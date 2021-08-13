@@ -77,3 +77,12 @@ function quadroDePixels (largura, comprimento) {
 }
 
 quadroDePixels(5, 5);
+
+//Desafio 6
+function firstPick () {
+	let standardColor = document.querySelector('.color');
+
+	standardColor.classList.add('selected');
+}
+
+firstPick();
