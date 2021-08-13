@@ -2,10 +2,10 @@ function colorPalette() {
   const paletaCores = document.querySelectorAll('.color');
   const cores = ['black', 'purple', 'darkblue', 'darkred'];
   for (let key = 0; key < paletaCores.length; key += 1) {
+    paletaCores[key].classList.add(cores[key]);
     if (cores[key] === 'black') {
       paletaCores[key].classList.add('selected');
     }
-    paletaCores[key].classList.add(cores[key]);
   }
 }
 colorPalette();
@@ -45,3 +45,24 @@ function verificarColor() {
     }
   }
 }
+
+function pintar() {
+  const pixel = document.querySelectorAll('.pixel');
+  for (let key = 0; key < pixel.length; key += 1) {
+    pixel[key].addEventListener('click', () => {
+      const corSelected = document.querySelector('.selected');
+      const colorAdd = corSelected.classList[1];
+      pixel[key].classList.add('paint');
+      paint(colorAdd);
+    });
+  }
+}
+pintar();
+
+function paint(value) {
+  const pintando = document.querySelectorAll('.paint');
+  for (let key = 0; key < pintando.length; key += 1) {
+    pintando[key].style.backgroundColor = value;
+  }
+}
+
