@@ -13,6 +13,11 @@ header {
   height: 50px;
 }
 
+#clear-board {
+  display: block;
+  margin: auto;
+}
+
 /* Atributos pra serem atendidos no Requisito 4 */
 #pixel-board {
   text-align: center;

@@ -99,3 +99,15 @@ pixelBoardSection.addEventListener('click', (event) => {
     selectedColor.style.backgroundColor = currentColor;
   }
 });
+
+// Requisito 9 - Criado o botão "Limpar" que, ao ser clicado, limpa o quadro preenchendo
+// a cor de todos seus pixels com branco.
+const clearButton = document.querySelector('#clear-board');
+clearButton.innerText = 'Limpar';
+
+clearButton.addEventListener('click', () => {
+  const pixelsWhite = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelsWhite.length; index += 1) {
+    pixelsWhite[index].style.backgroundColor = 'white';
+  }
+});
