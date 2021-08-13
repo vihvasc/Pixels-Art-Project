@@ -2,11 +2,11 @@
 // O título deverá ficar dentro de uma tag h1 com o id denominado title;
 // O texto do título deve ser exatamente "Paleta de Cores".
 function criarElementoH1() {
-    const novoH1 = document.createElement('h1');
-    novoH1.textContent = 'Paleta de Cores';
-    novoH1.id = 'title';
+  const novoH1 = document.createElement('h1');
+  novoH1.textContent = 'Paleta de Cores';
+  novoH1.id = 'title';
 
-    document.body.appendChild(novoH1);
+  document.body.appendChild(novoH1);
 };
 criarElementoH1();
 
@@ -17,22 +17,20 @@ criarElementoH1();
 // A paleta de cores deverá listar todas as cores disponíveis para utilização lado a lado, e deverá ser posicionada abaixo do título "Paleta de Cores";
 
 function criarPaletaCores() {
-    const paletaCores = document.createElement('div');
-    paletaCores.id = 'color-palette';
-    const totalCores = 4;
+  const paletaCores = document.createElement('div');
+  paletaCores.id = 'color-palette';
+  const totalCores = 4;
 
-    document.body.appendChild(paletaCores);
+  document.body.appendChild(paletaCores);
     
-    for (let index = 0; index < totalCores; index += 1) {
-        const novaCor = document.createElement('div');
-        novaCor.className = 'color';
-        novaCor.style.borderColor = 'black';
-        novaCor.style.borderStyle = 'solid';
-        novaCor.style.borderWidth = '1px';
-        novaCor.style.display = 'inline-block';
-        paletaCores.appendChild(novaCor);
-    };
-};
+  for (let index = 0; index < totalCores; index += 1) {
+    const novaCor = document.createElement('div');
+    novaCor.className = 'color';
+    novaCor.style.borderColor = 'black';
+    novaCor.style.borderStyle = 'solid';
+    novaCor.style.borderWidth = '1px';
+    novaCor.style.display = 'inline-block';
+    paletaCores.appendChild(novaCor);
+  }
+}
 criarPaletaCores();
-
-
