@@ -35,5 +35,23 @@ function criarPaletaCores() {
     novaCor.style.height = '30px';
     paletaCores.appendChild(novaCor);
   }
-}
+};
 criarPaletaCores();
+
+// Adicione à página um quadro de pixels, com 25 pixels.
+// O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
+// O quadro de "pixels" deve possuir o id denominado pixel-board, ao passo que cada "pixel" individual dentro do quadro deve possuir a classe denominada pixel;
+// A cor inicial dos "pixels" dentro do quadro, ao abrir a página, deve ser branca;
+// O quadro de "pixels" deve aparecer abaixo da paleta de cores.
+
+function adicionaContainerPixels() {
+  // Início da Função
+  const quadroDePixels = document.createElement('div');
+  quadroDePixels.id = 'pixel-board';
+  quadroDePixels.style.width = '150px';
+  quadroDePixels.style.height = '150px';
+  document.body.appendChild(quadroDePixels);
+  
+};
+adicionaContainerPixels();
+
