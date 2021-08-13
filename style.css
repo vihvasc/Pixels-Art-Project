@@ -1,32 +1,43 @@
 #color-palette{
-    height: 200px;
+    height: 50px;
 
 }
 #color-one{
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
     background-color:black;
     border: 1px solid black;
 }
 #color-two{
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
     background-color: red;
     border: 1px solid black;
 }
 #color-three{
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
     background-color: green;
     border: 1px solid black;
 }
 #color-four{
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
     background-color: yellow;
+    border: 1px solid black
+}
+#pixel-board{
+    width: 260px;
+    height: 150px;
+}
+.pixel{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: white;
     border: 1px solid black;
 }
