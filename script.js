@@ -71,3 +71,18 @@ function generateBoard(tamanho) {
 }
 
 generateBoard(5);
+
+// Requisito 7 - Criada função que altera a class "selected" entre as cores disponíveis na paleta
+function addClassSelected() {
+  const changeSelected = document.querySelectorAll('.color');
+
+  for (let index = 0; index < changeSelected.length; index += 1) {
+    changeSelected[index].addEventListener('click', (event) => {
+      const classSelected = document.querySelector('.selected');
+      classSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  }
+}
+
+addClassSelected();
