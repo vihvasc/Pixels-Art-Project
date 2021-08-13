@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 .color {
     border: 1px solid black;
     display: inline-block;
@@ -18,4 +22,16 @@
 
 .color:nth-child(4) {
     background-color: royalblue;
+}
+
+.pixel {
+    display: inline-block;
+    border: black 1px solid;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+}
+
+.line-pixel {
+    height: 40px;
 }
