@@ -1,5 +1,5 @@
 h1 {
-  font-family: 'Indie flower';
+  font-family: Indie flower, cursive;
 }
 
 ul li {
@@ -23,5 +23,5 @@ ul li {
 #clear-board {
   border-radius: 25%;
   box-shadow: 1px;
-  font-family: 'Indie flower';
+  font-family: Indie flower, cursive;
 }
