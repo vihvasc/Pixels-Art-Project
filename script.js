@@ -5,7 +5,7 @@ window.onload = function () {
 
   // requisito 2
   function addPalette (){
-  const colors = ['purple', 'black', 'green', 'blue'];
+  const colors = ['black', 'purple', 'green', 'blue'];
   const getDivColors = document.getElementsByClassName('color');
   for (let i = 0; i < getDivColors.length; i += 1){
     let divs = getDivColors[i];
