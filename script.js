@@ -68,12 +68,11 @@ function boardSize(event){
     if(event.target.className === 'changeSettings'){ 
         let input = document.getElementById('board-size');
         let boardValue = input.value;
-        if (boardValue >= 5 && boardValue <= 50 || boardValue === '' ){
-            if(boardValue === ''){
-                boardValue = 5;
-            }
+        if (boardValue >= 5 && boardValue <= 50){
             createPixel(boardValue);
-        } else {alert('Valor inválido!! Você pode usar valores entre 5 e 50 para a quantidade de pixels na horizontal!!')}
+        } else if (boardValue > 50) {
+            createPixel(50);
+        }else {alert('Board inválido!')}
     }
 
 }

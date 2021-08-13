@@ -16,17 +16,17 @@
         </div>        
     </header>
     <main class="mainContent">
+        <section class="settingBoard">
+            <h2 class="titleSettings">Configure seu quadro</h2>
+            <p>Escolha a quantidade de pixels na horizontal(entre 5 e 50)</p>
+            <input type="number" name="board" id="board-size" placeholder="5" min="1" max="50">
+            <button class="changeSettings" id="generate-board">VQV</button>
+        </section>
         <h2 class="title-board">Quadro de pintura</h2>       
         <button id="clear-board">Limpar</button>
-        <br />
+        <br />    
         <section id="pixel-board"></section>
     </main>
-    <section class="settingBoard">
-        <h2 class="titleSettings">Configure seu quadro</h2>
-        <p>Escolha a quantidade de pixels na horizontal(entre 5 e 50)</p>
-        <input type="number" name="board" id="board-size" placeholder="5" min="5" max="50">
-        <button class="changeSettings">alterar</button>
-    </section>
 
 
     <script src="script.js"></script>
