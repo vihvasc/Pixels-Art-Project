@@ -6,3 +6,18 @@ function createH1() {
 }
 
 createH1();
+
+function createDiv() {
+  const arrayColor = ['black', 'red', 'green', 'purple'];
+  const divColorFather = document.createElement('div');
+  divColorFather.id = 'color-palette';
+  document.body.appendChild(divColorFather);
+  for (let index = 0; index < 4; index += 1) {
+    const divColorSon = document.createElement('div');
+    divColorSon.className = 'color';
+    divColorSon.style.border = '1px solid black';
+    divColorSon.style.backgroundColor = arrayColor[index];
+    divColorFather.appendChild(divColorSon);
+  }
+}
+createDiv();
