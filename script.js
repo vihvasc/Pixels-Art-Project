@@ -16,6 +16,12 @@ for (let i = 0; i < colorBox.length; i += 1) {
   colorBox[i].style.background = colorSample[i];
 }
 
+const resetBtn = document.createElement('button');
+resetBtn.addEventListener('click', reset);
+resetBtn.id = 'clear-board';
+resetBtn.innerText = 'Limpar';
+document.body.appendChild(resetBtn);
+
 const pixelBoard = document.createElement('div');
 pixelBoard.id = 'pixel-board';
 document.body.appendChild(pixelBoard);
@@ -60,4 +66,10 @@ function applyColor(event) {
 
 for (let i = 0; i < pixel.length; i += 1) {
   pixel[i].addEventListener('click', applyColor);
+}
+
+function reset() {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.background = 'white';
+  }
 }
