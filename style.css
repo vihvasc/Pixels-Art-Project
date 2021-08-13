@@ -1,36 +1,47 @@
-h1{
+h1 {
     text-align: center;
 }
 
-div#color-palete{
+div#color-palete {
     block-size: 500px;
     text-align: center;
 }
 
-button.color{
-    border: 1px solid rgb(0, 0, 0);
+button.color {
+    border: 1px solid black;
 }
 
-button#c1{
-background-color: black;
-block-size: 50px;
-width: 50px;
+button#c1 {
+  background-color: black;
+  block-size: 40px;
+  width: 40px;
 }
 
-button#c2{
+button#c2 {
   background-color: red;
-  block-size: 50px;
-width: 50px; 
+  block-size: 40px;
+  width: 40px; 
 }
 
-button#c3{
+button#c3 {
   background-color: blue;
-  block-size: 50px;
-width: 50px;
+  block-size: 40px;
+  width: 40px;
 }
 
-button#c4{
-    background-color: yellow;
-    block-size: 50px;
-    width: 50px;
+button#c4 {
+  background-color: yellow;
+  block-size: 40px;
+  width: 40px;
+}
+
+.line {
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    display: inline-block;
+    border: 1px solid black;
 }
