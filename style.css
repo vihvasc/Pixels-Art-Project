@@ -13,11 +13,12 @@ body {
 h1 {
   padding: 10px;
   font-weight: 400;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 #color-palette {
   display: flex;
+  margin-bottom: 25px;
 }
 
 .color {
@@ -41,4 +42,31 @@ h1 {
 
 .green {
   background: green;
+}
+
+#pixels-board {
+  display: flex;
+}
+
+#pixels-board2 {
+  display: flex;
+}
+
+#pixels-board3 {
+  display: flex;
+}
+
+#pixels-board4 {
+  display: flex;
+}
+
+#pixels-board5 {
+  display: flex;
+}
+
+.pixel {
+  border: 1px solid black;
+  height: 80px;
+  width: 90px;
+  
 }
