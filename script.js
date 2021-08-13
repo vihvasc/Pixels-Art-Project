@@ -48,6 +48,16 @@ for (let i = 0; i < color.length; i += 1) {
   color[i].addEventListener('click', selectColor);
 }
 
-window.onload = function select() {
-  color[0].classList = 'color selected';
-};
+color[0].classList = 'color selected';
+
+const pixel = document.getElementsByClassName('pixel');
+;
+function applyColor(event) {
+  const selectedColorPallet = document.querySelectorAll('.selected')[0];
+  const selectedColor = selectedColorPallet.style.background;
+  event.target.style.background = selectedColor;
+}
+
+for (let i = 0; i < pixel.length; i += 1) {
+  pixel[i].addEventListener('click', applyColor);
+}
