@@ -55,9 +55,13 @@ header {
 }
 #pixel-board {
     width: 200px;
-    height: 200px;
+    height: 210px;
     margin: auto;
     margin-top: 100px;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
 }
 .linha {
     display: flex;
@@ -66,4 +70,5 @@ header {
     width: 40px;
     height: 40px;
     background-color: white;
+    border: solid 1px black;
 }
