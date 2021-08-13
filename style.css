@@ -1,11 +1,13 @@
 .color , .pixel {
   display: inline-block;
   border: 1px solid black;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+}
+
+.color , .pixel , .boardline {
+  height: 40px
 }
 
 .boardLine {
   margin: 0 auto;
-  height: 30px;
 }

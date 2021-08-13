@@ -8,12 +8,12 @@ function paintColorPalette() {
 paintColorPalette();
 
 function createPixelBoard() {
-  let pixelBoard = document.getElementById('pixel-board');
+  const pixelBoard = document.getElementById('pixel-board');
   for (let i = 0; i < 5; i += 1) {
-    let boardLine = document.createElement('div');
+    const boardLine = document.createElement('div');
     boardLine.className = 'boardLine';
-    for (let j = 0; j < 5; j+= 1) {
-      let pixel = document.createElement('div');
+    for (let j = 0; j < 5; j += 1) {
+      const pixel = document.createElement('div');
       pixel.className = 'pixel';
       boardLine.appendChild(pixel);
       pixel.style.backgroundColor = 'white';
