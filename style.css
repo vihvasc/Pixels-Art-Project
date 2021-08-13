@@ -8,22 +8,6 @@
   padding: 50px;
 }
 
-.black {
-  background-color: black;
-}
-
-.green {
-  background-color: #2A522E;
-}
-
-.blue {
-  background-color: #275AD8;
-}
-
-.yellow {
-  background-color: #E7C857;
-}
-
 #pixel-board {
   width: 160px;
   height: 160px;
