@@ -10,6 +10,26 @@
     <header>
       <h1 id="title">Paleta de Cores</h1>
     </header>
+    <main>
+        <div id="color-palette" class="color-palette">
+            <div class="color selected" ></div>
+            <div class="color" ></div>
+            <div class="color"></div>
+            <div class="color"></div>
+        </div>
+      <div class="input-container">
+        <input min="1" max="51" type="number" id="board-size" />
+        <button data-event="resizeCanvas" type="button" id="generate-board">
+          gerar quadrado de pixels
+        </button>
+      </div>
+
+    <button data-event="clearButton" type="button" id="clear-board">
+        Limpar
+      </button>
+      <div id="pixel-board"></div>
+    </main>
+
     
 
     <script src="script.js"></script>
