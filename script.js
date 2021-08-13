@@ -1,4 +1,5 @@
 const board = document.getElementById('pixel-board');
+const cores = document.getElementsByClassName('color');
 
 function createLine() {
   const numberOfLines = 5;
@@ -22,7 +23,17 @@ function createPixel() {
     }
   }
 }
-window.onload = function afterLoad() {
+
+function changeSelected(event) {
+  const selectedColor = document.querySelector('.selected');
+  selectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+window.onload = function initPage() {
   createLine();
   createPixel();
+  for (let c = 0; c < cores.length; c += 1) {
+    cores[c].addEventListener('click', changeSelected);
+  }
 };
