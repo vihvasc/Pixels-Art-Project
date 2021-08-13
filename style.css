@@ -45,7 +45,7 @@ main {
   background-color: blue;
 }
 
-#pixel-board{   
+#pixel-board {   
   display: table;
   position: relative;
   flex-direction: row;
@@ -57,14 +57,14 @@ main {
   border: 1px solid black;
 }
 
-.pixel{
+.pixel {
   background-color: white;
   width: 40px;
   height: 40px;  
   border: 1px solid black;
   display: table-cell;
 }
-.lines{
+.lines {
 
-    display: table-row;
+  display: table-row;
 }
