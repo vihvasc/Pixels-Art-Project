@@ -45,3 +45,14 @@ const firstChild = document.querySelector('.color');
 firstChild.classList.add('selected');
 
 // Requisito 7
+let divsPalette = document.querySelector('#color-palette');
+
+function selectColor(event) {
+  const filhos = document.querySelectorAll('.color');
+  for (let index = 0; index < filhos.length; index += 1) {
+    filhos[index].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+}
+
+divsPalette.addEventListener('click', selectColor);
