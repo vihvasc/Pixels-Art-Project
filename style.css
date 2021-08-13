@@ -44,7 +44,7 @@ h1 {
   background: green;
 }
 
-#pixels-board {
+#pixels-board1 {
   display: flex;
 }
 
@@ -65,7 +65,10 @@ h1 {
 }
 
 .pixel {
+  box-sizing: border-box;
   border: 1px solid black;
+  background: white;
   height: 40px;
   width: 40px;
 }
+

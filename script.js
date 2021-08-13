@@ -2,7 +2,7 @@ window.onload = function () {
   let colorPalette = document.getElementById('color-palette');
 
   function createPixelsBoard() {
-    let pixelsBoard = document.getElementById('pixels-board');
+    let pixelsBoard = document.getElementById('pixels-board1');
 
     for (let i = 1; i <= 5; i += 1) {
       let pixels = document.createElement('div');
