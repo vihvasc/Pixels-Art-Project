@@ -38,7 +38,6 @@ header {
   position: absolute;
   margin: 40px 0 0 50%;
   transform: translateX(-50%);
-  border: 1px solid black;
   width: 210px;
 }
 
@@ -52,4 +51,9 @@ header {
 
 #clear-board {
   margin-top: 10px;
+}
+
+#board-size,
+#generate-board {
+  margin: 5px;
 }

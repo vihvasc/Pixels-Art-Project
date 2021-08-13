@@ -15,7 +15,7 @@ function startPallet(colorsList) {
   setColors(colorsList);
   setPalletEventListener();
   selectFirstColor();
-}
+};
 
 function createPalletDivs(lenght) {
   let palletBox = document.getElementById("color-palette");
@@ -99,14 +99,19 @@ function selectFirstColor() {
 // Pixel box
 
 function startPixelBox() {
-  createPixelBoxItens();
+  createPixelBoxItens(25);
   pixelAddEventListener();
-  clearButtomCreator();
+  inputSizeCreator();
+  inputButtonCreator();
+  clearButtonCreator();
 };
 
-function createPixelBoxItens() {
+function createPixelBoxItens(size) {
   let pixelBoard = document.getElementById("pixel-board");
-  for (let index = 0; index < 25; index += 1) {
+  let pixelBoardCss = window.getComputedStyle(pixelBoard)
+  pixelBoard.style.width = Math.sqrt(size) * 42 + "px"
+  console.log(pixelBoardCss.getPropertyValue("width"));
+  for (let index = 0; index < size; index += 1) {
     let pixel = document.createElement("div");
     pixel.className = "pixel";
     pixel.style.backgroundColor = "white";
@@ -131,14 +136,13 @@ function colorPixel(event) {
 
 // Clear Board
 
-function clearButtomCreator() {
-  let article = document.querySelector(".main-content")
+function clearButtonCreator() {
+  let section = document.querySelector(".main-content")
   let buttom = document.createElement("button");
   buttom.innerText = "Limpar";
   buttom.id = "clear-board";
-  article.appendChild(buttom);
+  section.appendChild(buttom);
   buttom.addEventListener("click", clearBoard);
-  
 };
 
 function clearBoard() {
@@ -146,4 +150,51 @@ function clearBoard() {
   for (let pixel of pixels) {
     pixel.style.backgroundColor = "white";
   };
+};
+
+//  size input
+
+function inputSizeCreator() {
+  let article = document.querySelector(".main-content");
+  let input = document.createElement("input");
+  input.id = "board-size";
+  input.type = "number";
+  input.min = "1"
+  article.appendChild(input);
+};
+
+function inputButtonCreator() {
+  let article = document.querySelector(".main-content");
+  let inputButtom = document.createElement("button");
+  inputButtom.id = "generate-board";
+  inputButtom.innerText = "VQV";
+  article.appendChild(inputButtom);
+  inputButtom.addEventListener("click", createNewBoard);
+};
+
+
+function createNewBoard(event) {
+  let input = document.getElementById("board-size");
+  if (Number(input.value)) {
+    let size = filterSize(Number(input.value));
+    excludeOldBoard();
+    createPixelBoxItens(size);
+  } else {
+    alert("Board inválido!");
+  };
+};
+
+function filterSize(size) {
+  if ((size >= 5) && (size <= 50)) {
+    return size ** 2;
+  } else if (size < 5) {
+    return 5 ** 2;
+  } else {
+    return 50 ** 2;
+  };
+};
+
+function excludeOldBoard() {
+  let pixelBoard = document.getElementById("pixel-board");
+  pixelBoard.innerHTML = "";
 };
