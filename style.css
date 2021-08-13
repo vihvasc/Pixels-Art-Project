@@ -1,17 +1,19 @@
 body {
   width: 1366px;
   height: 768px;
+  text-align: center;
 }
 
 button {
+  
   border: solid 1px;
-  width: 125px;
-  height: 125px;
+  width: 25px;
+  height: 25px;
 }
 
 li {
-  width: 125px;
-  height: 125px;
+  width: 40px;
+  height: 40px;
   list-style-type: none;
   background-color: white;
   border: solid 1px black;
@@ -23,3 +25,4 @@ ul {
   padding: center;
   font-size: 0px;
 }
+
