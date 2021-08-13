@@ -88,6 +88,10 @@ function changeBoardSize() {
   let newBoardSize;
   if (input.value === '') {
     alert('Board inválido!');
+  } else if (input.value < 5) {
+    newBoardSize = 5;
+  } else if (input.value > 50) {
+    newBoardSize = 50;
   } else {
     newBoardSize = input.value;
   }
