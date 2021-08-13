@@ -35,7 +35,7 @@ function board () {
 board ();
 
 function select () {
-  let selectColorBlack=document.querySelector('.color');
+  let selectColorBlack=document.getElementsByClassName('color')[0];
   selectColorBlack.classList.add('selected')
 }
 
@@ -47,7 +47,7 @@ function selectedColor () {
     let newColor = document.getElementsByClassName('color');
       
     selectedColor.addEventListener('click', newColors)
-  //  acessado: https://github.com/tryber/sd-08-project-pixels-art/blob/fabio-ferreira-pixels-art-project/script.js
+  
     function removeSelected() {
         for (let i = 0; i < newColor.length; i += 1) {
           newColor[i].className = 'color';
@@ -59,3 +59,18 @@ function selectedColor () {
         event.target.className = 'color selected';
       }
     }
+    selectedColor () 
+
+    function paintBoard () {
+      let board = querySelectorAll('.pixel');
+      for (let i = 0; i < board.length; i += 1 ) {
+        let paint = board[i];
+        paint.addEventListener('click', function(e){
+          let color = document.querySelector('.selected');
+          paint.style;backgroundColor = color.style.backgroundColor;
+        })
+      }
+       
+      }
+
+    paintBoard ();
