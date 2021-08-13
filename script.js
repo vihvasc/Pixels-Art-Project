@@ -3,6 +3,7 @@ window.onload = function (){
     selectColor();
     document.addEventListener("click", selectColor);
     document.addEventListener('click', colorPixel);
+    document.addEventListener('click', clear);
 
 }
 
@@ -31,4 +32,14 @@ function colorPixel(event){
         event.target.style.backgroundColor = window.getComputedStyle(selected).backgroundColor;
     }
 
+}
+
+function clear(event){
+    pixel = document.getElementsByClassName('pixel');
+
+    if(event.target.id == 'clear-board'){
+    for (let i = 0; i < pixel.length; i += 1){
+        pixel[i].style.backgroundColor = '#fff';
+    }
+}
 }

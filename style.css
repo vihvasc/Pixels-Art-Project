@@ -43,6 +43,11 @@
     height: 40px;
     border: 1px solid black;
     display: inline-block;
-    margin: 1px;
+    margin: 0;
     background-color: #FFF;
+}
+
+#clear-board {
+    display:block;
+    font-size:13px;
 }
