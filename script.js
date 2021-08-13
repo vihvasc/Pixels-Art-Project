@@ -1,5 +1,11 @@
 window.onload = function (){
     createPixel(5);
+
+    let boardColoring = document.querySelectorAll('.color');
+    for (let i = 1; i < 4; i += 1){
+        boardColoring[i].style.backgroundColor = generateColor();
+    }
+
     selectColor();
     document.addEventListener("click", selectColor);
     document.addEventListener('click', colorPixel);
@@ -74,5 +80,17 @@ function boardSize(event){
             createPixel(50);
         }else {alert('Board inválido!')}
     }
+
+}
+
+function generateColor(){
+let valuesArray = '0123456789ABCDEF';
+let color = '#';
+
+for (let i = 0; i < 3; i += 1){
+    let randomValue = Math.floor(Math.random()*16);
+    color += valuesArray[randomValue];
+}
+return color;
 
 }
