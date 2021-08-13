@@ -2,6 +2,7 @@
 const pixelBoard = document.getElementById('pixel-board');
 const colors = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
+const buttonClearBoard = document.getElementById('clear-board');
 
 // Function to create a pixel board m x n
 function createPixelBoard(m, n) {
@@ -33,10 +34,20 @@ for (let i = 0; i < colors.length; i += 1) {
 
 // Function to give a class pixel the color of a class selected
 function paintPixel(eventoDeOrigem) {
-  let element = eventoDeOrigem.target;
-  let color = document.getElementsByClassName('selected')[0].style.backgroundColor;
+  const element = eventoDeOrigem.target;
+  const color = document.getElementsByClassName('selected')[0].style.backgroundColor;
   element.style.background = color;
 }
+
+// Function used to clean the pixels
+function cleanPixelsColor() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.background = 'white';
+  }
+}
+
+// Add event Listener to button id clear-board
+buttonClearBoard.addEventListener('click', cleanPixelsColor);
 
 // function used to start the page
 window.onload = function startPage() {
@@ -52,5 +63,4 @@ window.onload = function startPage() {
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].addEventListener('click', paintPixel);
   }
-
-};
+}
