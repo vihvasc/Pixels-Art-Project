@@ -1,0 +1,25 @@
+.color {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    display: inline-block;
+    padding: 50px;
+}
+
+#color-palette {
+    background-color: black;
+}
+
+#color-palette2 {
+    color: blueviolet;
+    background-color: blue;
+}
+
+#color-palette3 {
+    color: brown;
+    background-color: blueviolet;
+}
+
+#color-palette4 {
+    background-color:brown;
+}
