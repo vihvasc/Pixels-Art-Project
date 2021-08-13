@@ -1,0 +1,26 @@
+#color-palette {
+  display: flex;
+}
+
+.pixel {
+  outline: 1px solid black;
+}
+
+.color {
+  border: 1px solid black;
+  width: 64px;
+  height: 64px;
+}
+
+#color1 {
+  background-color: black;
+}
+#color2 {
+  background-color: #1e606e;
+}
+#color3 {
+  background-color: #5ab9a8;
+}
+#color4 {
+  background-color: #c4f0c2;
+}
