@@ -6,3 +6,13 @@ function colorPalette() {
   }
 }
 colorPalette();
+
+function createPixel(value) {
+  const pixelBorder = document.getElementById('pixel-board');
+  for (let key = 0; key < value; key += 1) {
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixelBorder.appendChild(pixel);
+  }
+}
+createPixel(25);
