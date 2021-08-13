@@ -23,3 +23,19 @@
 .dark {
   background-color: #330F0F;
 }
+
+#pixel-board {
+  display: grid;
+  grid-template-columns: repeat(16, 30px);
+  grid-template-rows: repeat(16, 30px);
+}
+
+.pixel {
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: white;
+}
+
+
