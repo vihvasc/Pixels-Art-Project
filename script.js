@@ -1,3 +1,5 @@
+var buttonBlack = document.querySelector('.color')
+buttonBlack.classList.add('selected')
 function createGrid(){
     numberOfLines = 5;
     numberOfColumns = 5;

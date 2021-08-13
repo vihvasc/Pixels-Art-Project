@@ -5,17 +5,17 @@
     margin-left: 15%;
     border: black solid 1px;
 }
-.red{
+.black{
     background-color: black;
 }
 .green{
-    background-color: red;
+    background-color: green;
 }
 .blue{
     background-color: blue;
 }
-.yellow{
-    background-color: green;
+.red{
+    background-color: red;
 }
 .pixel{
     display: inline-block;
