@@ -8,8 +8,8 @@
   padding: 50px;
 }
 
-.yellow {
-  background-color: #E7C857;
+.black {
+  background-color: black;
 }
 
 .green {
@@ -20,8 +20,8 @@
   background-color: #275AD8;
 }
 
-.dark {
-  background-color: #330F0F;
+.yellow {
+  background-color: #E7C857;
 }
 
 #pixel-board {
