@@ -33,22 +33,6 @@ h1 {
   height: 44px;
 }
 
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.black {
-  background-color: black;
-}
-
 #clear-board {
   display: block;
   margin: 0 auto;

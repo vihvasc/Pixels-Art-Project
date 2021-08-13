@@ -20,6 +20,8 @@ document.querySelector('#clear-board').addEventListener('click', handleClearBoar
 document.querySelector('#generate-board').addEventListener('click', makeNewBoard)
 
 // Funções
+makeColors();
+
 function makePixelBoard() {
   for (let index = 1; index <= boardSize; index += 1) {
     let line = document.createElement('div');
@@ -115,6 +117,17 @@ function handleClearBoard() {
   for (let index = 0; index < pixelBoard.length; index += 1) {
     pixelBoard[index].style.backgroundColor = 'rgb(255,255,255)';
   }
+}
+
+function makeColors() {
+  let color2 = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
+  let color3 = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
+  let color4 = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
+
+  color[0].style.backgroundColor = 'rgb(0,0,0)';
+  color[1].style.backgroundColor = color2;
+  color[2].style.backgroundColor = color3;
+  color[3].style.backgroundColor = color4;
 }
 
 }
