@@ -1,0 +1,22 @@
+.color {
+  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: rgb(214, 40, 40);
+}
+
+.orange {
+  background-color: rgb(247, 127, 0);
+}
+
+.yellow {
+  background-color: rgb(252, 191, 73);
+}
