@@ -14,6 +14,20 @@ function createPixelBoard(m, n) {
   }
 }
 
+// Add event Listener to class color
+const colors = document.getElementsByClassName('color');
+for (let i in colors) {
+  colors[i].addEventListener('click', classSelected);
+}
+
+// Function to give a class selected to the selected color
+function classSelected(eventoDeOrigem) {
+  for (let i in colors) {
+    colors[i].className = 'color';
+  }
+  eventoDeOrigem.target.className = 'color selected';
+}
+
 window.onload = function () {
   createPixelBoard(5, 5);
 };
