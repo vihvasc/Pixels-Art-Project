@@ -9,3 +9,18 @@ function paletteColors() {
 }
 
 paletteColors();
+
+function pixelBoard() {
+    let pixelBoard = document.getElementById('pixel-board');
+    let numberOfPixel = 25;
+
+    for (let index = 0; index < numberOfPixel; index += 1) {
+        let pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        pixel.style.backgroundColor = 'white';
+
+        pixelBoard.appendChild(pixel);
+    }
+}
+
+pixelBoard();

@@ -1,6 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 .color {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+#pixel-board {
+  position: relative;
+  width: 202px;
+  height: 218px;
+  border: 1px solid black;
+}
+
+.pixel {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
 }
