@@ -66,3 +66,13 @@ function paint(value) {
   }
 }
 
+function button() {
+  const botao = document.getElementById('clear-board');
+  const limpar = document.querySelectorAll('.pixel');
+  botao.addEventListener('click', () => {
+    for (let key = 0; key < limpar.length; key += 1) {
+      limpar[key].style.backgroundColor = 'white';
+    }
+  });
+}
+button();
