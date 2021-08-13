@@ -1,3 +1,5 @@
+window.onload = selecionaPrimeira();
+
 let classe = document.getElementsByClassName('color');
 
 for (let i = 0; i < classe.length; i += 1) {
@@ -21,3 +23,8 @@ criaQuadrado('fileira2');
 criaQuadrado('fileira3');
 criaQuadrado('fileira4');
 criaQuadrado('fileira5');
+
+function selecionaPrimeira() {
+  let paletaPreta = document.getElementsByClassName('color')[0];
+  paletaPreta.classList.add('selected');
+}

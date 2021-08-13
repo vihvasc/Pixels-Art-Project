@@ -1,10 +1,10 @@
 #color-palette {
-    border: 1px solid black;
-    display: inline-block;
+  border: 1px solid black;
+  display: inline-block;
 }
 
 .pixel {
-    height: 40px;
-    width: 40px;
-    border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
 }
