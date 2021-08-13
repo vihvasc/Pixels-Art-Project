@@ -5,9 +5,13 @@
   height: 30px;
 }
 
-button {
-  display: block;
+#toolbar {
   margin-bottom: 5px;
+}
+
+input {
+  margin-left: 30px;
+  width: 30px;
 }
 
 #pixel-board {

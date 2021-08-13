@@ -12,11 +12,11 @@ function createPixel() {
   return pixel;
 }
 
-function createpixelLine() {
+function createpixelLine(lineSize) {
   const pixelLine = document.createElement('div');
   pixelLine.className = 'pixel-line';
 
-  for (let j = 0; j < 5; j += 1) {
+  for (let j = 0; j < lineSize; j += 1) {
     const pixel = createPixel();
     pixelLine.appendChild(pixel);
   }
@@ -24,10 +24,10 @@ function createpixelLine() {
   return pixelLine;
 }
 
-function createPixelBoard() {
+function createPixelBoard(boardSize) {
   const pixelBoard = document.getElementById('pixel-board');
-  for (let i = 0; i < 5; i += 1) {
-    const pixelLine = createpixelLine();
+  for (let i = 0; i < boardSize; i += 1) {
+    const pixelLine = createpixelLine(boardSize);
     pixelBoard.appendChild(pixelLine);
   }
 }
@@ -76,11 +76,40 @@ function clearBoard() {
   });
 }
 
+function removeOldBoard() {
+  const pixelBoard = document.getElementById('pixel-board');
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
+  }
+}
+
+function changeBoardSize() {
+  const input = document.getElementById('board-size');
+  let newBoardSize;
+  if (input.value === '') {
+    alert('Board inválido!');
+  } else {
+    newBoardSize = input.value;
+  }
+
+  return newBoardSize;
+}
+
+function generateNewBoard() {
+  const boardGeneratorButton = document.getElementById('generate-board');
+  boardGeneratorButton.addEventListener('click', () => {
+    removeOldBoard();
+    const newBoardSize = changeBoardSize();
+    createPixelBoard(newBoardSize);
+  });
+}
+
 window.onload = () => {
   paintColorPalette();
-  createPixelBoard();
+  createPixelBoard(5);
   setInitialColor();
   selectColor();
   selectPixel();
   clearBoard();
+  generateNewBoard();
 };
