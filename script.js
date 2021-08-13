@@ -45,7 +45,7 @@ const firstChild = document.querySelector('.color');
 firstChild.classList.add('selected');
 
 // Requisito 7
-let divsPalette = document.querySelector('#color-palette');
+const divsPalette = document.querySelector('#color-palette');
 
 function selectColor(event) {
   const filhos = document.querySelectorAll('.color');
