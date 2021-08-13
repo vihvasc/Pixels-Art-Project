@@ -1,5 +1,19 @@
-let black = document.getElementById('black');
-window.onload = black.classList.add('selected');
+const black = document.getElementById('black');
+black.classList.add('selected');
+const colorPalete = document.getElementsByClassName('color');
+
+for (let key of colorPalete) {
+  key.addEventListener('click', changeClassSelected);
+}
+function changeClassSelected(event) {
+  const selected = document.getElementsByClassName('selected');
+  for (let key of selected) {
+    key.classList.remove('selected');
+  }
+  const evento = event.target;
+  evento.classList.add('selected');
+}
+
 // nDeLinhas(5);
 // nDePixelsLinha(5);
 
