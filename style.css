@@ -1,0 +1,30 @@
+#title {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#color-palette {
+  padding-left: 30%;
+}
+
+.color {
+  border: solid 1px black;
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin-left: 50px;
+  margin-top: 30px;
+}
+
+#red {
+  background-color: red;
+}
+#blue {
+  background-color: blue;
+}
+#pink {
+  background-color: pink;
+}
+#yellow {
+  background-color: yellow;
+}
