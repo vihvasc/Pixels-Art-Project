@@ -11,15 +11,17 @@
 }
 
 #color-palette {
-  margin: auto;
-  max-width: auto;
+	display: block;
+	box-sizing: border-box;
+	padding: 15px;
+	width: 80%;
 	text-align: center;
 }
 
 div .color {
   display: inline-block;
   margin: 10px;
-  padding: 45px;
+  padding: 25px;
 	align-items: center;
 	font-size: 0px;
 }
@@ -32,12 +34,8 @@ div .color {
 	text-align: center;
 }
 
-div .newDiv {
-	display: inline-block;
-	text-align: center;
-}
-
 div .pixel {
+	display: inline-block;
 	border: 1px solid black;
 	height: 40px;
 	width: 40px;
