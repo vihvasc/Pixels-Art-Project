@@ -101,7 +101,7 @@ function selectFirstColor() {
 function startPixelBox() {
   createPixelBoxItens();
   pixelAddEventListener();
-
+  clearButtomCreator();
 };
 
 function createPixelBoxItens() {
@@ -129,3 +129,21 @@ function colorPixel(event) {
   pixel.style.backgroundColor = color;
 };
 
+// Clear Board
+
+function clearButtomCreator() {
+  let article = document.querySelector(".main-content")
+  let buttom = document.createElement("button");
+  buttom.innerText = "Limpar";
+  buttom.id = "clear-board";
+  article.appendChild(buttom);
+  buttom.addEventListener("click", clearBoard);
+  
+};
+
+function clearBoard() {
+  let pixels = document.getElementsByClassName("pixel");
+  for (let pixel of pixels) {
+    pixel.style.backgroundColor = "white";
+  };
+};
