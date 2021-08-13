@@ -1,3 +1,7 @@
+body {
+    background-image: url(https://www.oficinadanet.com.br/imagens/post/15181/minecraft-2020.jpg);
+}
+
 h1 {
     text-align: center;
 }
@@ -32,8 +36,8 @@ h1 {
 
 .pixel {
     display: inline-block;
-    width: 65px;
-    height: 65px;
+    width: 40px;
+    height: 40px;
     border-style: solid;
     border-color: black;
     border-width: 1px;
