@@ -1,21 +1,25 @@
 window.onload = function() {
-// Variaveis
+// Criar PixelBoard
 const boardHeight = 5;
 const boardWidth = 5;
-const black = document.querySelector('.color.black');
-const red = document.querySelector('.color.red');
-const green = document.querySelector('.color.green');
-const blue = document.querySelector('.color.blue');
-
-// Event Listeners
-black.addEventListener('click', handleSelection);
-red.addEventListener('click', handleSelection);
-green.addEventListener('click', handleSelection);
-blue.addEventListener('click', handleSelection);
-
-// Funções
 makePixelBoard();
 
+// Variaveis
+const color = document.querySelectorAll('.color');
+const pixelBoard = document.querySelectorAll('.pixel');
+
+// Event Listeners
+for (let index = 0; index < color.length; index += 1) {
+  color[index].addEventListener('click', handleSelection);
+}
+
+for (let index = 0; index < pixelBoard.length; index += 1) {
+  pixelBoard[index].addEventListener('click', handleColoring);
+}
+
+pixelBoard[0].addEventListener('click', handleColoring);
+
+// Funções
 function makePixelBoard() {
   for (let index = 1; index <= boardHeight; index += 1) {
     let line = document.createElement('div');
@@ -38,13 +42,23 @@ function handleSelection(event) {
 
   if (!currentColor.contains('selected')) {
     currentColor.add('selected');
-    previousColor.classList.remove('selected');
-
-  } else if (currentColor.contains('selected')) {
-    currentColor.remove('selected');
+    if (previousColor != null) {
+      previousColor.classList.remove('selected');
+    }
   }
 
   console.log(document.querySelectorAll('.selected'))
+}
+
+function handleColoring(event) {
+  let selectedElement = document.querySelector('.selected');
+
+  if (selectedElement != null) {
+    let currentColor = window.getComputedStyle(selectedElement).getPropertyValue('background-color');
+    event.target.style.backgroundColor = currentColor;
+  } else {
+    event.target.style.backgroundColor = 'rgb(255,255,255)';
+  }
 }
 
 }
