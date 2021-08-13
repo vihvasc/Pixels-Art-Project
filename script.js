@@ -25,9 +25,10 @@ function selectPalette() {
 selectPalette();
 
 function paintSquareInBoard(event) {
-  if(event.target.className === 'pixel') {
+  let square = event;
+  if (event.target.className === 'pixel') {
     const selectedColor = document.querySelector('.selected');
-    event.target.style.backgroundColor = selectedColor.style.backgroundColor;
+    square.target.style.backgroundColor = selectedColor.style.backgroundColor;
   }
 }
 
@@ -37,3 +38,23 @@ function paintSquares() {
 }
 
 paintSquares();
+
+function cleanPixelBoard() {
+  const section = document.querySelector('#pixel-board').children;
+  for (let index of section) {
+    for (let index2 of index.children) {
+      index2.style.backgroundColor = 'white';
+    }
+  }
+}
+
+function insertButton() {
+  const section = document.getElementsByTagName('body')[0].children[2];
+  const button = document.createElement('button');
+  button.innerText = 'Limpar';
+  button.id = 'clear-board';
+  button.addEventListener('click', cleanPixelBoard);
+  section.appendChild(button);
+}
+
+insertButton();
