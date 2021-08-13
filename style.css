@@ -1,0 +1,21 @@
+.color {
+    border: 1px solid black;
+    display: inline-block;
+    width: 47px;
+    height: 47px;
+}
+.color:nth-child(1) {
+    background-color: black;
+}
+
+.color:nth-child(2) {
+    background-color: orange;
+}
+
+.color:nth-child(3) {
+    background-color: red;
+}
+
+.color:nth-child(4) {
+    background-color: royalblue;
+}
