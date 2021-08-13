@@ -1,5 +1,7 @@
 body {
     background-image: url(https://www.oficinadanet.com.br/imagens/post/15181/minecraft-2020.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1 {

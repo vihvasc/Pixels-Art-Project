@@ -1,12 +1,14 @@
-window.onload = corbranca;
+window.onload = function () { 
+corbranca();
+}
 
 function corbranca (){
 let pixels = document.getElementsByClassName("pixel")
 for(i = 0; i < pixels.length; i +=1) {
-    pixels[i].style.backgroundColor = "white"
+    pixels[i].style.backgroundColor = "rgb(255, 255, 255)"
 }
 }
-
+   
 let cor1 = document.getElementsByClassName("color")[0]
 cor1.style.backgroundColor = "black";
 
