@@ -89,7 +89,16 @@ function addListenerToColorPallete() {
   }
 }
 
+function randomizeColors() {
+  const colors = document.getElementsByClassName('color');
+  for (let index = 1; index < colors.length; index += 1) {
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    colors[index].style.backgroundColor = `#${randomColor}`;
+  }
+}
+
 function load() {
+  randomizeColors();
   addListenerToColorPallete();
 
   const clearBtn = document.getElementById('clear-board');
