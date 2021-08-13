@@ -10,6 +10,11 @@ function initColorPalette() {
   }
 }
 
+function selectColor(colorDiv) {
+  colorDiv.classList.add('selected');
+}
+
 window.onload = function () {
   initColorPalette();
+  selectColor(document.querySelector('.color'));
 };
