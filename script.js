@@ -80,7 +80,7 @@ buttonGenerateBoard.addEventListener('click', generateNewBoard);
 // Function to verify if values in input is in Range [0, 50]
 function verifyInputInRange(eventoDeOrigem) {
   let element = eventoDeOrigem.target;
-  size = element.value;
+  let size = element.value;
   size = parseInt(size, 10);
   if (size < 5) {
     element.value = 5;
@@ -90,7 +90,7 @@ function verifyInputInRange(eventoDeOrigem) {
 }
 
 // Add event Listener to input id board-size
-inputSizeBoard.addEventListener('change', verifyInputInRange)
+inputSizeBoard.addEventListener('change', verifyInputInRange);
 
 // Function to generate a randomNumber into range[min, max]
 function randomNumber(min, max) {
