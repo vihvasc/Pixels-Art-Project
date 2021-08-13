@@ -37,3 +37,10 @@ for (let i = 0; i < boardSize; i += 1) {
     pixelLine[n].appendChild(pixel);
   }
 }
+
+const color = document.getElementsByClassName('color');
+// const pixel = document.getElementsByClassName('pixel');
+
+window.onload = function select() {
+  color[0].classList = 'color selected';
+};
