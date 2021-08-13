@@ -1,20 +1,40 @@
 window.onload = function (){
-    createPixel(25);
+    createPixel(5);
     selectColor();
     document.addEventListener("click", selectColor);
     document.addEventListener('click', colorPixel);
     document.addEventListener('click', clear);
-
+    document.addEventListener('click', boardSize);    
 }
 
-function createPixel(nPixel){
-    
-    for(let i = 0; i < nPixel; i += 1){
-        let divPixel = document.createElement('div');
-        divPixel.className = 'pixel';
-        document.querySelector('#pixel-board').appendChild(divPixel);
-    }
+function createPixel(lineInput){
+    let nPixel = lineInput**2;
+    let boardTotal = 42*lineInput;
+    if(document.querySelector('.pixel')=== null){
+        for(let i = 0; i < nPixel; i += 1){
+            let divPixel = document.createElement('div');
+            divPixel.className = 'pixel';
+            document.querySelector('#pixel-board').appendChild(divPixel);
+        } 
+    } else {
+        let pixelExist = document.querySelectorAll('.pixel');
+        for(let i = 0; i < pixelExist.length; i +=1){
+                pixelExist[i].remove();
+        }
+
+        for(let i = 0; i < nPixel; i += 1){
+            let divPixel = document.createElement('div');
+            divPixel.className = 'pixel';
+            document.querySelector('#pixel-board').appendChild(divPixel);
+            document.querySelector('#pixel-board').style.width = boardTotal + 'px';
+            document.querySelector('#pixel-board').style.height = boardTotal + 'px';
+        }
+
+        
+        
+        }
 }
+
 
 function selectColor(event){
   let  sClass = document.getElementsByClassName('selected');
@@ -42,4 +62,18 @@ function clear(event){
         pixel[i].style.backgroundColor = '#fff';
     }
 }
+}
+
+function boardSize(event){
+    if(event.target.className === 'changeSettings'){ 
+        let input = document.getElementById('board-size');
+        let boardValue = input.value;
+        if (boardValue >= 5 && boardValue <= 50 || boardValue === '' ){
+            if(boardValue === ''){
+                boardValue = 5;
+            }
+            createPixel(boardValue);
+        } else {alert('Valor inválido!! Você pode usar valores entre 5 e 50 para a quantidade de pixels na horizontal!!')}
+    }
+
 }
