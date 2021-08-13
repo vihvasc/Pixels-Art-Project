@@ -1,5 +1,6 @@
 const colorPalette = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
+const btnEraseCanvas = document.getElementById('clear-board');
 let selectedColor;
 const config = {
   colors: ['black', 'green', 'blue', 'yellow'],
@@ -71,16 +72,25 @@ function insertCanvas() {
 }
 
 // Seleciona a primeira cor.
-function SelectFirstColor() {
+function selectFirstColor() {
   const firstColor = document.querySelector('.color');
   firstColor.classList.add('selected');
   selectedColor = firstColor.style.backgroundColor;
 }
 
+// Apaga/reseta o quadro.
+function eraseCanvas() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
+  }
+}
+
 function init() {
   insertColorPalette();
   insertCanvas();
-  SelectFirstColor();
+  selectFirstColor();
+  btnEraseCanvas.addEventListener('click', eraseCanvas);
 }
 
 window.onload = init;
