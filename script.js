@@ -33,3 +33,10 @@ function board () {
 }
 
 board ();
+
+function selected () {
+  let selectColorBlack=document.querySelector('.color');
+  selectColorBlack.classList.add('selected')
+}
+
+selected();
