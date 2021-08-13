@@ -20,9 +20,9 @@ function criarPaletaCores() {
   const paletaCores = document.createElement('div');
   paletaCores.id = 'color-palette';
   const totalCores = 4;
-
+  const coresDaPaleta = ['black', 'red', 'green', 'blue'];
   document.body.appendChild(paletaCores);
-    
+  
   for (let index = 0; index < totalCores; index += 1) {
     const novaCor = document.createElement('div');
     novaCor.className = 'color';
@@ -30,6 +30,9 @@ function criarPaletaCores() {
     novaCor.style.borderStyle = 'solid';
     novaCor.style.borderWidth = '1px';
     novaCor.style.display = 'inline-block';
+    novaCor.style.backgroundColor = coresDaPaleta[index];
+    novaCor.style.width = '30px';
+    novaCor.style.height = '30px';
     paletaCores.appendChild(novaCor);
   }
 }
