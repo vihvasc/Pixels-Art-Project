@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.box{
+    border: solid 1px black;
+    display: inline-block;
+}
+#box-black{
+    background-color: black;
+}
+#box-red{
+    background-color:red;
+}
+#box-green{
+    background-color:green;
+}
+#box-blue{
+    background-color:blue;
+}
