@@ -3,6 +3,7 @@ const colorOne = document.getElementById("color-one");
 const colorTwo = document.getElementById("color-two");
 const colorThree = document.getElementById("color-three");
 const colorFour = document.getElementById("color-four");
+const pixelBoard = document.getElementById("pixel-board");
 
 colorOne.style.backgroundColor = "black";
 colorTwo.style.backgroundColor = "red";
@@ -13,6 +14,7 @@ colorOne.addEventListener('click', addSelectedClass);
 colorTwo.addEventListener('click', addSelectedClass);
 colorThree.addEventListener('click', addSelectedClass);
 colorFour.addEventListener('click', addSelectedClass);
+pixelBoard.addEventListener('click', changeColor);
 
 function addSelectedClass(event) {
     let checkSelected = document.querySelector('.selected');
