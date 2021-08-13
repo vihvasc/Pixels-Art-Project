@@ -24,29 +24,18 @@
   background-color: rgb(255, 255, 255);
 }
 
-/* .box-color {
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-} */
-
-/* .box-color2 {
-  width: 100px;
-  height: 100px;
-  color: red;
-  display: inline-block;
+#box-color1 {
+  background-color: black;
 }
 
-.box-color3 {
-  width: 100px;
-  height: 100px;
-  color: green;
-  display: inline-block;
+#box-color2 {
+  background-color: green;
 }
 
-.box-color4 {
-  width: 100px;
-  height: 100px;
-  color: yellow;
-  display: inline-block;
-} */
+#box-color3 {
+  background-color: yellow;
+}
+
+#box-color4 {
+  background-color: blue;
+}
