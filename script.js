@@ -2,6 +2,7 @@ const palleteColors = ['rgb(0, 0, 0)', 'rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(
 const colorsUl = document.querySelector('.colors-ul')
 const pixelBoard = document.getElementById('pixel-board')
 const clearButton = document.getElementById('clear-board')
+const generateBoardButton = document.getElementById('generate-board')
 let backgroundColorSelected = 'rgb(0,0,0)'
 
 function addClassAndBackgroundToColors(colors){
@@ -17,11 +18,12 @@ function addClassAndBackgroundToColors(colors){
   }
 }
 function creatPixelsBoard(width, heigth){
-  const boardElements = document.getElementsByClassName('pixel')
-
+  const boardElements = document.querySelectorAll('.pixel')
   pixelBoard.style.maxWidth = `${width*40 + 2}px`
 
-  if(boardElements.length === 0){
+  if(boardElements.length !== 0){
+    
+  }
     for(let line = 1; line <= heigth; line += 1){
       let lineOfPixels = document.createElement('div')
       lineOfPixels.classList.add('pixel-line')
@@ -34,6 +36,10 @@ function creatPixelsBoard(width, heigth){
         lineOfPixels.appendChild(block)
       }
     }
+}
+function boardClear(pixels) {
+  for(let i = 0; i < pixels.length; i += 1){
+    pixels[i].remove()
   }
 }
 
@@ -50,6 +56,7 @@ colorsUl.addEventListener('click', function(e) {
 pixelBoard.addEventListener('click', function(e) {
   let element = e.target
   element.style.backgroundColor = backgroundColorSelected
+  console.log('clicou')
 })
 
 clearButton.addEventListener('click', function() {
@@ -57,6 +64,23 @@ clearButton.addEventListener('click', function() {
   for(pixel of pixelsList){
     pixel.style.backgroundColor = 'rgb(255,255,255)'
   }
+})
+
+generateBoardButton.addEventListener('click', function() {
+  const boardElements = document.querySelectorAll('.pixel')
+  let inputText = document.getElementById('board-size').value
+  let inputNumber = parseInt(inputText)
+  if(inputText === ''){
+    window.alert('Board inválido!')
+  }
+  else if (inputNumber < 5){
+    window.alert('Digite numeros positivos entre 5 e 50')
+  }
+  else{
+    boardClear(boardElements)
+    creatPixelsBoard(inputNumber, inputNumber)
+  }
+  
 })
 
 addClassAndBackgroundToColors(palleteColors)
