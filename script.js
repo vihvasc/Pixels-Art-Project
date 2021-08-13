@@ -17,6 +17,8 @@ window.onload = function() {
 		pixel.addEventListener("click", adicionaCor)
 		pixel.style.backgroundColor = 'white'
 	}
+	sessionStorage.setItem("cor",'#000')
+	primeiro.className = "color selected"
 }
 function adicionaCor(evento) {
 	let cor = sessionStorage.getItem("cor")
@@ -24,6 +26,9 @@ function adicionaCor(evento) {
 	pixel.style.backgroundColor = cor
 }
 function selecionaCor(evento) {
-  let cor = evento.target.style.backgroundColor
+  let selected = document.getElementsByClassName("selected")[0]
+	selected.className = "color"
+	let cor = evento.target.style.backgroundColor
+	evento.target.className = "color selected"
 	sessionStorage.setItem("cor",cor)
 }
