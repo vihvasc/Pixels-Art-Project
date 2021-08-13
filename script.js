@@ -11,6 +11,8 @@ function colorPalette() {
 
 function pixelsArt() {
   colorPalette();
+  const startColor = document.getElementsByClassName('selected')[0];
+  startColor.style.backgroundColor = 'black';
 }
 
 window.onload = pixelsArt;
