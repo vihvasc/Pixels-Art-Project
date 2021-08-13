@@ -22,7 +22,7 @@ function creatPixelsBoard(width, heigth){
   pixelBoard.style.maxWidth = `${width*40 + 2}px`
 
   if(boardElements.length !== 0){
-    
+    boardClear(boardElements)
   }
     for(let line = 1; line <= heigth; line += 1){
       let lineOfPixels = document.createElement('div')
@@ -74,10 +74,13 @@ generateBoardButton.addEventListener('click', function() {
     window.alert('Board inválido!')
   }
   else if (inputNumber < 5){
-    window.alert('Digite numeros positivos entre 5 e 50')
+    window.alert('Valor baixo demais, considerando como 5.')
+    creatPixelsBoard(5, 5)
   }
-  else{
-    boardClear(boardElements)
+  else if(inputNumber > 50){
+    window.alert('Valor alto demais, considerando como 50.')
+    creatPixelsBoard(50, 50)
+  }else{
     creatPixelsBoard(inputNumber, inputNumber)
   }
   
