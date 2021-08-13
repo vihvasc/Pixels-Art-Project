@@ -1,0 +1,32 @@
+#title {
+    text-align: center;
+    background-color: #2fc18c;
+    margin-top: auto;
+    padding: 40px;
+    color: white;
+    font-style: oblique;
+    font-size: 50px;
+    position: relative;
+}
+.color {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;    
+}
+#color-palette {
+    margin: auto;
+    width: fit-content;
+}
+#black {
+    background-color: black;
+}
+#red {
+    background-color: red;
+}
+#green {
+    background-color: green;
+}
+#blue {
+    background-color: blue;
+}
