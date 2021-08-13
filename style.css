@@ -17,3 +17,13 @@
 .yellow{
     background-color: green;
 }
+.pixel{
+    display: inline-block;
+    border: black 1px solid;
+    height: 100px;
+    width: 100px;
+    background-color: white;
+}
+.line-pixel{
+    height: 100px;
+}
