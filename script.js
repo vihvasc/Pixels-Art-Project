@@ -38,9 +38,20 @@ function handlePixel(event) {
   }
 }
 
+function handleClearBoardButton() {
+  const pixels = document.getElementsByClassName('pixel');
+
+  for (const pix of pixels) {
+    pix.style.backgroundColor = '';
+  }
+}
+
 window.onload = function () {
   initColorPalette();
   selectColor(document.querySelector('.color'));
   addEventListenerToColorDivs();
   document.getElementById('pixel-board').addEventListener('click', handlePixel);
+  document
+    .getElementById('clear-board')
+    .addEventListener('click', handleClearBoardButton);
 };
