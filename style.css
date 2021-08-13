@@ -1,0 +1,22 @@
+div.color {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.position1 {
+    background-color: rgb(0, 0, 0);
+}
+
+.position2 {
+    background-color: rgb(255, 0, 119);
+}
+
+.position3 {
+    background-color: rgb(255, 173, 173);
+}
+
+.position4 {
+    background-color: rgb(255, 214, 165);
+}
