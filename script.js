@@ -1,4 +1,5 @@
 const pixelBoard = document.getElementById('pixel-board');
+const getColor = document.getElementsByClassName('color');
 
 // Cria quadro de pixels
 function createPixels(value) {
@@ -14,3 +15,9 @@ function createPixels(value) {
   }
 }
 createPixels(5);
+
+// Cor preta inicialmente selecionada
+function setDefaultColor() {
+  getColor[0].classList.add('selected');
+}
+setDefaultColor();
