@@ -1,3 +1,5 @@
+let black = document.getElementById('black');
+window.onload = black.classList.add('selected');
 // nDeLinhas(5);
 // nDePixelsLinha(5);
 
