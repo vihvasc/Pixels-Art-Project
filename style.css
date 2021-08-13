@@ -6,8 +6,12 @@
 h1 {
     text-align: center;
     padding: 2%;
-    background-color:#555B6E;
+    background-color:#757C95;
     color: #D0DABE;
+}
+
+#color-palette {
+  margin-bottom: 2%;
 }
 
 .color {
@@ -45,3 +49,13 @@ h1 {
   background-color: #C1C3C1;
 }
 
+.line {
+  margin-left: 33%;
+  margin-right: auto;
+}
+
+.pixel {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 5%;
+}
