@@ -11,13 +11,7 @@ header {
   text-align: center;
 }
 
-
-.color {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
-}
+/* Color pallet */
 
 .main-content {
   position: absolute;
@@ -27,4 +21,30 @@ header {
 
 #color-pallete {
   border: 1px solid red;
+}
+
+.color {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+/* Pixel Board */
+
+#pixel-board {
+  position: absolute;
+  margin: 50px 0 0 50%;
+  transform: translateX(-50%);
+  border: 1px solid black;
+  width: 210px;
+}
+
+.pixel {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  vertical-align: top;
 }
