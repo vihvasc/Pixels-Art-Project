@@ -1,27 +1,31 @@
-#title{
+#title {
   text-align: center;
 }
-.color{
+
+.color {
   margin-left: 17%;
   width: 50px;
   height: 50px;
   border :solid black 1px;
-  display: inline-block;
-  
+  display: inline-block; 
 }
-#color-palette{
+
+#color-palette {
   width: 100%;
   height: 20%;
 }
-#buttonRed{
+
+#buttonRed {
   background-color: red;
 }
-#buttonBlue{
+
+#buttonBlue {
   background-color: blue;
 }
-#buttonGreen{
+#buttonGreen {
   background-color: green;
 }
-#buttonBlack{
+
+#buttonBlack {
   background-color: black;
 }
