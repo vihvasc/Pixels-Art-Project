@@ -123,4 +123,17 @@ function paintPixels () {
 
 paintPixels();
 
+//Desafio 9
+function clearButton () {
+	let button = document.getElementById('clear-board');
+  let board = document.querySelectorAll('.pixel');
+
+	button.addEventListener('click', function(){
+		for (let i = 0; i < board.length; i += 1) {
+			board[i].style.backgroundColor = 'white';
+		}
+	});
+}
+
+clearButton();
 

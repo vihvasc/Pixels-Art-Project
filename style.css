@@ -45,3 +45,9 @@ div .pixel {
 	height: 40px;
 	width: 40px;
 }
+
+#clear-button {
+	width: 5%;
+	margin: auto;
+	text-align: center;
+}
