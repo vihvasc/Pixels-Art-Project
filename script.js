@@ -1,8 +1,22 @@
-const colorPalette = ['#000000', '#203671', '#36868f', '#5fc75d'];
+const colorPalette = ['#000000'];
 let selectedColorDiv;
+
+function generateRandomPalette() {
+  const rgbMultiplier = 255;
+  const paletteSize = 3;
+
+  for (let i = 0; i < paletteSize; i += 1) {
+    const r = Math.round(Math.random() * rgbMultiplier);
+    const g = Math.round(Math.random() * rgbMultiplier);
+    const b = Math.round(Math.random() * rgbMultiplier);
+
+    colorPalette.push(`rgb(${r},${g},${b})`);
+  }
+}
 
 function initColorPalette() {
   const colorDivs = document.getElementsByClassName('color');
+  generateRandomPalette();
 
   for (let i = 0; i < colorDivs.length; i += 1) {
     const actualColor = colorPalette[i];
