@@ -7,6 +7,7 @@
 body {
   font-family: "Open Sans", sans-serif;
 	font-size: 25px;
+  background-color: #675650;
 }
 
 ul, ol, li {
@@ -25,10 +26,16 @@ section {
 
 #color-palette {
   text-align: center;
-  background-color: bisque;
   display: block;
-
+  border: 2px solid red;
 }
+
+#pixel-board {
+  margin-right: 580px;
+  margin-left: 560px;
+  border: 2px solid green;
+}
+
 #title {
   text-align: center;
 }
@@ -36,10 +43,20 @@ section {
 .color {
   border: 1px solid black;
   display: inline-block;
-  padding: 50px;
+  height: 80px;
+  width: 80px;
 }
-#darkBlue {
-  background-color: #46425e;
+
+.pixel {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
+  background-color: white;
+}
+
+#black {
+  background-color: black;
 }
 
 #lightBlue{
