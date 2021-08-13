@@ -1,4 +1,4 @@
-const colorPalette = ['#0f052d', '#203671', '#36868f', '#5fc75d'];
+const colorPalette = ['#000000', '#203671', '#36868f', '#5fc75d'];
 
 function initColorPalette() {
   const colorDivs = document.getElementsByClassName('color');
