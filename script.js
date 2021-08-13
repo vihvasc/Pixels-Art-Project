@@ -1,3 +1,17 @@
+function setupClearBtn() {
+  let clearGridBtn = document.createElement('button');
+
+  clearGridBtn.id = 'clear-board';
+  clearGridBtn.innerText = 'Limpar';
+  document.body.appendChild(clearGridBtn);
+  clearGridBtn.addEventListener('click', () => {
+    let pixels = document.querySelectorAll('.pixel');
+    pixels.forEach((e) => {
+      e.style.backgroundColor = 'white';
+    });
+  });
+}
+
 function setupGrid(y, x, pixelSize) {
   let grid = document.createElement('div');
   document.body.appendChild(grid);
@@ -24,7 +38,7 @@ function setupGrid(y, x, pixelSize) {
 
   console.log(`Created a grid of ${x} by ${y} with a size of ${pixelSize} px.`);
 }
-
+setupClearBtn();
 setupGrid(5, 5, 40);
 
 let palette = document.querySelectorAll('.color');
@@ -35,5 +49,15 @@ palette.forEach((e) => {
     selectedColor.className = 'color';
     console.log('clicked' + e.target);
     e.target.className = 'color selected';
+  });
+});
+
+let pixels = document.querySelectorAll('.pixel');
+
+pixels.forEach((e) => {
+  e.addEventListener('click', (e) => {
+    let color = document.querySelector('.selected').style.backgroundColor;
+    console.log(color);
+    e.target.style.backgroundColor = color;
   });
 });
