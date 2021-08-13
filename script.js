@@ -52,9 +52,24 @@ function selectColor() {
   }
 }
 
+function paintPixel(event) {
+  const currentColor = document.querySelector('.selected');
+  const targetPixel = event.target;
+
+  targetPixel.style.backgroundColor = currentColor.id;
+}
+
+function selectPixel() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', paintPixel);
+  }
+}
+
 window.onload = () => {
   paintColorPalette();
   createPixelBoard();
   setInitialColor();
   selectColor();
+  selectPixel();
 };
