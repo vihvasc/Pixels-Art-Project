@@ -60,17 +60,16 @@ function selectedColor () {
       }
     }
     selectedColor () 
+  
+      function paintBoard () {
+    
+        const board = document.getElementById('pixel-board');
+  
+        board.addEventListener('click', setColor);
 
-    // function paintBoard () {
-    //   let board = querySelectorAll('.pixel');
-    //   for (let i = 0; i < board.length; i += 1 ) {
-    //     let paint = board[i];
-    //     paint.addEventListener('click', function(e){
-    //       let color = document.querySelector('.selected');
-    //       paint.style;backgroundColor = color.style.backgroundColor;
-    //     })
-    //   }
-       
-    //   }
+        function setColor(event) {
+        event.target.style.backgroundColor = document.querySelector('.color.selected').style.backgroundColor;    
+        }
+        }
 
-    // paintBoard ();
+      paintBoard ();
