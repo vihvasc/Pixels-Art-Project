@@ -7,7 +7,7 @@ function criarElementoH1() {
   novoH1.id = 'title';
 
   document.body.appendChild(novoH1);
-};
+}
 criarElementoH1();
 
 // 02. Adicione à página uma paleta de quatro cores distintas.
@@ -35,7 +35,7 @@ function criarPaletaCores() {
     novaCor.style.height = '30px';
     paletaCores.appendChild(novaCor);
   }
-};
+}
 criarPaletaCores();
 
 // Adicione à página um quadro de pixels, com 25 pixels.
@@ -63,7 +63,7 @@ function criaPixelsNoContainer(linhas, colunas) {
 
     for (let indexl = 0; indexl < elementosLinha; indexl += 1) {
       const elementoLinha = document.createElement('div');
-      elementoLinha.className = 'pixel linha';
+      elementoLinha.className = 'pixel';
       // elementoLinha.style.display = 'inline-block';
       elementoLinha.style.backgroundColor = 'white';
       elementoLinha.style.width = '200px';
@@ -71,11 +71,12 @@ function criaPixelsNoContainer(linhas, colunas) {
       containerPixel.appendChild(elementoLinha);
       for (let indexc = 0; indexc < elementosColuna; indexc += 1) {
         const elementoColuna = document.createElement('div');
-        elementoColuna.className = 'pixel coluna';
+        elementoColuna.className = 'pixel';
         elementoColuna.style.display = 'inline-block';
         elementoColuna.style.backgroundColor = 'white';
         elementoColuna.style.width = '40px';
         elementoColuna.style.height = '40px';
+        // elementoColuna.innerText = indexl + '' + indexc ; // [DEBUG] Vvisualização do Elemento na Página.
         elementoLinha.appendChild(elementoColuna);
       }
     }
