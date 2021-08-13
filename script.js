@@ -9,8 +9,6 @@ function colorPalette() {
   fourthPallete.style.backgroundColor = '#A1A5A6';
 }
 
-function pickUpPalletColor()
-
 function pixelsArt() {
   colorPalette();
 }
