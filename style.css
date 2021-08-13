@@ -10,6 +10,20 @@
   display: inline-block;
 }
 
+.line {
+  width: 500px;
+  height: 100px;
+}
+
+.pixel {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: inline-block;
+  background-color: white;
+}
+
 /* .box-color {
   width: 100px;
   height: 100px;
