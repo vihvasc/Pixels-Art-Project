@@ -1,0 +1,33 @@
+/* Tags */
+h1 {
+  text-align: center;
+}
+
+/* Classes */
+#color-palette {
+  text-align: center;
+}
+
+.color {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+/* Elementos Individuais */
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.black {
+  background-color: black;
+}
