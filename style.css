@@ -5,8 +5,8 @@ body {
 
 .color {
   display: inline-block;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: solid 1px black;
 }
 
@@ -29,4 +29,21 @@ body {
 #color-cream {
   background-color: #f0e0cf;
 }
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  border: solid 1px black;
+  background-color: white;
+  margin: ;
+}
+
+.line {
+  display: inline-block;
+}
+
+#pixel-board {
+
+}
+
 
