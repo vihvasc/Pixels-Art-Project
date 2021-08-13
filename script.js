@@ -36,11 +36,11 @@ function divPixelsBoard() {
   div.id = 'pixel-board';
   document.body.appendChild(div);
   for (let index = 0; index < 25; index += 1) {
-    document.createElement('div');
-    div.className = 'pixel';
-    div.style.backgroundColor = 'white';
+    const div1 = document.createElement('div');
+    div1.className = 'pixel';
+    div1.style.backgroundColor = 'white';
     const pixelBoard = document.getElementById('pixel-board');
-    pixelBoard.appendChild(div);
+    pixelBoard.appendChild(div1);
   }
 }
 
