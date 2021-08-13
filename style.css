@@ -1,18 +1,18 @@
 /* CORES */
 #red {
-  background-color: red;
+  background-color: #cc0000;
 }
 
-#blue{
-  background-color: blue;
+#black{
+  background-color: #000000;
 }
 
-#green{
-  background-color: green;
+#grey{
+  background-color: #cccccc;
 }
 
-#pink{
-  background-color: palevioletred;
+#yellow{
+  background-color: #ffff00;
 }
 
 .color {
