@@ -66,7 +66,7 @@ buttonClearBoard.addEventListener('click', cleanPixelsColor);
 function generateNewBoard() {
   let size = inputSizeBoard.value;
   size = parseInt(size);
-  let confsize = isNaN(size) || size < 5 || size > 50;
+  const confsize = Number.isNaN(size) || size < 5 || size > 50;
   if (confsize === false) {
     createPixelBoard(size);
   } else {
@@ -76,6 +76,21 @@ function generateNewBoard() {
 
 // Add event Listener to button id generate-board
 buttonGenerateBoard.addEventListener('click', generateNewBoard);
+
+// Function to verify if number digited in input id board-size is numeric > 10
+function verifyInputNumber(eventoDeOrigem) {
+  let size = eventoDeOrigem.target.value;
+  size = parseInt(size);
+  const confSize = size < 0 || Number.isNaN(size) || size < 5 || size > 50;
+  if (confSize) {
+    alert('Board inválido!');
+  } else {
+    createPixelBoard(size);
+  }
+}
+
+// Add event Listener to input id board-size
+inputSizeBoard.addEventListener('change', verifyInputNumber)
 
 // function used to start the page
 window.onload = function startPage() {
