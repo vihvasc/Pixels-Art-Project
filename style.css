@@ -1,5 +1,25 @@
+body {
+  width: 1366px;
+  height: 768px;
+}
+
 button {
   border: solid 1px;
-  width: 200px;
-  height: 200px;
+  width: 125px;
+  height: 125px;
+}
+
+li {
+  width: 125px;
+  height: 125px;
+  list-style-type: none;
+  background-color: white;
+  border: solid 1px black;
+  display: inline-block;
+}
+
+ul {
+  margin: 0px;
+  padding: center;
+  font-size: 0px;
 }
