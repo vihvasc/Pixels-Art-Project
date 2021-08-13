@@ -1,0 +1,25 @@
+*{
+  width: 1366px; 
+  margin: 0;
+  padding: 0;
+}
+
+.color{ 
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+.colorBk_01 {
+  background-color: black;
+}
+.colorBk_02 {
+  background-color: red;
+}
+.colorBk_03 {
+  background-color: green;
+}
+.colorBk_04 {
+  background-color: yellow;
+}
