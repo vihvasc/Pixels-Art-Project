@@ -57,13 +57,13 @@ adicionaContainerPixels();
 
 function criaPixelsNoContainer(linhas, colunas) {
     const containerPixel = document.getElementById('pixel-board');
-    console.log(containerPixel); // [DEBUG]
+    // console.log(containerPixel); // [DEBUG]
     let elementosLinha = linhas;
     let elementosColuna = colunas;
 
     for (let indexl = 0; indexl < elementosLinha; indexl += 1) {
       const elementoLinha = document.createElement('div');
-      elementoLinha.className = 'pixel';
+      elementoLinha.className = 'board-line';
       // elementoLinha.style.display = 'inline-block';
       elementoLinha.style.backgroundColor = 'white';
       elementoLinha.style.width = '200px';
