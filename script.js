@@ -79,7 +79,7 @@ buttonGenerateBoard.addEventListener('click', generateNewBoard);
 
 // Function to verify if values in input is in Range [0, 50]
 function verifyInputInRange(eventoDeOrigem) {
-  let element = eventoDeOrigem.target;
+  const element = eventoDeOrigem.target;
   let size = element.value;
   size = parseInt(size, 10);
   if (size < 5) {
