@@ -6,6 +6,11 @@ h1 {
   color: #A4A4A4;
 }
 
+br {
+  height: 1px;
+  width: 100%;
+}
+
 .color {
   height: 3rem;
   width: 3rem;
@@ -33,6 +38,7 @@ h1 {
 .pixel {
   width: 40px;
   height: 40px;
+  margin: 0px;
   display: inline-block;
   background-color: white;
   border: 1px solid black;
