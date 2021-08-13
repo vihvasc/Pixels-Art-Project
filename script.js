@@ -22,7 +22,7 @@ function criarPaletaCores() {
   const totalCores = 4;
   const coresDaPaleta = ['black', 'red', 'green', 'blue'];
   document.body.appendChild(paletaCores);
-  
+  // Separador
   for (let index = 0; index < totalCores; index += 1) {
     const novaCor = document.createElement('div');
     novaCor.className = 'color ' + coresDaPaleta[index];
@@ -66,7 +66,7 @@ function criaPixelsNoContainer(linhas, colunas) {
       elementoLinha.className = 'board-line';
       // elementoLinha.style.display = 'inline-block';
       elementoLinha.style.backgroundColor = 'white';
-      elementoLinha.style.width = '200px';
+      elementoLinha.style.width = '210px';
       elementoLinha.style.height = '40px';
       containerPixel.appendChild(elementoLinha);
       for (let indexc = 0; indexc < elementosColuna; indexc += 1) {
@@ -76,9 +76,19 @@ function criaPixelsNoContainer(linhas, colunas) {
         elementoColuna.style.backgroundColor = 'white';
         elementoColuna.style.width = '40px';
         elementoColuna.style.height = '40px';
+        elementoColuna.style.borderColor = 'Black';
+        elementoColuna.style.borderWidth = '1px';
+        elementoColuna.style.borderStyle = 'solid';
         // elementoColuna.innerText = indexl + '' + indexc ; // [DEBUG] Vvisualização do Elemento na Página.
         elementoLinha.appendChild(elementoColuna);
       }
     }
 }
 criaPixelsNoContainer(5, 5);
+
+// 5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura [OK]
+// e seja delimitado por uma borda preta de 1 pixel. [OK]
+// O que será verificado: [OK]
+// Verifica se o quadro de pixels tem altura e comprimento de 5 elementos [OK]
+// Verifica se 40 pixels é o tamanho total do elemento, incluindo seu conteúdo e excluindo a borda preta, que deve ser criada à parte. [OK]
+// Requisito 05 Feito modificando a função acima deste Bloco de Comentários!!!
