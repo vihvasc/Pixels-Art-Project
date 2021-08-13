@@ -10,12 +10,10 @@ function paletteColors() {
     }
 
     function changeClass(event) {
-        if (event.target.classList.contains('selected')) {
-            event.target.classList.remove('selected');
-        }
-        else {
-            event.target.classList.add('selected')
-        }
+        let selected = document.querySelector('.selected');
+        selected.classList.remove('selected');
+        
+        event.target.classList.add('selected');
     }
 }
 
