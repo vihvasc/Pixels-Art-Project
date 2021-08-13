@@ -1,3 +1,5 @@
+/* Menu de Cores */
+
 .color {
   border: black solid 1px;
   width: 50px;
@@ -21,9 +23,11 @@
   background-color: #d80f74;
 }
 
+/* Pixel Board */
+
 #pixel-board {
-  height: 20px;
-  width: 20px;
+  height: 250px;
+  width: 250px;
 }
 
 .pixel {

@@ -1,7 +1,8 @@
-let pixelBoard = document.querySelector('#pixel-board');
+const pixelBoard = document.querySelector('#pixel-board');
 let amount = 25;
+
 for (let i = 0; i < amount; i += 1) {
-  let pixels = document.createElement('div');
-  pixels.className = 'pixel';
-  pixelBoard.appendChild(pixels);
+  const pixel = document.createElement('div');
+  pixel.className = 'pixel';
+  pixelBoard.appendChild(pixel);
 }
