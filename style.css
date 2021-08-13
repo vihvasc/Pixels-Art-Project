@@ -17,6 +17,7 @@
   width: 40px;
   border: 1px solid black;
   display: inline-block;
+  color: rgb(0,0,0)
 }
 .pixel-line {
   max-height: 40px;

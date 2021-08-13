@@ -1,4 +1,4 @@
-const palleteColors = ['black', 'red', 'green', 'blue']
+const palleteColors = ['rgb(0, 0, 0)', 'rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)']
 
 function addClassAndBackgroundToColors(colors){
   const colorsUl = document.querySelector('.colors-ul')
@@ -9,7 +9,6 @@ function addClassAndBackgroundToColors(colors){
       li.classList.add('selected')
     }
     li.classList.add('color')
-    li.classList.add(colors[i])
     li.style.backgroundColor = colors[i]
     colorsUl.appendChild(li)
   }
