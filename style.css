@@ -4,20 +4,22 @@
   box-sizing: border-box;
   background: rgb(241, 238, 238);
 }
+
 main {
-    position: relative;
-  }
+  position: relative;
+}
 
 #title {
-    text-align: center;
-    margin: 2rem 0;
-  }
+  text-align: center;
+  margin: 2rem 0;
+}
 
 #color-palette {
   display: flex;
   align-content: center;
   justify-content: center;
 }
+
 .color {
   width: 40px;
   height: 40px;
@@ -26,8 +28,12 @@ main {
   cursor: pointer;
 }
 
+.black{
+    background-color: black;
+}
+
 .red {
-  background-color: red;
+    background-color: red;
 }
 
 .green {
@@ -37,8 +43,3 @@ main {
 .blue {
   background-color: blue;
 }
-
-.purple {
-  background-color: purple;
-}
-
