@@ -32,14 +32,14 @@ createDivFilhas();
 // Requisito 4
 
 function divPixelsBoard() {
-  let div = document.createElement('div');
+  const div = document.createElement('div');
   div.id = 'pixel-board';
   document.body.appendChild(div);
   for (let index = 0; index < 25; index += 1) {
-    let div = document.createElement('div');
+    document.createElement('div');
     div.className = 'pixel';
     div.style.backgroundColor = 'white';
-    let pixelBoard = document.getElementById('pixel-board');
+    const pixelBoard = document.getElementById('pixel-board');
     pixelBoard.appendChild(div);
   }
 }
