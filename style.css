@@ -33,6 +33,8 @@ h1 {
 #pixel-board {
   border: solid #000 1px;
   display: table;
+  border-spacing: 0px;
+  background-color: #000;
   margin: auto;
 }
 
