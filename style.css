@@ -16,6 +16,10 @@
   border: 1px solid black;
 }
 
+#controls {
+  margin-bottom: 20px;
+}
+
 #pixel-board {
   display: table;
 }

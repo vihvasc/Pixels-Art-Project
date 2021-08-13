@@ -46,12 +46,51 @@ function handleClearBoardButton() {
   }
 }
 
+function resetPixelBoard() {
+  const pixelBoard = document.getElementById('pixel-board');
+  pixelBoard.innerHTML = '';
+}
+
+function generatePixelBoard(n) {
+  const rows = n;
+  const pixelsPerRow = n;
+  const pixelBoard = document.getElementById('pixel-board');
+  resetPixelBoard();
+
+  for (let i = 0; i < rows; i += 1) {
+    let pixelsRow = document.createElement('div');
+    pixelsRow.className = 'pixel-board-row';
+
+    for (let j = 0; j < pixelsPerRow; j += 1) {
+      let pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      pixelsRow.appendChild(pixel);
+    }
+
+    pixelBoard.appendChild(pixelsRow);
+  }
+}
+
+function handleGenerateBoardButton() {
+  const sizeInput = document.getElementById('board-size');
+
+  if (sizeInput.value === '') {
+    alert('Board inválido!');
+  } else {
+    generatePixelBoard(parseInt(sizeInput.value));
+  }
+}
+
 window.onload = () => {
   initColorPalette();
+  generatePixelBoard(5);
   selectColor(document.querySelector('.color'));
   addEventListenerToColorDivs();
   document.getElementById('pixel-board').addEventListener('click', handlePixel);
   document
     .getElementById('clear-board')
     .addEventListener('click', handleClearBoardButton);
+  document
+    .getElementById('generate-board')
+    .addEventListener('click', handleGenerateBoardButton);
 };
