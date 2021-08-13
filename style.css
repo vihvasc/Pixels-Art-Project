@@ -1,7 +1,7 @@
 .color {
   border: 1px solid black;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   display: inline-block;
 }
 
@@ -20,3 +20,22 @@
 .yellow {
   background-color: rgb(252, 191, 73);
 }
+/* Explicação de como criar o quadro retirada de: https://projects.raspberrypi.org/pt-BR/projects/pixel-art/2*/
+#pixel-board {
+  display: table;
+  border-spacing: 1px;
+  background-color: black;
+  border: 3px solid black;
+}
+
+.line {
+  display: table-row;
+}
+
+.pixel {
+  display: table-cell;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+}
+
