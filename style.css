@@ -1,6 +1,11 @@
 * {
   border: 0;
   margin: 0;
+  font-size: 0;
+}
+
+h1 {
+  font-size: 32px;
 }
 
 .color {
@@ -12,4 +17,13 @@
   width: 40px;
   height: 40px;
   margin-bottom: 50px;
- }
+}
+
+#pixel-board ul li {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 30px;
+  width: 40px;
+  height: 40px;
+  background-color : white;
+}
