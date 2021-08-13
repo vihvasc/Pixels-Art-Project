@@ -10,12 +10,35 @@ window.onload = function () {
 
 // Color Pallet
 
-function startPallet(colorsList) {
-  createPalletDivs(colorsList.length)
+function startPallet() {
+  let colorsList = createColorsList(4);
+  createPalletDivs(colorsList.length);
   setColors(colorsList);
   setPalletEventListener();
   selectFirstColor();
 };
+
+function randomNumberGenerator(limit) {
+  let number = (Math.random() * limit);
+  let roundNumber = Math.round(number);
+  return roundNumber
+}
+
+function createColor() {
+  let number1 = randomNumberGenerator(255);
+  let number2 = randomNumberGenerator(255);
+  let number3 = randomNumberGenerator(255);
+  return "rgb(" + number1 + ", " + number2 + ", " + number3 + ")";
+};
+
+function createColorsList(numberOfColors) {
+  let colorsList = ["black"];
+  for (let index = 0; index < numberOfColors - 1; index += 1) {
+    colorsList.push(createColor());
+  };
+  return colorsList;
+};
+
 
 function createPalletDivs(lenght) {
   let palletBox = document.getElementById("color-palette");
@@ -198,3 +221,4 @@ function excludeOldBoard() {
   let pixelBoard = document.getElementById("pixel-board");
   pixelBoard.innerHTML = "";
 };
+
