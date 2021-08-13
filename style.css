@@ -1,9 +1,9 @@
 body {
-  background-color: #1E1E1E;
+  background-color: #1e1e1e;
 }
 
 h1 {
-  color: #A4A4A4;
+  color: #a4a4a4;
 }
 
 br {
@@ -24,21 +24,21 @@ br {
 }
 
 .color2 {
-  background-color: #FF7777;
+  background-color: #f77;
 }
 
 .color3 {
-  background-color: #FFCE96;
+  background-color: #ffce96;
 }
 
 .color4 {
-  background-color: #F1F2DA;
+  background-color: #f1f2da;
 }
 
 .pixel {
   width: 40px;
   height: 40px;
-  margin: 0px;
+  margin: 0;
   display: inline-block;
   background-color: white;
   border: 1px solid black;
