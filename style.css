@@ -20,3 +20,18 @@
   display: inline-block;
   border: solid 1px black;
 }
+
+.pixel {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: solid 1px black;
+  margin: -2px;
+  padding: 0px;
+  background-color: white;
+}
+
+.linha {
+    margin: 0;
+    padding: 0;
+}
