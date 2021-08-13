@@ -38,8 +38,15 @@ for (let i = 0; i < boardSize; i += 1) {
   }
 }
 
+function selectColor(event) {
+  const oldCOlor = document.getElementsByClassName('selected');
+  oldCOlor[0].classList.remove('selected');
+  event.target.classList = 'color selected';
+}
 const color = document.getElementsByClassName('color');
-// const pixel = document.getElementsByClassName('pixel');
+for (let i = 0; i < color.length; i += 1) {
+  color[i].addEventListener('click', selectColor);
+}
 
 window.onload = function select() {
   color[0].classList = 'color selected';
