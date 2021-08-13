@@ -1,5 +1,7 @@
 const colorPalette = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
+const cleanBoardButton = document.querySelector('#clear-board');
+
 const boardSize = 5;
 
 const makePixel = () => {
@@ -32,15 +34,24 @@ function makeBoardLine(board) {
 
 makeBoardLine(boardSize);
 
+cleanBoardButton.addEventListener('click', () => {
+  cleanBoard();
+});
+
+function cleanBoard() {
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (let pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+}
+
 colorPalette.addEventListener('click', (e) => {
   const el = e.target;
   const selected = document.querySelector('.selected');
-
   selected.classList.remove('selected');
   el.classList.add('selected');
-
 });
-
 
 pixelBoard.addEventListener('click', (e) => {
   const selectedBrush = document.querySelector('.selected');
