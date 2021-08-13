@@ -1,7 +1,7 @@
 .color {
   border: 1px solid black;
-  height: 50px;
-  width: 50px;
+  height: 20px;
+  width: 20px;
   display: inline-block;
 }
 
@@ -23,11 +23,11 @@
 
 #pixel-board {
   border: 1px solid black;
-  height: 500px;
-  width: 500px;
+  height: 210px;
+  width: 210px;
   display: grid;
-  grid-template-columns: repeat(5, 100px);
-  grid-template-rows: repeat(5, 100px);
+  grid-template-columns: repeat(5, 42px);
+  grid-template-rows: repeat(5, 42px);
 }
 
 .pixel {
