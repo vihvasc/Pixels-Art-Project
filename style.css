@@ -32,30 +32,14 @@ h1 {
     margin-right: 30%;
 }
 
-.firstColor {
-  
-  background-color: #000;
-}
-
-.secondColor {
-  background-color: #6D597A;
-}
-
-.thirdColor {
-  background-color: #67697C ;
-}
-
-.fourthColor {
-  background-color: #C1C3C1;
-}
-
 .line {
-  margin-left: 33%;
+  margin-left: 42.5%;
   margin-right: auto;
 }
 
 .pixel {
   border: 1px solid black;
   display: inline-block;
-  padding: 5%;
+  height: 40px;
+  width: 40px;
 }
