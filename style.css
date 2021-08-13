@@ -1,9 +1,15 @@
+* {
+  --pixel-size;
+}
+
 #color-palette {
   display: flex;
 }
 
 .pixel {
   outline: 1px solid black;
+  height: var(--pixel-size);
+  width: var(--pixel-size);
 }
 
 .color {
