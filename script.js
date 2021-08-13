@@ -1,3 +1,28 @@
+generatePalette();
+setupClearBtn();
+inputs();
+setupGrid(5, 5, 40);
+
+// Função retirada de https://css-tricks.com/snippets/javascript/random-hex-color/
+function randomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+function generatePalette() {
+  let palette = document.querySelector('#color-palette');
+  let black = document.createElement('div');
+  black.className = 'color selected';
+  black.style.backgroundColor = 'black';
+  palette.appendChild(black);
+  for (let index = 0; index < 3; index++) {
+    let color = document.createElement('div');
+    color.className = 'color';
+    color.style.backgroundColor = randomColor();
+    palette.appendChild(color);
+  }
+  document.body.appendChild(palette);
+}
+
 function setupClearBtn() {
   let clearGridBtn = document.createElement('button');
 
@@ -37,27 +62,61 @@ function setupGrid(y, x, pixelSize) {
   }
 
   console.log(`Created a grid of ${x} by ${y} with a size of ${pixelSize} px.`);
+
+  let palette = document.querySelectorAll('.color');
+
+  palette.forEach((e) => {
+    e.addEventListener('click', (e) => {
+      let selectedColor = document.querySelector('.selected');
+      selectedColor.className = 'color';
+      console.log('clicked' + e.target);
+      e.target.className = 'color selected';
+    });
+  });
+
+  let pixels = document.querySelectorAll('.pixel');
+
+  pixels.forEach((e) => {
+    e.addEventListener('click', (e) => {
+      let color = document.querySelector('.selected').style.backgroundColor;
+      console.log(color);
+      e.target.style.backgroundColor = color;
+    });
+  });
 }
-setupClearBtn();
-setupGrid(5, 5, 40);
 
-let palette = document.querySelectorAll('.color');
-
-palette.forEach((e) => {
-  e.addEventListener('click', (e) => {
-    let selectedColor = document.querySelector('.selected');
-    selectedColor.className = 'color';
-    console.log('clicked' + e.target);
-    e.target.className = 'color selected';
+function inputs() {
+  let container = document.createElement('div');
+  container.style.display = 'flex';
+  let input = document.createElement('input');
+  input.id = 'board-size';
+  input.type = 'number';
+  input.min = 1;
+  let inputBtn = document.createElement('button');
+  inputBtn.id = 'generate-board';
+  inputBtn.innerText = 'VQV';
+  console.log('input: ' + input.value);
+  inputBtn.addEventListener('click', () => {
+    if (input.value == '') {
+      alert('Board inválido!');
+    } else if (input.value < 5) {
+      if (document.querySelector('#pixel-board')) {
+        document.querySelector('#pixel-board').remove();
+      }
+      setupGrid(5, 5, 40);
+    } else if (input.value > 50) {
+      if (document.querySelector('#pixel-board')) {
+        document.querySelector('#pixel-board').remove();
+      }
+      setupGrid(50, 50, 40);
+    } else {
+      if (document.querySelector('#pixel-board')) {
+        document.querySelector('#pixel-board').remove();
+      }
+      setupGrid(input.value, input.value, 40);
+    }
   });
-});
 
-let pixels = document.querySelectorAll('.pixel');
-
-pixels.forEach((e) => {
-  e.addEventListener('click', (e) => {
-    let color = document.querySelector('.selected').style.backgroundColor;
-    console.log(color);
-    e.target.style.backgroundColor = color;
-  });
-});
+  container.append(input, inputBtn);
+  document.body.appendChild(container);
+}
