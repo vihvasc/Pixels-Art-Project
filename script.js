@@ -37,11 +37,6 @@ function setColors(colorsList) {
   }
 }
 
-function addSelecedClass(selectedDiv) {
-  removeSelectedClassFromOthers();
-  selectedDiv.classList.add('selected');
-}
-
 function removeSelectedClassFromOthers() {
   const palletDivs = document.getElementsByClassName('color');
   for (const div of palletDivs) {
@@ -49,6 +44,11 @@ function removeSelectedClassFromOthers() {
       div.classList.remove('selected');
     }
   }
+}
+
+function addSelecedClass(selectedDiv) {
+  removeSelectedClassFromOthers();
+  selectedDiv.classList.add('selected');
 }
 
 function selectColor(event) {
@@ -78,7 +78,6 @@ function setPalletEventListener() {
     div.addEventListener('click', selectColor);
   }
 }
-
 
 // function removeFocous() {
 //   const palletDivs = document.getElementsByClassName('color');
@@ -160,15 +159,6 @@ function inputSizeCreator() {
   article.appendChild(input);
 }
 
-function inputButtonCreator() {
-  const article = document.querySelector('.main-content');
-  const inputButtom = document.createElement('button');
-  inputButtom.id = 'generate-board';
-  inputButtom.innerText = 'VQV';
-  article.appendChild(inputButtom);
-  inputButtom.addEventListener('click', createNewBoard);
-}
-
 function filterSize(size) {
   if ((size >= 5) && (size <= 50)) {
     return size ** 2;
@@ -192,6 +182,15 @@ function createNewBoard() {
   } else {
     alert('Board inválido!');
   }
+}
+
+function inputButtonCreator() {
+  const article = document.querySelector('.main-content');
+  const inputButtom = document.createElement('button');
+  inputButtom.id = 'generate-board';
+  inputButtom.innerText = 'VQV';
+  article.appendChild(inputButtom);
+  inputButtom.addEventListener('click', createNewBoard);
 }
 
 function startPallet() {
