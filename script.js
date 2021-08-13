@@ -89,9 +89,9 @@ function setFocous(selectedDiv) {
 };
 
 function selectFirstColor() {
-  firstPalletColorDiv = document.querySelector(".color");
+  let firstPalletColorDiv = document.querySelector(".color");
   firstPalletColorDiv.classList.add("selected");
-  firstPalletColor = firstPalletColorDiv.style.backgroundColor;
+  let firstPalletColor = firstPalletColorDiv.style.backgroundColor;
   sessionStorage.setItem("selectedColor", firstPalletColor);
   // setFocous(firstPalletColorDiv);
 };
@@ -99,12 +99,33 @@ function selectFirstColor() {
 // Pixel box
 
 function startPixelBox() {
-  pixelBoard = document.getElementById("pixel-board");
+  createPixelBoxItens();
+  pixelAddEventListener();
+
+};
+
+function createPixelBoxItens() {
+  let pixelBoard = document.getElementById("pixel-board");
   for (let index = 0; index < 25; index += 1) {
     let pixel = document.createElement("div");
     pixel.className = "pixel";
     pixel.style.backgroundColor = "white";
     pixelBoard.appendChild(pixel);
   };
+};
+
+// Color Pixel
+
+function pixelAddEventListener() {
+  let pixels = document.getElementsByClassName("pixel");
+  for (pixel of pixels) {
+    pixel.addEventListener("click", colorPixel);
+  };
+};
+
+function colorPixel(event) {
+  let color = sessionStorage.getItem("selectedColor")
+  let pixel = event.target;
+  pixel.style.backgroundColor = color;
 };
 
