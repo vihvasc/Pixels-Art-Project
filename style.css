@@ -1,37 +1,37 @@
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 .color {
-    border: 1px solid black;
-    display: inline-block;
-    width: 47px;
-    height: 47px;
+  border: 1px solid black;
+  display: inline-block;
+  width: 47px;
+  height: 47px;
 }
 .color:nth-child(1) {
-    background-color: black;
+  background-color: black;
 }
 
 .color:nth-child(2) {
-    background-color: orange;
+  background-color: orange;
 }
 
 .color:nth-child(3) {
-    background-color: red;
+  background-color: red;
 }
 
 .color:nth-child(4) {
-    background-color: royalblue;
+  background-color: royalblue;
 }
 
 .pixel {
-    display: inline-block;
-    border: black 1px solid;
-    height: 40px;
-    width: 40px;
-    background-color: white;
+  display: inline-block;
+  border: black 1px solid;
+  height: 40px;
+  width: 40px;
+  background-color: white;
 }
 
 .line-pixel {
-    height: 40px;
+  height: 40px;
 }

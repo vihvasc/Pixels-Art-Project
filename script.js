@@ -11,3 +11,11 @@ function createBoard() {
   }
 }
 createBoard();
+
+// CLASS SELECTed QUE VAI DEFINIR A COR QUE VAI PINTAR
+
+function colorBlack() {
+  let black = document.querySelector('.color:nth-child(1)');
+  black.className += ' selected';
+}
+colorBlack();
