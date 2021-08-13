@@ -1,4 +1,4 @@
-const palleteColors = ['rgb(0, 0, 0)', 'rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)']
+const palleteColors = generatePaletColors(3)
 const colorsUl = document.querySelector('.colors-ul')
 const pixelBoard = document.getElementById('pixel-board')
 const clearButton = document.getElementById('clear-board')
@@ -6,7 +6,7 @@ const generateBoardButton = document.getElementById('generate-board')
 let backgroundColorSelected = 'rgb(0,0,0)'
 
 function addClassAndBackgroundToColors(colors){
-
+  colors.unshift('rgb(0,0,0)')
   for(let i = 0; i < colors.length; i += 1){
     let li = document.createElement('li')
     if (i === 0) {
@@ -83,8 +83,21 @@ generateBoardButton.addEventListener('click', function() {
   }else{
     creatPixelsBoard(inputNumber, inputNumber)
   }
-  
 })
 
+function generateRGB(){
+  let red = Math.ceil(Math.random() * 255)
+  let green = Math.ceil(Math.random() * 255)
+  let blue = Math.ceil(Math.random() * 255)
+
+  return `rgb(${red}, ${green}, ${blue})`
+}
+function generatePaletColors(howMany){
+  let colors = []
+  for(let i = 0; i < howMany; i += 1){
+    colors.push(generateRGB())
+  }
+  return colors
+}
 addClassAndBackgroundToColors(palleteColors)
 creatPixelsBoard(5, 5)
