@@ -1,0 +1,19 @@
+.color {
+  border: solid black 1px;
+}
+
+#green {
+  background-color: rgb(74, 237, 144);
+}
+
+#purple {
+  background-color: rgb(176, 85, 237);
+}
+
+#greenlight {
+  background-color: rgb(91, 237, 62);
+}
+
+#red {
+  background-color: rgb(237, 53, 38);
+}
