@@ -72,11 +72,11 @@ function generatePixelBoard(n) {
   resetPixelBoard();
 
   for (let i = 0; i < rows; i += 1) {
-    let pixelsRow = document.createElement('div');
+    const pixelsRow = document.createElement('div');
     pixelsRow.className = 'pixel-board-row';
 
     for (let j = 0; j < pixelsPerRow; j += 1) {
-      let pixel = document.createElement('div');
+      const pixel = document.createElement('div');
       pixel.className = 'pixel';
       pixelsRow.appendChild(pixel);
     }
@@ -93,7 +93,7 @@ function handleGenerateBoardButton() {
     return;
   }
 
-  let inputValue = parseInt(sizeInput.value);
+  let inputValue = parseInt(sizeInput.value, 10);
 
   if (inputValue < 5) {
     inputValue = 5;
