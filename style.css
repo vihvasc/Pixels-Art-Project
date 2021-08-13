@@ -36,6 +36,7 @@ h1 {
   border-spacing: 0px;
   background-color: #000;
   margin: auto;
+  margin-bottom: 20px;
 }
 
 .row {
@@ -48,4 +49,9 @@ h1 {
   background-color: #fff;
   width: 40px;
   height: 40px;
+}
+
+#clear-board {
+  text-align: center;
+  display: inline-block;
 }

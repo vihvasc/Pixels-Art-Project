@@ -1,7 +1,7 @@
 var penColor = 'black';
 
 function setPenColor(color){
-  penColor = color; 
+  penColor = color;
 }
 
 function setPixelColor(pixel){
