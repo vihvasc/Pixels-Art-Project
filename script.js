@@ -100,10 +100,27 @@ function selectColor () {
 		  }
 			button.classList.add('selected');
 	  });
-
   }
-	console.log(colorList);
 }
 
 selectColor();
+
+//Desafio 8
+function paintPixels () {
+	let pixelList = document.querySelectorAll('.pixel');
+
+	for (let i = 0; i < pixelList.length; i += 1) {
+		let pixelSelected = pixelList[i];
+
+		pixelSelected.addEventListener('click', function(){
+			let colorItem = document.querySelector('.selected');
+			let colorSelected = colorItem.style.backgroundColor;
+
+			pixelSelected.style.backgroundColor = colorSelected;
+		});
+	}
+}
+
+paintPixels();
+
 
