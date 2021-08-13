@@ -12,8 +12,20 @@ window.onload = function () {
     divs.style.backgroundColor = colors[i];
     divs.style.display = 'inline-block'
   }
-}
-addPalette();
-}
+  }
 
-  // addPalette();
+  function addPixel (number){  
+    for(i = 0; i < number; i += 1){
+      let getDivPixel = document.getElementById('pixel-board');
+    // console.log(getDivPixel);
+    let DivLines = document.createElement('div');
+    getDivPixel.appendChild(DivLines);
+    DivLines.className = 'pixel';
+    }
+  }
+
+
+
+addPalette();
+addPixel(25);
+}

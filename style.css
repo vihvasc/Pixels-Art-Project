@@ -10,3 +10,19 @@
   float: left;
   margin-right: 20px;
 }
+#pixel-board{
+margin-top: 30px;
+width: 510px;
+height: 510px;
+background-color: red;
+/* border: 1px solid black; */
+/* margin: left; */
+/* margin-right: 20px; */
+}
+.pixel{
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 1px solid black;
+  float: left;
+}
