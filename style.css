@@ -1,31 +1,31 @@
 * {
-    margin: 0px;
-    font-family: Montserrat;
+  margin: 0;
+  font-family: serif;
 }
 
 h1 {
-    text-align: center;
-    padding: 2%;
-    background-color:#757C95;
-    color: #D0DABE;
+  text-align: center;
+  padding: 2%;
+  background-color: #757c95;
+  color: #d0dabe;
 }
 
 .color {
-    border: 1px solid black ;
-    max-width: 10%;
-    height: 100%;
-    padding: 3%;
-    display: inline-block;
-    margin: 1%;
-    margin-top: 3%;
+  border: 1px solid black;
+  max-width: 10%;
+  height: 100%;
+  padding: 3%;
+  display: inline-block;
+  margin: 1%;
+  margin-top: 3%;
 }
 
 #left {
-    margin-left: 34.3%;
+  margin-left: 34.3%;
 }
 
 #right {
-    margin-right: 30%;
+  margin-right: 30%;
 }
 
 .line {

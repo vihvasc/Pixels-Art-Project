@@ -1,48 +1,42 @@
-window.onload = function() {
-  let primeiro = document.getElementsByClassName("color")[0];
-  let segundo = document.getElementsByClassName("color")[1];
-  let terceiro = document.getElementsByClassName("color")[2];
-  let quarto = document.getElementsByClassName("color")[3];
-  primeiro.style.backgroundColor = '#000';
-	primeiro.addEventListener("click",selecionaCor);
-  segundo.style.backgroundColor = '#6D597A';
-	segundo.addEventListener("click",selecionaCor);
-  terceiro.style.backgroundColor = '#67697C';
-	terceiro.addEventListener("click",selecionaCor);
-  quarto.style.backgroundColor = '#C1C3C1';
-	quarto.addEventListener("click",selecionaCor);
-	
-	let pixels = document.getElementsByClassName("pixel");
-	for (pixel of pixels) {
-		pixel.addEventListener("click", adicionaCor);
-		pixel.style.backgroundColor = 'white';
-	}
-
-	sessionStorage.setItem("cor",'#000');
-	primeiro.className = "color selected";
-
-	document.getElementsByTagName("button")[0].addEventListener("click", limpaCor)
-}
-
-function adicionaCor(evento) {
-	let cor = sessionStorage.getItem("cor")
-	let pixel = evento.target
-	pixel.style.backgroundColor = cor
-}
-
+window.onload = function () {
+  const pixels = document.getElementsByClassName('pixel');
+  function adicionaCor(evento) {
+    const cor = sessionStorage.getItem('cor');
+    const pixel = evento.target;
+    pixel.style.backgroundColor = cor;
+  }
+  for (const pixel of pixels) {
+    pixel.addEventListener('click', adicionaCor);
+    pixel.style.backgroundColor = 'white';
+  }
+  sessionStorage.setItem('cor', '#000');
+  const primeiro = document.getElementsByClassName('color')[0];
+  primeiro.className = 'color selected';
+};
 function selecionaCor(evento) {
-  let selected = document.getElementsByClassName("selected")[0]
-	selected.className = "color"
-	let cor = evento.target.style.backgroundColor
-	evento.target.className = "color selected"
-	sessionStorage.setItem("cor",cor)
+  const selected = document.getElementsByClassName('selected')[0];
+  selected.className = 'color';
+  const cor = evento.target.style.backgroundColor;
+  evento.target.className = 'color selected';
+  sessionStorage.setItem('cor', cor);
 }
-
-
-function limpaCor (evento) {
-	let pixels = document.getElementsByClassName("pixel");
-	let cor = 'white'
-	for (pixel of pixels) {
-		pixel.style.backgroundColor = cor
-	}
+const primeiro = document.getElementsByClassName('color')[0];
+const segundo = document.getElementsByClassName('color')[1];
+const terceiro = document.getElementsByClassName('color')[2];
+const quarto = document.getElementsByClassName('color')[3];
+primeiro.style.backgroundColor = '#000';
+segundo.style.backgroundColor = '#6D597A';
+terceiro.style.backgroundColor = '#67697C';
+quarto.style.backgroundColor = '#C1C3C1';
+primeiro.addEventListener('click', selecionaCor);
+segundo.addEventListener('click', selecionaCor);
+terceiro.addEventListener('click', selecionaCor);
+quarto.addEventListener('click', selecionaCor);
+function limpaCor() {
+  const pixels = document.getElementsByClassName('pixel');
+  const cor = 'white';
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = cor;
+  }
 }
+document.getElementsByTagName('button')[0].addEventListener('click', limpaCor);
