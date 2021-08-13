@@ -7,10 +7,9 @@
     display: inline-block;
     width: 40px;
     height: 40px;
+    margin-bottom: 30px;
 }
-#box-black{
-    background-color: black;
-}
+
 #box-red{
     background-color:red;
 }
@@ -19,4 +18,14 @@
 }
 #box-blue{
     background-color:blue;
+}
+#pixel-board{
+    width: 250px;
+}
+.pixel{
+    width: 40px;
+    height: 40px;
+    border: solid 1px black;
+    display: inline-block;
+    background-color: white;
 }
