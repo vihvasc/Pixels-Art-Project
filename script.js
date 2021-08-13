@@ -1,5 +1,5 @@
 let linha1 = window.document.getElementById("linha1")
-for (let index = 0; index < 6; index += 1){
+for (let index = 0; index < 5; index += 1){
 let div = document.createElement("div");
 div.className = "pixel";
 linha1.appendChild(div);
