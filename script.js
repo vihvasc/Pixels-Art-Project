@@ -3,7 +3,6 @@
 window.onload = function () {
   let colorsList = ["black", "red", "green", "blue"];
   startPallet(colorsList);
-  selectFirstColor();
   startPixelBox();
 };
 
@@ -15,6 +14,7 @@ function startPallet(colorsList) {
   createPalletDivs(colorsList.length)
   setColors(colorsList);
   setPalletEventListener();
+  selectFirstColor();
 }
 
 function createPalletDivs(lenght) {
@@ -44,12 +44,12 @@ function selectColor(event) {
   let selectedDiv = event.target;
   let color = selectedDiv.style.backgroundColor;
   let sessionStorageColor = sessionStorage.getItem("selectedColor");
-  removeSelectedClass()
   if (sessionStorageColor !== color) {
     sessionStorage.setItem("selectedColor", color);
-    selectedDiv.classList.add("selected");
-  } else {
-    sessionStorage.removeItem("selectedColor");
+    addSelecedClass(selectedDiv);
+  // } else {
+  //   removeSelectedClassFromOthers();
+  //   sessionStorage.removeItem("selectedColor");
   };
   
   // if (selectedDiv.style.transform === "scale(1.3, 1.3)") {
@@ -61,7 +61,12 @@ function selectColor(event) {
   // };
 };
 
-function removeSelectedClass() {
+function addSelecedClass(selectedDiv) {
+  removeSelectedClassFromOthers()
+  selectedDiv.classList.add("selected");
+}
+
+function removeSelectedClassFromOthers() {
   let palletDivs = document.getElementsByClassName("color");
   for (let div of palletDivs) {
     if (div.classList.contains("selected")) {
@@ -80,7 +85,7 @@ function removeFocous() {
 };
 
 function setFocous(selectedDiv) {
-  selectedDiv.style.transform = "scale(1.3, 1.3)"
+  selectedDiv.style.transform = "scale(1.3, 1.3)";
 };
 
 function selectFirstColor() {
@@ -94,7 +99,7 @@ function selectFirstColor() {
 // Pixel box
 
 function startPixelBox() {
-  pixelBoard = document.getElementById("pixel-board")
+  pixelBoard = document.getElementById("pixel-board");
   for (let index = 0; index < 25; index += 1) {
     let pixel = document.createElement("div");
     pixel.className = "pixel";
