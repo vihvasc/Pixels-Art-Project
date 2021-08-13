@@ -1,5 +1,6 @@
 const board = document.getElementById('pixel-board');
 const cores = document.getElementsByClassName('color');
+const pixels = document.getElementsByClassName('pixel');
 
 function createLine() {
   const numberOfLines = 5;
@@ -19,6 +20,7 @@ function createPixel() {
       const actualLine = linesToFill[l];
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
+      pixel.backgroundColor = 'white';
       actualLine.appendChild(pixel);
     }
   }
@@ -30,10 +32,18 @@ function changeSelected(event) {
   event.target.classList.add('selected');
 }
 
+function paintPixel(event) {
+  const color = document.querySelector('.selected');
+  event.target.style.backgroundColor = `${color.id}`;
+}
+
 window.onload = function initPage() {
   createLine();
   createPixel();
   for (let c = 0; c < cores.length; c += 1) {
     cores[c].addEventListener('click', changeSelected);
+  }
+  for (let p = 0; p < pixels.length; p += 1) {
+    pixels[p].addEventListener('click', paintPixel);
   }
 };
