@@ -40,8 +40,8 @@ body {
 
 
 .pixel {
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     border: 1px solid black;
     background-color: white;
