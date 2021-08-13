@@ -15,12 +15,9 @@ lightBlueColor.addEventListener('click', changeSelected);
 lightGreenColor.addEventListener('click', changeSelected);
 
 // 8. Created function for select pixel
-function selectPixelColor(event) {
-  const selector = document.querySelector('.selected');
-  const selectColor = window.getComputedStyle(selector).getPropertyValue('background-color');
-  event.target.style.backgroundColor = selectColor.id;
+function setPixelColor(event) {
+  const selection = document.querySelector('.selected');
+  const selectionColor = window.getComputedStyle(selection).getPropertyValue('background-color');
+  event.target.style.backgroundColor = selectionColor;
 }
-document.getElementById('pixel-board').addEventListener('click', selectPixelColor);
-
-// ref.1: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
-// ref.2: https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/getPropertyValue
+document.querySelector('#pixel-board').addEventListener('click', setPixelColor);
