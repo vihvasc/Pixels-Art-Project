@@ -6,21 +6,26 @@ window.onload = function () {
   // requisito 2
   function addPalette (){
   const colors = ['black', 'purple', 'green', 'blue'];
-  const getDivColors = document.getElementsByClassName('color');
-  for (let i = 0; i < getDivColors.length; i += 1){
-    let divs = getDivColors[i];
-    divs.style.backgroundColor = colors[i];
-    divs.style.display = 'inline-block'
+  for (let i = 0; i < colors.length; i += 1){
+    let getDivColor = document.getElementById('color-palette')
+    let addDivs = document.createElement('div');
+    getDivColor.appendChild(addDivs);
+    addDivs.className = 'color';
+  }
+  const divs = document.getElementsByClassName('color');
+  for (let i = 0; i < divs.length; i += 1){
+    let paletteColor = divs[i];
+    paletteColor.style.backgroundColor = colors[i];
+    paletteColor.style.display = 'inline-block'
   }
   }
 
   function addPixel (number){  
     for(i = 0; i < number; i += 1){
       let getDivPixel = document.getElementById('pixel-board');
-    // console.log(getDivPixel);
-    let DivLines = document.createElement('div');
-    getDivPixel.appendChild(DivLines);
-    DivLines.className = 'pixel';
+      let DivLines = document.createElement('div');
+      getDivPixel.appendChild(DivLines);
+      DivLines.className = 'pixel';
     }
   }
 
