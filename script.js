@@ -1,5 +1,35 @@
-var buttonBlack = document.querySelector('.color')
-buttonBlack.classList.add('selected')
+const button1 = document.querySelector('.color')
+const button2 = document.querySelector('.green')
+const button3 = document.querySelector('.blue')
+const button4 = document.querySelector('.red')
+button1.addEventListener('click',switchColor1)
+button2.addEventListener('click', switchColor2);
+button3.addEventListener('click', switchColor3);
+button4.addEventListener('click', switchColor4);
+button1.classList.add('selected')
+
+function switchColor1(){
+    let actualColor = document.querySelector('.selected');
+    actualColor.classList.remove('selected')
+    button1.classList.add('selected')
+}
+
+function switchColor2(){
+    let actualColor = document.querySelector('.selected');
+    actualColor.classList.remove('selected')
+    button2.classList.add('selected')
+}
+function switchColor3(){
+    let actualColor = document.querySelector('.selected');
+    actualColor.classList.remove('selected')
+    button3.classList.add('selected')
+}
+function switchColor4(){
+    let actualColor = document.querySelector('.selected');
+    actualColor.classList.remove('selected')
+    button4.classList.add('selected')
+}
+
 function createGrid(){
     numberOfLines = 5;
     numberOfColumns = 5;
