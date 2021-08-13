@@ -2,15 +2,15 @@
   border: solid black 1px;
 }
 
-#green {
-  background-color: rgb(74, 237, 144);
+#black {
+  background-color: black;
 }
 
 #purple {
   background-color: rgb(176, 85, 237);
 }
 
-#greenlight {
+#green {
   background-color: rgb(91, 237, 62);
 }
 
