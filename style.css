@@ -8,6 +8,7 @@
   border: 1px solid black;
   min-width: 30px;
   min-height: 30px;
+  cursor: pointer;
 }
 #pixel-board {
   border: 1px solid black;

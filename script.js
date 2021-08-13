@@ -1,7 +1,8 @@
 const palleteColors = ['rgb(0, 0, 0)', 'rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)']
+const colorsUl = document.querySelector('.colors-ul')
+let backgroundColorSelected = 'rgb(0,0,0)'
 
 function addClassAndBackgroundToColors(colors){
-  const colorsUl = document.querySelector('.colors-ul')
 
   for(let i = 0; i < colors.length; i += 1){
     let li = document.createElement('li')
@@ -34,5 +35,17 @@ function creatPixelsBoard(width, heigth){
     }
   }
 }
+
+colorsUl.addEventListener('click', function(e) {
+  let element = e.target
+  backgroundColorSelected = element.style.backgroundColor
+
+  let previousSelected = document.querySelector('.selected')
+  previousSelected.classList.remove('selected')
+  
+  element.classList.add('selected')
+  console.log(element.classList)
+})
+
 addClassAndBackgroundToColors(palleteColors)
 creatPixelsBoard(5, 5)
