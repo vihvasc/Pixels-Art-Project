@@ -86,3 +86,24 @@ function firstPick () {
 }
 
 firstPick();
+
+//Desafio 7
+function selectColor () {
+	let colorList = document.querySelectorAll('.color');
+
+	for (let z = 0; z <colorList.length; z += 1) {
+		let button = colorList[z];
+
+	  button.addEventListener('click', function () {
+		  for (let i = 0; i < colorList.length; i += 1) {
+			  colorList[i].classList.remove('selected');
+		  }
+			button.classList.add('selected');
+	  });
+
+  }
+	console.log(colorList);
+}
+
+selectColor();
+

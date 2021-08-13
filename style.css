@@ -34,6 +34,11 @@ div .color {
 	text-align: center;
 }
 
+div .newDiv {
+	width: auto;
+	height: 40px;
+}
+
 div .pixel {
 	display: inline-block;
 	border: 1px solid black;
