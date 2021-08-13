@@ -1,13 +1,32 @@
-#title {
-  text-align: center;
-}
-
 .color {
   margin-left: 17%;
   width: 50px;
   height: 50px;
-  border :solid black 1px;
+  border:solid black 1px;
   display: inline-block; 
+}
+
+.pixel {
+  width: 80px;
+  height: 80px;
+  border: solid black 1px;
+  display: inline-block;
+  background-color: white;
+}
+* {
+  margin:0;
+  padding:0;
+  border:0;
+}
+
+#pixel-board { 
+  margin-left: 35%;
+  margin-right: 30%;
+  margin-top: 2%;
+}
+
+#title {
+  text-align: center;
 }
 
 #color-palette {
