@@ -33,3 +33,6 @@ function createPixels() {
   }
 }
 createPixels();
+
+let firstSelected = document.querySelector('.color');
+firstSelected.classList.add('selected');
