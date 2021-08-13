@@ -1,0 +1,35 @@
+
+.color {
+  width: 60px;
+  border: solid 1px black;
+  display: inline-block;
+  height: 60px;
+  color: white;
+  text-align: center;
+}
+.pixel {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: solid thin black;
+}
+
+#black {
+  background-color: black;
+}
+#red {
+background-color: red;
+}
+#blue {
+background-color: blue;
+}
+#yellow {
+background-color: yellow;
+}
+#pixelart {
+  line-height: 0;
+  display: flex;
+}
+.pixel{
+  background-color: white;
+}
