@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 8px;
+}
+
+header {
+  text-align: center;
+}
+
+
+.color {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+}
+
+.main-content {
+  position: absolute;
+  margin: 50px 0 0 50%;
+  transform: translateX(-50%);
+}
+
+#color-pallete {
+  border: 1px solid red;
+}
