@@ -25,7 +25,7 @@ function createPalette() {
 
 createPalette();
 
-// Requisito 4
+// Requisito 4 e 5
 function createFrame() {
   const divFather = document.createElement('div');
   divFather.id = 'pixel-board';
@@ -39,3 +39,9 @@ function createFrame() {
 }
 
 createFrame();
+
+// Requisito 6
+const firstChild = document.querySelector('.color');
+firstChild.classList.add('selected');
+
+// Requisito 7
