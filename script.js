@@ -50,3 +50,24 @@ function colorPalette() {
   }
 }
 colorPalette();
+
+// Requisito 4 - Criado o quadro de pixels de forma dinâmica
+// Gostaria de agradecer a Gisele Santin por ter me orientado nas
+// minhas alterações para obeter o resultado alcançado
+function generateBoard(tamanho) {
+  const pixelBoardSection = document.querySelector('#pixel-board');
+
+  for (let index = 0; index < tamanho; index += 1) {
+    const linePixelBoard = document.createElement('div');
+    linePixelBoard.classList.add('linha');
+    pixelBoardSection.appendChild(linePixelBoard);
+
+    for (let coluna = 0; coluna < tamanho; coluna += 1) {
+      const colunaPixelBoard = document.createElement('div');
+      linePixelBoard.appendChild(colunaPixelBoard);
+      colunaPixelBoard.classList.add('pixel');
+    }
+  }
+}
+
+generateBoard(5);
