@@ -1,5 +1,5 @@
 function colorPalette () {
-  let colors = ['blue', 'red', 'green', 'gray']
+  let colors = ['black', 'purple', 'orange', 'aqua']
   let paletteContainer = document.getElementById('color-palette');
 
   for ( let i = 0; i < 4; i += 1) {
@@ -15,4 +15,4 @@ function colorPalette () {
 
 }
 
-colorPalette ()
+colorPalette () 
