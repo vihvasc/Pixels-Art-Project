@@ -3,7 +3,7 @@ body {
 }
 
 #title-content {
-  border: 2px solid rgb(205, 95, 42);
+	border: 2px solid rgb(205, 95, 42);
 	border-radius: 25px;
 	max-width: 600px;
 	text-align: center;
