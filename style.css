@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#color-palette {
+  margin: 10px;
+  padding: 10px;
+}
+
+.color {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  margin-right: 20px;
+}
