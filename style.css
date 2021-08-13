@@ -1,6 +1,19 @@
+body{
+    background-color:#706a74;
+}
+#title{
+    text-align: center;
+}
+#color-palette{
+    margin: 50px 50px 20px 50px;
+}
+#pixel-board{
+    margin-left: 50px;
+}
 .paletteBox {
     width: 50px;
     height: 50px;
+    margin-right: 5px;
     display: inline-block;
     border: 1px solid #000;
     background-color: #000;
@@ -8,6 +21,7 @@
   .paletteBox1 {
     width: 50px;
     height: 50px;
+    margin-right: 5px;
     display: inline-block;
     border: 1px solid #000;
     background-color: #675650;
@@ -15,6 +29,7 @@
   .paletteBox2 {
     width: 50px;
     height: 50px;
+    margin-right: 5px;
     display: inline-block;
     border: 1px solid #000;
     background-color: #bea87d;;
@@ -22,7 +37,17 @@
   .paletteBox3 {
     width: 50px;
     height: 50px;
+    margin-right: 5px;
     display: inline-block;
     border: 1px solid #000;
     background-color: #f0e0cf;;
+  }
+
+  .pixel {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    margin: 1px 1px 1px 1px;
+    border: 1px solid #000;
+    background-color: #fff;
   }
