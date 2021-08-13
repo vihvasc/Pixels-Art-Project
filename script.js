@@ -20,7 +20,6 @@ function createPixel() {
       const actualLine = linesToFill[l];
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
-      pixel.backgroundColor = 'white';
       actualLine.appendChild(pixel);
     }
   }
