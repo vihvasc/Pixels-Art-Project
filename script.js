@@ -4,6 +4,8 @@ colorsList[1].style.background = 'lightblue';
 colorsList[2].style.background = 'lightgreen';
 colorsList[3].style.background = 'pink';
 
+colorsList[0].classList.add('selected');
+
 function createLine(width) {
   const pixelBoard = document.getElementById('pixel-board');
   const ul = document.createElement('ul');
@@ -22,3 +24,14 @@ function createBoard(height) {
 }
 
 createBoard(5);
+
+function handlePickedColor(event) {
+  const classSelected = document.querySelector('.selected');
+  classSelected.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+colorsList[0].addEventListener('click', handlePickedColor);
+colorsList[1].addEventListener('click', handlePickedColor);
+colorsList[2].addEventListener('click', handlePickedColor);
+colorsList[3].addEventListener('click', handlePickedColor);
