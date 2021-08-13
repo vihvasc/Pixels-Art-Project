@@ -41,3 +41,9 @@
   background-color: white;
   border: 1px solid black;
 }
+
+#clear-board {
+  margin-left: 80px;
+  border-color: black;
+  background-color: yellow;
+}
