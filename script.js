@@ -5,6 +5,9 @@ function addClassAndBackgroundToColors(colors){
 
   for(let i = 0; i < colors.length; i += 1){
     let li = document.createElement('li')
+    if (i === 0) {
+      li.classList.add('selected')
+    }
     li.classList.add('color')
     li.classList.add(colors[i])
     li.style.backgroundColor = colors[i]

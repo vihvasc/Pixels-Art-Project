@@ -22,3 +22,6 @@
   max-height: 40px;
   width: 100%;
 }
+.selected {
+  border: 2px dotted yellow;
+}
