@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = function comeca() {
   const pixels = document.getElementsByClassName('pixel');
   function adicionaCor(evento) {
     const cor = sessionStorage.getItem('cor');
@@ -14,10 +14,11 @@ window.onload = function () {
   primeiro.className = 'color selected';
 };
 function selecionaCor(evento) {
+  const selecionado = evento.target;
   const selected = document.getElementsByClassName('selected')[0];
   selected.className = 'color';
   const cor = evento.target.style.backgroundColor;
-  evento.target.className = 'color selected';
+  selecionado.className = 'color selected';
   sessionStorage.setItem('cor', cor);
 }
 const primeiro = document.getElementsByClassName('color')[0];
