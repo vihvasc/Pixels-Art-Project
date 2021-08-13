@@ -21,7 +21,7 @@
   border: 1px solid black;
   box-sizing: border-box;
   display: inline-block;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb (255, 255, 255);
 }
 
 #box-color1 {
