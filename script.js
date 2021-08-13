@@ -40,6 +40,14 @@ function makeNewBoard() {
   if (document.querySelector('#board-size').value > 0) {
     boardSize = document.querySelector('#board-size').value;
 
+    if (boardSize < 5) {
+      boardSize = 5;
+    }
+
+    if (boardSize > 50) {
+      boardSize = 50;
+    }
+
     if (document.querySelector('.pixel') != null) {
       for (let index = 0; index < pixelBoard.length; index += 1) {
         pixelBoard[index].remove();
@@ -74,7 +82,7 @@ function makeNewBoard() {
     }
 
   } else {
-    window.alert('Valor errado!')
+    window.alert('Board inválido!')
   }
 }
 
