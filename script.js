@@ -66,8 +66,8 @@ buttonClearBoard.addEventListener('click', cleanPixelsColor);
 function generateNewBoard() {
   let size = inputSizeBoard.value;
   size = parseInt(size, 10);
-  const confsize = Number.isNaN(size) || size < 5 || size > 50;
-  if (confsize === false) {
+  const confSize = Number.isNaN(size) || size < 5 || size > 50;
+  if (confSize === false) {
     createPixelBoard(size);
   } else {
     alert('Board inválido!');
@@ -77,13 +77,42 @@ function generateNewBoard() {
 // Add event Listener to button id generate-board
 buttonGenerateBoard.addEventListener('click', generateNewBoard);
 
+// Function to verify if values in input is in Range [0, 50]
+function verifyInputInRange(eventoDeOrigem) {
+  let element = eventoDeOrigem.target;
+  size = element.value;
+  size = parseInt(size, 10);
+  if (size < 5) {
+    element.value = 5;
+  } else if (size > 50) {
+    element.value = 50;
+  }
+}
+
+// Add event Listener to input id board-size
+inputSizeBoard.addEventListener('change', verifyInputInRange)
+
+// Function to generate a randomNumber into range[min, max]
+function randomNumber(min, max) {
+  return Math.random() * max + min;
+}
+
+// Function to generate random color
+function generateRandomColor() {
+  const r = randomNumber(0, 255);
+  const g = randomNumber(0, 255);
+  const b = randomNumber(0, 255);
+  const rbg = `rgb(${r},${g},${b})`;
+  return rbg;
+}
+
 // function used to start the page
 window.onload = function startPage() {
   // colors of palete
   colors[0].style.background = 'black';
-  colors[1].style.background = 'red';
-  colors[2].style.background = 'green';
-  colors[3].style.background = 'blue';
+  colors[1].style.background = generateRandomColor();
+  colors[2].style.background = generateRandomColor();
+  colors[3].style.background = generateRandomColor();
 
   createPixelBoard(5);
 };
