@@ -4,6 +4,10 @@
   height: 100px;
 }
 
+#black {
+  background-color: black;
+}
+
 #red {
   background-color: red;
 }
@@ -16,6 +20,3 @@
   background-color: blue;
 }
 
-#black {
-  background-color: black;
-}
