@@ -76,9 +76,19 @@ function handleGenerateBoardButton() {
 
   if (sizeInput.value === '') {
     alert('Board inválido!');
-  } else {
-    generatePixelBoard(parseInt(sizeInput.value));
+    return;
   }
+
+  let inputValue = parseInt(sizeInput.value);
+
+  if (inputValue < 5) {
+    inputValue = 5;
+  }
+  if (inputValue > 50) {
+    inputValue = 50;
+  }
+
+  generatePixelBoard(inputValue);
 }
 
 window.onload = () => {
