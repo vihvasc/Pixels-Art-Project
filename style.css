@@ -25,3 +25,13 @@
 .color4 {
     background-color: magenta;
 }
+
+.pixel {
+    display: inline-block;
+    height:40px;
+    width:40px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    background-color: white;
+}
+    
