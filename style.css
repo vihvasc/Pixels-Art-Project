@@ -25,17 +25,17 @@ body {
 }
 
 .pixel {
-    border: solid black 1px;
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    display: inline-block;
-    box-sizing: border-box;
+  border: solid black 1px;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 #pixel-board {
-    display: block;
-    width: 200px;
-    box-sizing: border-box;
-    line-height: 0;
+  display: block;
+  width: 200px;
+  box-sizing: border-box;
+  line-height: 0;
 }
