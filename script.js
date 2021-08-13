@@ -32,8 +32,29 @@ function createPixelBoard() {
   }
 }
 
+function setInitialColor() {
+  const blackColor = document.getElementById('black');
+  blackColor.classList.add('selected');
+}
+
+function changeSelectedColor(event) {
+  const currentColor = document.querySelector('.selected');
+  const newColor = event.target;
+
+  currentColor.classList.remove('selected');
+  newColor.classList.add('selected');
+}
+
+function selectColor() {
+  const colorPalette = document.getElementsByClassName('color');
+  for (let index = 0; index < colorPalette.length; index += 1) {
+    colorPalette[index].addEventListener('click', changeSelectedColor);
+  }
+}
+
 window.onload = () => {
   paintColorPalette();
   createPixelBoard();
-  document.getElementById('black').classList.add('selected');
+  setInitialColor();
+  selectColor();
 };
