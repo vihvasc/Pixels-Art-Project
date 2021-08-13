@@ -19,6 +19,8 @@ function createDiv() {
     divColorSon.style.backgroundColor = arrayColor[index];
     divColorFather.appendChild(divColorSon);
   }
+  const classSelected = document.querySelector('.color');
+  classSelected.classList.add('selected');
 }
 createDiv();
 
