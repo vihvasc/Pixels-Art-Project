@@ -9,12 +9,18 @@
 </head>
 <body></body>
   <h1 id="title">Paleta de Cores</h1>
+  <div id="board-input">
+    <input id="board-size" type="number" min="5" max="50">
+    <button id="generate-board">VQV</button>
+    <p>Escreva um número entre 5 e 50 acima para gerar um tabuleiro.</p>
+  </div>
   <header id="color-palette">
     <div class="color black selected"></div>
     <div class="color red"></div>
     <div class="color green"></div>
     <div class="color blue"></div>
   </header>
+  <button id="clear-board">Limpar</button>
   <section id="pixel-board"></section>
   <script src="script.js"></script>
 </body>

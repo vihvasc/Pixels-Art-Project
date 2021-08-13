@@ -48,3 +48,20 @@ h1 {
 .black {
   background-color: black;
 }
+
+#clear-board {
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#board-input {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#board-input p {
+  color: gray;
+  font-size: 14px;
+}
