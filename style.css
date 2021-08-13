@@ -6,9 +6,11 @@ body{
 }
 #color-palette{
     margin: 50px 50px 20px 50px;
+    
 }
 #pixel-board{
     margin-left: 50px;
+    border: 1px solid black;
 }
 .paletteBox {
     width: 50px;
@@ -44,8 +46,8 @@ body{
   }
 
   .pixel {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     margin: 1px 1px 1px 1px;
     border: 1px solid #000;
