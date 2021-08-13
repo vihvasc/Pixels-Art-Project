@@ -8,15 +8,16 @@ function titlePage() {
 titlePage();
 
 function colorPalette() {
-    let paleta = ['green', 'yellow', 'purple', 'orange'];
+    let paleta = ['black', 'green', 'purple', 'orange'];
     let divTag = document.createElement('div');
     divTag.id = 'color-palette';
     document.body.appendChild(divTag);
 
     for (let i = 0; i < paleta.length; i ++) {
-        let paletteTag = document.createElement('div');
+        let paletteTag = document.createElement('button');
         paletteTag.className = 'color';
         document.getElementById('color-palette').appendChild(paletteTag);
+        paletteTag.style.backgroundColor = paleta[i];
     }
     return paletteTag;
 }
