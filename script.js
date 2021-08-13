@@ -1,5 +1,5 @@
 const colorPalette = ['#000000', '#203671', '#36868f', '#5fc75d'];
-let selectedColor;
+let selectedColorDiv;
 
 function initColorPalette() {
   const colorDivs = document.getElementsByClassName('color');
@@ -12,11 +12,11 @@ function initColorPalette() {
 }
 
 function selectColor(colorDiv) {
-  if (typeof selectedColor !== 'undefined') {
-    selectedColor.classList.remove('selected');
+  if (typeof selectedColorDiv !== 'undefined') {
+    selectedColorDiv.classList.remove('selected');
   }
   colorDiv.classList.add('selected');
-  selectedColor = colorDiv;
+  selectedColorDiv = colorDiv;
 }
 
 function handleColorDiv(event) {
@@ -31,8 +31,16 @@ function addEventListenerToColorDivs() {
   }
 }
 
+function handlePixel(event) {
+  if (event.target.classList.contains('pixel')) {
+    const pixel = event.target;
+    pixel.style.backgroundColor = selectedColorDiv.style.backgroundColor;
+  }
+}
+
 window.onload = function () {
   initColorPalette();
   selectColor(document.querySelector('.color'));
   addEventListenerToColorDivs();
+  document.getElementById('pixel-board').addEventListener('click', handlePixel);
 };
