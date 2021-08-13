@@ -1,3 +1,16 @@
+:root {
+  --user-input: 5;
+  --grid-size: 0;
+}
+
+#title {
+  margin: 0;
+}
+
+.input {
+  margin: 5px;
+}
+
 #color-palette {
   height: 22px;
 }
@@ -31,15 +44,14 @@
 }
 
 #pixel-board {
-  border: 1px solid black;
-  height: 210px;
-  width: 210px;
   display: grid;
-  grid-template-columns: repeat(5, 42px);
-  grid-template-rows: repeat(5, 42px);
+  grid-template-columns: repeat(var(--user-input), var(--grid-size));
+  grid-template-rows: repeat(var(--user-input), var(--grid-size));
 }
 
 .pixel {
   border: 1px solid black;
+  width: var(--user-input) + 0px;
+  height: var(--user-input) + 0px;
   background-color: white;
 }
