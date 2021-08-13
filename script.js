@@ -1,3 +1,19 @@
+function generateRgbValues() {
+  const rgbValues = [];
+  for (let index = 0; index < 3; index += 1) {
+    rgbValues.push(Math.floor(Math.random() * (255 + 1)));
+  }
+
+  return `rgb(${rgbValues[0]}, ${rgbValues[1]}, ${rgbValues[2]})`;
+}
+
+function generateColorIds() {
+  const colorPalette = document.getElementsByClassName('color');
+  for (let index = 1; index < colorPalette.length; index += 1) {
+    colorPalette[index].id = generateRgbValues();
+  }
+}
+
 function paintColorPalette() {
   const colorPalette = document.getElementsByClassName('color');
   for (let index = 0; index < colorPalette.length; index += 1) {
@@ -109,6 +125,7 @@ function generateNewBoard() {
 }
 
 window.onload = () => {
+  generateColorIds();
   paintColorPalette();
   createPixelBoard(5);
   setInitialColor();
