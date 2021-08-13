@@ -3,7 +3,7 @@ body {
 }
 
 #title-content {
-	border: 2px solid rgb(205, 95, 42);
+  border: 2px solid rgb(205, 95, 42);
 	border-radius: 25px;
 	max-width: 600px;
 	text-align: center;
@@ -12,7 +12,7 @@ body {
 
 #title {
 	font-family: 'Press Start 2P', cursive;
-	color: #21181b;
+	color: rgb(33, 24, 27);
 	text-shadow: 2px 2px 2px rgb(242, 171, 55);
 }
 
@@ -22,14 +22,14 @@ body {
 
 #color-palette .color {
 	display: inline-block;
-	border: 1px solid rgb(0, 0, 0);
+	border: 1px solid black;
 	height: 80px;
 	width: 80px;
 	margin-top: 40px;
 }
 
 #color1 {
-	background-color: rgb(0, 0, 0);
+	background-color: black;
 }
 
 #color2 {
