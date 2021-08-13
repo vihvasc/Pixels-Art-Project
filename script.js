@@ -1,6 +1,8 @@
-// Function to create a pixel board m x n
+// Constantes
 const pixelBoard = document.getElementById('pixel-board');
+const colors = document.getElementsByClassName('color');
 
+// Function to create a pixel board m x n
 function createPixelBoard(m, n) {
   for (let i = 0; i < m; i += 1) {
     const line = document.createElement('div');
@@ -19,18 +21,16 @@ function classSelected(eventoDeOrigem) {
   for (let i = 0; i < colors.length; i += 1) {
     colors[i].className = 'color';
   }
-  eventoDeOrigem.target.className = 'color selected';
+  let selectedColor = eventoDeOrigem.target;
+  selectedColor.className = 'color selected';
 }
 
 // Add event Listener to class color
-const colors = document.getElementsByClassName('color');
 for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', classSelected);
 }
 
 // function used to start the page
-function startPage() {
+window.onload = function startPage() {
   createPixelBoard(5, 5);
 };
-
-window.onload = startPage();
