@@ -3,16 +3,36 @@ const pixelBoard = document.getElementById('pixel-board');
 const colors = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
 const buttonClearBoard = document.getElementById('clear-board');
+const buttonGenerateBoard = document.getElementById('generate-board');
+const inputSizeBoard = document.getElementById('board-size');
 
-// Function to create a pixel board m x n
-function createPixelBoard(m, n) {
-  for (let i = 0; i < m; i += 1) {
+// Function to delete board
+function deletePixelBoard() {
+  const element = document.getElementById('pixel-board');
+  const numberOfRemoved = element.childNodes.length;
+  for (let i = 0; i < numberOfRemoved; i += 1) {
+    element.removeChild(element.lastChild);
+  }
+}
+
+// Function to give a class pixel the color of a class selected
+function paintPixel(eventoDeOrigem) {
+  const element = eventoDeOrigem.target;
+  const color = document.getElementsByClassName('selected')[0].style.backgroundColor;
+  element.style.background = color;
+}
+
+// Function to create a pixel board n x n
+function createPixelBoard(n) {
+  deletePixelBoard();
+  for (let i = 0; i < n; i += 1) {
     const line = document.createElement('div');
     line.className = 'linePixelBoard';
     pixelBoard.appendChild(line);
     for (let j = 0; j < n; j += 1) {
       const column = document.createElement('div');
       column.className = 'pixel';
+      column.addEventListener('click', paintPixel);
       document.querySelectorAll('#pixel-board .linePixelBoard')[i].appendChild(column);
     }
   }
@@ -32,13 +52,6 @@ for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', classSelected);
 }
 
-// Function to give a class pixel the color of a class selected
-function paintPixel(eventoDeOrigem) {
-  const element = eventoDeOrigem.target;
-  const color = document.getElementsByClassName('selected')[0].style.backgroundColor;
-  element.style.background = color;
-}
-
 // Function used to clean the pixels
 function cleanPixelsColor() {
   for (let i = 0; i < pixels.length; i += 1) {
@@ -49,6 +62,21 @@ function cleanPixelsColor() {
 // Add event Listener to button id clear-board
 buttonClearBoard.addEventListener('click', cleanPixelsColor);
 
+// Function to create a new pixel board n x n
+function generateNewBoard() {
+  let size = inputSizeBoard.value;
+  size = parseInt(size);
+  let confsize = isNaN(size) || size < 5 || size > 50;
+  if (confsize === false) {
+    createPixelBoard(size);
+  } else {
+    alert('Board inválido!');
+  }
+}
+
+// Add event Listener to button id generate-board
+buttonGenerateBoard.addEventListener('click', generateNewBoard);
+
 // function used to start the page
 window.onload = function startPage() {
   // colors of palete
@@ -57,10 +85,5 @@ window.onload = function startPage() {
   colors[2].style.background = 'green';
   colors[3].style.background = 'blue';
 
-  createPixelBoard(5, 5);
-
-  // Add event Listener to class pixel
-  for (let i = 0; i < pixels.length; i += 1) {
-    pixels[i].addEventListener('click', paintPixel);
-  }
-}
+  createPixelBoard(5);
+};
