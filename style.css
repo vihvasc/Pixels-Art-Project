@@ -17,6 +17,7 @@
 #color-palette {
     margin: auto;
     width: fit-content;
+    margin-bottom: 100px;
 }
 #black {
     background-color: black;
@@ -29,4 +30,16 @@
 }
 #blue {
     background-color: blue;
+}
+
+.pixel {
+    background-color: white;
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    border: 1px solid black;
+}
+#pixel-board {
+    width: 220px;
+    margin: auto;
 }
