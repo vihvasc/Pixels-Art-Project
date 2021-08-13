@@ -5,12 +5,18 @@
     border: 1px solid black;
 }
 
+.color:hover, .pixel:hover {
+    cursor: pointer;
+}
+
+
+
 .color:nth-child(1) {
     background-color: black;
 }
 
 .color:nth-child(2) {
-    background-color: rgb(94, 94, 196);
+    background-color: rgb(4, 94, 196);
 }
 
 .color:nth-child(3) {
@@ -22,10 +28,13 @@
 }
 
 #pixel-board {
+
+    display:inline-block;
+    margin: 0;
     position: relative;
-    outline: 0.5px solid darkblue;
     width: 220px;
-    height: 237px;
+    height: 220px;
+    line-height: 0px;
     
 }
 
