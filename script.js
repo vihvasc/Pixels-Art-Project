@@ -17,7 +17,7 @@ function addClass(elementOrigin){
 
     let currentClass = document.querySelector(".selected")
 
-    if (document.getElementsByClassName("selected").length >= 1) {
+    if(document.getElementsByClassName("selected").length >= 1) {
         currentClass.classList.remove("selected")
     }
 
@@ -25,8 +25,23 @@ function addClass(elementOrigin){
 
 }
 
+function changePixelColor(elementOrigin) {
+    let element = elementOrigin.target
+    let selected = document.querySelector(".selected")
+    let cssProp = window.getComputedStyle(selected)
+    let color = cssProp.getPropertyValue("background-color")
+    element.style.setProperty("background-color", color)
+}
+
 window.onload = function () {
     createGrid(5)
+    
     let colorPalette = document.querySelector("#color-palette")
     colorPalette.addEventListener("click", addClass)
+
+    let pixel = document.getElementsByClassName("pixel")
+    for(let counter = 0; counter < pixel.length; counter += 1) {
+        let add = pixel[counter]
+        add.addEventListener("click", changePixelColor)
+    }
 }

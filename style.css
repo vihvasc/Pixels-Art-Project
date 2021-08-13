@@ -17,7 +17,6 @@ header {
     top: 0px;
     bottom: 0px;
     background-color: white;
-    background: white;
 }
 
 .line {
@@ -29,22 +28,18 @@ header {
 
 #black {
     background-color: black;
-    background: black;
 }
 
 #blue {
     background-color: blue;
-    background: blue;
 }
 
 #pink {
     background-color: magenta;
-    background: magenta;
 }
 
 #red {
     background-color: red;
-    background: red;
 }
 
 #pixel-board {
