@@ -1,0 +1,45 @@
+body {
+	background-color: rgb(250, 245, 216);
+}
+
+#title-content {
+	border: 2px solid rgb(205, 95, 42);
+	border-radius: 25px;
+	max-width: 600px;
+	text-align: center;
+	margin: auto;
+}
+
+#title {
+	font-family: 'Press Start 2P', cursive;
+	color: #21181b;
+	text-shadow: 2px 2px 2px rgb(242, 171, 55);
+}
+
+#color-palette {
+	text-align: center;
+}
+
+#color-palette .color {
+	display: inline-block;
+	border: 1px solid rgb(0, 0, 0);
+	height: 80px;
+	width: 80px;
+	margin-top: 40px;
+}
+
+#color1 {
+	background-color: rgb(0, 0, 0);
+}
+
+#color2 {
+	background-color: rgb(205, 95, 42);
+}
+
+#color3 {
+	background-color: rgb(242, 171, 55);
+}
+
+#color4 {
+	background-color: rgb(216, 174, 139);
+}
