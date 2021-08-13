@@ -23,3 +23,10 @@
 #color-palette4 {
     background-color:brown;
 }
+
+.pixel {
+    background-color: white;
+    display: inline-block;
+    padding: 25px;
+}
+
