@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    font-family: Montserrat;
+}
+
+h1 {
+    text-align: center;
+    padding: 2%;
+    background-color:#555B6E;
+    color: #D0DABE;
+}
+
+.color {
+    border: 1px solid black ;
+    max-width: 10%;
+    height: 100%;
+    padding: 3%;
+    display: inline-block;
+    margin: 1%;
+    margin-top: 3%;
+}
+
+#left {
+    margin-left: 35%;
+}
+
+#right {
+    margin-right: 30%;
+}
+
+.firstColor {
+  background-color: #C1C3C1;
+}
+
+.secondColor {
+  background-color: #5386E4;
+}
+
+.thirdColor {
+  background-color: #427AA1;
+}
+
+.fourthColor {
+  background-color: #242423;
+}
+
