@@ -1,6 +1,7 @@
 const palleteColors = ['rgb(0, 0, 0)', 'rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)']
 const colorsUl = document.querySelector('.colors-ul')
 const pixelBoard = document.getElementById('pixel-board')
+const clearButton = document.getElementById('clear-board')
 let backgroundColorSelected = 'rgb(0,0,0)'
 
 function addClassAndBackgroundToColors(colors){
@@ -29,7 +30,7 @@ function creatPixelsBoard(width, heigth){
       for(let column = 1; column <= width; column += 1){
         let block = document.createElement('div')
         block.classList.add('pixel')
-        block.style.backgroundColor = 'white'
+        block.style.backgroundColor = 'rgb(255,255,255)'
         lineOfPixels.appendChild(block)
       }
     }
@@ -49,6 +50,13 @@ colorsUl.addEventListener('click', function(e) {
 pixelBoard.addEventListener('click', function(e) {
   let element = e.target
   element.style.backgroundColor = backgroundColorSelected
+})
+
+clearButton.addEventListener('click', function() {
+  let pixelsList = document.getElementsByClassName('pixel')
+  for(pixel of pixelsList){
+    pixel.style.backgroundColor = 'rgb(255,255,255)'
+  }
 })
 
 addClassAndBackgroundToColors(palleteColors)

@@ -24,3 +24,6 @@
   max-height: 40px;
   width: 100%;
 }
+#clear-board {
+  margin-bottom: 10px;
+}
