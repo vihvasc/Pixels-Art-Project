@@ -4,6 +4,7 @@ function pixelArts() {
   pageTitle();
   createColorPalette();
   createColors();
+  changeColor();
 }
 // requisito 1
 function pageTitle() {
@@ -19,7 +20,7 @@ function createColorPalette() {
   document.body.appendChild(colorPalette);
 }
 function createColors() {
-  let colors = ['green', 'orange', 'brown', 'red']
+  let colors = ['brown', 'orange', 'green', 'red']
   for(color of colors) {
   let liColors = document.createElement('li');
   let ulColorPalette = document.getElementById('color-palette');
@@ -28,3 +29,9 @@ function createColors() {
   liColors.style.backgroundColor = color;
   }
 }
+// requisito 3
+function changeColor() {
+  let firstColor = document.getElementById('color-palette').firstChild;
+  firstColor.style.backgroundColor = 'black';
+}
+// requisito 4
