@@ -1,5 +1,5 @@
 let cor1 = document.getElementsByClassName("color")[0]
-cor1.style.backgroundColor = "green"
+cor1.style.backgroundColor = "black"
 
 let cor2 = document.getElementsByClassName("color")[1]
 cor2.style.backgroundColor = "red"
