@@ -54,9 +54,12 @@ colorPalette();
 // Requisito 4 - Criado o quadro de pixels de forma dinâmica
 // Gostaria de agradecer a Gisele Santin por ter me orientado nas
 // minhas alterações para obeter o resultado alcançado
-function generateBoard(tamanho) {
-  const pixelBoardSection = document.querySelector('#pixel-board');
 
+// Tornei variável global para que eu possa manipular através de eventos,
+// para que seja atendida
+const pixelBoardSection = document.querySelector('#pixel-board');
+
+function generateBoard(tamanho) {
   for (let index = 0; index < tamanho; index += 1) {
     const linePixelBoard = document.createElement('div');
     linePixelBoard.classList.add('linha');
@@ -86,3 +89,13 @@ function addClassSelected() {
 }
 
 addClassSelected();
+
+// Requisito 8 - Modifica as cores do backGround dos elementos da classe "pixel"
+// de acordo com a cor selecionada na "palette-color"
+pixelBoardSection.addEventListener('click', (event) => {
+  if (event.target.className === 'pixel') {
+    const currentColor = document.querySelector('.selected').style.backgroundColor;
+    const selectedColor = event.target;
+    selectedColor.style.backgroundColor = currentColor;
+  }
+});
