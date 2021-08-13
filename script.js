@@ -7,6 +7,8 @@ window.onload = function () {
   startPixelBox();
 };
 
+
+
 // Color Pallet
 
 function startPallet(colorsList) {
@@ -42,8 +44,10 @@ function selectColor(event) {
   let selectedDiv = event.target;
   let color = selectedDiv.style.backgroundColor;
   let sessionStorageColor = sessionStorage.getItem("selectedColor");
+  removeSelectedClass()
   if (sessionStorageColor !== color) {
     sessionStorage.setItem("selectedColor", color);
+    selectedDiv.classList.add("selected");
   } else {
     sessionStorage.removeItem("selectedColor");
   };
@@ -55,6 +59,15 @@ function selectColor(event) {
   //   removeFocous();
   //   setFocous(selectedDiv);
   // };
+};
+
+function removeSelectedClass() {
+  let palletDivs = document.getElementsByClassName("color");
+  for (let div of palletDivs) {
+    if (div.classList.contains("selected")) {
+      div.classList.remove("selected");
+    };
+  };
 };
 
 function removeFocous() {
@@ -72,6 +85,7 @@ function setFocous(selectedDiv) {
 
 function selectFirstColor() {
   firstPalletColorDiv = document.querySelector(".color");
+  firstPalletColorDiv.classList.add("selected");
   firstPalletColor = firstPalletColorDiv.style.backgroundColor;
   sessionStorage.setItem("selectedColor", firstPalletColor);
   // setFocous(firstPalletColorDiv);
@@ -88,3 +102,4 @@ function startPixelBox() {
     pixelBoard.appendChild(pixel);
   };
 };
+
