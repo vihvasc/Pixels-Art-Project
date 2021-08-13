@@ -1,5 +1,6 @@
 const palleteColors = ['rgb(0, 0, 0)', 'rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)']
 const colorsUl = document.querySelector('.colors-ul')
+const pixelBoard = document.getElementById('pixel-board')
 let backgroundColorSelected = 'rgb(0,0,0)'
 
 function addClassAndBackgroundToColors(colors){
@@ -16,7 +17,6 @@ function addClassAndBackgroundToColors(colors){
 }
 function creatPixelsBoard(width, heigth){
   const boardElements = document.getElementsByClassName('pixel')
-  const pixelBoard = document.getElementById('pixel-board')
 
   pixelBoard.style.maxWidth = `${width*40 + 2}px`
 
@@ -44,7 +44,11 @@ colorsUl.addEventListener('click', function(e) {
   previousSelected.classList.remove('selected')
   
   element.classList.add('selected')
-  console.log(element.classList)
+})
+
+pixelBoard.addEventListener('click', function(e) {
+  let element = e.target
+  element.style.backgroundColor = backgroundColorSelected
 })
 
 addClassAndBackgroundToColors(palleteColors)
