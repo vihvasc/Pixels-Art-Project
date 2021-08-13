@@ -1,0 +1,23 @@
+.color {
+  height: 3rem;
+  width: 3rem;
+  display: inline-block;
+  border: 1px solid black;
+  border-radius: 1.5rem;
+}
+
+.color1 {
+  background-color: black;
+}
+
+.color2 {
+  background-color: #FF7777;
+}
+
+.color3 {
+  background-color: #FFCE96;
+}
+
+.color4 {
+  background-color: #F1F2DA;
+}
