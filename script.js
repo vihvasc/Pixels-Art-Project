@@ -4,7 +4,6 @@ function createH1() {
   h1.innerText = 'Paleta de Cores';
   document.body.appendChild(h1);
 }
-
 createH1();
 
 function create4Palletes() {
@@ -20,5 +19,17 @@ function create4Palletes() {
   }
   document.body.appendChild(bigDiv);
 }
-
 create4Palletes();
+
+function createPixels() {
+  let divFather = document.createElement('div');
+  divFather.id = 'pixel-board';
+  document.body.appendChild(divFather);
+  for (let index = 0; index < 25; index += 1) {
+    let divChild = document.createElement('div');
+    divChild.className = 'pixel';
+    divChild.style.background = 'white';
+    divFather.appendChild(divChild);
+  }
+}
+createPixels();
