@@ -11,17 +11,17 @@
 }
 
 .line {
-  width: 500px;
-  height: 100px;
+  width: 220px;
+  height: 45px;
 }
 
 .pixel {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   border: 1px solid black;
   box-sizing: border-box;
   display: inline-block;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
 }
 
 /* .box-color {
