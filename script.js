@@ -8,7 +8,7 @@ function createH1() {
 createH1();
 
 function createDiv() {
-  const arrayColor = ['black', 'red', 'green', 'purple'];
+  const arrayColor = ['black', 'aqua', 'green', 'purple'];
   const divColorFather = document.createElement('div');
   divColorFather.id = 'color-palette';
   document.body.appendChild(divColorFather);
@@ -21,3 +21,16 @@ function createDiv() {
   }
 }
 createDiv();
+
+function createPixelFrame() {
+  const divFather = document.createElement('div');
+  divFather.id = 'pixel-board';
+  document.body.appendChild(divFather);
+  for (let index = 0; index < 25; index += 1) {
+    const divSon = document.createElement('div');
+    divSon.className = 'pixel';
+    divSon.style.backgroundColor = 'white';
+    divFather.appendChild(divSon);
+  }
+}
+createPixelFrame();
