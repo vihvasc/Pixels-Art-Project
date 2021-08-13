@@ -24,7 +24,8 @@ function createDivFilhas() {
     div.style.border = '1px solid black';
     const divCores = document.querySelector('#color-palette');
     divCores.appendChild(div);
-  }
+  } const color = document.querySelector('.color');
+  color.className = 'color selected';
 }
 
 createDivFilhas();
@@ -46,3 +47,7 @@ function divPixelsBoard() {
 
 divPixelsBoard();
 
+function colorBlack() {
+  const color = document.querySelectorAll('.color');
+  color.className = 'color selected';
+}
