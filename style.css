@@ -1,0 +1,23 @@
+#color-palette
+
+
+.color{
+border: black solid 1px;
+display: inline-block;
+height: 50px;
+width: 50px;
+}
+
+.black{
+background-color:black;
+}
+.purple{
+background-color:purple;
+}
+.orange{
+background-color:orange;
+}
+.greenyellow{
+background-color:greenyellow;
+}
+
