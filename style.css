@@ -15,23 +15,19 @@
 }
 
 .color {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   border: solid 1px black;
+  margin-left: -2px;
+  margin-bottom: 15px;
 }
 
 .pixel {
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
   border: solid 1px black;
   margin: -2px;
-  padding: 0px;
   background-color: white;
-}
-
-.linha {
-    margin: 0;
-    padding: 0;
 }
