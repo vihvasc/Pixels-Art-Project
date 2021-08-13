@@ -1,8 +1,30 @@
+header {
+    text-align: center;
+}
+
 .color {
     border: 1px solid black;
     display: inline-block;
     height: 50px;
     width: 50px;
+}
+
+.pixel {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    top: 0px;
+    bottom: 0px;
+    background-color: white;
+    background: white;
+}
+
+.line {
+    margin: 0px;
+    bottom: 0px;
+    height: 42px;
+    text-align: center;
 }
 
 #black {
@@ -23,4 +45,10 @@
 #red {
     background-color: red;
     background: red;
+}
+
+#pixel-board {
+    width: auto;
+    height: auto;
+    margin-top: 10px;
 }
