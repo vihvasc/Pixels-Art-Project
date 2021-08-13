@@ -20,3 +20,17 @@ div.color {
 .position4 {
     background-color: rgb(255, 214, 165);
 }
+
+#pixel-board {
+    display: flexbox;
+    font-size: 0;
+    margin: 0 auto;
+}
+
+.pixel {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
