@@ -48,10 +48,36 @@ function adicionaContainerPixels() {
   // Início da Função
   const quadroDePixels = document.createElement('div');
   quadroDePixels.id = 'pixel-board';
-  quadroDePixels.style.width = '150px';
-  quadroDePixels.style.height = '150px';
+  quadroDePixels.style.width = '200px';
+  quadroDePixels.style.height = '200px';
   document.body.appendChild(quadroDePixels);
-  
+
 };
 adicionaContainerPixels();
 
+function criaPixelsNoContainer(linhas, colunas) {
+    const containerPixel = document.getElementById('pixel-board');
+    console.log(containerPixel); // [DEBUG]
+    let elementosLinha = linhas;
+    let elementosColuna = colunas;
+
+    for (let indexl = 0; indexl < elementosLinha; indexl += 1) {
+      const elementoLinha = document.createElement('div');
+      elementoLinha.className = 'pixel linha';
+      // elementoLinha.style.display = 'inline-block';
+      elementoLinha.style.backgroundColor = 'white';
+      elementoLinha.style.width = '200px';
+      elementoLinha.style.height = '40px';
+      containerPixel.appendChild(elementoLinha);
+      for (let indexc = 0; indexc < elementosColuna; indexc += 1) {
+        const elementoColuna = document.createElement('div');
+        elementoColuna.className = 'pixel coluna';
+        elementoColuna.style.display = 'inline-block';
+        elementoColuna.style.backgroundColor = 'white';
+        elementoColuna.style.width = '40px';
+        elementoColuna.style.height = '40px';
+        elementoLinha.appendChild(elementoColuna);
+      }
+    }
+}
+criaPixelsNoContainer(5, 5);
