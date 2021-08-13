@@ -46,17 +46,17 @@ function selectedColor () {
     let selectedColor = document.getElementById('color-palette')
     let newColor = document.getElementsByClassName('color');
       
-    selectedColor.addEventListener('click', newColors)
-  
+    selectedColor.addEventListener('click', newColors);
+  //  material acessado :https://github.com/tryber/sd-08-project-pixels-art/blob/fabio-ferreira-pixels-art-project/script.js
     function removeSelected() {
         for (let i = 0; i < newColor.length; i += 1) {
           newColor[i].className = 'color';
         }
       }
 
-      function newColors (event) {
+      function newColors (newColor) {
         removeSelected ();
-        event.target.className = 'color selected';
+        newColor.target.className = 'color selected';
       }
     }
     selectedColor () 
