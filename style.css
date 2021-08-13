@@ -1,5 +1,5 @@
 .color {
-  border: 1px solid #000;
+  border: 1px solid black;
   display: inline-block;
   width: 50px;
   height: 50px;
@@ -7,14 +7,17 @@
 }
 
 .color-green {
-  background-color: #32CD32;
+  background-color: limegreen;
 }
+
 .color-blue {
-  background-color: #1E90FF;
+  background-color: dodgerblue;
 }
+
 .color-gray {
-  background-color: #808080;
+  background-color: gray;
 }
+
 .color-red {
-  background-color: #DC143C;
+  background-color: crimson;
 }
