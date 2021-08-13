@@ -3,7 +3,7 @@
     margin:0;
     border:0;
     position: relative;
-    text-align: center
+    text-align: center;
     }
 
 #color-palette{
@@ -17,9 +17,21 @@
     border: 1px solid black
 }
 
+#pixel-board {
+    display: inline-block;
+    height: 210px;
+    width: 210px;
+    background-color: aqua;
+    align-items: center;
+    font-size: 0;
+    line-height: 0
+}
+
 .pixel {
     display: inline-block;
     height: 40px;
     width: 40px;
-    border: 1px solid black
+    border: 1px solid black;
+    background-color: white;
+    
 }

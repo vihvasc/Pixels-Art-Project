@@ -44,8 +44,19 @@ function palleteColors() {
   paleteColor[3].style.backgroundColor = cor3;
 }
 
-function principal() {
-  palleteColors();
+function createPixes() {
+  const N = 5;
+  const NN = N ** 2;
+  const pixelBoard = document.getElementById('pixel-board');
+
+  for (let i = 0; i < NN - 1; i += 1) {
+    const criaPixels = document.createElement('div');
+    criaPixels.className = 'pixel';
+    pixelBoard.appendChild(criaPixels);
+  }
 }
 
-principal();
+window.onload = function main() {
+  palleteColors();
+  createPixes();
+};
