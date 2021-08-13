@@ -1,26 +1,22 @@
-#color-palette {
-
+#cor1 {
+  background-color: black;
 }
 
-#cor1{
-    background-color: red;
+#cor2 {
+  background-color: blue;
 }
 
-#cor2{
-    background-color: blue;
+#cor3 {
+  background-color: green;
 }
 
-#cor3{
-    background-color: green;
-}
-
-#cor4{
-    background-color: yellow;
+#cor4 {
+  background-color: yellow;
 }
 
 .color {
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    border: solid 1px black
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  border: solid 1px black;
 }
