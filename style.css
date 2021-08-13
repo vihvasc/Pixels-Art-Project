@@ -1,0 +1,26 @@
+.color {
+    border: 1px solid black;
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+}
+
+#black {
+    background-color: black;
+    background: black;
+}
+
+#blue {
+    background-color: blue;
+    background: blue;
+}
+
+#pink {
+    background-color: magenta;
+    background: magenta;
+}
+
+#red {
+    background-color: red;
+    background: red;
+}
