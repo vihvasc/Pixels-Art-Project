@@ -5,3 +5,10 @@
     width: 82px;
     height: 82px;
 }
+
+.pixel{
+    display: inline-block;
+    border:solid black 1px;
+    width: 82px;
+    height: 82px;
+}
