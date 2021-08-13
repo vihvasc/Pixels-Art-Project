@@ -1,4 +1,36 @@
+h1 {
+    text-align: center;
+}
+#color-palette {
+    padding-top: 3px;
+    text-align: center;
+}
+
 .color {
+    display: inline-block;
+    width: 65px;
+    height: 65px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+}
+
+#pixel-board {
+    width: 400px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3px;
+}
+
+.base {
+    width: 394px;
+    height: 72px;
+    padding: 3px;
+
+}
+
+.pixel {
     display: inline-block;
     width: 65px;
     height: 65px;
