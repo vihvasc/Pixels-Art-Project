@@ -20,10 +20,10 @@
 .pixel{
     display: inline-block;
     border: black 1px solid;
-    height: 100px;
-    width: 100px;
+    height: 40px;
+    width: 40px;
     background-color: white;
 }
 .line-pixel{
-    height: 100px;
+    height: 40px;
 }
