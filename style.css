@@ -5,6 +5,16 @@
   height: 30px;
 }
 
+button {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#pixel-board {
+  display: inline-block;
+  border: 1px solid black;
+}
+
 .pixel {
   display: inline-block;
   border: 1px solid black;
