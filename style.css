@@ -1,13 +1,22 @@
-#color-palette {
-  background-color: rgb(223, 223, 223);
-  width: 328px;
+body {
+  text-align: center;
 }
 
 .color {  
   border: solid 1px black;
-  padding: 25px;
+  padding: 35px;
   margin-right: 5px;
-  width: 25px;
-  height: 25px;
   display: inline-block;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  padding: 20px;
+  background-color: white;
+  display: inline-block;
+  margin-right: 5px;
+  border: solid 1px black;
 }
