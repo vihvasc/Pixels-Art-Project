@@ -2,7 +2,8 @@ const colorPalette = document.querySelector('#color-palette');
 const pixelBoard = document.querySelector('#pixel-board');
 const cleanBoardButton = document.querySelector('#clear-board');
 
-const boardSize = 5;
+const boardSizeInput = document.querySelector('#board-size');
+const boardButton = document.querySelector('#generate-board');
 
 const makePixel = () => {
   const pixel = document.createElement('div');
@@ -24,7 +25,7 @@ const boardLine = () => {
   return line;
 };
 
-function makeBoardLine(board) {
+function makeBoard(board = 5) {
   for (let i = 1; i <= board; i += 1) {
     const line = boardLine();
     pixelBoard.appendChild(line);
@@ -32,19 +33,54 @@ function makeBoardLine(board) {
   }
 }
 
-makeBoardLine(boardSize);
+function cleanBoard() {
+  const pixels = document.querySelectorAll('.pixel');
+
+  for (const pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+}
+
+function removeBoard() {
+  const lines = document.querySelectorAll('.line');
+
+  for (const line of lines) {
+    line.remove();
+  }
+}
+
+function generateColors() {
+  const colors = document.querySelectorAll('.random-col');
+
+  for(const col of colors) {
+    col.style.backgroundColor = randomColor()
+  }
+}
+
+function randomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r},${g},${b})`
+}
+
+
+boardButton.addEventListener('click', () => {
+  if (!boardSizeInput.value) window.alert('Board inválido!');
+  if (boardSizeInput.value >= 5 && boardSizeInput.value <= 50) {
+    removeBoard();
+    const boardSize = boardSizeInput.value;
+    makeBoard(boardSize);
+  }
+  if (boardSizeInput.value > 50) {
+    removeBoard();
+    makeBoard(50);
+  }
+});
 
 cleanBoardButton.addEventListener('click', () => {
   cleanBoard();
 });
-
-function cleanBoard() {
-  const pixels = document.querySelectorAll('.pixel');
-
-  for (let pixel of pixels) {
-    pixel.style.backgroundColor = 'white';
-  }
-}
 
 colorPalette.addEventListener('click', (e) => {
   const el = e.target;
@@ -63,3 +99,8 @@ pixelBoard.addEventListener('click', (e) => {
     el.style.backgroundColor = color;
   }
 });
+
+window.onload = () => {
+  makeBoard();
+  generateColors()
+};

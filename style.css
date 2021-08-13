@@ -41,12 +41,16 @@ h1 {
 main {
   padding: 1em;
   text-align: center;
-  padding-top: 135px;
+  padding-top: 125px;
 }
 
 #logo {
   position: absolute;
   left: 5em;
+}
+
+input {
+  margin: 0 .5em;
 }
 
 /* Color Pallete */
@@ -81,7 +85,7 @@ main {
 #pixel-board {
   border: 1px solid green;
   padding: 1em;
-  margin: 0 auto;
+  margin: 1em auto;
   display: inline-block;
 }
 
