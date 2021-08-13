@@ -2,24 +2,24 @@
 
 .color {
   border: black solid 1px;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: inline-block;
 }
 
-.dark-black {
+#dark-black {
   background-color: black;
 }
 
-.dark-blue {
+#dark-blue {
   background-color: #0c728e;
 }
 
-.dark-pink {
+#dark-pink {
   background-color: #8c0d47;
 }
 
-.bright-pink {
+#bright-pink {
   background-color: #d80f74;
 }
 
