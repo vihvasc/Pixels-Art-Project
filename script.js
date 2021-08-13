@@ -1,17 +1,4 @@
-window.onload = function () {
-  startPallet();
-  startPixelBox();
-};
-
 // Color Pallet
-
-function startPallet() {
-  const colorsList = createColorsList(4);
-  createPalletDivs(colorsList.length);
-  setColors(colorsList);
-  setPalletEventListener();
-  selectFirstColor();
-}
 
 function randomNumberGenerator(limit) {
   const number = (Math.random() * limit);
@@ -92,18 +79,18 @@ function removeSelectedClassFromOthers() {
   }
 }
 
-function removeFocous() {
-  const palletDivs = document.getElementsByClassName('color');
-  for (div of palletDivs) {
-    if (div.style.transform === 'scale(1.3, 1.3)') {
-      div.style.transform = '';
-    }
-  }
-}
+// function removeFocous() {
+//   const palletDivs = document.getElementsByClassName('color');
+//   for (let div of palletDivs) {
+//     if (div.style.transform === 'scale(1.3, 1.3)') {
+//       div.style.transform = '';
+//     }
+//   }
+// }
 
-function setFocous(selectedDiv) {
-  selectedDiv.style.transform = 'scale(1.3, 1.3)';
-}
+// function setFocous(selectedDiv) {
+//   selectedDiv.style.transform = 'scale(1.3, 1.3)';
+// }
 
 function selectFirstColor() {
   const firstPalletColorDiv = document.querySelector('.color');
@@ -114,14 +101,6 @@ function selectFirstColor() {
 }
 
 // Pixel box
-
-function startPixelBox() {
-  createPixelBoxItens(25);
-  pixelAddEventListener();
-  inputSizeCreator();
-  inputButtonCreator();
-  clearButtonCreator();
-}
 
 function createPixelBoxItens(size) {
   const pixelBoard = document.getElementById('pixel-board');
@@ -140,7 +119,7 @@ function createPixelBoxItens(size) {
 
 function pixelAddEventListener() {
   const pixels = document.getElementsByClassName('pixel');
-  for (pixel of pixels) {
+  for (let pixel of pixels) {
     pixel.addEventListener('click', colorPixel);
   }
 }
@@ -213,3 +192,25 @@ function excludeOldBoard() {
   const pixelBoard = document.getElementById('pixel-board');
   pixelBoard.innerHTML = '';
 }
+
+function startPallet() {
+  const colorsList = createColorsList(4);
+  createPalletDivs(colorsList.length);
+  setColors(colorsList);
+  setPalletEventListener();
+  selectFirstColor();
+}
+
+function startPixelBox() {
+  createPixelBoxItens(25);
+  pixelAddEventListener();
+  inputSizeCreator();
+  inputButtonCreator();
+  clearButtonCreator();
+}
+
+
+window.onload = function () {
+  startPallet();
+  startPixelBox();
+};
