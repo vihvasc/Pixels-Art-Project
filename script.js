@@ -10,7 +10,7 @@ for (let i = 0; i < numberOfColors; i += 1) {
 }
 
 const colorBox = document.getElementsByClassName('color');
-const colorSample = ['green', 'red', 'blue', 'purple'];
+const colorSample = ['black', 'red', 'green', 'purple'];
 
 for (let i = 0; i < colorBox.length; i += 1) {
   colorBox[i].style.background = colorSample[i];
