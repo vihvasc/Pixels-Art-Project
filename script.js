@@ -60,4 +60,13 @@ window.onload = function () {
   }
 
   createPixelsBoard5();
+
+  //Adicionando o evento na cor preta
+
+  let colorBlack = document.querySelector(".black");
+  colorBlack.className = "color black selected";
+
+  colorBlack.addEventListener("click", function () {
+    
+  })
 };
