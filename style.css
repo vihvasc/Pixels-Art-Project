@@ -1,1 +1,22 @@
-/* only comments */
+.color {
+  border: 1px solid black;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+}
+
+.night-blue {
+  background-color: rgb(15, 5, 45);
+}
+
+.dark-blue {
+  background-color: rgb(32, 54, 113);
+}
+
+.light-blue {
+  background-color: rgb(54, 134, 143);
+}
+
+.light-green {
+  background-color: rgb(95, 199, 93);
+}
