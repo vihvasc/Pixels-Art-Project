@@ -7,6 +7,7 @@
 
 main {
   position: relative;
+  display: flex;
 }
 
 #title {
@@ -28,12 +29,12 @@ main {
   cursor: pointer;
 }
 
-.black{
-    background-color: black;
+.black {
+  background-color: black;
 }
 
 .red {
-    background-color: red;
+  background-color: red;
 }
 
 .green {
@@ -42,4 +43,28 @@ main {
 
 .blue {
   background-color: blue;
+}
+
+#pixel-board{   
+  display: table;
+  position: relative;
+  flex-direction: row;
+  border-spacing: 1px;
+  top: 50px;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+}
+
+.pixel{
+  background-color: white;
+  width: 40px;
+  height: 40px;  
+  border: 1px solid black;
+  display: table-cell;
+}
+.lines{
+
+    display: table-row;
 }
