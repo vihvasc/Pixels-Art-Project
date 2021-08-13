@@ -1,0 +1,13 @@
+#color-palette {
+  background-color: rgb(223, 223, 223);
+  width: 328px;
+}
+
+.color {  
+  border: solid 1px black;
+  padding: 25px;
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
