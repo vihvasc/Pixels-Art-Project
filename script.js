@@ -46,7 +46,7 @@ function handleClearBoardButton() {
   }
 }
 
-window.onload = function () {
+window.onload = () => {
   initColorPalette();
   selectColor(document.querySelector('.color'));
   addEventListenerToColorDivs();
