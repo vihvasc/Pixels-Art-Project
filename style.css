@@ -1,39 +1,37 @@
-#color-palette
-
-
-.color{
-border: black solid 1px;
-display: inline-block;
-height: 50px;
-width: 50px;
+#color-palette .color {
+  border: black solid 1px;
+  display: inline-block;
+  height: 50px;
+  width: 50px;
 }
 
-.black{
-background-color:black;
+.black {
+  background-color: black;
 }
-.purple{
-background-color:purple;
+.purple {
+  background-color: purple;
 }
-.orange{
-background-color:orange;
+.orange {
+  background-color: orange;
 }
-.greenyellow{
-background-color:greenyellow;
-}
-
-#pixel-board{
-    display: table;
-    border-spacing: 1px;
-    background-color: black;
-}   
-
-.row{
-display:table-row
+.greenyellow {
+  background-color: greenyellow;
 }
 
-.pixel{
+#pixel-board {
+  display: table;
+  border-spacing: 1px;
+  background-color: black;
+}
+
+.row {
+  display: table-row;
+}
+
+.pixel {
   display: table-cell;
   background-color: white;
   width: 40px;
   height: 40px;
+  border: black solid 1px;
 }
