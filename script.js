@@ -35,3 +35,18 @@ colorsList[0].addEventListener('click', handlePickedColor);
 colorsList[1].addEventListener('click', handlePickedColor);
 colorsList[2].addEventListener('click', handlePickedColor);
 colorsList[3].addEventListener('click', handlePickedColor);
+
+function colorPixels(event) {
+  const selectedColor = document.querySelector('.selected');
+  const colouredPixel = event.target;
+  colouredPixel.style.background = selectedColor.style.background;
+}
+
+function handlePixelsEventAdd() {
+  const pixelsBoard = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixelsBoard.length; index += 1) {
+    pixelsBoard[index].addEventListener('click', colorPixels);
+  }
+}
+
+handlePixelsEventAdd();
