@@ -61,16 +61,16 @@ function selectedColor () {
     }
     selectedColor () 
 
-    function paintBoard () {
-      let board = querySelectorAll('.pixel');
-      for (let i = 0; i < board.length; i += 1 ) {
-        let paint = board[i];
-        paint.addEventListener('click', function(e){
-          let color = document.querySelector('.selected');
-          paint.style;backgroundColor = color.style.backgroundColor;
-        })
-      }
+    // function paintBoard () {
+    //   let board = querySelectorAll('.pixel');
+    //   for (let i = 0; i < board.length; i += 1 ) {
+    //     let paint = board[i];
+    //     paint.addEventListener('click', function(e){
+    //       let color = document.querySelector('.selected');
+    //       paint.style;backgroundColor = color.style.backgroundColor;
+    //     })
+    //   }
        
-      }
+    //   }
 
-    paintBoard ();
+    // paintBoard ();
