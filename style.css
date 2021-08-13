@@ -8,10 +8,16 @@
   height: 40px;
   border: 1px solid black;
   display: inline-block;
+  margin: 0%;
+  padding: 0%;
 }
-.line {
-  display: block;
+.line{
+margin: 0%;
+  padding: 0%;
 }
+/* #pixel-board {
+  border: 1px solid black;
+} */
 
 .sunset-orange {
   background-color: rgb(255, 85, 85);
