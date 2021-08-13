@@ -1,0 +1,21 @@
+.color{
+    border: 1px solid black;
+    height: 75px;
+    width: 75px;
+    display: inline-flex;   
+}
+
+.color:nth-of-type(1){
+   background-color: black 
+}
+
+.color:nth-of-type(2){
+    background-color: #6e51c8
+ }
+
+.color:nth-of-type(3){
+    background-color: #dda2a3}
+
+.color:nth-of-type(4){
+    background-color: #3c42c4
+ }    
