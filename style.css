@@ -1,7 +1,6 @@
 * {
-  padding: 0;
-  margin: 0;
-	box-sizing: border-box;
+  padding: auto;
+  margin: auto;
 }
 
 #title {
@@ -25,12 +24,20 @@ div .color {
 	font-size: 0px;
 }
 
+#pixel-board {
+	display: block;
+	box-sizing: border-box;
+	padding: 30px;
+	width: 80%;
+	text-align: center;
+}
+
 div .newDiv {
+	display: inline-block;
 	text-align: center;
 }
 
 div .pixel {
-	display: inline-block;
 	border: 1px solid black;
 	height: 40px;
 	width: 40px;
