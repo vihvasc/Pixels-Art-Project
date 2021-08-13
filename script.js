@@ -5,6 +5,7 @@ const blackColor = colorsArray[0];
 const pixels = document.querySelectorAll('.pixel');
 const pixelsArray = Array.from(pixels);
 const pixelsArrayLength = pixelsArray.length;
+const clearButton = document.querySelector('#clear-board');
 blackColor.classList.add('selected');
 
 function addSelected(originEvent) {
@@ -32,4 +33,10 @@ for (let index = 0; index < pixelsArrayLength; index += 1) {
   pixelsArray[index].addEventListener('click', paintSquare);
 }
 
+function clearBoard() {
+  for (let index = 0; index < pixelsArrayLength; index += 1) {
+    pixelsArray[index].style.background = 'white';
+  }
+}
 
+clearButton.addEventListener('click', clearBoard);
