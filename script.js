@@ -12,4 +12,21 @@ function createGrid(number) {
     }
 }
 
-createGrid(5)
+function addClass(elementOrigin){
+    let element = elementOrigin.target
+
+    let currentClass = document.querySelector(".selected")
+
+    if (document.getElementsByClassName("selected").length >= 1) {
+        currentClass.classList.remove("selected")
+    }
+
+    element.classList.add("selected");
+
+}
+
+window.onload = function () {
+    createGrid(5)
+    let colorPalette = document.querySelector("#color-palette")
+    colorPalette.addEventListener("click", addClass)
+}
