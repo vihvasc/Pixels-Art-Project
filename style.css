@@ -1,3 +1,11 @@
+body {
+  background-color: #1E1E1E;
+}
+
+h1 {
+  color: #A4A4A4;
+}
+
 .color {
   height: 3rem;
   width: 3rem;
@@ -20,4 +28,12 @@
 
 .color4 {
   background-color: #F1F2DA;
+}
+
+.pixel {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-color: white;
+  border: 1px solid black;
 }
