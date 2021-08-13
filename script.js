@@ -5,8 +5,6 @@ function paintColorPalette() {
   }
 }
 
-paintColorPalette();
-
 function createPixelBoard() {
   const pixelBoard = document.getElementById('pixel-board');
   for (let i = 0; i < 5; i += 1) {
@@ -22,4 +20,8 @@ function createPixelBoard() {
   }
 }
 
-createPixelBoard();
+window.onload = () => {
+  paintColorPalette();
+  createPixelBoard();
+  document.getElementById('black').classList.add('selected');
+};
