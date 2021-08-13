@@ -1,9 +1,8 @@
-let secondColor = [];
-let thirdColor = [];
-let fourthColor = [];
+window.onload = generateRGB();
 
 createBoard();
 firstColor();
+
 
 //função que cria os grids para o pixel-board
 function createBoard(){
@@ -22,15 +21,16 @@ function firstColor(){
   firstBox.style.backgroundColor = "black";
 }
 
-//gera valores rgb aleatorios para a palheta
-function generateColors(){
-  let blueValue = Math.random(0, 255);
-  let redValue = Math.random(0, 255);
-  let greenValue = Math.random(0, 256);
-  let rgb = [redValue, greenValue, blueValue];
+//gera as cores para preencher a palheta
+function generateRGB(){
+  let secondColor = [];
+let thirdColor = [];
+let fourthColor = [];
 
-  if((blueValue === 0 && redValue === 0) && greenValue === 0){
-    return 'Invalid color';
+  for(let i = 0; i < 3; i ++){
+    secondColor[i] = Math.random(0, 256);
+    thirdColor[i] = Math.random(0, 256);
+    fourthColor[i] = Math.random(0, 256);
   }
- return rgb;
+  console.log(secondColor);
 }
