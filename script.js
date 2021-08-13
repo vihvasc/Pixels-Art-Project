@@ -1,3 +1,6 @@
+let secondColor = [];
+let thirdColor = [];
+let fourthColor = [];
 
 createBoard();
 firstColor();
@@ -17,4 +20,17 @@ function createBoard(){
 function firstColor(){
   let firstBox = document.querySelector(".color");
   firstBox.style.backgroundColor = "black";
+}
+
+//gera valores rgb aleatorios para a palheta
+function generateColors(){
+  let blueValue = Math.random(0, 255);
+  let redValue = Math.random(0, 255);
+  let greenValue = Math.random(0, 256);
+  let rgb = [redValue, greenValue, blueValue];
+
+  if((blueValue === 0 && redValue === 0) && greenValue === 0){
+    return 'Invalid color';
+  }
+ return rgb;
 }
