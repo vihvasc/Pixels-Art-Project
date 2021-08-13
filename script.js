@@ -5,18 +5,30 @@ function paintColorPalette() {
   }
 }
 
+function createPixel() {
+  const pixel = document.createElement('div');
+  pixel.className = 'pixel';
+  pixel.style.backgroundColor = 'white';
+  return pixel;
+}
+
+function createpixelLine() {
+  const pixelLine = document.createElement('div');
+  pixelLine.className = 'pixel-line';
+
+  for (let j = 0; j < 5; j += 1) {
+    const pixel = createPixel();
+    pixelLine.appendChild(pixel);
+  }
+
+  return pixelLine;
+}
+
 function createPixelBoard() {
   const pixelBoard = document.getElementById('pixel-board');
   for (let i = 0; i < 5; i += 1) {
-    const boardLine = document.createElement('div');
-    boardLine.className = 'boardLine';
-    for (let j = 0; j < 5; j += 1) {
-      const pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      boardLine.appendChild(pixel);
-      pixel.style.backgroundColor = 'white';
-    }
-    pixelBoard.appendChild(boardLine);
+    const pixelLine = createpixelLine();
+    pixelBoard.appendChild(pixelLine);
   }
 }
 
