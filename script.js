@@ -1,6 +1,5 @@
 window.onload = function () {
-  const colorsList = ['black', 'red', 'green', 'blue'];
-  startPallet(colorsList);
+  startPallet();
   startPixelBox();
 };
 
