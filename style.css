@@ -1,0 +1,38 @@
+#color-palette {
+  display: inline-block;
+}
+
+.color {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+/* .box-color {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+} */
+
+/* .box-color2 {
+  width: 100px;
+  height: 100px;
+  color: red;
+  display: inline-block;
+}
+
+.box-color3 {
+  width: 100px;
+  height: 100px;
+  color: green;
+  display: inline-block;
+}
+
+.box-color4 {
+  width: 100px;
+  height: 100px;
+  color: yellow;
+  display: inline-block;
+} */
