@@ -5,17 +5,18 @@
   display: inline-block;
 }
 
-.dark-blue {
-  background-color: #0c728e;
+.dark-black {
+  background-color: black;
 }
 
-.light-blue {
-  background-color: #4aceed;
+.dark-blue {
+  background-color: #0c728e;
 }
 
 .dark-pink {
   background-color: #8c0d47;
 }
+
 .bright-pink {
   background-color: #d80f74;
 }
