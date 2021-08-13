@@ -1,0 +1,11 @@
+h1 {
+  margin-left: 80px;
+}
+
+.color {
+  border: solid black 1px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 15px;
+}
