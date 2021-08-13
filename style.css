@@ -1,0 +1,17 @@
+#title {
+    font-family: Montserrat, sans-serif;
+    text-align: center;
+}
+
+#color-palette {
+    display: inline-block;
+    margin-left: 505px;
+    
+}
+.color {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
