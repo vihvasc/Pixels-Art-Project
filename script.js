@@ -24,8 +24,7 @@ function createDivFilhas() {
     div.style.border = '1px solid black';
     const divCores = document.querySelector('#color-palette');
     divCores.appendChild(div);
-  } const color = document.querySelector('.color');
-  color.className = 'color selected';
+  }
 }
 
 createDivFilhas();
@@ -47,7 +46,27 @@ function divPixelsBoard() {
 
 divPixelsBoard();
 
+// Exercício 06
+
 function colorBlack() {
-  const color = document.querySelectorAll('.color');
-  color.className = 'color selected';
+  const color = document.querySelector('.color');
+  color.classList.add('selected');
 }
+
+colorBlack();
+
+// Exercício 07
+
+function addListenerInColors() {
+  let allDivsBoard = document.querySelectorAll('.color');
+  for (let index = 0; index < allDivsBoard.length; index += 1) {
+    allDivsBoard[index].addEventListener('click', function() {
+      allDivsBoard[index].classList.add('selected');
+    }
+  }
+}
+
+addListenerInColors();
+
+
+
