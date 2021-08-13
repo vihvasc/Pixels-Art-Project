@@ -22,7 +22,6 @@ div.color {
 }
 
 #pixel-board {
-    display: flexbox;
     font-size: 0;
     margin: 0 auto;
 }
