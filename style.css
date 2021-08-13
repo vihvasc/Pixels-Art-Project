@@ -10,17 +10,17 @@
 }
 
 .color:nth-of-type( 1 ) {
-  background-color: green;
+  background-color: black;
 }
 
 .color:nth-of-type( 2 ) {
-  background-color: gold;
+  background-color: green;
 }
 
 .color:nth-of-type( 3 ) {
-  background-color: blue;
+  background-color: gold;
 }
 
 .color:nth-of-type( 4 ) {
-  background-color: purple;
+  background-color: blue;
 }
