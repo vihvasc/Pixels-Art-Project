@@ -29,8 +29,14 @@ window.onload = function () {
     }
   }
 
+  function selectInitialColor (){
+  const getBlackColor = document.querySelector('.color');
+  getBlackColor.className = 'color selected';
+  }
+
 
 
 addPalette();
 addPixel(25);
+selectInitialColor();
 }
