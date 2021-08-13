@@ -5,9 +5,9 @@ window.onload = function comeca() {
     const pixel = evento.target;
     pixel.style.backgroundColor = cor;
   }
-  for (const pixel of pixels) {
-    pixel.addEventListener('click', adicionaCor);
-    pixel.style.backgroundColor = 'white';
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', adicionaCor);
+    pixels[index].style.backgroundColor = 'white';
   }
   sessionStorage.setItem('cor', '#000');
   const primeiro = document.getElementsByClassName('color')[0];
@@ -36,8 +36,8 @@ quarto.addEventListener('click', selecionaCor);
 function limpaCor() {
   const pixels = document.getElementsByClassName('pixel');
   const cor = 'white';
-  for (const pixel of pixels) {
-    pixel.style.backgroundColor = cor;
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = cor;
   }
 }
 document.getElementsByTagName('button')[0].addEventListener('click', limpaCor);
