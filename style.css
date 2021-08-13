@@ -1,0 +1,25 @@
+#color-palette {
+  display: flex;
+}
+
+.color {
+  margin: 50px;
+  border: 1px solid black;
+  padding: 50px;
+}
+
+.yellow {
+  background-color: #E7C857;
+}
+
+.green {
+  background-color: #2A522E;
+}
+
+.blue {
+  background-color: #275AD8;
+}
+
+.dark {
+  background-color: #330F0F;
+}
