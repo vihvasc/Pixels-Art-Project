@@ -6,14 +6,14 @@
     border: black solid 1px;
 }
 .red{
-    background-color: red;
+    background-color: black;
 }
 .green{
-    background-color: green;
+    background-color: red;
 }
 .blue{
     background-color: blue;
 }
 .yellow{
-    background-color: yellow;
+    background-color: green;
 }
