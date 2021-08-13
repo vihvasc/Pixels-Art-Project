@@ -53,3 +53,14 @@ function handlePixelsEventAdd() {
 }
 
 handlePixelsEventAdd();
+
+const button = document.getElementById('clear-board');
+
+function eraser() {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.background = 'white';
+  }
+}
+
+button.addEventListener('click', eraser);
