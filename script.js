@@ -12,3 +12,20 @@ window.onload = function() {
     }
 };
 
+let buttons = document.getElementsByTagName('button');
+
+for (index = 0; index < buttons.length; index += 1) {
+    buttons[index].addEventListener('click', colorSelection);
+}
+
+console.log(buttons.length)
+
+
+
+function colorSelection() {
+    const selectedColor = document.querySelector('.selected');
+    const newColor = event.target
+
+    selectedColor.classList.remove('selected');
+    newColor.classList.add('selected');
+}
