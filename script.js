@@ -24,3 +24,24 @@ function createPixel(value) {
   }
 }
 createPixel(25);
+
+function selected() {
+  const paletaCores = document.querySelectorAll('.color');
+  for (let key = 0; key < paletaCores.length; key += 1) {
+    paletaCores[key].addEventListener('click', () => {
+      verificarColor();
+      paletaCores[key].className += ' selected';
+    });
+  }
+}
+selected();
+
+function verificarColor() {
+  const paletaCores = document.querySelectorAll('.color');
+  for (let key = 0; key < paletaCores.length; key += 1) {
+    const verificar = paletaCores[key].className;
+    if (verificar.includes('selected')) {
+      paletaCores[key].classList.remove('selected');
+    }
+  }
+}
