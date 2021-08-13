@@ -1,9 +1,9 @@
+const button = document.getElementById('clear-board');
 const colorsList = document.querySelectorAll('.color');
 colorsList[0].style.background = 'black';
 colorsList[1].style.background = 'lightblue';
 colorsList[2].style.background = 'lightgreen';
 colorsList[3].style.background = 'pink';
-
 colorsList[0].classList.add('selected');
 
 function createLine(width) {
@@ -23,8 +23,6 @@ function createBoard(height) {
   }
 }
 
-createBoard(5);
-
 function handlePickedColor(event) {
   const classSelected = document.querySelector('.selected');
   classSelected.classList.remove('selected');
@@ -36,8 +34,6 @@ function handlePickColorEvent() {
     colorsList[index].addEventListener('click', handlePickedColor);
   }
 }
-
-handlePickColorEvent();
 
 function colorPixels(event) {
   const selectedColor = document.querySelector('.selected');
@@ -52,10 +48,6 @@ function handlePixelsEventAdd() {
   }
 }
 
-handlePixelsEventAdd();
-
-const button = document.getElementById('clear-board');
-
 function eraser() {
   const pixels = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixels.length; index += 1) {
@@ -63,4 +55,9 @@ function eraser() {
   }
 }
 
-button.addEventListener('click', eraser);
+window.onload = function createPixelArt() {
+  createBoard(5);
+  handlePickColorEvent();
+  handlePixelsEventAdd();
+  button.addEventListener('click', eraser);
+};
