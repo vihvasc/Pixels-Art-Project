@@ -25,7 +25,7 @@ function criarPaletaCores() {
   
   for (let index = 0; index < totalCores; index += 1) {
     const novaCor = document.createElement('div');
-    novaCor.className = 'color';
+    novaCor.className = 'color ' + coresDaPaleta[index];
     novaCor.style.borderColor = 'black';
     novaCor.style.borderStyle = 'solid';
     novaCor.style.borderWidth = '1px';
