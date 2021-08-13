@@ -33,6 +33,14 @@ function changePixelColor(elementOrigin) {
     element.style.setProperty("background-color", color)
 }
 
+function clearBoard() {
+    let pixel = document.getElementsByClassName("pixel")
+    for(let counter = 0; counter < pixel.length; counter += 1) {
+        let change = pixel[counter]
+        change.style.backgroundColor = "white"
+    }
+}
+
 window.onload = function () {
     createGrid(5)
     
@@ -44,4 +52,7 @@ window.onload = function () {
         let add = pixel[counter]
         add.addEventListener("click", changePixelColor)
     }
+
+    let clearBtn = document.querySelector("#clear-board")
+    clearBtn.addEventListener("click", clearBoard)
 }
