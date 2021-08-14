@@ -9,8 +9,8 @@ fillPalette();
 //variáveis globais
 var paletteList = document.querySelectorAll(".color");
 var pixelBoard = document.querySelectorAll(".pixel");
-console.log(pixelBoard);
 var selectedColor = 'Black';
+var button = document.getElementById("clear-board");
 
 
 //função que cria os grids para o pixel-board
@@ -92,5 +92,14 @@ function createEvent(pixelBoard, paletteList){
 
   for(let i =0; i < paletteList.length; i ++){
     paletteList[i].addEventListener('click', selectColor);
+  }
+}
+
+button.addEventListener('click', clearBoard);
+
+function clearBoard(){
+  
+  for(let key of pixelBoard){
+    key.style.backgroundColor = 'white';
   }
 }
