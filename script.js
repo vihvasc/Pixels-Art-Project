@@ -18,9 +18,30 @@ function generateRandomColor() {
   return cor;
 }
 
+function percorreLista(boleano, cor) {
+  let check = boleano;
+  check = false;
+  for (let i = 0; i < listColor.length; i += 1) {
+    const element = listColor[i];
+    if (element === cor) {
+      check = true;
+    }
+  }
+  return check;
+}
+function checkExistence() {
+  let verify = true;
+  let newColor = generateRandomColor();
+  while (verify) {
+    verify = percorreLista(verify, newColor);
+    newColor = generateRandomColor();
+  }
+  return newColor;
+}
+
 function appendListColor() {
   for (let i = 1; i < listColorLength; i += 1) {
-    const newColor = generateRandomColor();
+    const newColor = checkExistence();
     listColor.push(newColor);
   }
 }
