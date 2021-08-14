@@ -1,22 +1,22 @@
-
 h1 {
   margin-left: 80px;
 }
- ul {
-   width: 190px;
-   margin-left: 50px;
- }
- section {
-   line-height: 0px;
- }
 
- #clear-board{
-   margin-left: 150px;
-   margin-bottom: 15px;
+ul {
+  width: 190px;
+  margin-left: 50px;
+}
 
- }
+section {
+  line-height: 0px;
+}
 
- .color {
+#clear-board {
+  margin-left: 150px;
+  margin-bottom: 15px;
+}
+
+.color {
   border: solid black 1px;
   display: inline-block;
   height: 40px;
@@ -25,20 +25,18 @@ h1 {
 }
 
 .pixel {
-  background-color: white;  
+  background-color: white;
   border: solid black 1px;
   display: inline-block;
   height: 40px;
   width: 40px;
- 
 }
 
 .line {
   line-height: 0px;
 }
 
-#pixel-board{
+#pixel-board {
   margin-left: 80px;
-  max-width:210px ;
-  
+  max-width: 210px;
 }
