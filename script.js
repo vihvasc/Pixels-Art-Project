@@ -34,7 +34,8 @@ function changeSelected(event) {
 
 function paintPixel(event) {
   const color = document.querySelector('.selected');
-  event.target.style.backgroundColor = `${color.id}`;
+  const eventTarget = event.target;
+  eventTarget.style.backgroundColor = `${color.id}`;
 }
 
 function limpar() {
