@@ -1,12 +1,13 @@
 const board = document.getElementById('pixel-board');
-const colors = document.getElementsByClassName('color')
+const colors = document.getElementsByClassName('color');
 
-// function changeColor(event) {
-//   event.target.className = bColor;
-// }
+function changeColor(event) {
+  const bColor = document.querySelector('.selected').style.backgroundColor;
+  event.target.style.backgroundColor = bColor;
+}
 
 function selectColor(event) {
-  let selectedColor = document.querySelector('.selected');
+  const selectedColor = document.querySelector('.selected');
   selectedColor.classList.remove('selected');
   event.target.classList.add('selected');
 }
@@ -14,7 +15,7 @@ function selectColor(event) {
 function makePixel() {
   const pixel = document.createElement('div');
   pixel.className = 'pixel';
-  //pixel.addEventListener('dblclick', changeColor);
+  pixel.addEventListener('click', changeColor);
   return pixel;
 }
 
