@@ -126,13 +126,25 @@ function createPageStructure() {
 
 createPageStructure();
 
+function randomColor() {
+  let color = 'rgb(';
+  for (let index = 0; index < 3; index += 1) {
+    color += Math.floor(Math.random() * 255).toString(10);
+    if (index < 2) {
+      color += ', ';
+    }
+  }
+  color += ')';
+  return color;
+}
+
 function startColorPalette(idValue) {
   const parent = document.getElementById(idValue);
   const myDiv = parent.children[0];
   myDiv.childNodes[0].style.backgroundColor = 'black';
-  myDiv.childNodes[1].style.backgroundColor = 'green';
-  myDiv.childNodes[2].style.backgroundColor = 'gold';
-  myDiv.childNodes[3].style.backgroundColor = 'blue';
+  myDiv.childNodes[1].style.backgroundColor = randomColor();
+  myDiv.childNodes[2].style.backgroundColor = randomColor();
+  myDiv.childNodes[3].style.backgroundColor = randomColor();
   myDiv.childNodes[0].classList.add('selected');
 }
 
