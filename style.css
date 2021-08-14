@@ -45,7 +45,7 @@ h1 {
 }
 
 main {
-  margin-bottom: 20px;
+  margin: 10px 0 20px 20px;
 }
 
 header {
@@ -57,4 +57,18 @@ footer {
   bottom: 0;
   padding: 20px;
   color: white;
+}
+
+#extra-color h2 {
+  margin: 10px 0 5px 10px;
+}
+
+#extra-color div {
+  display: inline-block;
+}
+
+#extra-color div input {
+  display: block;
+  margin: 5px 10px 0 10px;
+  width: 180px;
 }
