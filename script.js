@@ -83,4 +83,3 @@ paletteList[0].addEventListener('click', selectColor);
 paletteList[1].addEventListener('click', selectColor);
 paletteList[2].addEventListener('click', selectColor);
 paletteList[3].addEventListener('click', selectColor);
-paletteList[4].addEventListener('click', selectColor);
