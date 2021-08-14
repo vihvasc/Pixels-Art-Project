@@ -151,10 +151,15 @@ function preparaPixels() {
   let elementosPixel = document.getElementsByClassName('pixel');
   // console.log(elementosPixel); // [DEBUG]
   for (let index = 0; index < elementosPixel.length; index += 1) {
-    elementosPixel[index].addEventListener('click', mePinte() );
+    elementosPixel[index].addEventListener('click', mePinte );
   }
+  function mePinte(index) {
+    let corSelecionada = document.getElementsByClassName('selected');
+    let corDoElemento = corSelecionada[0].style.backgroundColor;
+    console.log(corDoElemento);
+    event.target.style.backgroundColor = corDoElemento;
+  }
+  // mePinte();
 }
+preparaPixels();
 
-function mePinte() {
-  
-}
