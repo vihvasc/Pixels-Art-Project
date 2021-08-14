@@ -8,18 +8,6 @@ const clearButton = document.getElementById('clear-board');
 const boardSize = document.getElementById('board-size');
 const generateBoardButton = document.getElementById('generate-board');
 
-firstColor.style.backgroundColor = 'black';
-secondColor.style.backgroundColor = getRandomColor();
-thirdColor.style.backgroundColor = getRandomColor();
-fourthColor.style.backgroundColor = getRandomColor();
-
-firstColor.addEventListener('click', addSelectedClass);
-secondColor.addEventListener('click', addSelectedClass);
-thirdColor.addEventListener('click', addSelectedClass);
-fourthColor.addEventListener('click', addSelectedClass);
-pixelBoard.addEventListener('click', changeColor);
-clearButton.addEventListener('click', clearColor);
-generateBoardButton.addEventListener('click', setPixelWidth);
 function CreatePixelBoard(size) {
   for (let index = 0; index < size; index += 1) {
     const ul = document.createElement('ul');
@@ -42,8 +30,9 @@ function addSelectedClass(event) {
 }
 
 function changeColor(event) {
+  const pixel = event;
   const ColorSelected = document.querySelector('.selected').style.backgroundColor;
-  event.target.style.backgroundColor = ColorSelected;
+  pixel.target.style.backgroundColor = ColorSelected;
 }
 
 function clearColor() {
@@ -70,8 +59,21 @@ function setPixelWidth() {
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let color = '#';
-  for (let i = 0; i < 6; i++) {
+  for (let index = 0; index < 6; index += 1) {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
 }
+
+firstColor.style.backgroundColor = 'black';
+secondColor.style.backgroundColor = getRandomColor();
+thirdColor.style.backgroundColor = getRandomColor();
+fourthColor.style.backgroundColor = getRandomColor();
+
+firstColor.addEventListener('click', addSelectedClass);
+secondColor.addEventListener('click', addSelectedClass);
+thirdColor.addEventListener('click', addSelectedClass);
+fourthColor.addEventListener('click', addSelectedClass);
+pixelBoard.addEventListener('click', changeColor);
+clearButton.addEventListener('click', clearColor);
+generateBoardButton.addEventListener('click', setPixelWidth);
