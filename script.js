@@ -112,10 +112,11 @@ function generateRandomColor() {
 
 // Function to verify if color is not a number
 function isNotNumber(value) {
+  let aux = value;
   if (Number.isNaN(value) === true) {
-    value = 0;
+    aux = 0;
   }
-  return value;
+  return aux;
 }
 
 // Function to generate newColor
