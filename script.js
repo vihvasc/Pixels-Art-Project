@@ -38,7 +38,7 @@ createPixelFrame();
 let classSelected = document.querySelector('.color');
 classSelected.classList.add('selected');
 
-let allDivs = document.querySelectorAll('.color');
+const allDivs = document.querySelectorAll('.color');
 
 function addClass() {
   for (let index = 0; index < allDivs.length; index += 1) {
@@ -50,3 +50,14 @@ function addClass() {
   }
 }
 addClass();
+
+function colorPixel() {
+  const boxPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < boxPixel.length; index += 1) {
+    boxPixel[index].addEventListener('click', function (event) {
+      let colorSelected = classSelected.style.backgroundColor;
+      event.target.style.backgroundColor = colorSelected;
+    });
+  }
+}
+colorPixel();
