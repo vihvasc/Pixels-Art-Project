@@ -52,23 +52,33 @@ window.onload = function() {
   linha1[4].addEventListener('click', function() { linha1[4].style.backgroundColor = corAtual; });
 
   for (let item = 0; item < linha1.length; item += 1) {
-    linha1[item].addEventListener('click', function() { linha1[item].style.backgroundColor = corAtual; });
+    linha1[item].addEventListener('click', function() { 
+      linha1[item].style.backgroundColor = corAtual; 
+    });
   }
 
   for (let item = 0; item < linha2.length; item += 1) {
-    linha2[item].addEventListener('click', function() { linha2[item].style.backgroundColor = corAtual; });
+    linha2[item].addEventListener('click', function() { 
+      linha2[item].style.backgroundColor = corAtual; 
+    });
   }
 
   for (let item = 0; item < linha3.length; item += 1) {
-    linha3[item].addEventListener('click', function() { linha3[item].style.backgroundColor = corAtual; });
+    linha3[item].addEventListener('click', function() { 
+      linha3[item].style.backgroundColor = corAtual; 
+    });
   }
 
   for (let item = 0; item < linha4.length; item += 1) {
-    linha4[item].addEventListener('click', function() { linha4[item].style.backgroundColor = corAtual; });
+    linha4[item].addEventListener('click', function() { 
+      linha4[item].style.backgroundColor = corAtual; 
+    });
   }
 
   for (let item = 0; item < linha5.length; item += 1) {
-    linha5[item].addEventListener('click', function() { linha5[item].style.backgroundColor = corAtual; });
+    linha5[item].addEventListener('click', function() { 
+      linha5[item].style.backgroundColor = corAtual; 
+    });
   }
 
   const botao = document.getElementById('clear-board');
