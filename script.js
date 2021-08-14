@@ -68,3 +68,18 @@ pixelBoard();
 // Requisito 06
 let initialColor = document.querySelector('.color');
 initialColor.classList.add('selected');
+
+// Requisito 07
+let changeColor = document.querySelectorAll('.color');
+
+function addClass() {
+  for (let i = 0; i < changeColor.length; i += 1) {
+    changeColor[i].addEventListener('click', function(event){
+      initialColor.classList.remove('selected');
+      event.target.classList.add('selected');
+      initialColor = event.target;
+    })
+  }
+}
+
+addClass();
