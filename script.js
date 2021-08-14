@@ -132,7 +132,7 @@ function generateNewColor() {
   b = isNotNumber(b);
 
   const color = `rgb(${r},${g},${b})`;
-  const element = document.querySelector('#extra-color .color');
+  const element = document.querySelector('#color-palette div:nth-of-type(4)');
   element.style.backgroundColor = color;
   local.setItem('newColor', color);
 }
@@ -149,8 +149,6 @@ window.onload = function startPage() {
   colors[1].style.background = generateRandomColor();
   colors[2].style.background = generateRandomColor();
   colors[3].style.background = generateRandomColor();
-
-  document.querySelector('#extra-color .color').style.backgroundColor = local.getItem('newColor');
 
   createPixelBoard(5);
 };
