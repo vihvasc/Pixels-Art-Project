@@ -1,6 +1,7 @@
 // Requisito 01
+const h1 = document.createElement('h1');
+
 function createTitle() {
-  const h1 = document.createElement('h1');
   h1.id = 'title';
   h1.innerText = 'Paleta de Cores';
   document.querySelector('body').appendChild(h1);
@@ -54,12 +55,16 @@ function createPixels() {
   }
 }
 
-
 function pixelBoard() {
   const createBoard = document.createElement('div');
   createBoard.id = 'pixel-board';
+  createBoard.style.margin = '10px';
   document.querySelector('body').appendChild(createBoard);
   createPixels();
 }
 
 pixelBoard();
+
+// Requisito 06
+let initialColor = document.querySelector('.color');
+initialColor.classList.add('selected');
