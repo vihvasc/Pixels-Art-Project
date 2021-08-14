@@ -23,3 +23,18 @@
 .colorBk_04 {
   background-color: yellow;
 }
+
+#pixel-board{
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+
+}
+
+.pixel {
+  text-align: center;
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
