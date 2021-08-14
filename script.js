@@ -20,7 +20,7 @@ function colorRepeat() {
   if (cores.length === 0) {
     return newColor;
   }
-  for (let i = 0; i <= cores.length; i += 1) {
+  for (let i = 0; i < 4; i += 1) {
     if (newColor === cores[i]) {
       colorGenerator();
     }
@@ -68,7 +68,7 @@ function paintPixels() {
   for (let i = 0; i < pixelList.length; i += 1) {
     const pixelSelected = pixelList[i];
 
-    pixelSelected.addEventListener('click', function semuso2() {
+    pixelSelected.addEventListener('click', function uselessNameSecond() {
       const colorItem = document.querySelector('.selected');
       const colorSelected = colorItem.style.backgroundColor;
 
@@ -76,7 +76,6 @@ function paintPixels() {
     });
   }
 }
-
 
 // Desafio 4
 function quadroDePixels(tamanho) {
@@ -107,7 +106,7 @@ function selectColor() {
   for (let z = 0; z < colorList.length; z += 1) {
     const button = colorList[z];
 
-    button.addEventListener('click', function semuso1() {
+    button.addEventListener('click', function uselessNameFirst() {
       for (let i = 0; i < colorList.length; i += 1) {
         colorList[i].classList.remove('selected');
       }
@@ -123,7 +122,7 @@ function clearButton() {
   const button = document.getElementById('clear-board');
   const board = document.querySelectorAll('.pixel');
 
-  button.addEventListener('click', function semuso4() {
+  button.addEventListener('click', function uselessNameThird() {
     for (let i = 0; i < board.length; i += 1) {
       board[i].style.backgroundColor = 'white';
     }
@@ -136,7 +135,7 @@ clearButton();
 function resizeBoard() {
   const input = document.getElementById('board-size');
   const button = document.getElementById('generate-board');
-  button.addEventListener('click', function semuso4() {
+  button.addEventListener('click', function uselessNameFour() {
     const entrada = input.value;
     const size = document.getElementById('pixel-board');
     if (entrada === '') {
