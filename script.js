@@ -110,6 +110,14 @@ function generateRandomColor() {
   return rbg;
 }
 
+// Function to verify if color is not a number
+function isNotNumber(value) {
+  if (Number.isNaN(value) === true) {
+    value = 0;
+  }
+  return value;
+}
+
 // Function to generate newColor
 function generateNewColor() {
   let r = inputNewColorRed.value;
@@ -119,23 +127,14 @@ function generateNewColor() {
   g = parseInt(g, 10);
   b = parseInt(b, 10);
 
-  if (Number.isNaN(r) === true) {
-    inputNewColorRed.value = 0;
-    r = 0;
-  }
-  if (Number.isNaN(g) === true) {
-    inputNewColorGreen.value = 0;
-    g = 0;
-  }
-  if (Number.isNaN(b) === true) {
-    inputNewColorBlue.value = 0;
-    b = 0;
-  }
+  r = isNotNumber(r);
+  g = isNotNumber(g);
+  b = isNotNumber(b);
 
-  const color = `rgb(${r},${g},${b})`
+  const color = `rgb(${r},${g},${b})`;
   const element = document.querySelector('#extra-color .color');
   element.style.backgroundColor = color;
-  local.setItem('newColor',color);
+  local.setItem('newColor', color);
 }
 
 // Add event Listener to input's for creationNewColor
