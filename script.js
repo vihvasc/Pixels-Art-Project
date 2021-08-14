@@ -60,7 +60,7 @@ selectColor();
 
 // Requisito 8
 function pixelColor() {
-  let pixelBox = document.querySelectorAll('.pixel');
+  const pixelBox = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixelBox.length; index += 1) {
     pixelBox[index].addEventListener('click', (event) => {
       const colorPixelSelected = colorSelected.style.backgroundColor;
