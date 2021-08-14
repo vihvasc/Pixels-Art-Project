@@ -41,18 +41,19 @@ function createFrame() {
 createFrame();
 
 // Requisito 6
-const firstChild = document.querySelector('.color');
-firstChild.classList.add('selected');
+let colorSelected = document.querySelector('.color');
+colorSelected.classList.add('selected');
 
 // Requisito 7
-const divsPalette = document.querySelector('#color-palette');
-
-function selectColor(event) {
-  const filhos = document.querySelectorAll('.color');
-  for (let index = 0; index < filhos.length; index += 1) {
-    filhos[index].classList.remove('selected');
+function selectColor() {
+  const divsPalette = document.querySelectorAll('.color');
+  for (let index = 0; index < divsPalette.length; index += 1) {
+    divsPalette[index].addEventListener('click', (event) => {
+      colorSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+      colorSelected = event.target;
+    });
   }
-  event.target.classList.add('selected');
 }
 
-divsPalette.addEventListener('click', selectColor);
+selectColor();
