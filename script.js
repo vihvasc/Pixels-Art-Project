@@ -11,7 +11,10 @@ createTitle();
 
 // Requisito 2 e 3
 function createPalette() {
-  const colors = ['black', 'lightblue', 'lightgreen', 'pink'];
+  const colors = ['black'];
+  for (let index = 0; index < 3; index += 1) {
+    colors.push(`rgb(${randomPalette()}, ${randomPalette()}, ${randomPalette()})`);
+  }
   const divFather = document.createElement('div');
   divFather.id = 'color-palette';
   document.body.appendChild(divFather);
@@ -86,3 +89,9 @@ function createButton() {
 }
 
 createButton();
+
+// Requisito 12
+function randomPalette() {
+  const randomNumber = Math.floor((Math.random() * 255) + 1);
+  return randomNumber;
+}
