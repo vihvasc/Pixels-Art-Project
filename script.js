@@ -21,16 +21,18 @@ function criarPaletaCores() {
   paletaCores.id = 'color-palette';
   const totalCores = 10;
   // Function capturada do Site: https://www.ti-enxame.com/pt/javascript/gerador-de-cores-aleatorias/967183954/
-  const coresDaPaleta = ['black', "#"+((1<<24)*Math.random()|0).toString(16),
+  const coresDaPaleta = ['black',
   "#"+((1<<24)*Math.random()|0).toString(16),
   "#"+((1<<24)*Math.random()|0).toString(16),
-  "#"+((1<<24)*Math.random()|0).toString(16),
-  "#"+((1<<24)*Math.random()|0).toString(16),
-  "#"+((1<<24)*Math.random()|0).toString(16),
-  "#"+((1<<24)*Math.random()|0).toString(16),
-  "#"+((1<<24)*Math.random()|0).toString(16),
-  "#"+((1<<24)*Math.random()|0).toString(16),
-  "#"+((1<<24)*Math.random()|0).toString(16)];
+  "#"+((1<<24)*Math.random()|0).toString(16)
+  // "#"+((1<<24)*Math.random()|0).toString(16),
+  // "#"+((1<<24)*Math.random()|0).toString(16),
+  // "#"+((1<<24)*Math.random()|0).toString(16),
+  // "#"+((1<<24)*Math.random()|0).toString(16),
+  // "#"+((1<<24)*Math.random()|0).toString(16),
+  // "#"+((1<<24)*Math.random()|0).toString(16),
+  // "#"+((1<<24)*Math.random()|0).toString(16)
+  ];
   document.body.appendChild(paletaCores);
   // Separador
   for (let index = 0; index < totalCores; index += 1) {
@@ -198,7 +200,7 @@ function elementoSelecionado() {
     } else {
       elementoDaPaleta[index].addEventListener('click', function() {
         for (let index = 0; index< elementoDaPaleta.length; index +=1 ){
-          elementoDaPaleta[index].className = 'color';
+          elementoDaPaleta[index].className = 'color ';
         }
       elementoDaPaleta[index].className = 'color selected';
       });
