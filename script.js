@@ -35,6 +35,7 @@ function createColors() {
 function changeColor() {
   let firstColor = document.getElementById('color-palette').firstChild;
   firstColor.style.backgroundColor = 'black';
+  firstColor.classList = 'color selected';
 }
 // requisito 4
 function pixelFrame() {
@@ -54,3 +55,7 @@ function internalFrame() {
     }
   }
 }
+// requisito 5
+// feito no CSS 
+
+// requisito 6

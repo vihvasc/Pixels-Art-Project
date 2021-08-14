@@ -1,19 +1,19 @@
 .color {
   border: 1px solid black;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 40px;
+  width: 40px;
   margin: 20px;
 }
 #pixel-board {
-  margin-right: 50%;
-  margin-left: 2.3%;
-  margin-top: 1%;
+  margin-right: 75%;
+  margin-left: 5%;
+  margin-top: 0%;
 }
 .pixel {
   background-color: white;
   border: 1px solid black;
   display: inline-block;
-  height: 100px;
-  width: 100px;
+  height: 40px;
+  width: 40px;
 }
