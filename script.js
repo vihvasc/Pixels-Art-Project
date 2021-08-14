@@ -72,7 +72,7 @@ function pixelColor() {
 pixelColor();
 
 // Requisito 9
-function button() {
+function createButton() {
   const button = document.createElement('button');
   button.id = 'clear-board';
   button.innerText = 'Limpar';
@@ -85,4 +85,4 @@ function button() {
   });
 }
 
-button();
+createButton();
