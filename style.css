@@ -4,6 +4,8 @@
 }
 
 .color {
+  position: relative;
+  right: 35px;
   display: inline-block;
   width: 40px;
   height: 40px;
@@ -12,6 +14,8 @@
 
 #pixel-board {
   position: relative;
+  top: 5px;
+  left: 5px;
   width: 202px;
   height: 218px;
   border: 1px solid black;
@@ -22,4 +26,9 @@
   width: 40px;
   height: 40px;
   border: 1px solid black;
+}
+
+#clear-board {
+  position: relative;
+  left: 145px;
 }

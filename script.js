@@ -4,6 +4,7 @@ let pixelBoard = document.querySelector('#pixel-board');
 let pixel = document.getElementsByClassName('pixel');
 let colorPixel;
 let colors = ['black', 'red', 'green', 'yellow'];
+let button = document.querySelector('#clear-board');
 
 function createColorsAndAddClass() {
     let quantListItem = 4;
@@ -46,3 +47,12 @@ function paintPixel(event) {
 }
 
 pixelBoard.addEventListener('click', paintPixel);
+
+function clearPixelBoard() {
+    for (let i = 0; i < pixel.length; i += 1) {
+        pixel[i].style.backgroundColor = 'white';
+    }
+    pixelBoard.style.backgroundColor = 'white';
+}
+
+button.addEventListener('click', clearPixelBoard);
