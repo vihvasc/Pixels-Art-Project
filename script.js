@@ -7,7 +7,10 @@ function titleH1() {
 titleH1();
 
 function createDiv() {
-  const arrayColor = ['black', 'purple', 'green', 'blue'];
+  const arrayColor = ['black'];
+  for (let index = 1; index < 4; index +=1){
+  arrayColor.push(`rgb(${collorsRandom()}, ${collorsRandom()}, ${collorsRandom()})`)
+}
   const divColorFather = document.createElement('div');
   divColorFather.id = 'color-palette';
   document.body.appendChild(divColorFather);
@@ -75,3 +78,9 @@ function createBotton() {
   })
 }
 createBotton();
+
+function collorsRandom() {
+  let collorRandom = Math.floor(Math.random() * 255) + 1;
+  return collorRandom;
+
+}
