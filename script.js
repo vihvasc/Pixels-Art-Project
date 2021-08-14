@@ -51,8 +51,8 @@ function removeAddSelected() {
 removeAddSelected();
 
 
+let pixelBox = document.getElementsByClassName('pixel');
 function selectPixel() {
-  let pixelBox = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixelBox.length; index += 1) {
     pixelBox[index].addEventListener('click', function (event) {
       let collorSelected = firstChild.style.backgroundColor;
@@ -61,3 +61,17 @@ function selectPixel() {
   }
 }
 selectPixel()
+
+function createBotton() {
+  let button = document.createElement('button');
+  button.id = 'clear-board';
+  button.innerText ='Limpar';
+  document.body.insertBefore(button, document.querySelector('#pixel-board'));
+
+  button.addEventListener('click', function(event){
+  for (let index = 0; index < pixelBox.length; index += 1) {
+    pixelBox[index].style.backgroundColor = 'white';
+  }
+  })
+}
+createBotton();
