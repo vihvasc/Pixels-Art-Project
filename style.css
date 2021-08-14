@@ -3,6 +3,11 @@
   margin-right: auto;
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+}
+
 .color {
   width: 35px;
   height: 35px;
@@ -23,3 +28,6 @@
   border: 1px solid black;
 }
 
+#clear-board {
+  margin-bottom: 10px;
+}
