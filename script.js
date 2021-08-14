@@ -1,5 +1,6 @@
 const paletteItem = document.getElementsByClassName('color');
-const takeBody = document.getElementsByTagName('body');
+const takeBody = document.getElementById('main-container');
+const takeClear = document.getElementById('clear-container');
 const listColor = ['rgba(0,0,0)', 'rgba(51, 221, 255)', 'rgba(245, 214, 34)', 'rgba(245, 32, 34)'];
 const gridLength = 5;
 let currentColor = 'rgba(0,0,0)';
@@ -45,11 +46,29 @@ function generateGrid() {
     }
     containerGrid.appendChild(contaienrLine);
   }
-  takeBody[0].appendChild(containerGrid);
+  takeBody.appendChild(containerGrid);
+}
+
+function clearBoard() {
+  const listPixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < listPixels.length; index += 1) {
+    const pixel = listPixels[index];
+    pixel.style.backgroundColor = 'white';
+  }
+}
+
+function generanteClearBnt() {
+  const btn = document.createElement('button');
+  btn.id = 'clear-board';
+  btn.innerText = 'Limpar';
+  btn.addEventListener('click', clearBoard);
+
+  takeClear.appendChild(btn);
 }
 
 function iniciando() {
   appendPaletteColor();
+  generanteClearBnt();
   generateGrid();
 }
 

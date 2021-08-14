@@ -2,6 +2,10 @@
   display: flex;
 }
 
+#clear-board {
+  margin-block: 10px;
+}
+
 #pixel-board {
   margin-top: 10px;
 }
