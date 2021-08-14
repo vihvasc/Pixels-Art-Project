@@ -19,8 +19,6 @@ function createDiv() {
     divColorSon.style.backgroundColor = arrayColor[index];
     divColorFather.appendChild(divColorSon);
   }
-  const classSelected = document.querySelector('.color');
-  classSelected.classList.add('selected');
 }
 createDiv();
 
@@ -36,3 +34,19 @@ function createPixelFrame() {
   }
 }
 createPixelFrame();
+
+let classSelected = document.querySelector('.color');
+classSelected.classList.add('selected');
+
+let allDivs = document.querySelectorAll('.color');
+
+function addClass() {
+  for (let index = 0; index < allDivs.length; index += 1) {
+    allDivs[index].addEventListener('click', function (event) {
+      classSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+      classSelected = event.target;
+    });
+  }
+}
+addClass();
