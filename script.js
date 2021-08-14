@@ -9,7 +9,7 @@ const primeiraCor = document.querySelector('#firstColor')
 let paletteColors = document.querySelectorAll('.color');
 
 function createGrid(){
-    let gridSize = 5;
+    let gridSize = 20;
     let local = document.querySelector('#pixel-board')
     for (let linhas = 0; linhas < gridSize; linhas++) {
         let divsLinhas = document.createElement('div')
@@ -45,27 +45,7 @@ function seletora(event){
     console.log(event.target.style.backgroundColor);
 }
 
-// function pintar() {
-//     const pixel = document.querySelectorAll('.pixel');
-//     for (let key = 0; key < pixel.length; key += 1) {
-//       pixel[key].addEventListener('click', () => {
-//         const corSelected = document.querySelector('.selected');
-//         const colorAdd = corSelected.classList[1];
-//         pixel[key].classList.add('paint');
-//         paint(colorAdd);
-//       });
-//     }
-//   }
-//   pintar();
-  
-//   function paint(value) {
-//     const pintando = document.querySelectorAll('.paint');
-//     for (let key = 0; key < pintando.length; key += 1) {
-//       pintando[key].style.backgroundColor = value;
-//     }
-//   }
-  
-function painter(event){
+function painter(){
     
    var elem = document.querySelector(".selected");
    var pixelColor = document.querySelectorAll('.pixel')
@@ -82,17 +62,11 @@ function painter(event){
     //console.log(event.target);
     
 }
-
+painter()
+function clique(evento){
 let allPixels = document.querySelectorAll('.pixel')
 
 for (let i = 0; i < allPixels.length; i++) {
     allPixels[i].addEventListener('click', painter)
     
-}
-
-
-
-
-//paletteColors.addEventListener('click'. selectColor)
-// toda box tem uma classe com a cor
-// eu preciso armazenar a classe 
+}}
