@@ -5,13 +5,40 @@ body {
 
 #color-palette {
   display: flex;
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+
+#pixel-board {
+  display: flex;
+  padding-left: 30px;
+}
+
+#pixel-board2 {
+  display: flex;
+  padding-left: 30px;
+}
+
+#pixel-board3 {
+  display: flex;
+  padding-left: 30px;
+}
+
+#pixel-board4 {
+  display: flex;
+  padding-left: 30px;
+}
+
+#pixel-board5 {
+  display: flex;
+  padding-left: 30px;
 }
 
 .color {
   border: 1px solid black;
-  height: 80px;
+  height: 90px;
   width: 90px;
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 .black {
@@ -28,4 +55,52 @@ body {
 
 .yellow {
   background: yellow;
+}
+
+.pixel {
+  border: 1px solid black;
+  height: 80px;
+  width: 90px;
+  background-color: white;
+}
+
+.coluna {
+  border: 1px solid black;
+  height: 80px;
+  width: 90px;
+}
+
+.line {
+  display: inline-block;
+  border: 1px solid black;
+  height: 80px;
+  width: 90px;
+}
+
+.line2 {
+  display: flex;
+  border: 1px solid black;
+  height: 80px;
+  width: 90px;
+}
+
+.line3 {
+  display: flex;
+  border: 1px solid black;
+  height: 80px;
+  width: 90px;
+}
+
+.line4 {
+  display: flex;
+  border: 1px solid black;
+  height: 80px;
+  width: 90px;
+}
+
+.line5 {
+  display: flex;
+  border: 1px solid black;
+  height: 80px;
+  width: 90px;
 }
