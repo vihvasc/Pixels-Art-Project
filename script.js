@@ -49,3 +49,14 @@ function removeAndAddSelected() {
   }
 }
 removeAndAddSelected();
+
+function addColorForClick() {
+  let allPixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < allPixels.length; index += 1) {
+    allPixels[index].addEventListener('click', function(event) {
+      let colorActual = colorSelected.style.backgroundColor;
+      event.target.style.backgroundColor = colorActual;
+    })
+  }
+}
+addColorForClick();
