@@ -50,8 +50,8 @@ function removeAndAddSelected() {
 }
 removeAndAddSelected();
 
+let allPixels = document.getElementsByClassName('pixel');
 function addColorForClick() {
-  let allPixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < allPixels.length; index += 1) {
     allPixels[index].addEventListener('click', function(event) {
       let colorActual = colorSelected.style.backgroundColor;
@@ -60,3 +60,18 @@ function addColorForClick() {
   }
 }
 addColorForClick();
+
+function resetColors() {
+  let button = document.createElement('button');
+  button.id = 'clear-board';
+  button.innerText = 'Limpar';
+  button.addEventListener('click', function(event) {
+    for (let index = 0; index < allPixels.length; index += 1) {
+      allPixels[index].style.backgroundColor = 'white';
+    }
+  })
+
+  document.body.insertBefore(button, document.querySelector('#pixel-board'));
+
+}
+resetColors();
