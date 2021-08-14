@@ -3,6 +3,11 @@
   margin: 0;
 }
 
+body {
+  background-image: url('./images/background-mountain.jpg');
+  background-size: cover;
+}
+
 .color,
 .pixel {
   display: inline-block;
