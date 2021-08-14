@@ -1,27 +1,37 @@
 
+body {
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+    
+}
+
 .color {
     display: inline-block;
-    height: 100px;
-    width: 100px;
+    height: 38px;
+    width: 38px;
     border: 1px solid black;
+    margin: 5px;
 }
 
 #pixel-board {
     display: inline-block;
-    height: 504px;
-    width: 500px;
+    height: 210px;
+    width: 210px;
+    margin-left: 5px;
     margin-top: 15px;
-    border-bottom: 2px solid black;
+    /* margin-top: 1px; */
+    border: 1px solid black;
+    /* border-bottom: 2px solid black;
     border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-right: 1px solid black; */
 }
 
 .pixel {
     display: inline-block;
     border: 1px solid black;
-    width: 98px;
-    height: 100px;
-    margin-top: -5px;
-    top: 50px;
+    width: 40px;
+    height: 40px;
+    margin-bottom: -4px;
     background-color: white;
 }
