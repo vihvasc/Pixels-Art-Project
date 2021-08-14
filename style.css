@@ -1,0 +1,23 @@
+.color{
+    display: inline;
+    border: solid 1px black;
+    padding: 50px;
+    margin-right: 5px;
+    
+}
+.red{
+    background-color:  red;
+}
+.blue{
+    background-color:  blue;
+}
+.yellow{
+    background-color:  yellow;
+}
+.green{
+    background-color:  green;
+    
+}
+#color-palette{
+    margin-top: 100px;
+}
