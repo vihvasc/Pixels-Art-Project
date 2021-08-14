@@ -22,14 +22,27 @@ function handlePaintingPixelBoard(event) {
   targetEvent.target.style.backgroundColor = newColor;
 }
 
+const allPixels = document.getElementsByClassName('pixel');
 function addPixelEventListener() {
-  const allPixels = document.getElementsByClassName('pixel');
   for (let i = 0; i < allPixels.length; i += 1) {
     allPixels[i].addEventListener('click', handlePaintingPixelBoard);
   }
 }
 
+// Requisito 9 - Resetar todos os quadrados com a cor branca.
+const clearButton = document.getElementById('clear-board');
+function handleClearButton() {
+  for (let i = 0; i < allPixels.length; i += 1) {
+    allPixels[i].style.backgroundColor = 'white';
+  }
+}
+
+function addClearButtonEventListener() {
+  clearButton.addEventListener('click', handleClearButton);
+}
+
 window.onload = function () {
   addPaletteEventListener();
   addPixelEventListener();
+  addClearButtonEventListener();
 };
