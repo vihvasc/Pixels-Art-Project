@@ -1,6 +1,9 @@
 let elementBlack = document.getElementById('black');
 let elementColorPallete = document.getElementById('color-palette');
 let elementPixelBoard = document.getElementById('pixel-board')
+let elementColor = document.getElementsByClassName('color');
+let elementPixel = document.getElementsByClassName('pixel')
+let elementButton = document.getElementById('clear-board');
 
 window.onload = function() {
     blackSelected()
@@ -19,9 +22,6 @@ function selectedColor(e) {
     }
 }
 elementColorPallete.addEventListener('click', selectedColor);
-
-
-let elementColor = document.getElementsByClassName('color');
 
 function addPixelColor(e) {
     let elementSelected = document.querySelector('.selected');
@@ -44,3 +44,10 @@ function addPixelColor(e) {
     }
 }
 elementPixelBoard.addEventListener('click', addPixelColor);
+
+function buttonClear() {
+    for (let i = 0; i < elementPixel.length; i += 1) {
+        elementPixel[i].style.backgroundColor = "white";
+    }
+}
+elementButton.addEventListener('click', buttonClear)
