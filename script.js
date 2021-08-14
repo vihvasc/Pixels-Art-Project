@@ -9,8 +9,7 @@ const fourthColor = colors[3];
 const pixels = document.getElementsByClassName('pixel');
 const stylesheet = document.styleSheets[0];
 
-
-window.onload = function() {
+window.onload = function () {
   selectedColor.style.transform = 'translateY(-5px)';
 };
 
@@ -24,9 +23,15 @@ function generateColors() {
     const rColor = Math.floor(Math.random() * max);
     const gColor = Math.floor(Math.random() * max);
     const bColor = Math.floor(Math.random() * max);
-    colors[index].style.backgroundColor = `rgb (${rColor}, ${gColor}, ${bColor})`;
-  } return colors;
+    if (rColor !== 255 || gColor !== 255 || bColor !== 255) {
+      stylesheet.insertRule(`:root{--color${index + 1}: rgb(${rColor}, ${gColor}, ${bColor})`);
+    } else {
+      generateColors();
+    }
+  }
 }
+
+generateColors();
 
 // Criar pixel board sqrt(numeroDeElementos) x sqrt(numeroDeElementos)
 
@@ -57,7 +62,7 @@ for (let index = 0; index < pixels.length; index += 1) {
 
 function clearBoard() {
   for (let index = 0; index < pixels.length; index += 1) {
-    pixels[index].target.style.setProperty('background-color', 'rgb(255, 255, 255');
+    pixels[index].style.setProperty('background-color', 'rgb(255, 255, 255');
   }
 }
 
