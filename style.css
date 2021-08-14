@@ -10,18 +10,10 @@
     margin-bottom: 30px;
 }
 
-#box-red{
-    background-color:red;
-}
-#box-green{
-    background-color:green;
-}
-#box-blue{
-    background-color:blue;
-}
 #pixel-board{
     width: 250px;
 }
+
 .pixel{
     width: 40px;
     height: 40px;
