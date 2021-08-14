@@ -20,3 +20,11 @@ pixelSquare.addEventListener('click', function(event) {
         corSelecionada.style.backgroundColor = corAtual;
     }
 });
+
+let clearPallete = document.querySelector('#clear-board');
+clearPallete.addEventListener('click', function() {
+    let pixelFrame = document.querySelectorAll('.pixel');
+    for (let paint = 0; paint < pixelFrame.length; paint += 1) {
+        pixelFrame[paint].style.backgroundColor = 'white';
+    }
+});
