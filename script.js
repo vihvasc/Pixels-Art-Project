@@ -7,7 +7,10 @@ function createH1() {
 createH1();
 
 function create4Palletes() {
-  let colors = ['black', 'blue', 'green', 'orange']
+  let colors = ['black']
+  for (let index = 0; index < 3; index += 1) {
+    colors.push(`rgb(${randomColors()}, ${randomColors()}, ${randomColors()})`)
+  }
   let bigDiv = document.createElement('div');
   bigDiv.id = 'color-palette';
   for (let index = 0; index < 4; index += 1) {
@@ -75,3 +78,8 @@ function resetColors() {
 
 }
 resetColors();
+
+function randomColors() {
+  let randomNumber = Math.floor(Math.random() * 255) + 1;
+  return randomNumber;
+}
