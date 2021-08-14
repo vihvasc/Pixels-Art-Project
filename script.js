@@ -80,7 +80,7 @@ function createBotton() {
 createBotton();
 
 function collorsRandom() {
-  let collorRandom = Math.floor(Math.random() * 255) + 1;
+  let collorRandom = Math.floor(Math.random() * 255);
   return collorRandom;
 
 }
