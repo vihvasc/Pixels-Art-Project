@@ -11,7 +11,7 @@ green.addEventListener('click', selected)
 function selected(event){
     let sel = document.querySelector('.selected')
     sel.classList.remove('selected')
-    
+
     event.target.classList.add('selected')
 }
 
@@ -28,4 +28,20 @@ function troca(event){
     event.target.style.backgroundColor = colorir2
 }
 
+let butao = document.createElement('div')
+butao.id = 'clear-board'
+butao.innerHTML = 'Limpar'
+butao.style.backgroundColor = 'grey'
+butao.style.width = '100px'
+butao.style.padding = '4px'
+butao.style.display = 'inline-block'
+let board = document.getElementById('pixel-board')
+document.body.insertBefore(butao, board)
 
+
+
+butao.addEventListener('click', function (){
+    for(let key of li){
+        key.style.backgroundColor = 'white';
+    }
+})
