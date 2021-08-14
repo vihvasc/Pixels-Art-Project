@@ -1,6 +1,5 @@
 
 
-
 let boxBlackA = document.getElementsByClassName('color')[0];
 boxBlackA.style.backgroundColor = 'black';
 
@@ -36,9 +35,15 @@ function selectColor(evento) {
     evento.target.classList.add('selected');
 }
 
-
-
 boxBlackA.addEventListener('click', selectColor);
 boxBlackB.addEventListener('click', selectColor);
 boxBlackC.addEventListener('click', selectColor);
 boxBlackD.addEventListener('click', selectColor);
+
+
+let main = document.querySelector('main');
+main.addEventListener('click', function (evento) {
+    let corSelecionada = document.querySelector('.selected');
+    evento.target.style.backgroundColor = corSelecionada.style.backgroundColor;
+
+})
