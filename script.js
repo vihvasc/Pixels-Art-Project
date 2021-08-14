@@ -1,7 +1,12 @@
+//variáveis globais
+var paletteList = document.querySelectorAll(".color");
 
+//chamada das funções
 createBoard();
 firstColor();
 fillPalette();
+// createEvents();
+
 
 //função que cria os grids para o pixel-board
 function createBoard(){
@@ -55,3 +60,27 @@ function fillPalette(){
 //     boxesPalette[i].style.backgroundColor = createRGBString(numericColor);
 //   }
 // }
+function selectColor(event){
+  for(let i = 0; i < paletteList.length; i ++){
+    if(event.target === paletteList[i]){
+      paletteList[i].classList.add("selected");
+    }
+  }
+  for(let i = 0; i < paletteList.length; i ++){
+    if(event.target !== paletteList[i]){
+      paletteList[i].classList.remove("selected");
+    }
+  }
+}
+
+// function createEvents(){
+//   for(let i = 0; i>paletteList.length; i ++ ){
+//     paletteList[i].addEventListener('click', selectColor);
+//   }
+// }
+//automatizar isso em breve, não está funcionando com o for, why?
+paletteList[0].addEventListener('click', selectColor);
+paletteList[1].addEventListener('click', selectColor);
+paletteList[2].addEventListener('click', selectColor);
+paletteList[3].addEventListener('click', selectColor);
+paletteList[4].addEventListener('click', selectColor);
