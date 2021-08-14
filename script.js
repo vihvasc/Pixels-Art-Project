@@ -1,7 +1,8 @@
-const paletteBox = document.querySelector('.paletteBox')
+const paletteBox  = document.querySelector('.paletteBox')
 const paletteBox1 = document.querySelector('.paletteBox1')
 const paletteBox2 = document.querySelector('.paletteBox2')
 const paletteBox3 = document.querySelector('.paletteBox3')
+const clearButton = document.querySelector('#clear-board')
 
 const primeiraCor = document.querySelector('#firstColor')
       primeiraCor.classList.add('selected')
@@ -9,7 +10,7 @@ const primeiraCor = document.querySelector('#firstColor')
 let paletteColors = document.querySelectorAll('.color');
 
 function createGrid(){
-    let gridSize = 20;
+    let gridSize = 5;
     let local = document.querySelector('#pixel-board')
     for (let linhas = 0; linhas < gridSize; linhas++) {
         let divsLinhas = document.createElement('div')
@@ -17,14 +18,10 @@ function createGrid(){
         for (let colunas = 0; colunas < gridSize; colunas++) {
             let pixel = createPixel()
              divsLinhas.appendChild(pixel)
-            
         }
     }
-    
-
 }
 createGrid()
-
 
 function createPixel(){ 
     let pixel = document.createElement('div');
@@ -63,10 +60,17 @@ function painter(){
     
 }
 painter()
-function clique(evento){
+
+function clique(event){
 let allPixels = document.querySelectorAll('.pixel')
 
 for (let i = 0; i < allPixels.length; i++) {
     allPixels[i].addEventListener('click', painter)
     
+    
 }}
+
+function clear(){
+
+}
+clearButton.addEventListener('click')
