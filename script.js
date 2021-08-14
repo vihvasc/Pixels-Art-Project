@@ -1,5 +1,6 @@
 const board = document.getElementById('pixel-board');
 const colors = document.getElementsByClassName('color');
+const buttom = document.getElementById('clear-board');
 
 function changeColor(event) {
   const bColor = document.querySelector('.selected').style.backgroundColor;
@@ -31,6 +32,15 @@ function makePixelBoard() {
     }
   }
 }
+
+function clearBoard() {
+  const pixel = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+}
+
+buttom.addEventListener('click', clearBoard);
 
 for (let i = 0; i < colors.length; i += 1) {
   colors[i].addEventListener('click', selectColor);
