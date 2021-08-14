@@ -1,23 +1,31 @@
-.color{
-    display: inline;
+.color {
+   display: inline;
+   border: solid 1px black;
+   padding: 50px;
+   margin-right: 5px;
+}
+.black {
+   background-color: black;
+}
+.blue {
+   background-color: blue;
+}
+.yellow {
+   background-color: yellow;
+}
+.green {
+   background-color: green;
+}
+#color-palette {
+   margin-top: 100px;
+}
+.pixel {
     border: solid 1px black;
     padding: 50px;
-    margin-right: 5px;
-    
+    background-color: white;
+    display: inline-block;
 }
-.red{
-    background-color:  red;
-}
-.blue{
-    background-color:  blue;
-}
-.yellow{
-    background-color:  yellow;
-}
-.green{
-    background-color:  green;
-    
-}
-#color-palette{
+#pixel-board {
     margin-top: 100px;
+    width: 550px;
 }
