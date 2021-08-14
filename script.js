@@ -48,12 +48,18 @@ function deletarLi(elemento, listali) {
 
 adicionarEscutadores();
 
+function colorir(elemento) {
+  let corSelecionada = document.getElementsByClassName('selected')[0].style.backgroundColor;
+  elemento.target.style.backgroundColor = corSelecionada;
+}
+
 function criarQuadrosDePixels() {
   let linha = document.getElementsByClassName('linha');
   for(let i = 0; i < linha.length; i += 1) {
     for(let gerar = 1; gerar < 6; gerar += 1) {
       let pixel = document.createElement('div');
       pixel.className = 'pixel';
+      pixel.addEventListener("click", colorir);
       linha[i].appendChild(pixel);
     }
   }
