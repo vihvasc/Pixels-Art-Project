@@ -1,17 +1,27 @@
+
 h1 {
   margin-left: 80px;
 }
  ul {
-   max-width: 300px;
-   display: inline-block;
+   width: 190px;
+   margin-left: 50px;
+ }
+ section {
+   line-height: 0px;
  }
 
-.color {
+ #clear-board{
+   margin-left: 150px;
+   margin-bottom: 15px;
+
+ }
+
+ .color {
   border: solid black 1px;
   display: inline-block;
   height: 40px;
   width: 40px;
-  margin: 15px;
+  margin: 2px;
 }
 
 .pixel {
@@ -29,5 +39,6 @@ h1 {
 
 #pixel-board{
   margin-left: 80px;
-  max-width:213px ;
+  max-width:210px ;
+  
 }
