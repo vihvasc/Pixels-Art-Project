@@ -34,5 +34,18 @@ function createPixels() {
 }
 createPixels();
 
-let firstSelected = document.querySelector('.color');
-firstSelected.classList.add('selected');
+let colorSelected = document.querySelector('.color');
+colorSelected.classList.add('selected');
+
+let allDivsBoard = document.querySelectorAll('.color');
+
+function removeAndAddSelected() {
+  for (let index = 0; index < allDivsBoard.length; index += 1) {
+    allDivsBoard[index].addEventListener('click', function(event) {
+      colorSelected.classList.remove('selected'); // Remove selected da div colorSelected
+      event.target.classList.add('selected'); // Adiciona selected ao alvo do clique
+      colorSelected = event.target; // Adiciona a div do clique ao colorSelected
+    })
+  }
+}
+removeAndAddSelected();
