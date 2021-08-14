@@ -59,7 +59,6 @@ function criaPixelsNoContainer(linhas, colunas) {
   // console.log(containerPixel); // [DEBUG]
   const elementosLinha = linhas;
   const elementosColuna = colunas;
-  
   for (let indexl = 0; indexl < elementosLinha; indexl += 1) {
     const elementoLinha = document.createElement('div');
     elementoLinha.className = 'board-line';
@@ -96,10 +95,10 @@ criaPixelsNoContainer(5, 5);
 // O elemento da cor preta deve possuir, inicialmente, a classe selected;
 // Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
 
-function corInicial() {
+function firstSelected() {
   let elementoComCorInicial = document.getElementsByClassName('color');
   console.log(elementoComCorInicial);
   elementoComCorInicial[0].className += " selected";
 
 }
-corInicial();
+firstSelected();
