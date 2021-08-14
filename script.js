@@ -34,5 +34,19 @@ function createBox() {
 }
 createBox();
 
-const firstChild = document.querySelector('.color');
+let firstChild = document.querySelector('.color');
 firstChild.classList.add('selected');
+
+let allBoxCollor = document.querySelectorAll('.color');
+
+function removeAddSelected() {
+  for (let index = 0; index < allBoxCollor.length; index += 1) {
+    allBoxCollor[index].addEventListener('click', function(event) {
+      firstChild.classList.remove('selected');
+      event.target.classList.add('selected');
+      firstChild = event.target;
+    })
+  } 
+}
+removeAddSelected();
+
