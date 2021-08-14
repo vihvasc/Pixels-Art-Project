@@ -1,8 +1,20 @@
 const board = document.getElementById('pixel-board');
+const colors = document.getElementsByClassName('color')
+
+// function changeColor(event) {
+//   event.target.className = bColor;
+// }
+
+function selectColor(event) {
+  let selectedColor = document.querySelector('.selected');
+  selectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
+}
 
 function makePixel() {
   const pixel = document.createElement('div');
   pixel.className = 'pixel';
+  //pixel.addEventListener('dblclick', changeColor);
   return pixel;
 }
 
@@ -17,6 +29,10 @@ function makePixelBoard() {
       line.appendChild(makePixel());
     }
   }
+}
+
+for (let i = 0; i < colors.length; i += 1) {
+  colors[i].addEventListener('click', selectColor);
 }
 
 window.onload = makePixelBoard;

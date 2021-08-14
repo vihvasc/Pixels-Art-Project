@@ -22,3 +22,8 @@
   width: 210px;
   height: 40px;
 }
+
+.selected {
+  border: 4px solid pink
+
+}
