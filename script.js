@@ -149,9 +149,12 @@ elementoSelecionado();
 
 function preparaPixels() {
   let elementosPixel = document.getElementsByClassName('pixel');
-
+  // console.log(elementosPixel); // [DEBUG]
   for (let index = 0; index < elementosPixel.length; index += 1) {
     elementosPixel[index].addEventListener('click', mePinte() );
   }
 }
-console.log(elementosPixel);
+
+function mePinte() {
+  
+}
