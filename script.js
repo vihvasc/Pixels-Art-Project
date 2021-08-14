@@ -4,15 +4,25 @@ const thirdColor = document.querySelectorAll('.color')[2];
 const fourthColor = document.querySelectorAll('.color')[3];
 
 firstColor.classList.add('selected');
+firstColor.addEventListener("click", clickColor);
+secondColor.addEventListener("click", clickColor);
+thirdColor.addEventListener("click", clickColor);
+fourthColor.addEventListener("click", clickColor);
 
-firstColor.addEventListener("click", changeColor);
-secondColor.addEventListener("click", changeColor);
-thirdColor.addEventListener("click", changeColor);
-fourthColor.addEventListener("click", changeColor);
+firstColor.style.backgroundColor = 'black';
+secondColor.style.backgroundColor = 'purple';
+thirdColor.style.backgroundColor = 'plum';
+fourthColor.style.backgroundColor = 'peachpuff';
 
-function changeColor (event) {
+function clickColor (event) {
     document.querySelector('.selected').classList.remove('selected');
     event.target.classList.add('selected');
+}
+
+function changeColor(event) {
+    const selected = document.querySelector('.selected');
+    event.target.style.backgroundColor = selected.style.backgroundColor;
+    console.log('teste');
 }
 
 function createTable() {
@@ -21,7 +31,8 @@ function createTable() {
 		for (let coluna = 0; coluna < 5; coluna += 1) {
 			const tableElement = document.createElement('td');
 			tableElement.classList.add('pixel');
-		tableLine[linha].appendChild(tableElement);
+		    tableLine[linha].appendChild(tableElement);
+            tableElement.addEventListener("click", changeColor);
         }
     }
 }
