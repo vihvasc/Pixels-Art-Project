@@ -5,6 +5,10 @@ const pixels = document.getElementsByClassName('pixel');
 const buttonClearBoard = document.getElementById('clear-board');
 const buttonGenerateBoard = document.getElementById('generate-board');
 const inputSizeBoard = document.getElementById('board-size');
+const inputNewColorRed = document.getElementById('newColorRed');
+const inputNewColorGreen = document.getElementById('newColorGreen');
+const inputNewColorBlue = document.getElementById('newColorBlue');
+const local = localStorage;
 
 // Function to delete board
 function deletePixelBoard() {
@@ -106,6 +110,39 @@ function generateRandomColor() {
   return rbg;
 }
 
+// Function to generate newColor
+function generateNewColor() {
+  let r = inputNewColorRed.value;
+  let g = inputNewColorGreen.value;
+  let b = inputNewColorBlue.value;
+  r = parseInt(r, 10);
+  g = parseInt(g, 10);
+  b = parseInt(b, 10);
+
+  if (Number.isNaN(r) === true) {
+    inputNewColorRed.value = 0;
+    r = 0;
+  }
+  if (Number.isNaN(g) === true) {
+    inputNewColorGreen.value = 0;
+    g = 0;
+  }
+  if (Number.isNaN(b) === true) {
+    inputNewColorBlue.value = 0;
+    b = 0;
+  }
+
+  const color = `rgb(${r},${g},${b})`
+  const element = document.querySelector('#extra-color .color');
+  element.style.backgroundColor = color;
+  local.setItem('newColor',color);
+}
+
+// Add event Listener to input's for creationNewColor
+inputNewColorRed.addEventListener('change', generateNewColor);
+inputNewColorGreen.addEventListener('change', generateNewColor);
+inputNewColorBlue.addEventListener('change', generateNewColor);
+
 // function used to start the page
 window.onload = function startPage() {
   // colors of palete
@@ -113,6 +150,8 @@ window.onload = function startPage() {
   colors[1].style.background = generateRandomColor();
   colors[2].style.background = generateRandomColor();
   colors[3].style.background = generateRandomColor();
+
+  document.querySelector('#extra-color .color').style.backgroundColor = local.getItem('newColor');
 
   createPixelBoard(5);
 };
