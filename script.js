@@ -7,6 +7,7 @@ function pixelArts() {
   changeColor();
   pixelFrame();
   internalFrame();
+  selectColor();
 }
 // requisito 1
 function pageTitle() {
@@ -17,14 +18,14 @@ function pageTitle() {
 }
 // requisito 2
 function createColorPalette() {
-  let colorPalette = document.createElement('ul');
+  let colorPalette = document.createElement('section');
   colorPalette.id = 'color-palette';
   document.body.appendChild(colorPalette);
 }
 function createColors() {
   let colors = ['brown', 'orange', 'green', 'red']
   for(color of colors) {
-  let liColors = document.createElement('li');
+  let liColors = document.createElement('div');
   let ulColorPalette = document.getElementById('color-palette');
   ulColorPalette.appendChild(liColors);
   liColors.className = 'color';
@@ -35,11 +36,11 @@ function createColors() {
 function changeColor() {
   let firstColor = document.getElementById('color-palette').firstChild;
   firstColor.style.backgroundColor = 'black';
-  firstColor.classList = 'color selected';
+  firstColor.classList.add('selected');
 }
 // requisito 4
 function pixelFrame() {
-  framePrincipal = document.createElement('ul');
+  framePrincipal = document.createElement('section');
   framePrincipal.id = 'pixel-board';
   document.body.appendChild(framePrincipal);
 }
@@ -48,10 +49,9 @@ function internalFrame() {
   let framePrincipal = document.getElementById('pixel-board');
   for(let square of frames) {
     for(square of frames) {
-      let liInternalFrame = document.createElement('li');
+      let liInternalFrame = document.createElement('div');
       liInternalFrame.className = 'pixel';
       framePrincipal.appendChild(liInternalFrame);
-      console.log(square);
     }
   }
 }
@@ -59,3 +59,17 @@ function internalFrame() {
 // feito no CSS 
 
 // requisito 6
+// feito na linha 38
+
+// requisito 7
+function selectColor() {
+  let colorSelected = document.getElementsByClassName('color');
+  for (let color = 0; color < colorSelected.length; color += 1) {
+    colorSelected[color].addEventListener('click', changeSelectedColor);
+  }
+}
+function changeSelectedColor(event){
+  let selectColor = document.querySelector('.selected');
+  selectColor.classList.remove('selected');
+  event.target.classList.add('selected');
+}
