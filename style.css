@@ -35,7 +35,11 @@ button#c4 {
   width: 40px;
 }
 
-.line {
+button#clear-board {
+    background-color: white;
+    block-size: 20px;
+    border: 1px solid black;
+    margin-bottom: 2px;
 }
 
 .pixel {
