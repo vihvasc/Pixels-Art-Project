@@ -15,9 +15,7 @@ function colorRandom() {
 function createDiv() {
   const arrayColor = ['black'];
   for (let index = 0; index < 3; index += 1) {
-    arrayColor.push(
-      `rgb(${colorRandom()}, ${colorRandom()}, ${colorRandom()})`
-    );
+    arrayColor.push(`rgb(${colorRandom()}, ${colorRandom()}, ${colorRandom()})`);
   }
   const divColorFather = document.createElement('div');
   divColorFather.id = 'color-palette';
@@ -52,7 +50,7 @@ const allDivs = document.querySelectorAll('.color');
 
 function addClass() {
   for (let index = 0; index < allDivs.length; index += 1) {
-    allDivs[index].addEventListener('click', function (event) {
+    allDivs[index].addEventListener('click', function(event) {
       classSelected.classList.remove('selected');
       event.target.classList.add('selected');
       classSelected = event.target;
@@ -65,7 +63,7 @@ const boxPixel = document.getElementsByClassName('pixel');
 
 function colorPixel() {
   for (let index = 0; index < boxPixel.length; index += 1) {
-    boxPixel[index].addEventListener('click', function (event) {
+    boxPixel[index].addEventListener('click', function(event) {
       let colorSelected = classSelected.style.backgroundColor;
       event.target.style.backgroundColor = colorSelected;
     });
@@ -79,7 +77,7 @@ function createButton() {
   button.innerText = 'Limpar';
   document.body.insertBefore(button, document.querySelector('#pixel-board'));
 
-  button.addEventListener('click', function (event) {
+  button.addEventListener('click', function() {
     for (let index = 0; index < boxPixel.length; index += 1) {
       boxPixel[index].style.backgroundColor = 'white';
     }
