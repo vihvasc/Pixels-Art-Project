@@ -1,15 +1,16 @@
 const colorPalette = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
 const btnEraseCanvas = document.getElementById('clear-board');
+const btnGenerateCanvas = document.getElementById('generate-board');
+const inputBoardSize = document.getElementById('board-size');
 let selectedColor;
 const config = {
   colors: ['black', 'green', 'blue', 'yellow'],
   pixelSize: 40,
   pixelSizeFormated: '40px',
-  canvasLength: 25,
   canvasLineLength: 5,
-  canvasLineNumber: 5,
 };
+
 
 // Pinta um pixel.
 function paintPixel(event) {
@@ -66,7 +67,7 @@ function createCanvasLine() {
 
 // Insere o quadro de pixels a página.
 function insertCanvas() {
-  for (let index = 0; index < config.canvasLineNumber; index += 1) {
+  for (let index = 0; index < config.canvasLineLength; index += 1) {
     pixelBoard.appendChild(createCanvasLine());
   }
 }
@@ -86,11 +87,63 @@ function eraseCanvas() {
   }
 }
 
+// Valida o input mínimo e máximo do quadro.
+function validateSizeInput(value) {
+  let fixedValue = value;
+
+  if (value < 5) {
+    fixedValue = 5;
+  } else if (value > 50) {
+    fixedValue = 50;
+  }
+  return fixedValue;
+}
+
+// Determina o tamanho do quadro.
+function changeCanvasSize() {
+  if (inputBoardSize.value === '') {
+    return alert('Board inválido!');
+  }
+  const lines = document.getElementsByClassName('color-line');
+  const linesLength = lines.length;
+  for (let index = linesLength - 1; index >= 0; index -= 1) {
+    lines[index].remove();
+  }
+
+  const sizeInput = validateSizeInput(inputBoardSize.value);
+  config.canvasLineLength = sizeInput;
+  inputBoardSize.value = sizeInput;
+  insertCanvas();
+}
+
+// Gera um número aleatório entre 1 e 255 para o RGB.
+function generateRandomNumber() {
+  return Math.random() * (255 - 1) + 1;
+}
+
+// Gera uma cor aleatória em RGB.
+function generateRandomRGB() {
+  const red = generateRandomNumber();
+  const green = generateRandomNumber();
+  const blue = generateRandomNumber();
+  const rgb = `rgb(${red},${green},${blue})`;
+  return rgb;
+}
+
+// Insere uma paleta aleatória dentro da configuração.
+function randomPalette() {
+  for (let index = 1; index < 4; index += 1) {
+    config.colors[index] = generateRandomRGB();
+  }
+}
+
 function init() {
+  randomPalette();
   insertColorPalette();
   insertCanvas();
   selectFirstColor();
   btnEraseCanvas.addEventListener('click', eraseCanvas);
+  btnGenerateCanvas.addEventListener('click', changeCanvasSize);
 }
 
 window.onload = init;
