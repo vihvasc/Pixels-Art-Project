@@ -66,3 +66,16 @@ function addSelected() { // adicionando classe selected elemento selecionado
 addSelected();
 
 // Exercício 8
+const pixel = document.querySelectorAll('.pixel');
+function pixelColor() {
+  for (let index = 0; index < pixel.length; index += 1) {
+    pixel[index].addEventListener('click', (event) => {
+      const colorPixel = color.style.backgroundColor;
+      event.target.style.backgroundColor = colorPixel;
+    });
+  }
+}
+pixelColor();
+
+// Exercício 9
+
