@@ -55,15 +55,15 @@ function firstColorBlack () {
 firstColorBlack();
 
 //Desafio 4
-function quadroDePixels (largura, comprimento) {
+function quadroDePixels (tamanho) {
 	let quadroPixel = document.querySelector('#pixel-board');
 
-	for (let index = 1; index <= comprimento; index += 1) {
+	for (let index = 1; index <= tamanho; index += 1) {
 		let linhaPixel = document.createElement('div');
 		let contador = 1;
 		linhaPixel.className = 'newDiv';
 
-	  for (let i = 1; i <= largura; i += 1) {
+	  for (let i = 1; i <= tamanho; i += 1) {
 		  let pixelL = document.createElement('div');
 
 		  pixelL.className = 'pixel';
@@ -76,7 +76,7 @@ function quadroDePixels (largura, comprimento) {
   }
 }
 
-quadroDePixels(5, 5);
+quadroDePixels(5);
 
 //Desafio 6
 function firstPick () {
@@ -137,3 +137,29 @@ function clearButton () {
 
 clearButton();
 
+//Desafio 10
+function resizeBoard () {
+	let input = document.getElementById('board-size');
+	let button = document.getElementById('generate-board');
+	let tamanho = input.value;
+
+	button.addEventListener('click', function(){
+	const entrada = input.value;
+	let size = document.getElementById('pixel-board')
+
+	if (entrada === '') {
+		alert('Board inválido!');
+	} else if(entrada >= 1 && entrada <= 5) {
+		size.innerHTML = '';
+		quadroDePixels(5);
+	} else if(entrada >= 50) {
+		size.innerHTML = '';
+		quadroDePixels(50);
+	} else if(entrada > 5 && entrada < 50) {
+		size.innerHTML = '';
+		quadroDePixels(entrada);
+	}
+	});
+}
+
+resizeBoard();
