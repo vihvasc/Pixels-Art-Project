@@ -1,5 +1,4 @@
 const pixelBoard = document.getElementById('pixel-board'); // Seleciona elemento de ID pixel-board
-const getColor = document.getElementsByClassName('color'); // Seleiona elementos com classe color
 
 // Cria quadro de pixels
 function createPixels(value) {
@@ -17,6 +16,8 @@ function createPixels(value) {
 createPixels(5);
 
 // Cor preta inicialmente selecionada
+const getColor = document.getElementsByClassName('color'); // Seleiona elementos com classe color
+
 function setDefaultColor() {
   getColor[0].classList.add('selected');
 }
@@ -38,3 +39,11 @@ color1.addEventListener('click', changeSelectedColor);
 color2.addEventListener('click', changeSelectedColor);
 color3.addEventListener('click', changeSelectedColor);
 color4.addEventListener('click', changeSelectedColor);
+
+// Pinta pixels com a cor selecionada
+function setPixelColor(event) {
+  const selectedColor = document.querySelector('.selected');
+  const getPixelColor = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
+  event.target.style.backgroundColor = getPixelColor;
+}
+pixelBoard.addEventListener('click', setPixelColor);
