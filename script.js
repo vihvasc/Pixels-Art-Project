@@ -45,15 +45,15 @@ function seletora(event){
 function painter(){
     
    var elem = document.querySelector(".selected");
-   var pixelColor = document.querySelectorAll('.pixel')
+   var pixelColor = document.querySelectorAll('.pixel');
       for (let i = 0; i < pixelColor.length; i++) {
           console.log('entrei no loop');
           pixelColor[i].addEventListener('click', function(){
             var elem = document.querySelector(".selected");
     
         var theCSSprop = window.getComputedStyle(elem).getPropertyValue("background-color");      
-        pixelColor[i].style.backgroundColor = theCSSprop
-          console.log('dentro da função');})   
+        pixelColor[i].style.backgroundColor = theCSSprop;
+          console.log('dentro da função');});
       }
     
     //console.log(event.target);
@@ -62,19 +62,19 @@ function painter(){
 painter()
 
 function clique(event){
-let allPixels = document.querySelectorAll('.pixel')
+let allPixels = document.querySelectorAll('.pixel');
 
 for (let i = 0; i < allPixels.length; i++) {
-    allPixels[i].addEventListener('click', painter)
+    allPixels[i].addEventListener('click', painter);
     
     
 }}
 
 function clear(){
-    let allPixels = document.querySelectorAll('.pixel')
+    let allPixels = document.querySelectorAll('.pixel');
         for (let i = 0; i < allPixels.length; i++) {
-           allPixels[i].style.backgroundColor = 'white'
+           allPixels[i].style.backgroundColor = 'white';
             
         }
 }
-clearButton.addEventListener('click', clear)
+clearButton.addEventListener('click', clear);
