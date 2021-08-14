@@ -76,6 +76,7 @@ function usuarioGeraQuadrado() {
   const inputGQ = document.createElement('input');
   inputGQ.id = 'board-size';
   const botaoGQ = document.createElement('button');
+  botaoGQ.id = 'generate-board';
   botaoGQ.innerText = 'VQV';
   document.body.appendChild(inputGQ);
   document.body.appendChild(botaoGQ);
