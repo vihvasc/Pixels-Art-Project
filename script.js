@@ -8,6 +8,7 @@ function pixelArts() {
   pixelFrame();
   internalFrame();
   selectColor();
+  selectFramePixel();
 }
 // requisito 1
 function pageTitle() {
@@ -68,8 +69,18 @@ function selectColor() {
     colorSelected[color].addEventListener('click', changeSelectedColor);
   }
 }
-function changeSelectedColor(event){
+function changeSelectedColor(event) {
   let selectColor = document.querySelector('.selected');
   selectColor.classList.remove('selected');
   event.target.classList.add('selected');
+}
+// requisito 8
+function selectFramePixel() {
+  let pixelBoardSelected = document.getElementById('pixel-board');
+  pixelBoardSelected.addEventListener('click', paintFramePixel);
+}
+function paintFramePixel(event) {
+  let color = document.querySelector('.selected');
+  console.log(color);
+  event.target.style.backgroundColor = color.style.backgroundColor;
 }
