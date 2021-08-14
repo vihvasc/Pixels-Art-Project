@@ -1,36 +1,31 @@
 const colorList = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
+const firstBlock = document.createElement('div');
+const secondBlock = document.createElement('div');
+const thirdBlock = document.createElement('div');
+const fourBlock = document.createElement('div');
 
-// eslint-disable-next-line max-lines-per-function
 function createColor() {
-  const firstBlock = document.createElement('div');
-  firstBlock.className = 'color';
   firstBlock.id = 'black';
+  firstBlock.className = 'color';
   firstBlock.style.background = 'black';
   colorList.appendChild(firstBlock);
-
-  const secondBlock = document.createElement('div');
-  secondBlock.className = 'color';
   secondBlock.id = 'red';
+  secondBlock.className = 'color';
   secondBlock.style.background = 'red';
   colorList.appendChild(secondBlock);
-
-  const thirdBlock = document.createElement('div');
-  thirdBlock.className = 'color';
   thirdBlock.id = 'blue';
+  thirdBlock.className = 'color';
   thirdBlock.style.background = 'blue';
   colorList.appendChild(thirdBlock);
-
-  const fourBlock = document.createElement('div');
-  fourBlock.className = 'color';
   fourBlock.id = 'green';
+  fourBlock.className = 'color';
   fourBlock.style.background = 'green';
   colorList.appendChild(fourBlock);
 }
 createColor();
 
 function selectFirstColor() {
-  const firstBlock = document.querySelector('#black');
   if (firstBlock.style.background === 'black') {
     firstBlock.className = 'color selected';
   } else {
@@ -46,9 +41,22 @@ function createPixels() {
     pixelBoard.appendChild(line);
     for (let pixels = 0; pixels < 5; pixels += 1) {
       const pixel = document.createElement('div');
+      pixel.style.minwidth = 40;
+      pixel.style.minheight = 40;
+      pixel.style.border = '1px solid black';
       pixel.className = 'pixel';
       line.appendChild(pixel);
     }
   }
 }
 createPixels();
+
+function selectColor(event) {
+  const colorSelect = document.querySelector('.selected');
+  colorSelect.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+firstBlock.addEventListener('click', selectColor);
+secondBlock.addEventListener('click', selectColor);
+thirdBlock.addEventListener('click', selectColor);
+fourBlock.addEventListener('click', selectColor);
