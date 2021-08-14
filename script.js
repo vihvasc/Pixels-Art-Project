@@ -29,10 +29,16 @@ function creatBox() {
 
 creatBox();
 
-function selectColor(){
+function selectColor(evento) {
 
-
+    let selecionado = document.querySelector('.selected');
+    selecionado.classList.remove('selected');
+    evento.target.classList.add('selected');
 }
 
-selectColor();
 
+
+boxBlackA.addEventListener('click', selectColor);
+boxBlackB.addEventListener('click', selectColor);
+boxBlackC.addEventListener('click', selectColor);
+boxBlackD.addEventListener('click', selectColor);
