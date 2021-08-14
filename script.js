@@ -1,6 +1,6 @@
 window.onload = function() {
   const palette = document.getElementsByClassName('color');
-  let corAtual = '';
+  let corAtual = '#000000';
 
   palette[0].style.backgroundColor = '#000000';
   palette[1].style.backgroundColor = '#16db93';
