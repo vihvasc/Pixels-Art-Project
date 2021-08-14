@@ -1,8 +1,10 @@
- const selectId = document.querySelector('#pixel-board');
- const lineBase = 5
- const colunmBase = 5
+document.addEventListener("DOMContentLoaded", function() {
+  colorTransfer();
+});
 
-
+const selectId = document.querySelector('#pixel-board');
+const lineBase = 5
+const colunmBase = 5
 
 function crateSquare() {
   for(let index = 0; index < lineBase; index += 1){
@@ -18,7 +20,7 @@ crateSquare ()
 
 function getColorButton() {
   const selectColor = document.querySelectorAll('.color')
-  selectColor[0].classList.add('selected');
+  selectColor[0].classList.add('selected')
 
   for(let color of selectColor){
     color.addEventListener('click', function(event) { 
@@ -27,24 +29,24 @@ function getColorButton() {
         event.target.classList.add('selected');
     })
   }
+
 }
+
 getColorButton()
 
 function colorTransfer() {
   const selectDiv = document.querySelectorAll('.pixel')
-
+  
   for (let pixel of selectDiv){
     pixel.addEventListener('click', function() {
-      let changecolor = colordefol
+      const sele = window.getComputedStyle(document.querySelector('.selected'))
+      let changecolor = sele.getPropertyValue('background-color')
+      console.log(changecolor);
       let colorStandard = document.querySelector('.pixel').style.backgroundColor
-      if (pixel.style.backgroundColor === colorStandard) {
         pixel.style.backgroundColor = changecolor
-      } else {
-        pixel.style.backgroundColor = colorStandard
-      }
     }) 
   }
 };
 
-colorTransfer()
+
 
