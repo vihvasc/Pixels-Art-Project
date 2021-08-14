@@ -3,11 +3,12 @@ const takeBody = document.getElementsByTagName('body');
 const listColor = ['rgba(0,0,0)', 'rgba(51, 221, 255)', 'rgba(245, 214, 34)', 'rgba(245, 32, 34)'];
 const gridLength = 5;
 let currentColor = 'rgba(0,0,0)';
-
+paletteItem[0].style.backgroundColor = currentColor;
 
 function pickColor(evento) {
   const newColor = getComputedStyle(evento.target);
-  for (let item of paletteItem) {
+  for (let index = 0; index < paletteItem.length; index += 1) {
+    const item = paletteItem[index];
     item.classList.remove('selected');
   }
   evento.target.classList.add('selected');
@@ -15,7 +16,7 @@ function pickColor(evento) {
 }
 
 function appendPaletteColor() {
-  paletteItem[0].classList.add('selected')
+  paletteItem[0].classList.add('selected');
   for (let index = 0; index < paletteItem.length; index += 1) {
     paletteItem[index].style.backgroundColor = listColor[index];
     paletteItem[index].addEventListener('click', pickColor);
@@ -24,7 +25,7 @@ function appendPaletteColor() {
 
 function changeColor(evento) {
   const fundo = evento.target;
-  console.log(fundo.style.backgroundColor)
+
   fundo.style.backgroundColor = currentColor;
 }
 
