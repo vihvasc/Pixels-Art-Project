@@ -55,3 +55,14 @@ function toColor() {
   }
 }
 toColor();
+
+function buttonClear() {
+  const clearPixels = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < clearPixels.length; index += 1) {
+    clearPixels[index].style.backgroundColor = 'white';
+  }
+}
+
+const clearButton = document.getElementById('clear-board');
+clearButton.addEventListener('click', buttonClear);
