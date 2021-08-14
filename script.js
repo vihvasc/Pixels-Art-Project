@@ -97,8 +97,46 @@ criaPixelsNoContainer(5, 5);
 
 function firstSelected() {
   let elementoComCorInicial = document.getElementsByClassName('color');
-  console.log(elementoComCorInicial);
+  // console.log(elementoComCorInicial);
   elementoComCorInicial[0].className += " selected";
 
 }
 firstSelected();
+
+// 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+// A classe selected deve ser adicionada à cor selecionada na paleta, ao mesmo tempo em que é removida da cor anteriormente selecionada;
+// Somente uma das cores da paleta deve ter a classe selected de cada vez;
+// Note que os elementos que deverão receber a classe selected devem ser os mesmos elementos que possuem a classe color, como especificado no requisito 2
+
+function elementoSelecionado() {
+  let elementoDaPaleta = document.getElementsByClassName('color');
+  // console.log(elementoDaPaleta[0]); // [DEBUG]
+  // console.log(elementoDaPaleta[1]); // [DEBUG]
+  // console.log(elementoDaPaleta[2]); // [DEBUG]
+  // console.log(elementoDaPaleta[3]); // [DEBUG]
+  elementoDaPaleta[0].addEventListener('click', function() {
+    elementoDaPaleta[0].className = 'color black selected';
+    elementoDaPaleta[1].className = 'color red';
+    elementoDaPaleta[2].className = 'color green';
+    elementoDaPaleta[3].className = 'color blue';
+  });
+  elementoDaPaleta[1].addEventListener('click', function() {
+    elementoDaPaleta[0].className = 'color black';
+    elementoDaPaleta[1].className = 'color red selected';
+    elementoDaPaleta[2].className = 'color green';
+    elementoDaPaleta[3].className = 'color blue';
+  });
+  elementoDaPaleta[2].addEventListener('click', function() {
+    elementoDaPaleta[0].className = 'color black';
+    elementoDaPaleta[1].className = 'color red';
+    elementoDaPaleta[2].className = 'color green selected';
+    elementoDaPaleta[3].className = 'color blue';
+  });
+  elementoDaPaleta[3].addEventListener('click', function() {
+    elementoDaPaleta[0].className = 'color black';
+    elementoDaPaleta[1].className = 'color red';
+    elementoDaPaleta[2].className = 'color green';
+    elementoDaPaleta[3].className = 'color blue selected';
+  });
+}
+elementoSelecionado();
