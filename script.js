@@ -3,7 +3,6 @@ const colorPallet = document.createElement('div');
 colorPallet.id = 'color-palette';
 document.body.appendChild(colorPallet);
 const numberOfColors = 4;
-
 for (let i = 0; i < numberOfColors; i += 1) {
   const newDiv = document.createElement('div');
   newDiv.className = 'color';
@@ -39,7 +38,6 @@ function reset() {
     pixel[i].style.background = 'white';
   }
 }
-
 const resetBtn = document.createElement('button');
 resetBtn.addEventListener('click', reset);
 resetBtn.id = 'clear-board';
