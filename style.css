@@ -2,16 +2,38 @@
 body {
     margin: 0%;
     padding: 0%;
+    background-color:#161618;
+    color: #eee;
+}
+
+#title {
+    margin: 0px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    background-color: #036b52;
+    border-bottom: 10px solid #2fc18c;
 }
 
 #color-palette {
     width: 80%;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 #pixel-board {
     width: 80%;
     margin-left: 20px;
+}
+
+#clear-board {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-bottom: 5px;
 }
 
 .color {
@@ -38,7 +60,6 @@ body {
     background-color: darkred;
 }
 
-
 .pixel {
     width: 40px;
     height: 40px;
@@ -46,4 +67,6 @@ body {
     border: 1px solid black;
     background-color: white;
 }
+
+
 

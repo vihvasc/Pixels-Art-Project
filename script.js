@@ -25,6 +25,16 @@ function createPixel(value) {
 }
 createPixel(25);
 
+function verificarColor() {
+  const paletaCores = document.querySelectorAll('.color');
+  for (let key = 0; key < paletaCores.length; key += 1) {
+    const verificar = paletaCores[key].className;
+    if (verificar.includes('selected')) {
+      paletaCores[key].classList.remove('selected');
+    }
+  }
+}
+
 function selected() {
   const paletaCores = document.querySelectorAll('.color');
   for (let key = 0; key < paletaCores.length; key += 1) {
@@ -36,35 +46,17 @@ function selected() {
 }
 selected();
 
-function verificarColor() {
-  const paletaCores = document.querySelectorAll('.color');
-  for (let key = 0; key < paletaCores.length; key += 1) {
-    const verificar = paletaCores[key].className;
-    if (verificar.includes('selected')) {
-      paletaCores[key].classList.remove('selected');
-    }
-  }
-}
-
 function pintar() {
   const pixel = document.querySelectorAll('.pixel');
   for (let key = 0; key < pixel.length; key += 1) {
     pixel[key].addEventListener('click', () => {
       const corSelected = document.querySelector('.selected');
       const colorAdd = corSelected.classList[1];
-      pixel[key].classList.add('paint');
-      paint(colorAdd);
+      pixel[key].style.backgroundColor = colorAdd;
     });
   }
 }
 pintar();
-
-function paint(value) {
-  const pintando = document.querySelectorAll('.paint');
-  for (let key = 0; key < pintando.length; key += 1) {
-    pintando[key].style.backgroundColor = value;
-  }
-}
 
 function button() {
   const botao = document.getElementById('clear-board');
