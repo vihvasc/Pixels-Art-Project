@@ -89,8 +89,7 @@ function pixelWhite() {
   button.addEventListener('click', function () {
     for (let index = 0; index < pixel.length; index += 1) {
       pixel[index].style.backgroundColor = 'white';
-    }
-  })
+    }})
 }
 
 pixelWhite();
