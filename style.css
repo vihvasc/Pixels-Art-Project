@@ -1,29 +1,27 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-
-#color-palette{
-  display: inline-block;
-  margin-left: 350px;
-  margin-top: 40px;
+#color-palette {
+  display: flexbox;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.color{
+.color {
   display: inline-block;
   width: 40px;
   height: 40px;
-  margin: 0 auto;
+  margin: auto;
 }
 
-#pixel-board{
-  max-width:202px;
-  height:202px;
+#pixel-board {
+  max-width: 202px;
+  height: 202px;
   border: 1px solid #000;
-  margin: 40px auto;
 }
 
-.pixel{
+.pixel {
   display: table-cell;
   width: 40px;
   height: 40px;
