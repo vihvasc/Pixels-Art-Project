@@ -44,6 +44,17 @@ h1 {
   border-radius: 20px;
 }
 
+main {
+  margin-bottom: 20px;
+}
+
 header {
   background-color: rgb(3, 107, 82);
+}
+
+footer {
+  background-color: rgb(3, 107, 82);
+  bottom: 0;
+  padding: 20px;
+  color: white;
 }
