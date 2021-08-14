@@ -70,7 +70,7 @@ for (let i = 0; i < allPixels.length; i++) {
     
 }}
 
-function clear(){
+// function clear(){
 
-}
-clearButton.addEventListener('click')
+// }
+//clearButton.addEventListener('click')
