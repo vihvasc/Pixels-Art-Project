@@ -1,4 +1,4 @@
-#cor1 {
+/* #cor1 {
   background-color: black;
 }
 
@@ -12,7 +12,7 @@
 
 #cor4 {
   background-color: yellow;
-}
+} */
 
 .color {
   width: 40px;
@@ -32,6 +32,3 @@
   background-color: white;
 }
 
-.selected {
-    background-color: black;
-}

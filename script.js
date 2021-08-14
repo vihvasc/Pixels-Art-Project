@@ -1,12 +1,14 @@
 const pixels = document.getElementsByClassName('pixel');
 let c1 = document.getElementById('cor1');
+c1.style.backgroundColor = 'black'
 let c2 = document.getElementById('cor2');
+c2.style.backgroundColor = 'blue'
 let c3 = document.getElementById('cor3');
+c3.style.backgroundColor = 'green'
 let c4 = document.getElementById('cor4');
-let elem = document.getElementsByClassName('color selected');
+c4.style.backgroundColor = 'yellow'
 let cores = document.getElementsByClassName('color');
-
-
+document.getElementById('cor1').classList.add('selected');
 
 
 function selectedColor(cor) {
@@ -15,22 +17,29 @@ function selectedColor(cor) {
     }
   let c = cor.target;
   c.classList.add('selected');
-  console.log(elem);
+   
+}
 
+function pintarPixel2 () {
+    const selected2 = document.querySelector('.selected')
+    const corr = selected2.style.backgroundColor
+    event.target.style.backgroundColor = corr
+}
+
+function pintarPixel () {
+
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].addEventListener('click', pintarPixel2);
+  }
+    
 
 }
 
-function pintarPixel (pixel) {
-  let pintar = pixel.target;
-  
-}
+pintarPixel ()
 
-for (let i = 0; i < pixels.length; i += 1) {
-  pixels[i].addEventListener('click', pintarPixel);
-}
+
 
 for (let i = 0; i < cores.length; i += 1) {
   cores[i].addEventListener('click', selectedColor)
 }
 
-document.getElementById('cor1').classList.add('selected');
