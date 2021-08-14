@@ -14,6 +14,43 @@ function changeClassSelected(event) {
   evento.classList.add('selected');
 }
 
+const selected = document.getElementsByClassName('pixel');
+
+for (let key of selected) {
+  key.addEventListener('click', changeColorPixel);
+}
+
+function changeColorPixel(event) {
+  const selectedColor = document.querySelectorAll('.selected')[0];
+  console.log(selectedColor);
+  const evento = event.target;
+  console.log(evento);
+  if (selectedColor.id === 'black') {
+    evento.style.backgroundColor = 'black';
+  }
+  if (selectedColor.id === 'blue') {
+    evento.style.backgroundColor = 'blue';
+  }
+  if (selectedColor.id === 'pink') {
+    evento.style.backgroundColor = 'pink';
+  }
+  if (selectedColor.id === 'yellow') {
+    evento.style.backgroundColor = 'yellow';
+  }
+}
+
+// requisito 9
+// const button = document.getElementById('clear-board');
+// button.addEventListener('click', changeColors);
+
+// function changeColors() {
+//   const squarePixels = document.getElementsByClassName('pixel');
+//   console.log(squarePixels);
+//   for (let key of squarePixels) {
+//     key.classList.toggle('white');
+//     console.log(key);
+//   }
+//Quadrado de pixels dinamico;
 // nDeLinhas(5);
 // nDePixelsLinha(5);
 
