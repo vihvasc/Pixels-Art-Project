@@ -1,9 +1,14 @@
-.color  {
+li {
+  list-style-type: none;
+}
+.color {
   display: inline-block;
   border: 1px solid black;
   width: 50px;
   height: 50px;
+  margin-bottom: 20px;
 }
+
 #firstColor {
   background-color: black;
 }
@@ -18,4 +23,14 @@
 
 #fourthColor {
   background-color: green;
+}
+
+.pixel {
+  border: 1px solid black; 
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  display: inline-block;
+  margin-left: -4px;
+  margin-top: -4px;
 }
