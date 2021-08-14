@@ -75,6 +75,8 @@ adicionaContainerPixels();
 function usuarioGeraQuadrado() {
   const inputGQ = document.createElement('input');
   inputGQ.id = 'board-size';
+  inputGQ.type = 'number';
+  inputGQ.min = 1;
   const botaoGQ = document.createElement('button');
   botaoGQ.id = 'generate-board';
   botaoGQ.innerText = 'VQV';
