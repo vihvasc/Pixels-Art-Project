@@ -5,6 +5,8 @@ function pixelArts() {
   createColorPalette();
   createColors();
   changeColor();
+  pixelFrame();
+  internalFrame();
 }
 // requisito 1
 function pageTitle() {
@@ -35,3 +37,20 @@ function changeColor() {
   firstColor.style.backgroundColor = 'black';
 }
 // requisito 4
+function pixelFrame() {
+  framePrincipal = document.createElement('ul');
+  framePrincipal.id = 'pixel-board';
+  document.body.appendChild(framePrincipal);
+}
+function internalFrame() {
+  let frames = ['F1', 'F2', 'F3', 'F4', 'F5'];
+  let framePrincipal = document.getElementById('pixel-board');
+  for(let square of frames) {
+    for(square of frames) {
+      let liInternalFrame = document.createElement('li');
+      liInternalFrame.className = 'pixel';
+      framePrincipal.appendChild(liInternalFrame);
+      console.log(square);
+    }
+  }
+}
