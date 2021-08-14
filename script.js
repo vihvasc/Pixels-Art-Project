@@ -4,10 +4,12 @@ window.onload = initialSetup;
 
 function initialSetup() {
   var pixelBoard = document.querySelector('#pixel-board');
-  var pixelSize = Number(getComputedStyle(root).getPropertyValue('--user-input'));
-  gridSize = pixelSize * pixelSize;
+  var pixelSize = getComputedStyle(root).getPropertyValue('--user-input');
+  var pixelSizeNumber = Number(pixelSize);
+  var gridSize = pixelSizeNumber * pixelSizeNumber;
   var gridSizeString = String(gridSize) + 'px';
-  root.style.setProperty('--grid-size', gridSizeString);
+  root.style.setProperty('--grid-size', gridSize);
+  root.style.setProperty('--grid-size-px', gridSizeString)
   for (let index = 1; index <= gridSize; index += 1) {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
@@ -24,7 +26,6 @@ function initialSetup() {
   var clearButton = document.querySelector('#clear-board');
   var input = document.querySelector('#board-size');
   var gridButton = document.querySelector('#generate-board');
-
   blackColor.classList.add('selected');
 
   for (let index = 0; index < colorsArrayLength; index += 1) {
@@ -38,6 +39,24 @@ function initialSetup() {
   clearButton.addEventListener('click', clearBoard);
   
   gridButton.addEventListener('click', checkInput);
+
+  // function exercise5() {
+  //   var sideExercise = getComputedStyle(root).getPropertyValue('--side');
+  //   var sideExerciseNumber = Number(sideExercise);
+  //   var sideGrid = sideExerciseNumber * sideExerciseNumber;
+  //   var sideGridString = sideGrid + 'px'
+  //   root.style.setProperty('--grid-size-px', sideGridString)
+  //   for (let index = 1; index <= 5; index += 1) {
+  //     let pixel = document.createElement('div');
+  //     pixel.classList.add('pixel');
+  //     pixelBoard.appendChild(pixel);
+  //   }
+  //   for (let index = 0; index < pixelsArrayLength - 1; index += 1) {
+  //     pixelsArray[index].style.width = sideExercise;
+  //     pixelsArray[index].style.height = sideExercise;
+  //   }
+  // }
+  // exercise5();
 
   function addSelected(originEvent) {
     const element = originEvent.target;
@@ -73,20 +92,21 @@ function initialSetup() {
   }
   
   function addPixels() {
-    var pixelSize = input.value;
-    var pixelSizeString = String(pixelSize);
-    console.log(pixelSizeString)
-    var gridSize = pixelSize * pixelSize;
-    var gridSizeString = String(gridSize) + 'px';
-    root.style.setProperty('--user-input', pixelSizeString);
-    root.style.setProperty('--grid-size', gridSizeString);
+    var pixelSizeNumber = Number(input.value);
+    var pixelSizeString = String(pixelSizeNumber) + 'px';
+    root.style.setProperty('--user-input', String(pixelSizeNumber));
+    root.style.setProperty('--user-input-px', pixelSizeString);
+    var gridSizeNumber = pixelSizeNumber * pixelSizeNumber;
+    var gridSizeString = String(gridSizeNumber) + 'px';
+    root.style.setProperty('--grid-size', String(gridSizeNumber));
+    root.style.setProperty('--grid-size-px', gridSizeString);
     pixelBoard.innerHTML = '';
-    for (let index = 1; index <= gridSize; index += 1) {
+    for (let index = 1; index <= gridSizeNumber; index += 1) {
       let pixel = document.createElement('div');
       pixel.classList.add('pixel');
       pixelBoard.appendChild(pixel);
+      pixel.addEventListener('click', paintSquare);
     }
-    root.style.setProperty('--number-of-elements', pixelSize);
     clearBoard();
   }
   

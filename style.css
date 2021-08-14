@@ -1,6 +1,9 @@
 :root {
   --user-input: 5;
+  --user-input-px: 5px;
   --grid-size: 0;
+  --grid-size-px: 0;
+  --side: 40px;
 }
 
 #title {
@@ -44,14 +47,17 @@
 }
 
 #pixel-board {
+  border: 1px solid black;
   display: grid;
-  grid-template-columns: repeat(var(--user-input), var(--grid-size));
-  grid-template-rows: repeat(var(--user-input), var(--grid-size));
+  max-width: var(--grid-size-px);
+  max-height: var(--grid-size-px);
+  grid-template-columns: repeat(var(--user-input), var(--user-input-px));
+  grid-template-rows: repeat(var(--user-input), var(--user-input-px));
 }
 
 .pixel {
   border: 1px solid black;
-  width: var(--user-input) + 0px;
-  height: var(--user-input) + 0px;
+  width: var(--user-input-px);
+  height: var(--user-input-px);
   background-color: white;
 }
