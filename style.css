@@ -1,4 +1,8 @@
-.box{
+body{
+    text-align: center;
+}
+
+.color{
     border: solid black 1px;
     width: 40px;
     height: 40px;
@@ -32,4 +36,5 @@
 
 .ull{
     margin: 2px;
+    padding-left: 0%;
 }
