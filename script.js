@@ -5,12 +5,11 @@ const btnGenerateCanvas = document.getElementById('generate-board');
 const inputBoardSize = document.getElementById('board-size');
 let selectedColor;
 const config = {
-  colors: ['black', 'green', 'blue', 'yellow'],
+  colors: ['black'],
   pixelSize: 40,
   pixelSizeFormated: '40px',
   canvasLineLength: 5,
 };
-
 
 // Pinta um pixel.
 function paintPixel(event) {
