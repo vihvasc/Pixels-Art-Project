@@ -20,10 +20,12 @@ function criarPaletaCores() {
   const paletaCores = document.createElement('div');
   paletaCores.id = 'color-palette';
   const totalCores = 4;
-  const coresDaPaleta = ['black', 'red', 'green', 'blue'];
+  // Function capturada do Site: 
+  const coresDaPaleta = ['black', "#"+((1<<24)*Math.random()|0).toString(16), "#"+((1<<24)*Math.random()|0).toString(16), "#"+((1<<24)*Math.random()|0).toString(16)];
   document.body.appendChild(paletaCores);
   // Separador
   for (let index = 0; index < totalCores; index += 1) {
+    let corRandonica = "#"+((1<<24)*Math.random()|0).toString(16);
     const novaCor = document.createElement('div');
     novaCor.className = 'color ' + coresDaPaleta[index];
     novaCor.style.borderColor = 'black';
