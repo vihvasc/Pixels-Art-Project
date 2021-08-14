@@ -36,34 +36,45 @@ function makeBoard(board = 5) {
 function cleanBoard() {
   const pixels = document.querySelectorAll('.pixel');
 
-  for (const pixel of pixels) {
+  pixels.forEach((element) => {
+    const pixel = element;
     pixel.style.backgroundColor = 'white';
-  }
+  });
+  // for (const pixel of pixels) {
+  //   pixel.style.backgroundColor = 'white';
+  // }
 }
 
 function removeBoard() {
   const lines = document.querySelectorAll('.line');
 
-  for (const line of lines) {
+  lines.forEach((element) => {
+    const line = element;
     line.remove();
-  }
-}
-
-function generateColors() {
-  const colors = document.querySelectorAll('.random-col');
-
-  for(const col of colors) {
-    col.style.backgroundColor = randomColor()
-  }
+  });
+  // for (const line of lines) {
+  //   line.remove();
+  // }
 }
 
 function randomColor() {
   const r = Math.floor(Math.random() * 256);
   const g = Math.floor(Math.random() * 256);
   const b = Math.floor(Math.random() * 256);
-  return `rgb(${r},${g},${b})`
+  return `rgb(${r},${g},${b})`;
 }
 
+function generateColors() {
+  const colors = document.querySelectorAll('.random-col');
+
+  colors.forEach((element) => {
+    const color = element;
+    color.style.backgroundColor = randomColor();
+  });
+  // for (const col of colors) {
+  //   col.style.backgroundColor = randomColor();
+  // }
+}
 
 boardButton.addEventListener('click', () => {
   if (!boardSizeInput.value) window.alert('Board inválido!');
@@ -102,5 +113,5 @@ pixelBoard.addEventListener('click', (e) => {
 
 window.onload = () => {
   makeBoard();
-  generateColors()
+  generateColors();
 };
