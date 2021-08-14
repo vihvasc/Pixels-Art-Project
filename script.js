@@ -7,6 +7,11 @@ const pickingDarkBlack = document.getElementById('dark-black');
 const clearBoard = document.getElementById('clear-board');
 const allPixels = document.getElementsByClassName('pixel');
 
+pickingDarkBlack.style.backgroundColor = 'black';
+pickingBrightPink.style.backgroundColor = '#d80f74';
+pickingDarkPink.style.backgroundColor = '#8c0d47';
+pickingDarkBlue.style.backgroundColor = '#0c728e';
+
 for (let i = 0; i < amount; i += 1) {
   const pixel = document.createElement('div');
   pixel.className = 'pixel';
