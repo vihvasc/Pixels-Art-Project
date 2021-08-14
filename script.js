@@ -79,7 +79,7 @@ function selectFirstColor() {
 }
 
 // Apaga/reseta o quadro.
-function eraseCanvas() {
+function cleanCanvas() {
   const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
@@ -98,17 +98,22 @@ function validateSizeInput(value) {
   return fixedValue;
 }
 
-// Determina o tamanho do quadro.
-function changeCanvasSize() {
-  if (inputBoardSize.value === '') {
-    return alert('Board inválido!');
-  }
+// Apaga o quadro.
+function deleteCanvas() {
   const lines = document.getElementsByClassName('color-line');
   const linesLength = lines.length;
   for (let index = linesLength - 1; index >= 0; index -= 1) {
     lines[index].remove();
   }
+}
 
+// Determina o tamanho do quadro.
+function changeCanvasSize() {
+  if (inputBoardSize.value === '') {
+    return alert('Board inválido!');
+  }
+
+  deleteCanvas();
   const sizeInput = validateSizeInput(inputBoardSize.value);
   config.canvasLineLength = sizeInput;
   inputBoardSize.value = sizeInput;
@@ -141,7 +146,7 @@ function init() {
   insertColorPalette();
   insertCanvas();
   selectFirstColor();
-  btnEraseCanvas.addEventListener('click', eraseCanvas);
+  btnEraseCanvas.addEventListener('click', cleanCanvas);
   btnGenerateCanvas.addEventListener('click', changeCanvasSize);
 }
 
