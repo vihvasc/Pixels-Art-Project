@@ -92,17 +92,23 @@ function usuarioGeraQuadrado() {
       valorBoard = 50;
     }
     // limpaPixels();
-    // removeBoard();
+    removeBoard();
     criaPixelsNoContainer(valorBoard, valorBoard);
     preparaPixels();
   } );
 
 }
 
-function limpaPixels() {
-  const elementosPixel = document.getElementsByClassName('pixel');
-  for (let index = 0; index < elementosPixel.length; index += 1) {
-    elementosPixel[index].remove;
+function removeBoard() {
+  pixelsNoQuadro = document.querySelectorAll('.pixel');
+  linhaDePixels = document.querySelectorAll('.board-line');
+
+  for (let index = 0; index < pixelsNoQuadro.length; index += 1) {
+    pixelsNoQuadro[index].remove();
+  }
+
+  for (let index = 0; index < linhaDePixels.length; index += 1) {
+    linhaDePixels[index].remove();
   }
 }
 
