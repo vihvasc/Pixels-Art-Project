@@ -44,6 +44,16 @@ color4.addEventListener('click', changeSelectedColor);
 function setPixelColor(event) {
   const selectedColor = document.querySelector('.selected');
   const getPixelColor = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
+  console.log(window.getComputedStyle(selectedColor));
   event.target.style.backgroundColor = getPixelColor;
 }
 pixelBoard.addEventListener('click', setPixelColor);
+
+// Limpar quadro de pixels
+const button = document.getElementById('clear-board');
+const pixels = document.getElementsByClassName('pixel');
+button.addEventListener('click', function () {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+});
