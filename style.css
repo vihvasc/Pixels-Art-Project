@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap') ;
 
 * {
   margin: 0;
@@ -7,8 +7,8 @@
 }
 
 body {
-  font-family: 'Lobster', sans-serif;
-  font-size: .9rem;
+  font-family: Lobster, sans-serif;
+  font-size: 0.9rem;
 }
 
 header {
@@ -33,9 +33,9 @@ h1 {
   text-align: center;
   color: #f3f3f3;
   background-color: #13704c;
-  padding:0 .1em;
+  padding: 0 0.1em;
   border-radius: 1em;
-  margin-bottom: .2em;
+  margin-bottom: 0.2em;
 }
 
 main {
@@ -50,16 +50,15 @@ main {
 }
 
 input {
-  margin: 0 .5em;
+  margin: 0 0.5em;
 }
 
 /* Color Pallete */
-
 .color {
   height: 50px;
   width: 50px;
   border: 1px solid black;
-  display: inline-block
+  display: inline-block;
 }
 
 .black {
@@ -67,7 +66,6 @@ input {
 }
 
 /* Pixel Board */
-
 #pixel-board {
   border: 1px solid green;
   padding: 1em;
@@ -80,5 +78,5 @@ input {
   width: 40px;
   display: inline-block;
   border: 1px solid black;
-  background-color: rgb(255,255,255);
+  background-color: white;
 }
