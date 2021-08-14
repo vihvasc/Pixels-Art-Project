@@ -19,15 +19,24 @@ criarElementoH1();
 function criarPaletaCores() {
   const paletaCores = document.createElement('div');
   paletaCores.id = 'color-palette';
-  const totalCores = 4;
-  // Function capturada do Site: 
-  const coresDaPaleta = ['black', "#"+((1<<24)*Math.random()|0).toString(16), "#"+((1<<24)*Math.random()|0).toString(16), "#"+((1<<24)*Math.random()|0).toString(16)];
+  const totalCores = 10;
+  // Function capturada do Site: https://www.ti-enxame.com/pt/javascript/gerador-de-cores-aleatorias/967183954/
+  const coresDaPaleta = ['black', "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16),
+  "#"+((1<<24)*Math.random()|0).toString(16)];
   document.body.appendChild(paletaCores);
   // Separador
   for (let index = 0; index < totalCores; index += 1) {
     let corRandonica = "#"+((1<<24)*Math.random()|0).toString(16);
     const novaCor = document.createElement('div');
-    novaCor.className = 'color ' + coresDaPaleta[index];
+    novaCor.className = 'color ';
     novaCor.style.borderColor = 'black';
     novaCor.style.borderStyle = 'solid';
     novaCor.style.borderWidth = '1px';
@@ -177,30 +186,43 @@ function elementoSelecionado() {
   // console.log(elementoDaPaleta[1]); // [DEBUG]
   // console.log(elementoDaPaleta[2]); // [DEBUG]
   // console.log(elementoDaPaleta[3]); // [DEBUG]
-  elementoDaPaleta[0].addEventListener('click', function() {
-    elementoDaPaleta[0].className = 'color black selected';
-    elementoDaPaleta[1].className = 'color red';
-    elementoDaPaleta[2].className = 'color green';
-    elementoDaPaleta[3].className = 'color blue';
-  });
-  elementoDaPaleta[1].addEventListener('click', function() {
-    elementoDaPaleta[0].className = 'color black';
-    elementoDaPaleta[1].className = 'color red selected';
-    elementoDaPaleta[2].className = 'color green';
-    elementoDaPaleta[3].className = 'color blue';
-  });
-  elementoDaPaleta[2].addEventListener('click', function() {
-    elementoDaPaleta[0].className = 'color black';
-    elementoDaPaleta[1].className = 'color red';
-    elementoDaPaleta[2].className = 'color green selected';
-    elementoDaPaleta[3].className = 'color blue';
-  });
-  elementoDaPaleta[3].addEventListener('click', function() {
-    elementoDaPaleta[0].className = 'color black';
-    elementoDaPaleta[1].className = 'color red';
-    elementoDaPaleta[2].className = 'color green';
-    elementoDaPaleta[3].className = 'color blue selected';
-  });
+  for ( let index = 0; index < elementoDaPaleta.length; index += 1){
+
+    if (index === 0) {
+      elementoDaPaleta[0].addEventListener('click', function() {
+        for (let index = 1; index< elementoDaPaleta.length; index +=1 ){
+          elementoDaPaleta[index].className = 'color ';
+        }
+      elementoDaPaleta[index].className = 'color selected';
+      });
+    } else {
+      elementoDaPaleta[index].addEventListener('click', function() {
+        for (let index = 0; index< elementoDaPaleta.length; index +=1 ){
+          elementoDaPaleta[index].className = 'color';
+        }
+      elementoDaPaleta[index].className = 'color selected';
+      });
+    }
+  }
+  
+  // elementoDaPaleta[1].addEventListener('click', function() {
+  //   elementoDaPaleta[0].className = 'color black';
+  //   elementoDaPaleta[1].className = 'color red selected';
+  //   elementoDaPaleta[2].className = 'color green';
+  //   elementoDaPaleta[3].className = 'color blue';
+  // });
+  // elementoDaPaleta[2].addEventListener('click', function() {
+  //   elementoDaPaleta[0].className = 'color black';
+  //   elementoDaPaleta[1].className = 'color red';
+  //   elementoDaPaleta[2].className = 'color green selected';
+  //   elementoDaPaleta[3].className = 'color blue';
+  // });
+  // elementoDaPaleta[3].addEventListener('click', function() {
+  //   elementoDaPaleta[0].className = 'color black';
+  //   elementoDaPaleta[1].className = 'color red';
+  //   elementoDaPaleta[2].className = 'color green';
+  //   elementoDaPaleta[3].className = 'color blue selected';
+  // });
 }
 elementoSelecionado();
 
