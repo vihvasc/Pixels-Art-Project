@@ -7,8 +7,9 @@
 
 main {
   position: relative;
-  display: flex;
+  display: block;
 }
+
 
 #title {
   text-align: center;
@@ -16,11 +17,17 @@ main {
 }
 
 #color-palette {
+  position: relative;
   display: flex;
   align-content: center;
   justify-content: center;
+  bottom: 20px;
 }
-
+#button-clear {
+  display: flex;
+  align-content: center;
+  justify-content: center;  
+}
 .color {
   width: 40px;
   height: 40px;
@@ -43,6 +50,14 @@ main {
   background-color: white;
   display: table-cell;
 }
-.lines {
+.lines { 
   display: table-row;
+} 
+button{
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;  
 }
