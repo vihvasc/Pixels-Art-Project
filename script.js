@@ -1,36 +1,48 @@
-function paletteColors() {
-    let paletteColors = document.getElementById('color-palette');
-    let contentColor = document.getElementsByClassName('color');
-    contentColor[0].classList.add('selected');
-    let colors = ['black', 'yellow', 'green', 'red'];
+let contentPalette = document.querySelector('.colors-ul');
+let colorPalette = document.getElementsByClassName('color');
+let pixelBoard = document.querySelector('#pixel-board');
+let pixel = document.getElementsByClassName('pixel');
+let colorPixel;
+let colors = ['black', 'red', 'green', 'yellow'];
 
-    for (let index = 0; index < contentColor.length; index += 1) {
-        contentColor[index].style.backgroundColor = colors[index];
-        contentColor[index].addEventListener('click', changeClass);
-    }
+function createColorsAndAddClass() {
+    let quantListItem = 4;
 
-    function changeClass(event) {
-        let selected = document.querySelector('.selected');
-        selected.classList.remove('selected');
-        
-        event.target.classList.add('selected');
+    for (let i = 0; i < quantListItem; i += 1) {
+        let li = document.createElement('li');
+        li.className = 'color';
+        li.style.backgroundColor = colors[i];
+        contentPalette.appendChild(li);
     }
+    colorPalette[0].classList.add('selected');
 }
 
-paletteColors();
+createColorsAndAddClass();
 
-
-function pixelBoard() {
-    let pixelBoard = document.getElementById('pixel-board');
-    let numberOfPixel = 25;
-
-    for (let index = 0; index < numberOfPixel; index += 1) {
+function generatePixelInBoard() {
+    let quantPixel = 25;
+    for (let i = 0; i < quantPixel; i += 1) {
         let pixel = document.createElement('div');
-        pixel.className = 'pixel';
+        pixel.className= 'pixel';
         pixel.style.backgroundColor = 'white';
-
         pixelBoard.appendChild(pixel);
     }
 }
 
-pixelBoard();
+generatePixelInBoard();
+
+function setSelectedClass(event) {
+    for (let i = 0; i < colorPalette.length; i += 1) {
+        colorPalette[i].classList.remove('selected')
+    }
+    event.target.classList.add('selected');
+}
+
+contentPalette.addEventListener('click', setSelectedClass);
+
+function paintPixel(event) {
+    colorPixel = document.querySelector('.selected');
+    event.target.style.backgroundColor = colorPixel.style.backgroundColor;
+}
+
+pixelBoard.addEventListener('click', paintPixel);
