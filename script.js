@@ -1,3 +1,9 @@
+function selectColor() {
+  const defaultColor = document.getElementById('black');
+  defaultColor.className += ' selected';
+}
+selectColor();
+
 function squareOfPixels() {
   for (let i = 0; i < 5; i += 1) {
     const line = document.createElement('div');
