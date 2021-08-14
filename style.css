@@ -44,4 +44,10 @@ body {
 #pixel-board {
   padding: 0;
   margin: 0;
+  display: inline-block;
+}
+
+#clear-board {
+  display: block;
+  margin: 30px;
 }
