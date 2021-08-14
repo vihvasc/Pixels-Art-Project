@@ -70,7 +70,11 @@ for (let i = 0; i < allPixels.length; i++) {
     
 }}
 
-// function clear(){
-
-// }
-//clearButton.addEventListener('click')
+function clear(){
+    let allPixels = document.querySelectorAll('.pixel')
+        for (let i = 0; i < allPixels.length; i++) {
+           allPixels[i].style.backgroundColor = 'white'
+            
+        }
+}
+clearButton.addEventListener('click', clear)
