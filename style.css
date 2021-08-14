@@ -12,13 +12,18 @@
 }
 
 #pixel-board {
-  max-height: 505px;
-  max-width: 505px;
-  background-color: red;
+  margin-left: 50px;
+}
+
+.linha {
+  display: table-row;
+  background-color: teal;
 }
 
 .pixel {
+  display: table-cell;
   background-color: white;
-  width: 100px;
-  height: 100px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
 }

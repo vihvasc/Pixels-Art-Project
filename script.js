@@ -45,15 +45,14 @@ function deletarLi(elemento, listali) {
 adicionarEscutadores();
 
 function criarQuadrosDePixels() {
-  const div = document.createElement('div');
-  div.id = 'pixel-board';
-
-  for(let i = 0; i < 25; i += 1) {
-    let pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    div.appendChild(pixel);
+  let linha = document.getElementsByClassName('linha');
+  for(let i = 0; i < linha.length; i += 1) {
+    for(let gerar = 1; gerar < 6; gerar += 1) {
+      let pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      linha[i].appendChild(pixel);
+    }
   }
-  
-  document.body.appendChild(div)
 }
+
 criarQuadrosDePixels();
