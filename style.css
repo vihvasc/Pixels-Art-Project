@@ -2,15 +2,6 @@
   background-color: black;
 }
 
-.selected {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  border: solid 1px black;
-  margin-left: -2px;
-  margin-bottom: 15px;
-}
-
 #cor2 {
   background-color: blue;
 }
@@ -39,4 +30,8 @@
   border: solid 1px black;
   margin: -2px;
   background-color: white;
+}
+
+.selected {
+    background-color: black;
 }
