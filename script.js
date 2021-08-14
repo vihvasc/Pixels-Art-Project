@@ -12,20 +12,18 @@ function colorGenerator() {
   return randomColor;
 }
 
-// Verifica se a função acima não tem cor repetida
-function colorRepeat() {
+// Função que servira para verificar repetição de valores
+function colorRepeat(quantCores) {
   const cores = document.querySelectorAll('.color');
   const newColor = colorGenerator();
 
   if (cores.length === 0) {
     return newColor;
   }
-  for (let i = 0; i < 4; i += 1) {
-    if (newColor === cores[i]) {
-      colorGenerator();
-    }
-    return newColor;
+  if (newColor === cores) {
+    colorRepeat(quantCores);
   }
+  return newColor;
 }
 
 // Desafio 2
@@ -36,9 +34,9 @@ function fourDistinctColorPalette(quantCores) {
     const palette = document.createElement('div');
     palette.className = 'color';
 
-    palette.style.backgroundColor = colorRepeat();
+    palette.style.backgroundColor = colorRepeat(quantCores);
     palette.style.border = '1px solid black';
-    div.appendChild(palette);		
+    div.appendChild(palette);
   }
 }
 
@@ -68,7 +66,7 @@ function paintPixels() {
   for (let i = 0; i < pixelList.length; i += 1) {
     const pixelSelected = pixelList[i];
 
-    pixelSelected.addEventListener('click', function uselessNameSecond() {
+    pixelSelected.addEventListener('click', () => {
       const colorItem = document.querySelector('.selected');
       const colorSelected = colorItem.style.backgroundColor;
 
@@ -106,7 +104,7 @@ function selectColor() {
   for (let z = 0; z < colorList.length; z += 1) {
     const button = colorList[z];
 
-    button.addEventListener('click', function uselessNameFirst() {
+    button.addEventListener('click', () => {
       for (let i = 0; i < colorList.length; i += 1) {
         colorList[i].classList.remove('selected');
       }
@@ -120,9 +118,9 @@ selectColor();
 // Desafio 9
 function clearButton() {
   const button = document.getElementById('clear-board');
-  const board = document.querySelectorAll('.pixel');
 
-  button.addEventListener('click', function uselessNameThird() {
+  button.addEventListener('click', () => {
+    const board = document.querySelectorAll('.pixel');
     for (let i = 0; i < board.length; i += 1) {
       board[i].style.backgroundColor = 'white';
     }
@@ -131,24 +129,34 @@ function clearButton() {
 
 clearButton();
 
+// Função adicional para o Desafio 10
+function boardPattern() {
+  const input = document.getElementById('board-size');
+  const entrada = input.value;
+  const size = document.getElementById('pixel-board');
+  if (entrada >= 1 && entrada <= 5) {
+    size.innerHTML = '';
+    quadroDePixels(5);
+  } else if (entrada >= 50) {
+    size.innerHTML = '';
+    quadroDePixels(50);
+  }
+}
+
 // Desafio 10
 function resizeBoard() {
   const input = document.getElementById('board-size');
   const button = document.getElementById('generate-board');
-  button.addEventListener('click', function uselessNameFour() {
+  button.addEventListener('click', () => {
     const entrada = input.value;
     const size = document.getElementById('pixel-board');
     if (entrada === '') {
       alert('Board inválido!');
-    } else if (entrada >= 1 && entrada <= 5) {
-      size.innerHTML = '';
-      quadroDePixels(5);
-    } else if (entrada >= 50) {
-      size.innerHTML = '';
-      quadroDePixels(50);
     } else if (entrada > 5 && entrada < 50) {
       size.innerHTML = '';
       quadroDePixels(entrada);
+    } else {
+      boardPattern();
     }
   });
 }
