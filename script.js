@@ -40,6 +40,7 @@ criarPaletaCores();
 
 // Chama função que cria Botão!!!
 botaoLimpaQuadro()
+usuarioGeraQuadrado();
 
 // Adicione à página um quadro de pixels, com 25 pixels.
 // O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
@@ -57,6 +58,54 @@ function adicionaContainerPixels() {
 }
 adicionaContainerPixels();
 
+// 10 - Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
+// Crie um input e um botão que permitam definir um quadro de pixels com tamanho entre 5 e 50. Ao clicar no botão,
+// deve ser gerado um quadro de N pixels de largura e N pixels de altura, onde N é o número inserido no input;
+//  Ou seja, se o valor passado para o input for 7, ao clicar no botão, vai ser gerado um quadro de 49 pixels
+// (7 pixels de largura x 7 pixels de altura);
+
+//  O input deve ter o id denominado board-size e o botão deve ter o id denominado generate-board;
+//  O input só deve aceitar número maiores que zero. Essa restrição deve ser feita usando os atributos do elemento input;
+//  O botão deve conter o texto "VQV";
+//  O input deve estar posicionado entre a paleta de cores e o quadro de pixels;
+//  O botão deve estar posicionado ao lado do input;
+
+// Se nenhum valor for colocado no input ao clicar no botão, mostre um alert com o texto: "Board inválido!";
+// O novo quadro deve ter todos os pixels preenchidos com a cor branca.
+function usuarioGeraQuadrado() {
+  const inputGQ = document.createElement('input');
+  inputGQ.id = 'board-size';
+  const botaoGQ = document.createElement('button');
+  botaoGQ.innerText = 'VQV';
+  document.body.appendChild(inputGQ);
+  document.body.appendChild(botaoGQ);
+  // console.log(inputGQ.innerText); // [DEBUG]
+  botaoGQ.addEventListener('click', function() {
+
+    let valorBoard = document.querySelector('#board-size').value;
+    if (!valorBoard > 0) {
+      window.alert('Board inválido!');
+      return null;
+    } else if (valorBoard < 5) {
+      valorBoard = 5;
+    } else if (valorBoard > 50) {
+      valorBoard = 50;
+    }
+    // limpaPixels();
+    // removeBoard();
+    criaPixelsNoContainer(valorBoard, valorBoard);
+    preparaPixels();
+  } );
+
+}
+
+function limpaPixels() {
+  const elementosPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < elementosPixel.length; index += 1) {
+    elementosPixel[index].remove;
+  }
+}
+
 function criaPixelsNoContainer(linhas, colunas) {
   const containerPixel = document.getElementById('pixel-board');
   // console.log(containerPixel); // [DEBUG]
@@ -67,7 +116,7 @@ function criaPixelsNoContainer(linhas, colunas) {
     elementoLinha.className = 'board-line';
     // elementoLinha.style.display = 'inline-block';
     elementoLinha.style.backgroundColor = 'white';
-    elementoLinha.style.width = '210px';
+    elementoLinha.style.width = '2100px';
     elementoLinha.style.height = '40px';
     containerPixel.appendChild(elementoLinha);
     for (let indexc = 0; indexc < elementosColuna; indexc += 1) {
@@ -85,7 +134,7 @@ function criaPixelsNoContainer(linhas, colunas) {
     }
   }
 }
-criaPixelsNoContainer(5, 5);
+// criaPixelsNoContainer(5, 5);
 
 // 5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura [OK]
 // e seja delimitado por uma borda preta de 1 pixel. [OK]
