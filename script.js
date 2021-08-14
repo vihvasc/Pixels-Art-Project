@@ -51,8 +51,9 @@ function addClass() {
 }
 addClass();
 
+const boxPixel = document.getElementsByClassName('pixel');
+
 function colorPixel() {
-  const boxPixel = document.getElementsByClassName('pixel');
   for (let index = 0; index < boxPixel.length; index += 1) {
     boxPixel[index].addEventListener('click', function (event) {
       let colorSelected = classSelected.style.backgroundColor;
@@ -61,3 +62,18 @@ function colorPixel() {
   }
 }
 colorPixel();
+
+function createButton() {
+  const button = document.createElement('button');
+  button.id = 'clear-board';
+  button.innerText = 'Limpar';
+  document.body.insertBefore(button, document.querySelector('#pixel-board'));
+
+  button.addEventListener('click', function (event) {
+    for (let index = 0; index < boxPixel.length; index += 1) {
+      boxPixel[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
+createButton();
