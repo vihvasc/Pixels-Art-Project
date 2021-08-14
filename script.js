@@ -66,3 +66,20 @@ function criarQuadrosDePixels() {
 }
 
 criarQuadrosDePixels();
+
+function apagar(){
+  document.getElementById('apaga').play();
+  let divsColoridas = document.querySelectorAll('.linha div');
+  for (let cor of divsColoridas) {
+    cor.style.backgroundColor = '';
+  }
+}
+
+function gerarBotaoReset() {
+  const button = document.getElementsByTagName('button')[0];
+  button.id = 'clear-board';
+  button.innerText = 'Limpar';
+  button.addEventListener('click', apagar);
+}
+
+gerarBotaoReset();
