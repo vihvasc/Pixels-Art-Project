@@ -34,3 +34,16 @@ function colorir(event) {
 }
 
 pixelBoard.addEventListener('click', colorir);
+
+// função para limpar a mesa
+const buttonClear = document.getElementById('clear-board');
+
+function clearBoard() {
+  const allPixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < allPixels.length; index += 1) {
+    const pixel = allPixels[index];
+    pixel.style.backgroundColor = 'white';
+  }
+}
+
+buttonClear.addEventListener('click', clearBoard);
