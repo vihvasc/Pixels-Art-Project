@@ -2,8 +2,10 @@ const firstColor = document.querySelectorAll('.color')[0];
 const secondColor = document.querySelectorAll('.color')[1];
 const thirdColor = document.querySelectorAll('.color')[2];
 const fourthColor = document.querySelectorAll('.color')[3];
+const clearButton = document.getElementById('clear-board');
 
 firstColor.classList.add('selected');
+clearButton.addEventListener("click", clearTable);
 firstColor.addEventListener("click", clickColor);
 secondColor.addEventListener("click", clickColor);
 thirdColor.addEventListener("click", clickColor);
@@ -22,7 +24,6 @@ function clickColor (event) {
 function changeColor(event) {
     const selected = document.querySelector('.selected');
     event.target.style.backgroundColor = selected.style.backgroundColor;
-    console.log('teste');
 }
 
 function createTable() {
@@ -37,3 +38,10 @@ function createTable() {
     }
 }
 createTable();
+
+function clearTable() {
+    const pixel = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.background = 'white';
+    }
+  }
