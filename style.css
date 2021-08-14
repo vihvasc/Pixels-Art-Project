@@ -1,6 +1,12 @@
+h1{
+ text-align: center;
+}
 #color-palette{
   width: 400px;
   height: 75px;
+  margin: auto;
+  padding: 0px;
+
   
 }
 .color {
@@ -8,15 +14,13 @@
   height: 40px;
   border: 1px solid black;
   float: left;
-  margin-right: 20px;
+  margin-left: 47px;
 }
 #pixel-board{
 width: 210px;
 height: 210px;
 background-color: red;
-/* border: 1px solid black; */
-/* margin: left; */
-/* margin-right: 20px; */
+margin: auto;
 }
 .pixel{
   width: 40px;
@@ -24,4 +28,15 @@ background-color: red;
   background-color: white;
   border: 1px solid black;
   float: left;
+}
+
+
+
+
+#x {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  float: left;
+  margin-left: 47px;
 }
