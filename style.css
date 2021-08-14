@@ -5,19 +5,19 @@
   border: 1px solid black;
 }
 
-.color:nth-of-type( 1 ) {
+#firstColor {
   background-color: black;
 }
 
-.color:nth-of-type( 2 ) {
+#secondColor {
   background-color: blueviolet;
 }
 
-.color:nth-of-type( 3 ) {
+#thirdColor {
   background-color: brown;
 }
 
-.color:nth-of-type( 4 ) {
+#fourthColor {
   background-color: aqua;
 }
 

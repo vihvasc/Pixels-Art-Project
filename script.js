@@ -1,5 +1,7 @@
 const test = document.querySelector('#pixel-board');
 const firstColor = document.getElementById('firstColor');
+firstColor.classList.add('selected');
+
 const secondColor = document.getElementById('secondColor');
 const thirdColor = document.getElementById('thirdColor');
 const fourthColor = document.getElementById('fourthColor');
@@ -17,7 +19,6 @@ function createPixelDivs(param1) {
 }
 createPixelDivs(5);
 
-/* https://github.com/LeonardoMonti/trybe-exercicios/blob/exercicios/5.3/01-fundamentos/bloco-5-javascript-dom-eventos-e-web-storage/dia-3-javascript-eventos/para-fixar/main.js */
 function addAndRemoveClassSelected(event) {
   firstColor.classList.remove('selected');
   secondColor.classList.remove('selected');
@@ -30,3 +31,27 @@ firstColor.addEventListener('click', addAndRemoveClassSelected);
 secondColor.addEventListener('click', addAndRemoveClassSelected);
 thirdColor.addEventListener('click', addAndRemoveClassSelected);
 fourthColor.addEventListener('click', addAndRemoveClassSelected);
+
+function selectionColor() {
+  const select = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < select.length; index += 1) {
+    select[index].addEventListener('click', () => {
+      const elem = document.querySelector('.selected');
+      const theCSSprop = window.getComputedStyle(elem, null).getPropertyValue('background-color');
+      select[index].style.backgroundColor = theCSSprop;
+    });
+  }
+}
+selectionColor();
+
+/* https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp */
+
+function toColor() {
+  const colorirPixel = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < colorirPixel.length; index += 1) {
+    colorirPixel[index].addEventListener('click', selectionColor);
+  }
+}
+toColor();
