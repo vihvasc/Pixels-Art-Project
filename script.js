@@ -42,16 +42,16 @@ function createPixels() {
     createLine.id = 'pixel-line';
     createLine.style.height = '40px';
     document.getElementById('pixel-board').appendChild(createLine);
-      for (let cols = 0; cols < gridSize; cols += 1) {
-        const createColumn = document.createElement('div');
-        createColumn.className = 'pixel';
-        createColumn.style.border = '1px solid black';
-        createColumn.style.display = 'inline-block';
-        createColumn.style.width = '40px';
-        createColumn.style.height = '40px';
-        createColumn.style.backgroundColor = '#ffffff';
-        createLine.appendChild(createColumn);
-      }    
+    for (let cols = 0; cols < gridSize; cols += 1) {
+      const createColumn = document.createElement('div');
+      createColumn.className = 'pixel';
+      createColumn.style.border = '1px solid black';
+      createColumn.style.display = 'inline-block';
+      createColumn.style.width = '40px';
+      createColumn.style.height = '40px';
+      createColumn.style.backgroundColor = '#ffffff';
+      createLine.appendChild(createColumn);
+    }    
   }
 }
 
@@ -74,12 +74,26 @@ let changeColor = document.querySelectorAll('.color');
 
 function addClass() {
   for (let i = 0; i < changeColor.length; i += 1) {
-    changeColor[i].addEventListener('click', function(event){
+    changeColor[i].addEventListener('click', function (event) {
       initialColor.classList.remove('selected');
       event.target.classList.add('selected');
       initialColor = event.target;
-    })
+    });
   }
 }
 
 addClass();
+
+// Requisito 08
+function changePixelColor() {
+  let catchPixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < catchPixels.length; i += 1) {
+    catchPixels[i].addEventListener('click', function(event){
+      let consoleLogDoFernando = initialColor.style.backgroundColor;
+      event.target.style.backgroundColor = consoleLogDoFernando;
+    })
+  }
+}
+
+changePixelColor();
+
