@@ -24,3 +24,19 @@ body {
   margin-right: 5px;
   border: solid 1px black;
 }
+
+#clear-board {
+  color: white;
+  background-color: darkgreen;
+}
+
+#generate-board {
+  color: white;
+  background-color: darkgreen;
+}
+
+#board-size {
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 5px;
+}

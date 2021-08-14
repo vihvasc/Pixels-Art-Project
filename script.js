@@ -1,3 +1,4 @@
+// Cria a paleta de cores.
 const colorPallet = document.createElement('div');
 colorPallet.id = 'color-palette';
 document.body.appendChild(colorPallet);
@@ -15,6 +16,14 @@ const colorSample = ['black', 'red', 'green', 'purple'];
 for (let i = 0; i < colorBox.length; i += 1) {
   colorBox[i].style.background = colorSample[i];
 }
+const pixel = document.getElementsByClassName('pixel');
+
+// Cria o botão de Limpar o quadro.
+function reset() {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.background = 'white';
+  }
+}
 
 const resetBtn = document.createElement('button');
 resetBtn.addEventListener('click', reset);
@@ -22,33 +31,75 @@ resetBtn.id = 'clear-board';
 resetBtn.innerText = 'Limpar';
 document.body.appendChild(resetBtn);
 
-const pixelBoard = document.createElement('div');
-pixelBoard.id = 'pixel-board';
-document.body.appendChild(pixelBoard);
+// Cria o botão e imput para definir o tamanho do quadro.
+const input = document.createElement('input');
+input.id = 'board-size';
+input.placeholder = 'Número de pixels';
+input.type = 'number';
+input.min = '1';
+document.body.appendChild(input);
 
-const boardSize = 5;
+const generateBoardBtn = document.createElement('button');
+generateBoardBtn.id = 'generate-board';
+generateBoardBtn.innerText = 'VQV';
+document.body.appendChild(generateBoardBtn);
+let boardSize = 5;
+const pboard = 'pixel-board';
 
-for (let i = 0; i < boardSize; i += 1) {
-  const pixelLine = document.createElement('div');
-  pixelLine.className = 'pixel-line';
-  pixelBoard.appendChild(pixelLine);
+// Cria o quadro de pixels.
+function createBoardDiv() {
+  const pixelBoard = document.createElement('div');
+  pixelBoard.id = pboard;
+  document.body.appendChild(pixelBoard);
 }
+createBoardDiv();
 
-const pixelLine = document.getElementsByClassName('pixel-line');
-
-for (let i = 0; i < boardSize; i += 1) {
-  for (let n = 0; n < boardSize; n += 1) {
-    const pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    pixelLine[n].appendChild(pixel);
+function createBoardLines() {
+  for (let i = 0; i < boardSize; i += 1) {
+    const pixelLine = document.createElement('div');
+    pixelLine.className = 'pixel-line';
+    const pixelBoard = document.getElementById(pboard);
+    pixelBoard.appendChild(pixelLine);
   }
 }
+createBoardLines();
+const pixelLine = document.getElementsByClassName('pixel-line');
 
+function createBoardColums() {
+  for (let i = 0; i < boardSize; i += 1) {
+    for (let n = 0; n < boardSize; n += 1) {
+      const newPixel = document.createElement('div');
+      newPixel.className = 'pixel';
+      pixelLine[n].appendChild(newPixel);
+    }
+  }
+}
+createBoardColums();
+
+function createBoard() {
+  const oldPixelBoard = document.getElementById(pboard);
+  if (oldPixelBoard != null) {
+    oldPixelBoard.remove();
+  }
+  boardSize = input.value;
+  if (boardSize === '') {
+    window.alert('Board inválido!');
+  }
+  createBoardDiv();
+  createBoardLines();
+  createBoardColums();
+}
+
+generateBoardBtn.addEventListener('click', createBoard);
+
+// Função que seleciona a cor a ser aplicada.
 function selectColor(event) {
   const oldCOlor = document.getElementsByClassName('selected');
   oldCOlor[0].classList.remove('selected');
-  event.target.classList = 'color selected';
+  const eventTarget = event.target;
+  eventTarget.classList = 'color selected';
 }
+
 const color = document.getElementsByClassName('color');
 for (let i = 0; i < color.length; i += 1) {
   color[i].addEventListener('click', selectColor);
@@ -56,20 +107,14 @@ for (let i = 0; i < color.length; i += 1) {
 
 color[0].classList = 'color selected';
 
-const pixel = document.getElementsByClassName('pixel');
-;
+// Função que aplica a cor selecionada.
 function applyColor(event) {
   const selectedColorPallet = document.querySelectorAll('.selected')[0];
   const selectedColor = selectedColorPallet.style.background;
-  event.target.style.background = selectedColor;
+  const eventTarget = event.target;
+  eventTarget.style.background = selectedColor;
 }
 
 for (let i = 0; i < pixel.length; i += 1) {
   pixel[i].addEventListener('click', applyColor);
-}
-
-function reset() {
-  for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.background = 'white';
-  }
 }
