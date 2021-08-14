@@ -1,0 +1,22 @@
+let position1 = document.querySelectorAll('.color')[0].style.backgroundColor = 'rgb(0, 0, 0)';
+let position2 = document.querySelectorAll('.color')[1].style.backgroundColor = 'rgb(255, 0, 119)';
+let position3 = document.querySelectorAll('.color')[2].style.backgroundColor = 'rgb(255, 173, 173)';
+let position4 = document.querySelectorAll('.color')[3].style.backgroundColor = 'rgb(255, 214, 165)';
+
+let colorPalette = document.querySelector("#color-palette");
+colorPalette.addEventListener("click", function(event) {
+    let selectColor = document.querySelector('.selected');
+    if (event.target.id !== 'color-palette') {
+        selectColor.classList.remove('selected');
+        event.target.classList.add('selected');
+    }
+});
+
+let pixelSquare = document.getElementById('pixel-board')
+pixelSquare.addEventListener('click', function(event) {
+    if (event.target.className === 'pixel') {
+        let corAtual = document.querySelector('.selected').style.backgroundColor;
+        let corSelecionada = event.target;
+        corSelecionada.style.backgroundColor = corAtual;
+    }
+});
