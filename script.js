@@ -60,3 +60,11 @@ firstBlock.addEventListener('click', selectColor);
 secondBlock.addEventListener('click', selectColor);
 thirdBlock.addEventListener('click', selectColor);
 fourBlock.addEventListener('click', selectColor);
+
+function selectPixel(color) {
+  const painted = document.querySelector('.selected');
+  if (color.target.className === 'pixel') {
+    color.target.style.backgroundColor = painted.style.backgroundColor;
+  }
+}
+pixelBoard.addEventListener('click', selectPixel);

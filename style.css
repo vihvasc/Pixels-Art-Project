@@ -33,17 +33,16 @@ main {
   display: table;
   position: relative;
   flex-direction: row;
- 
   top: 50px;
   margin: auto;
   width: 200px;
-  height: 200px; 
+  height: 200px;
 }
 
- .pixel {
+.pixel {
   background-color: white;
   display: table-cell;
 }
-.lines { 
-  display: table-row;  
-} 
+.lines {
+  display: table-row;
+}
