@@ -1,6 +1,7 @@
 const board = document.getElementById('pixel-board');
 const cores = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
+const button = document.getElementById('clear-board');
 
 function createLine() {
   const numberOfLines = 5;
@@ -36,6 +37,12 @@ function paintPixel(event) {
   event.target.style.backgroundColor = `${color.id}`;
 }
 
+function limpar() {
+  for (let p = 0; p < pixels.length; p += 1) {
+    pixels[p].style.backgroundColor = 'white';
+  }
+}
+
 window.onload = function initPage() {
   createLine();
   createPixel();
@@ -45,4 +52,5 @@ window.onload = function initPage() {
   for (let p = 0; p < pixels.length; p += 1) {
     pixels[p].addEventListener('click', paintPixel);
   }
+  button.addEventListener('click', limpar);
 };
