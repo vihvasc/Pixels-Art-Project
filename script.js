@@ -22,10 +22,17 @@ function creatBox() {
             let divBox = document.createElement('div');
             divBox.className = 'pixel';
             divLineBox.appendChild(divBox);
-
         }
         pixelBoard.appendChild(divLineBox);
     }
 }
 
 creatBox();
+
+function selectColor(){
+
+
+}
+
+selectColor();
+
