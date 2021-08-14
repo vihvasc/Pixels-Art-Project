@@ -3,6 +3,7 @@ window.onload = pixelArts;
 function pixelArts() {
   pageTitle();
   createColorPalette();
+  createButton();
   createColors();
   changeColor();
   pixelFrame();
@@ -81,6 +82,19 @@ function selectFramePixel() {
 }
 function paintFramePixel(event) {
   let color = document.querySelector('.selected');
-  console.log(color);
   event.target.style.backgroundColor = color.style.backgroundColor;
 }
+// requisito 9
+function createButton() {
+  let clearButton = document.createElement('button');
+  clearButton.id = 'clear-board';
+  clearButton.innerHTML = 'Limpar';
+  document.body.appendChild(clearButton);
+  clearButton.addEventListener('click', clearPixel);
+}
+function clearPixel() {
+  let pixels = document.getElementsByClassName('pixel');
+  for (pixel of pixels) {
+    pixel.style.backgroundColor = 'white';
+  }
+} 
