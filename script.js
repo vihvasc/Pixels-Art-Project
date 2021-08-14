@@ -91,3 +91,15 @@ criaPixelsNoContainer(5, 5);
 // Verifica se o quadro de pixels tem altura e comprimento de 5 elementos [OK]
 // Verifica se 40 pixels é o tamanho total do elemento, incluindo seu conteúdo e excluindo a borda preta, que deve ser criada à parte. [OK]
 // Requisito 05 Feito modificando a função acima deste Bloco de Comentários!!!
+
+// 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
+// O elemento da cor preta deve possuir, inicialmente, a classe selected;
+// Note que o elemento que deverá receber a classe selected deve ser um dos elementos que possuem a classe color, como especificado no requisito 2.
+
+function corInicial() {
+  let elementoComCorInicial = document.getElementsByClassName('color');
+  console.log(elementoComCorInicial);
+  elementoComCorInicial[0].className += " selected";
+
+}
+corInicial();
