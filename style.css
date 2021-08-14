@@ -1,4 +1,4 @@
-#color-pallete {
+#color-palette {
   display: flex;
 }
 
@@ -23,4 +23,9 @@
 
 .grid-line {
   display: flex;
+}
+
+.selected {
+  border-radius: 50%;
+  transition: 0.5s;
 }
