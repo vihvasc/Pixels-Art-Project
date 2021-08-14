@@ -8,13 +8,6 @@ function createTitle() {
 createTitle();
 
 // Requsito 02 e 03
-function createPalette() {
-  const createList = document.createElement('div');
-  createList.id = 'color-palette';
-  document.querySelector('body').appendChild(createList);
-  addColor();
-}
-
 const colors = ['#000000', '#ffb3ff', '#b3ffcc', '#ccb3ff'];
 
 function addColor() {
@@ -30,26 +23,24 @@ function addColor() {
     document.querySelector('#color-palette').appendChild(colorPallete);
   }
 }
+function createPalette() {
+  const createList = document.createElement('div');
+  createList.id = 'color-palette';
+  document.querySelector('body').appendChild(createList);
+  addColor();
+}
+
 createPalette();
 
 // Requisito 04 e 05
 
 let gridSize = 5;
-
-function pixelBoard() {
-  const createBoard = document.createElement('div');
-  createBoard.id = 'pixel-board';
-  document.querySelector('body').appendChild(createBoard);
-  createPixels();
-}
-
 function createPixels() {
   for (let line = 0; line < gridSize; line += 1) {
     const createLine = document.createElement('div');
     createLine.id = 'pixel-line';
     createLine.style.height = '40px';
     document.getElementById('pixel-board').appendChild(createLine);
-    for (let cols2 = 0; cols2 < 1; cols2 += 1) {
       for (let cols = 0; cols < gridSize; cols += 1) {
         const createColumn = document.createElement('div');
         createColumn.className = 'pixel';
@@ -59,9 +50,16 @@ function createPixels() {
         createColumn.style.height = '40px';
         createColumn.style.backgroundColor = '#ffffff';
         createLine.appendChild(createColumn);
-      }
-    }
+      }    
   }
+}
+
+
+function pixelBoard() {
+  const createBoard = document.createElement('div');
+  createBoard.id = 'pixel-board';
+  document.querySelector('body').appendChild(createBoard);
+  createPixels();
 }
 
 pixelBoard();
