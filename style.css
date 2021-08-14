@@ -1,5 +1,5 @@
 body{
-  /* text-align: center; */
+  text-align: center;
 }
 
 .color {
@@ -25,7 +25,7 @@ body{
 #pixel-board {
   padding-top: 50px;
   width: 250px;
-  /* margin: auto; */
+  margin: auto;
 }
 
 .pixel {

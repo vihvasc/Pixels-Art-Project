@@ -21,3 +21,16 @@ blackColor.addEventListener('click', addClass);
 blueColor.addEventListener('click', addClass);
 yellowColor.addEventListener('click', addClass);
 greenColor.addEventListener('click', addClass);
+
+// função que altera cor
+function colorir(event) {
+  const corSelecionada = document.querySelector('.selected');
+  const corSelecionadaCss = window.getComputedStyle(corSelecionada);
+  const eventclick = event.target;
+
+  if (eventclick.className === 'pixel') {
+    eventclick.style.backgroundColor = corSelecionadaCss.backgroundColor;
+  }
+}
+
+pixelBoard.addEventListener('click', colorir);
