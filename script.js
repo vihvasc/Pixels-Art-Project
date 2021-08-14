@@ -8,7 +8,7 @@ function colorGenerator() {
     return colorGenerator();
   }
 
-  const randomColor = 'rgb(' + req1 + ',' + req2 + ',' + req3 + ')';
+  const randomColor = `rgb(${req1},${req2},${req3})`;
   return randomColor;
 }
 
@@ -54,6 +54,30 @@ function firstColorBlack() {
 
 firstColorBlack();
 
+// Desafio 6
+function firstPick() {
+  const standardColor = document.querySelector('.color');
+
+  standardColor.classList.add('selected');
+}
+
+// Desafio 8
+function paintPixels() {
+  const pixelList = document.querySelectorAll('.pixel');
+
+  for (let i = 0; i < pixelList.length; i += 1) {
+    const pixelSelected = pixelList[i];
+
+    pixelSelected.addEventListener('click', function semuso2() {
+      const colorItem = document.querySelector('.selected');
+      const colorSelected = colorItem.style.backgroundColor;
+
+      pixelSelected.style.backgroundColor = colorSelected;
+    });
+  }
+}
+
+
 // Desafio 4
 function quadroDePixels(tamanho) {
   const quadroPixel = document.querySelector('#pixel-board');
@@ -76,13 +100,6 @@ function quadroDePixels(tamanho) {
 
 quadroDePixels(5);
 
-// Desafio 6
-function firstPick() {
-  const standardColor = document.querySelector('.color');
-
-  standardColor.classList.add('selected');
-}
-
 // Desafio 7
 function selectColor() {
   const colorList = document.querySelectorAll('.color');
@@ -101,26 +118,10 @@ function selectColor() {
 
 selectColor();
 
-// Desafio 8
-function paintPixels() {
-  const pixelList = document.querySelectorAll('.pixel');
-
-  for (let i = 0; i < pixelList.length; i += 1) {
-    const pixelSelected = pixelList[i];
-
-    pixelSelected.addEventListener('click', function semuso2() {
-      const colorItem = document.querySelector('.selected');
-      const colorSelected = colorItem.style.backgroundColor;
-
-      pixelSelected.style.backgroundColor = colorSelected;
-    });
-  }
-}
-
 // Desafio 9
 function clearButton() {
-  let button = document.getElementById('clear-board');
-  let board = document.querySelectorAll('.pixel');
+  const button = document.getElementById('clear-board');
+  const board = document.querySelectorAll('.pixel');
 
   button.addEventListener('click', function semuso4() {
     for (let i = 0; i < board.length; i += 1) {
