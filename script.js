@@ -29,7 +29,7 @@ function createDivFilhas() {
 
 createDivFilhas();
 
-// Requisito 4
+// Requisito 4 e 5
 
 function divPixelsBoard() {
   const div = document.createElement('div');
@@ -48,25 +48,21 @@ divPixelsBoard();
 
 // Exercício 06
 
-function colorBlack() {
-  const color = document.querySelector('.color');
-  color.classList.add('selected');
-}
-
-colorBlack();
+let color = document.querySelector('.color');
+color.classList.add('selected');
 
 // Exercício 07
 
-function addListenerInColors() {
-  let allDivsBoard = document.querySelectorAll('.color');
-  for (let index = 0; index < allDivsBoard.length; index += 1) {
-    allDivsBoard[index].addEventListener('click', function() {
-      allDivsBoard[index].classList.add('selected');
-    }
+function addSelected() { // adicionando classe selected elemento selecionado
+  const colorsAll = document.getElementsByClassName('color');
+  for (let index = 0; index < colorsAll.length; index += 1) {
+    colorsAll[index].addEventListener('click', function(event) {
+    color.classList.remove('selected');
+    event.target.classList.add('selected');
+    color = event.target;
+    });
   }
 }
+addSelected();
 
-addListenerInColors();
-
-
-
+// Exercício 8
