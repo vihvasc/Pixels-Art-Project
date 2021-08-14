@@ -1,9 +1,18 @@
-.box {
+.box{
     border: solid black 1px;
     width: 40px;
     height: 40px;
     display: inline-block;
 }
+
+.pixel{
+    background-color: white;
+    border: solid black 1px;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+
 
 #black{
     background-color: black;
@@ -19,4 +28,8 @@
 
 #green{
     background-color: green;
+}
+
+.ull{
+    margin: 2px;
 }
