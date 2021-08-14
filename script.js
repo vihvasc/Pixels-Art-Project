@@ -140,7 +140,7 @@ function criaPixelsNoContainer(linhas, colunas) {
     }
   }
 }
-// criaPixelsNoContainer(5, 5);
+criaPixelsNoContainer(5, 5);
 
 // 5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura [OK]
 // e seja delimitado por uma borda preta de 1 pixel. [OK]
