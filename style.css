@@ -46,6 +46,9 @@ body {
   background: black;
 }
 
+.selected {
+}
+
 .blue {
   background: blue;
 }

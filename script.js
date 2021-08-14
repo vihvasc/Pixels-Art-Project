@@ -1,4 +1,6 @@
 window.onload = function () {
+
+  function criaQuadrado () {
   function criaLinha() {
     let elementoOriginal = document.getElementById('pixel-board');
     let elementoCriado = document.createElement('div');
@@ -54,4 +56,6 @@ window.onload = function () {
   criaLinha5();
   criaLinha5();
   criaLinha5();
+  }
+criaQuadrado()
 };
