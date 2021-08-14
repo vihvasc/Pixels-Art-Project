@@ -85,8 +85,8 @@ function addClass() {
 addClass();
 
 // Requisito 08
+let catchPixels = document.querySelectorAll('.pixel');
 function changePixelColor() {
-  let catchPixels = document.querySelectorAll('.pixel');
   for (let i = 0; i < catchPixels.length; i += 1) {
     catchPixels[i].addEventListener('click', function(event){
       let consoleLogDoFernando = initialColor.style.backgroundColor;
@@ -97,3 +97,21 @@ function changePixelColor() {
 
 changePixelColor();
 
+// Requisito 09
+function createButton(buttonId, buttonText, insBeforeId) {
+  let button = document.createElement('button');
+  button.id = buttonId;
+  button.innerText = buttonText;
+  document.body.insertBefore(button, document.getElementById(insBeforeId));
+}
+
+function clearButton() {
+  createButton('clear-board', 'Limpar', 'pixel-board');
+  let clearBoard = document.querySelector('#clear-board');
+  clearBoard.addEventListener('click', function(event){
+    for (let pix = 0; pix < catchPixels.length; pix += 1) {
+    catchPixels[pix].style.backgroundColor = 'white';
+    }
+  });
+}
+clearButton()
