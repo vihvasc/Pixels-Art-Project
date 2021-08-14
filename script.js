@@ -1,21 +1,43 @@
+// CRIA QUADRO DE CORES
+
 function createBoard() {
-  let linhas = 5;
-  let colunas = 5;
-  for (let criaLinhas = 0; criaLinhas < linhas; criaLinhas += 1) {
-    let line = document.querySelectorAll('.line-pixel')[criaLinhas];
+  const table = document.getElementById('pixel-board');
+  const linhas = 5;
+  const colunas = 5;
+
+  for (let linhaAtual = 0; linhaAtual < linhas; linhaAtual += 1) {
+    const divRow = document.createElement('div');
+    divRow.className = 'lines';
     for (let criaColunas = 0; criaColunas < colunas; criaColunas += 1) {
-      let divBox = document.createElement('div');
+      const divBox = document.createElement('div');
       divBox.className = 'pixel';
-      line.appendChild(divBox);
+      divRow.appendChild(divBox);
     }
+    table.appendChild(divRow);
   }
 }
 createBoard();
 
-// CLASS SELECTed QUE VAI DEFINIR A COR QUE VAI PINTAR
+function corInicial() {
+  const black = document.querySelector('.black');
 
-function colorBlack() {
-  let black = document.querySelector('.color:nth-child(1)');
   black.className += ' selected';
 }
-colorBlack();
+corInicial();
+
+function removeAdicionaSelector(event) {
+  const selected = document.querySelector('.selected');
+  const corNova = event.target;
+
+  selected.classList.remove('selected');
+  corNova.className += ' selected';
+}
+
+function allBox() {
+  const tabelaCores = document.querySelectorAll('.color');
+
+  for (let index = 0; index < tabelaCores.length; index += 1) {
+    tabelaCores[index].addEventListener('click', removeAdicionaSelector);
+  }
+}
+allBox();

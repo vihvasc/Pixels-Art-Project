@@ -8,19 +8,19 @@ body {
   width: 47px;
   height: 47px;
 }
-.color:nth-child(1) {
+.black {
   background-color: black;
 }
 
-.color:nth-child(2) {
+.orange {
   background-color: orange;
 }
 
-.color:nth-child(3) {
+.red {
   background-color: red;
 }
 
-.color:nth-child(4) {
+.royalblue {
   background-color: royalblue;
 }
 
@@ -32,6 +32,6 @@ body {
   background-color: white;
 }
 
-.line-pixel {
-  height: 40px;
+.lines {
+  display: flex;
 }
