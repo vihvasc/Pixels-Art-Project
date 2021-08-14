@@ -7,8 +7,18 @@ function createH1() {
 
 createH1();
 
+function colorRandom() {
+  const numberRandom = Math.floor(Math.random() * 255) + 1;
+  return numberRandom;
+}
+
 function createDiv() {
-  const arrayColor = ['black', 'aqua', 'green', 'purple'];
+  const arrayColor = ['black'];
+  for (let index = 0; index < 3; index += 1) {
+    arrayColor.push(
+      `rgb(${colorRandom()}, ${colorRandom()}, ${colorRandom()})`
+    );
+  }
   const divColorFather = document.createElement('div');
   divColorFather.id = 'color-palette';
   document.body.appendChild(divColorFather);

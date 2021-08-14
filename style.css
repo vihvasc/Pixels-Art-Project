@@ -1,3 +1,13 @@
+* {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .color {
   width: 50px;
   height: 50px;
