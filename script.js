@@ -41,8 +41,39 @@ function addClearButtonEventListener() {
   clearButton.addEventListener('click', handleClearButton);
 }
 
+// Requisito 10 - Fazer o tamanho do quadro de pixels ser definido pelo usuário.
+// Emite mensagem de erro quando o input é vazio
+const inputValue = document.getElementById('board-size');
+const newBoardButton = document.getElementById('generate-board');
+function alertErrorMessage() {
+  if (!inputValue.value) {
+    return alert('Board inválido!');
+  }
+  if (inputValue.value < 5 || inputValue.value > 50) {
+    return alert('Tamanho do board inválido!');
+  }
+}
+
+// Refaz o board com base N.
+function rebuildBoard() {
+  const getBoardParent = document.getElementById('pixel-board');
+  const base = inputValue.value;
+
+  for (let i = 0; i < base; i += 1) {
+    for (let j = 0; j < base; j += 1) {
+      
+      getBoardParent.appendChild();
+    }
+  }
+}
+
+function addNewBoard() {
+  newBoardButton.addEventListener('click', alertErrorMessage);
+  newBoardButton.addEventListener('click', rebuildBoard);
+}
 window.onload = function () {
   addPaletteEventListener();
   addPixelEventListener();
   addClearButtonEventListener();
+  addNewBoard();
 };
