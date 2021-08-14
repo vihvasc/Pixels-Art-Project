@@ -7,6 +7,10 @@ azul.style.backgroundColor = "blue";
 let verde = document.querySelectorAll(".color")[3];
 verde.style.backgroundColor = "green";
 
-
+function changeBlackClass(){
+    let blackPixel = document.querySelectorAll(".color")[0];
+    blackPixel.classList.add("selected");
+};
+changeBlackClass()
 
 
