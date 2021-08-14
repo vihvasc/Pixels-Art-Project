@@ -6,6 +6,10 @@
   margin-block: 10px;
 }
 
+#board-size {
+  margin-inline: 10px;
+}
+
 #pixel-board {
   margin-top: 10px;
 }

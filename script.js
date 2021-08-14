@@ -1,10 +1,29 @@
 const paletteItem = document.getElementsByClassName('color');
 const takeBody = document.getElementById('main-container');
-const takeClear = document.getElementById('clear-container');
-const listColor = ['rgba(0,0,0)', 'rgba(51, 221, 255)', 'rgba(245, 214, 34)', 'rgba(245, 32, 34)'];
-const gridLength = 5;
+const takeBtns = document.getElementById('btns-container');
+let gridLength = 5;
 let currentColor = 'rgba(0,0,0)';
 paletteItem[0].style.backgroundColor = currentColor;
+
+const listColor = ['rgba(0,0,0)'];
+const listColorLength = 4;
+
+// Crédito para função de gerar cor: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+function generateRandomColor() {
+  const red = Math.random() * 255;
+  const green = Math.random() * 255;
+  const blue = Math.random() * 255;
+  const cor = `rgb(${red}, ${green}, ${blue})`;
+
+  return cor;
+}
+
+function appendListColor() {
+  for (let i = 1; i < listColorLength; i += 1) {
+    const newColor = generateRandomColor();
+    listColor.push(newColor);
+  }
+}
 
 function pickColor(evento) {
   const newColor = getComputedStyle(evento.target);
@@ -30,14 +49,14 @@ function changeColor(evento) {
   fundo.style.backgroundColor = currentColor;
 }
 
-function generateGrid() {
+function generateGrid(tamanho) {
   const containerGrid = document.createElement('div');
   containerGrid.id = 'pixel-board';
 
-  for (let linha = 0; linha < gridLength; linha += 1) {
+  for (let linha = 0; linha < tamanho; linha += 1) {
     const contaienrLine = document.createElement('div');
     contaienrLine.className = 'grid-line';
-    for (let coluna = 0; coluna < gridLength; coluna += 1) {
+    for (let coluna = 0; coluna < tamanho; coluna += 1) {
       const containerColumn = document.createElement('div');
       containerColumn.className = 'pixel';
       containerColumn.addEventListener('click', changeColor);
@@ -46,7 +65,7 @@ function generateGrid() {
     }
     containerGrid.appendChild(contaienrLine);
   }
-  takeBody.appendChild(containerGrid);
+  takeBody.append(containerGrid);
 }
 
 function clearBoard() {
@@ -57,19 +76,62 @@ function clearBoard() {
   }
 }
 
-function generanteClearBnt() {
+function generateClearBnt() {
   const btn = document.createElement('button');
   btn.id = 'clear-board';
   btn.innerText = 'Limpar';
   btn.addEventListener('click', clearBoard);
 
-  takeClear.appendChild(btn);
+  takeBtns.appendChild(btn);
+}
+
+function generateGridInput() {
+  const input = document.createElement('input');
+  input.id = 'board-size';
+  input.type = 'number';
+  input.min = 1;
+
+  takeBtns.appendChild(input);
+}
+
+function checkRange(range) {
+  let tamanho = range;
+  if (range < 5) {
+    tamanho = 5;
+  } else if (range > 50) {
+    tamanho = 50;
+  }
+  return tamanho;
+}
+
+function callBoardChange() {
+  const input = document.getElementById('board-size');
+  const currentPixelBoard = document.getElementById('pixel-board');
+  if (input.value === '') {
+    alert('Board inválido!');
+  } else {
+    gridLength = checkRange(input.value);
+    currentPixelBoard.remove();
+    generateGrid(gridLength);
+  }
+}
+
+function generateGridBnt() {
+  const btn = document.createElement('button');
+  btn.id = 'generate-board';
+  btn.innerText = 'VQV';
+  btn.addEventListener('click', callBoardChange);
+
+  takeBtns.append(btn);
 }
 
 function iniciando() {
+  appendListColor();
   appendPaletteColor();
-  generanteClearBnt();
-  generateGrid();
+  generateClearBnt();
+  generateGridInput();
+  generateGridBnt();
+  generateGrid(gridLength);
 }
 
 window.onload = iniciando;
