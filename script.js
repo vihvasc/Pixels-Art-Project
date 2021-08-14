@@ -22,6 +22,7 @@ palleteSection.addEventListener("click", selectedColor);
 function colorPixels(event) {
     const selectedColor = document.querySelector('.selected');
     const colouredPixel = event.target;
+    // Segue o link da referencia getComputedStyle: https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle
     let getStyle = getComputedStyle(selectedColor).backgroundColor;
     colouredPixel.style.backgroundColor = getStyle;
 }
