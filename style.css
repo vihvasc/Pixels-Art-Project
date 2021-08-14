@@ -6,9 +6,12 @@
   margin-left: 5px;
 }
 
-.selecionado {
-  transform: translateY(-6px);
+.selected {
   transition: 0.2s;
+}
+
+.efeito {
+  transform: translateY(-8px);
 }
 
 #pixel-board {

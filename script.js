@@ -8,13 +8,16 @@ function criarPaletas() {
   for (let i = 0; i < cores.length; i += 1) {
     const li = document.createElement('li');
     li.className = 'color';
+    if(i === 0) {
+      li.className += " selected";
+    }
     li.style.backgroundColor = cores[i];
     ul.appendChild(li);
   }
 }
+
 criarPaletas();
 
-//efeitinho adicional na paleta
 function adicionarEscutadores() {
   const li = document.getElementsByTagName('li');
   for (let elemento of li) {
@@ -23,12 +26,12 @@ function adicionarEscutadores() {
 }
 
 function mudarClasse(elemento) {
-  elemento.target.className += ' selecionado';
+  elemento.target.className += ' selected efeito';
   pegarElementosLi(elemento);
 }
 
 function pegarElementosLi(elemento) {
-  let selecionado = document.getElementsByClassName('selecionado');
+  let selecionado = document.getElementsByClassName('selected');
   if(selecionado.length > 1) {
     deletarLi(elemento, selecionado);
   }
