@@ -55,6 +55,12 @@ function createBoardDiv() {
 createBoardDiv();
 
 function createBoardLines() {
+  if (boardSize < 5) {
+    boardSize = 5;
+  }
+  if (boardSize > 50) {
+    boardSize = 50;
+  }
   for (let i = 0; i < boardSize; i += 1) {
     const pixelLine = document.createElement('div');
     pixelLine.className = 'pixel-line';
@@ -66,6 +72,12 @@ createBoardLines();
 const pixelLine = document.getElementsByClassName('pixel-line');
 
 function createBoardColums() {
+  if (boardSize < 5) {
+    boardSize = 5;
+  }
+  if (boardSize > 50) {
+    boardSize = 50;
+  }
   for (let i = 0; i < boardSize; i += 1) {
     for (let n = 0; n < boardSize; n += 1) {
       const newPixel = document.createElement('div');
@@ -84,6 +96,12 @@ function createBoard() {
   boardSize = input.value;
   if (boardSize === '') {
     window.alert('Board inválido!');
+  }
+  if (boardSize < 5) {
+    boardSize = 5;
+  }
+  if (boardSize > 50) {
+    boardSize = 50;
   }
   createBoardDiv();
   createBoardLines();
