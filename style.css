@@ -2,13 +2,12 @@ h1 {
     text-align: center;
 }
 
-div#color-palete {
-    block-size: 500px;
-    text-align: center;
+div#color-palette {
 }
 
 button.color {
     border: 1px solid black;
+    text-align: center;
 }
 
 button#c1 {
