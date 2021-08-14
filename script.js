@@ -41,12 +41,23 @@ let allBoxCollor = document.querySelectorAll('.color');
 
 function removeAddSelected() {
   for (let index = 0; index < allBoxCollor.length; index += 1) {
-    allBoxCollor[index].addEventListener('click', function(event) {
+    allBoxCollor[index].addEventListener('click', function (event) {
       firstChild.classList.remove('selected');
       event.target.classList.add('selected');
       firstChild = event.target;
     })
-  } 
+  }
 }
 removeAddSelected();
 
+
+function selectPixel() {
+  let pixelBox = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixelBox.length; index += 1) {
+    pixelBox[index].addEventListener('click', function (event) {
+      let collorSelected = firstChild.style.backgroundColor;
+      event.target.style.backgroundColor = collorSelected
+    });
+  }
+}
+selectPixel()
