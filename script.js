@@ -18,3 +18,13 @@ function selectedColor(event){
     event.target.classList.add("selected");
 }
 palleteSection.addEventListener("click", selectedColor);
+
+function colorPixels(event) {
+    const selectedColor = document.querySelector('.selected');
+    const colouredPixel = event.target;
+    let getStyle = getComputedStyle(selectedColor).backgroundColor;
+    colouredPixel.style.backgroundColor = getStyle;
+}
+corpoDoQuadro.addEventListener("click", colorPixels)
+  
+  
