@@ -51,29 +51,25 @@ window.onload = function() {
   linha1[3].addEventListener('click', function() { linha1[3].style.backgroundColor = corAtual; });
   linha1[4].addEventListener('click', function() { linha1[4].style.backgroundColor = corAtual; });
 
-  linha2[0].addEventListener('click', function() { linha2[0].style.backgroundColor = corAtual; });
-  linha2[1].addEventListener('click', function() { linha2[1].style.backgroundColor = corAtual; });
-  linha2[2].addEventListener('click', function() { linha2[2].style.backgroundColor = corAtual; });
-  linha2[3].addEventListener('click', function() { linha2[3].style.backgroundColor = corAtual; });
-  linha2[4].addEventListener('click', function() { linha2[4].style.backgroundColor = corAtual; });
-  
-  linha3[0].addEventListener('click', function() { linha3[0].style.backgroundColor = corAtual; });
-  linha3[1].addEventListener('click', function() { linha3[1].style.backgroundColor = corAtual; });
-  linha3[2].addEventListener('click', function() { linha3[2].style.backgroundColor = corAtual; });
-  linha3[3].addEventListener('click', function() { linha3[3].style.backgroundColor = corAtual; });
-  linha3[4].addEventListener('click', function() { linha3[4].style.backgroundColor = corAtual; });
+  for (let item = 0; item < linha1.length; item += 1) {
+    linha1[item].addEventListener('click', function() { linha1[item].style.backgroundColor = corAtual; });
+  }
 
-  linha4[0].addEventListener('click', function() { linha4[0].style.backgroundColor = corAtual; });
-  linha4[1].addEventListener('click', function() { linha4[1].style.backgroundColor = corAtual; });
-  linha4[2].addEventListener('click', function() { linha4[2].style.backgroundColor = corAtual; });
-  linha4[3].addEventListener('click', function() { linha4[3].style.backgroundColor = corAtual; });
-  linha4[4].addEventListener('click', function() { linha4[4].style.backgroundColor = corAtual; });
+  for (let item = 0; item < linha2.length; item += 1) {
+    linha2[item].addEventListener('click', function() { linha2[item].style.backgroundColor = corAtual; });
+  }
 
-  linha5[0].addEventListener('click', function() { linha5[0].style.backgroundColor = corAtual; });
-  linha5[1].addEventListener('click', function() { linha5[1].style.backgroundColor = corAtual; });
-  linha5[2].addEventListener('click', function() { linha5[2].style.backgroundColor = corAtual; });
-  linha5[3].addEventListener('click', function() { linha5[3].style.backgroundColor = corAtual; });
-  linha5[4].addEventListener('click', function() { linha5[4].style.backgroundColor = corAtual; });
+  for (let item = 0; item < linha3.length; item += 1) {
+    linha3[item].addEventListener('click', function() { linha3[item].style.backgroundColor = corAtual; });
+  }
+
+  for (let item = 0; item < linha4.length; item += 1) {
+    linha4[item].addEventListener('click', function() { linha4[item].style.backgroundColor = corAtual; });
+  }
+
+  for (let item = 0; item < linha5.length; item += 1) {
+    linha5[item].addEventListener('click', function() { linha5[item].style.backgroundColor = corAtual; });
+  }
 
   const botao = document.getElementById('clear-board');
 
