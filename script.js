@@ -156,10 +156,33 @@ function preparaPixels() {
   function mePinte(index) {
     let corSelecionada = document.getElementsByClassName('selected');
     let corDoElemento = corSelecionada[0].style.backgroundColor;
-    console.log(corDoElemento);
+    // console.log(corDoElemento);
     event.target.style.backgroundColor = corDoElemento;
   }
   // mePinte();
 }
 preparaPixels();
 
+// 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
+// O que será verificado:
+// Verifica se o botão tem o id denominado clear-board
+// Verifica se o botão está posicionado entre a paleta de cores e o quadro de pixels
+// Verifica se o texto do botão é 'Limpar'
+// Verifica se ao clicar no botão, o quadro de pixels é totalmente preenchido de branco
+
+function limpaQuadro() {
+  let botaoClear = document.createElement('button');
+  botaoClear.id = 'clear-board';
+  botaoClear.innerText = 'Limpar';
+  botaoClear.addEventListener('click', resetaQuadro );
+  document.body.appendChild(botaoClear);
+
+}
+limpaQuadro()
+
+function resetaQuadro() {
+  let elementosPixel = document.getElementsByClassName('pixel');
+  for (index = 0; index < elementosPixel.length; index += 1) {
+    elementosPixel[index].style.backgroundColor = 'white';
+  }
+}
