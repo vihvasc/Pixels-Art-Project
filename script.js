@@ -1,80 +1,63 @@
-const paletteBox  = document.querySelector('.paletteBox')
-const paletteBox1 = document.querySelector('.paletteBox1')
-const paletteBox2 = document.querySelector('.paletteBox2')
-const paletteBox3 = document.querySelector('.paletteBox3')
-const clearButton = document.querySelector('#clear-board')
+const clearButton = document.querySelector('#clear-board');
+const primeiraCor = document.querySelector('#firstColor');
+primeiraCor.classList.add('selected');
 
-const primeiraCor = document.querySelector('#firstColor')
-      primeiraCor.classList.add('selected')
+const paletteColors = document.querySelectorAll('.color');
 
-let paletteColors = document.querySelectorAll('.color');
-
-function createGrid(){
-    let gridSize = 5;
-    let local = document.querySelector('#pixel-board')
-    for (let linhas = 0; linhas < gridSize; linhas++) {
-        let divsLinhas = document.createElement('div')
-            local.appendChild(divsLinhas)
-        for (let colunas = 0; colunas < gridSize; colunas++) {
-            let pixel = createPixel()
-             divsLinhas.appendChild(pixel)
-        }
+function createGrid (){
+const gridSize = 5;
+const local = document.querySelector('#pixel-board');
+  for (let linhas = 0; linhas < gridSize; linhas += 1) {
+    const divsLinhas = document.createElement('div');
+    local.appendChild(divsLinhas);
+    for (let colunas = 0; colunas < gridSize; colunas +=1) {
+        const pixel = createPixel();
+        divsLinhas.appendChild(pixel);
     }
+  }
 }
-createGrid()
+createGrid ();
 
-function createPixel(){ 
-    let pixel = document.createElement('div');
-        pixel.className = 'pixel';
-       return pixel;
+function createPixel(){
+  const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    return pixel;
 }
 
 for (let i = 0; i < paletteColors.length; i++) {
-    paletteColors[i].addEventListener('click', seletora)
-    
+  paletteColors[i].addEventListener('click', seletora);
 }
+
 function seletora(event){
-    let selectedBox = document.querySelector('.selected')
-        selectedBox.classList.remove('selected');
-        event.target.classList.add('selected')
-        
-    console.log(event.target.classList);
-    console.log(event.target.style.backgroundColor);
+  const selectedBox = document.querySelector('.selected');
+  selectedBox.classList.remove('selected');
+  event.target.classList.add('selected');
 }
 
 function painter(){
-    
-   var elem = document.querySelector(".selected");
-   var pixelColor = document.querySelectorAll('.pixel');
-      for (let i = 0; i < pixelColor.length; i++) {
-          console.log('entrei no loop');
-          pixelColor[i].addEventListener('click', function(){
-            var elem = document.querySelector(".selected");
-    
-        var theCSSprop = window.getComputedStyle(elem).getPropertyValue("background-color");      
-        pixelColor[i].style.backgroundColor = theCSSprop;
-          console.log('dentro da função');});
-      }
-    
-    //console.log(event.target);
-    
+  let pixelColor = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelColor.length; i++) {
+    pixelColor[i].addEventListener('click', function(){
+    let elem = document.querySelector('.selected');
+    let theCSSprop = window.getComputedStyle(elem).getPropertyValue('background-color');      
+    pixelColor[i].style.backgroundColor = theCSSprop;
+    });
+  }
 }
-painter()
+painter();
 
 function clique(event){
-let allPixels = document.querySelectorAll('.pixel');
+  const allPixels = document.querySelectorAll('.pixel');
 
 for (let i = 0; i < allPixels.length; i++) {
-    allPixels[i].addEventListener('click', painter);
-    
-    
-}}
+  allPixels[i].addEventListener('click', painter); 
+  }
+}
 
 function clear(){
-    let allPixels = document.querySelectorAll('.pixel');
-        for (let i = 0; i < allPixels.length; i++) {
-           allPixels[i].style.backgroundColor = 'white';
-            
-        }
+  const allPixels = document.querySelectorAll('.pixel');
+    for (let i = 0; i < allPixels.length; i++) {
+    allPixels[i].style.backgroundColor = 'white';
+  }
 }
 clearButton.addEventListener('click', clear);
