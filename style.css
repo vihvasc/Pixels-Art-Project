@@ -10,15 +10,15 @@
 }
 
 #secondColor {
-  background-color: blueviolet;
+  background-color: #5a189a;
 }
 
 #thirdColor {
-  background-color: brown;
+  background-color: #072ac8;
 }
 
 #fourthColor {
-  background-color: aqua;
+  background-color: #FCA311;
 }
 
 .pixel {
@@ -30,10 +30,7 @@
 }
 
 #pixel-board {
-  width: 220px;
-  height: 220px;
   line-height: 0px;
   border: 1px solid black;
   display: inline-block;
 }
-

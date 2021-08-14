@@ -1,4 +1,5 @@
 const test = document.querySelector('#pixel-board');
+
 const firstColor = document.getElementById('firstColor');
 firstColor.classList.add('selected');
 
@@ -6,24 +7,25 @@ const secondColor = document.getElementById('secondColor');
 const thirdColor = document.getElementById('thirdColor');
 const fourthColor = document.getElementById('fourthColor');
 
+const clearButton = document.getElementById('clear-board');
+
 function createPixelDivs(param1) {
   let lengthDivs;
-  const yHeight = param1;
-  const xWidth = param1;
-
-  for (let index = 0; index < yHeight * xWidth; index += 1) {
+  let widthDivs;
+  for (let index = 0; index < param1; index += 1) {
     lengthDivs = document.createElement('div');
+    for (let index2 = 0; index2 < param1; index2 += 1) {
+      widthDivs = document.createElement('div');
+      widthDivs.classList = 'pixel';
+      lengthDivs.appendChild(widthDivs);
+    }
     test.appendChild(lengthDivs);
-    lengthDivs.classList = 'pixel';
   }
 }
-createPixelDivs(5);
 
 function addAndRemoveClassSelected(event) {
-  firstColor.classList.remove('selected');
-  secondColor.classList.remove('selected');
-  thirdColor.classList.remove('selected');
-  fourthColor.classList.remove('selected');
+  const addAndRemove = document.querySelector('.selected');
+  addAndRemove.classList.remove('selected');
 
   event.target.classList.add('selected');
 }
@@ -43,18 +45,8 @@ function selectionColor() {
     });
   }
 }
-selectionColor();
 
 /* https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp */
-
-function toColor() {
-  const colorirPixel = document.querySelectorAll('.pixel');
-
-  for (let index = 0; index < colorirPixel.length; index += 1) {
-    colorirPixel[index].addEventListener('click', selectionColor);
-  }
-}
-toColor();
 
 function buttonClear() {
   const clearPixels = document.querySelectorAll('.pixel');
@@ -64,5 +56,9 @@ function buttonClear() {
   }
 }
 
-const clearButton = document.getElementById('clear-board');
 clearButton.addEventListener('click', buttonClear);
+
+window.onload = () => {
+  createPixelDivs(5);
+  selectionColor();
+};
