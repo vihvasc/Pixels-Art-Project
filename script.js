@@ -10,7 +10,7 @@ fillPalette();
 var paletteList = document.querySelectorAll(".color");
 var pixelBoard = document.querySelectorAll(".pixel");
 console.log(pixelBoard);
-var selectedColor = 'black';
+var selectedColor = 'Black';
 
 
 //função que cria os grids para o pixel-board
@@ -70,7 +70,7 @@ function selectColor(event){
   for(let i = 0; i < paletteList.length; i ++){
     if(event.target === paletteList[i]){
       paletteList[i].classList.add("selected");
-      selectColor = paletteList[i].style.backgroundColor;
+      selectedColor = paletteList[i].style.backgroundColor;
     }
   }
   for(let i = 0; i < paletteList.length; i ++){
@@ -78,38 +78,19 @@ function selectColor(event){
       paletteList[i].classList.remove("selected");
     }
   }
-  console.log(selectColor);
+  console.log(selectedColor);
 }
-
-// function createEvents(){
-//   for(let i = 0; i>paletteList.length; i ++ ){
-//     paletteList[i].addEventListener('click', selectColor);
-//   }
-// }
-//automatizar isso em breve, não está funcionando com o for, why?
-paletteList[0].addEventListener('click', selectColor);
-paletteList[1].addEventListener('click', selectColor);
-paletteList[2].addEventListener('click', selectColor);
-paletteList[3].addEventListener('click', selectColor);
-
-/* 
-  preencher o board:
-  1. criar um evento para cada pixel do quadro
-  2. criar uma função que muda o backgroundColor do pixel quando clicado
-  
-  problemas:
-  precisa salvar a cor que foi selecionada da paletta pra poder usar no pixel
-*/
-
-//automatizar depois assim como o anterior 
 
 function paint(){
   event.target.style.backgroundColor = selectedColor;
 }
-createEvent(pixelBoard);
-function createEvent(pixelBoard){
+createEvent(pixelBoard, paletteList);
+function createEvent(pixelBoard, paletteList){
   for(let i =0; i < pixelBoard.length; i++){
     pixelBoard[i].addEventListener('click', paint);
   }
 
+  for(let i =0; i < paletteList.length; i ++){
+    paletteList[i].addEventListener('click', selectColor);
+  }
 }
