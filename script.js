@@ -1,20 +1,26 @@
-// window.onload = function () {
+function selectColor() {
+  const colorPalette = document.querySelector('#color-palette');
 
-//   selectedColor();
+  colorPalette.addEventListener('click', (event) => {
+    if (event.target !== colorPalette) {
+      const selected = document.querySelector('.selected');
+      selected.classList.remove('selected');
+      event.target.classList.add('selected');
+    }
+  });
+}
+
+selectColor();
+
+// function selectColor() {
+//   const colorPalette = document.querySelector('#color-palette');
+//   const paletteElement = document.querySelectorAll('.color')
+
+//   colorPalette.addEventListener('click', (event) => {
+//     const selected = document.querySelector('.selected');
+//     paletteElement.classList.add('selected');
+//     selected.classList.remove('selected');
+//   });
 // }
 
-// function selectedColor() {
-//   let paletteColor = document.querySelector('.color');
-//   let selectedColor = document.querySelectorAll('.color');
-//    paletteColor.addEventListener('click', function(){
-//   for(let i = 0; i < paletteColor.length; i += 1) {
-//  if (selectedColor[i].classList.value !== 'color selected'){
-//    selectedColor[i].classList.add('selected')
-//  } else {
-//   selectedColor[i].className = 'color';
-// }
-// }
-//  })
-// }
-// console.log(selectedColor[0].classList.value)
-
+// selectColor();

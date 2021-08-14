@@ -10,10 +10,6 @@ body {
   border: solid 1px black;
 }
 
-/* #color-palette {
-  display: inline-block;
-} */
-
 #color-black {
   background-color: black;
 }
@@ -35,13 +31,12 @@ body {
   height: 40px;
   border: solid 1px black;
   background-color: white;
-  margin: 0 ;
+  margin: 0;
   padding: 0;
-  display: table-cell
+  display: table-cell;
 }
 
 .line {
-  display:;
   padding: 0;
   margin: 0;
 }
