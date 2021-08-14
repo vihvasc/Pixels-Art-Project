@@ -1,5 +1,4 @@
 // Requisito 1
-
 function createTitle() {
   const h1 = document.createElement('h1');
   h1.id = 'title';
@@ -8,6 +7,12 @@ function createTitle() {
 }
 
 createTitle();
+
+// Requisito 12
+function randomPalette() {
+  const randomNumber = Math.floor((Math.random() * 255) + 1);
+  return randomNumber;
+}
 
 // Requisito 2 e 3
 function createPalette() {
@@ -89,9 +94,3 @@ function createButton() {
 }
 
 createButton();
-
-// Requisito 12
-function randomPalette() {
-  const randomNumber = Math.floor((Math.random() * 255) + 1);
-  return randomNumber;
-}
