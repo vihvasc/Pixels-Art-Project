@@ -47,15 +47,14 @@ function selectedColor() {
       colorselect[i].className = 'color';
     }
   }
-  //  ...........
   // erro lint acessado:https://stackoverflow.com/questions/35637770/how-to-avoid-no-param-reassign-when-setting-a-property-on-a-dom-objec
   function getBoardColors(event) {
     const evitaError = event;
     removeSelected();
     evitaError.target.className = 'color selected';
   }
-    // ....  
-  selectColorPalette.addEventListener('click', getBoardColors); 
+  // ...
+  selectColorPalette.addEventListener('click', getBoardColors);
 }
 selectedColor();
 
@@ -77,13 +76,14 @@ function clearButton() {
   const getPixels = document.querySelectorAll('.pixel');
   const colorPixel = 'white';
 
-  getButton.addEventListener('click', function getwhite() {
+  function getwhite() {
     for (let i = 0; i < getPixels.length; i += 1) {
       if (getPixels[i].style.backgroundColor !== colorPixel) {
         getPixels[i].style.backgroundColor = colorPixel;
       }
     }
-  });
+  }
+  getButton.addEventListener('click', getwhite);
 }
 
 clearButton();
