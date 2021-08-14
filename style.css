@@ -1,6 +1,23 @@
+#title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 20px;
+}
 .color{
     border: 1px solid black;
     display: inline-block;
-    width: 100px;
-    height: 100px;
+    width: 40px;
+    height: 40px;
+    }
+.pixel{
+    border: 1px solid black;
+    height: 40px;
+    width: 40px;
+    margin: 0px;   
+    padding-bottom: 0px;
+    background-color: white;
+
+}
+#pixel-board tr{
+    margin-left: px;
+    
 }
