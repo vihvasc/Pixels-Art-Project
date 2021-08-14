@@ -112,7 +112,7 @@ firstSelected();
 // Note que os elementos que deverão receber a classe selected devem ser os mesmos elementos que possuem a classe color, como especificado no requisito 2
 
 function elementoSelecionado() {
-  let elementoDaPaleta = document.getElementsByClassName('color');
+  const elementoDaPaleta = document.getElementsByClassName('color');
   // console.log(elementoDaPaleta[0]); // [DEBUG]
   // console.log(elementoDaPaleta[1]); // [DEBUG]
   // console.log(elementoDaPaleta[2]); // [DEBUG]
@@ -154,11 +154,11 @@ function preparaPixels() {
   let elementosPixel = document.getElementsByClassName('pixel');
   // console.log(elementosPixel); // [DEBUG]
   for (let index = 0; index < elementosPixel.length; index += 1) {
-    elementosPixel[index].addEventListener('click', mePinte );
+    elementosPixel[index].addEventListener('click', mePinte);
   }
   function mePinte(index) {
-    let corSelecionada = document.getElementsByClassName('selected');
-    let corDoElemento = corSelecionada[0].style.backgroundColor;
+    const corSelecionada = document.getElementsByClassName('selected');
+    const corDoElemento = corSelecionada[0].style.backgroundColor;
     // console.log(corDoElemento);
     event.target.style.backgroundColor = corDoElemento;
   }
@@ -174,17 +174,16 @@ preparaPixels();
 // Verifica se ao clicar no botão, o quadro de pixels é totalmente preenchido de branco
 
 function botaoLimpaQuadro() {
-  let botaoClear = document.createElement('button');
+  const botaoClear = document.createElement('button');
   botaoClear.id = 'clear-board';
   botaoClear.innerText = 'Limpar';
   botaoClear.addEventListener('click', resetaQuadro );
   document.body.appendChild(botaoClear);
-
 }
 
 function resetaQuadro() {
-  let elementosPixel = document.getElementsByClassName('pixel');
-  for (index = 0; index < elementosPixel.length; index += 1) {
+  const elementosPixel = document.getElementsByClassName('pixel');
+  for (let index = 0; index < elementosPixel.length; index += 1) {
     elementosPixel[index].style.backgroundColor = 'white';
   }
 }
