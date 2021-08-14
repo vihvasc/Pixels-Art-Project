@@ -22,9 +22,7 @@ for (let key of selected) {
 
 function changeColorPixel(event) {
   const selectedColor = document.querySelectorAll('.selected')[0];
-  console.log(selectedColor);
   const evento = event.target;
-  console.log(evento);
   if (selectedColor.id === 'black') {
     evento.style.backgroundColor = 'black';
   }
@@ -39,17 +37,15 @@ function changeColorPixel(event) {
   }
 }
 
-// requisito 9
-// const button = document.getElementById('clear-board');
-// button.addEventListener('click', changeColors);
+const button = document.getElementById('clear-board');
+button.addEventListener('click', changeColors);
 
-// function changeColors() {
-//   const squarePixels = document.getElementsByClassName('pixel');
-//   console.log(squarePixels);
-//   for (let key of squarePixels) {
-//     key.classList.toggle('white');
-//     console.log(key);
-//   }
+function changeColors() {
+  const squarePixels = document.getElementsByClassName('pixel');
+  for (let key of squarePixels) {
+    key.style.backgroundColor = 'white';
+  }
+}
 //Quadrado de pixels dinamico;
 // nDeLinhas(5);
 // nDePixelsLinha(5);
