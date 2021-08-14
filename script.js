@@ -48,8 +48,8 @@ function adicionaContainerPixels() {
   // Início da Função
   const quadroDePixels = document.createElement('div');
   quadroDePixels.id = 'pixel-board';
-  quadroDePixels.style.width = '200px';
-  quadroDePixels.style.height = '200px';
+  quadroDePixels.style.width = '5em';
+  quadroDePixels.style.height = '5em';
   document.body.appendChild(quadroDePixels);
 }
 adicionaContainerPixels();
