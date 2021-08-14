@@ -59,17 +59,33 @@ function selectedColor () {
         newColor.target.className = 'color selected';
       }
     }
-    selectedColor () 
+    selectedColor () ;
   
-      function paintBoard () {
+  
+    function paintBoard () {
     
-        const board = document.getElementById('pixel-board');
+      const board = document.getElementById('pixel-board');
   
-        board.addEventListener('click', setColor);
+      board.addEventListener('click', setColor);
 
-        function setColor(event) {
-        event.target.style.backgroundColor = document.querySelector('.color.selected').style.backgroundColor;    
+      function setColor(event) {
+      event.target.style.backgroundColor = document.querySelector('.color.selected').style.backgroundColor;    
         }
         }
 
       paintBoard ();
+
+      function clearButton (){
+        let getButton = document.querySelector('#clear-board');
+        let getPixels = document.querySelectorAll('.pixel')
+        let colorPixel = 'white';
+        getButton.addEventListener('click', function() {
+          for (let i = 0; i <getPixels.length; i +=1) {
+            if ( getPixels[i].style.backgroundColor !== colorPixel ) {
+              getPixels[i].style.backgroundColor = colorPixel
+            }
+          }
+        })
+
+      }
+      clearButton()
