@@ -16,7 +16,7 @@ function paletteList() {
 
   for (let index = 0; index < 4; index += 1) {
     let paletteSon = document.createElement('div');
-    let colors = ['#000', '#e8f7d9', '#fcdec9', '#d3d5e4'];
+    let colors = ['#000', '#00BFFF	', '#fcdec9', '#d3d5e4'];
     paletteSon.className = 'color';
     paletteSon.style.backgroundColor = colors[index];
     paletteSon.style.border = '1px solid #000';
@@ -64,6 +64,37 @@ function selectClicks(){
 selectClicks()
 
 // Desafio 8
+let colorPixel = document.querySelectorAll('.pixel');
+
+function colorsBox(){
+for (let index = 0; index < colorPixel.length; index += 1){
+  colorPixel[index].addEventListener('click',function(event){
+    let acesso = colorsSelect.style.backgroundColor;
+    event.target.style.backgroundColor = acesso;
+  })
+}
+}
+colorsBox();
+
+// Desafio 9
+function clearButton(){
+let buttonClear = document.createElement('button');
+buttonClear.id = 'clear-board';
+buttonClear.innerText = 'Limpar';
+let pixelBoard = document.getElementById('pixel-board');
+
+document.body.insertBefore(buttonClear, pixelBoard);
+buttonClear.addEventListener('click', function(){
+  for(let index = 0;index < colorPixel.length; index += 1){
+    colorPixel[index].style.backgroundColor = 'white';
+    }
+});
+}
+
+clearButton();
+
+
+
 
 
 
