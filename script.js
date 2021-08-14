@@ -59,8 +59,8 @@ function selectColor() {
 selectColor();
 
 // Requisito 8
+const pixelBox = document.querySelectorAll('.pixel');
 function pixelColor() {
-  const pixelBox = document.querySelectorAll('.pixel');
   for (let index = 0; index < pixelBox.length; index += 1) {
     pixelBox[index].addEventListener('click', (event) => {
       const colorPixelSelected = colorSelected.style.backgroundColor;
@@ -70,3 +70,19 @@ function pixelColor() {
 }
 
 pixelColor();
+
+// Requisito 9
+function button() {
+  const button = document.createElement('button');
+  button.id = 'clear-board';
+  button.innerText = 'Limpar';
+  document.body.insertBefore(button, document.querySelector('#pixel-board'));
+
+  button.addEventListener('click', () => {
+    for (let index = 0; index < pixelBox.length; index += 1) {
+      pixelBox[index].style.backgroundColor = 'white';
+    }
+  });
+}
+
+button();
