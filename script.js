@@ -1,3 +1,4 @@
+// Requisito 1
 function createH1() {
   let h1 = document.createElement('h1');
   h1.id = 'title';
@@ -6,6 +7,8 @@ function createH1() {
 }
 createH1();
 
+// Requisito 2
+// Requisito 3
 function create4Palletes() {
   let colors = ['black']
   for (let index = 0; index < 3; index += 1) {
@@ -24,6 +27,7 @@ function create4Palletes() {
 }
 create4Palletes();
 
+// Requisito 4
 function createPixels() {
   let divFather = document.createElement('div');
   divFather.id = 'pixel-board';
@@ -37,11 +41,12 @@ function createPixels() {
 }
 createPixels();
 
+// Requisito 6
 let colorSelected = document.querySelector('.color');
 colorSelected.classList.add('selected');
 
+// Requisito 7
 let allDivsBoard = document.querySelectorAll('.color');
-
 function removeAndAddSelected() {
   for (let index = 0; index < allDivsBoard.length; index += 1) {
     allDivsBoard[index].addEventListener('click', function(event) {
@@ -53,6 +58,7 @@ function removeAndAddSelected() {
 }
 removeAndAddSelected();
 
+// Requisito 8
 let allPixels = document.getElementsByClassName('pixel');
 function addColorForClick() {
   for (let index = 0; index < allPixels.length; index += 1) {
@@ -64,6 +70,7 @@ function addColorForClick() {
 }
 addColorForClick();
 
+// Requisito 9
 function resetColors() {
   let button = document.createElement('button');
   button.id = 'clear-board';
@@ -79,6 +86,7 @@ function resetColors() {
 }
 resetColors();
 
+// Requisito 12
 function randomColors() {
   let randomNumber = Math.floor(Math.random() * 255) + 1;
   return randomNumber;
