@@ -34,9 +34,14 @@ function criandoQuadradoDivs() {
     }
     for (let index = 1; index <= 20; index += 1) {
         divPai.innerHTML += '<div class="pixel"></div>';
-    }
-
-    // let corInicialPixels = document.getElementsByClassName('pixel')
-    
+    }    
 }
 criandoQuadradoDivs();
+
+
+
+function criandoClasseSelected() {
+    let minhaClasseSelected = document.getElementById('cor1')
+    minhaClasseSelected.classList.add('selected')
+}
+criandoClasseSelected();
