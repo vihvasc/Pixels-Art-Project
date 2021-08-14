@@ -26,6 +26,7 @@ function adicionarEscutadores() {
 }
 
 function mudarClasse(elemento) {
+  document.querySelector('#efeito').play();
   elemento.target.className += ' selected efeito';
   pegarElementosLi(elemento);
 }
