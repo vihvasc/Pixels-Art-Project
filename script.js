@@ -38,6 +38,9 @@ function criarPaletaCores() {
 }
 criarPaletaCores();
 
+// Chama função que cria Botão!!!
+botaoLimpaQuadro()
+
 // Adicione à página um quadro de pixels, com 25 pixels.
 // O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
 // O quadro de "pixels" deve possuir o id denominado pixel-board, ao passo que cada "pixel" individual dentro do quadro deve possuir a classe denominada pixel;
@@ -170,7 +173,7 @@ preparaPixels();
 // Verifica se o texto do botão é 'Limpar'
 // Verifica se ao clicar no botão, o quadro de pixels é totalmente preenchido de branco
 
-function limpaQuadro() {
+function botaoLimpaQuadro() {
   let botaoClear = document.createElement('button');
   botaoClear.id = 'clear-board';
   botaoClear.innerText = 'Limpar';
@@ -178,7 +181,6 @@ function limpaQuadro() {
   document.body.appendChild(botaoClear);
 
 }
-limpaQuadro()
 
 function resetaQuadro() {
   let elementosPixel = document.getElementsByClassName('pixel');
