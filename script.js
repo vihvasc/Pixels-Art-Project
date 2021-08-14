@@ -9,9 +9,9 @@ const boardSize = document.getElementById('board-size');
 const generateBoardButton = document.getElementById('generate-board');
 
 firstColor.style.backgroundColor = 'black';
-secondColor.style.backgroundColor = 'green';
-thirdColor.style.backgroundColor = 'orange';
-fourthColor.style.backgroundColor = 'purple';
+secondColor.style.backgroundColor = getRandomColor();
+thirdColor.style.backgroundColor = getRandomColor();
+fourthColor.style.backgroundColor = getRandomColor();
 
 firstColor.addEventListener('click', addSelectedClass);
 secondColor.addEventListener('click', addSelectedClass);
@@ -20,22 +20,20 @@ fourthColor.addEventListener('click', addSelectedClass);
 pixelBoard.addEventListener('click', changeColor);
 clearButton.addEventListener('click', clearColor);
 generateBoardButton.addEventListener('click', setPixelWidth);
-function CreatePixelBoard(pixels) {
-  for (let index = 0; index < 5; index += 1) {
+function CreatePixelBoard(size) {
+  for (let index = 0; index < size; index += 1) {
     const ul = document.createElement('ul');
     ul.Id = index + 1;
     pixelBoard.appendChild(ul);
-    for (let index2 = 0; index2 < 5; index2 += 1) {
+    for (let index2 = 0; index2 < size; index2 += 1) {
       const li = document.createElement('li');
       li.className = 'pixel';
-      li.style.width = pixels;
-      li.style.height = pixels;
       li.style.backgroundColor = 'white';
       ul.appendChild(li);
     }
   }
 }
-CreatePixelBoard('40px');
+CreatePixelBoard(5);
 
 function addSelectedClass(event) {
   const checkSelected = document.querySelector('.selected');
@@ -59,13 +57,21 @@ function setPixelWidth() {
     alert('Board inválido!');
   } else if (boardSize.value < 5) {
     pixelBoard.innerHTML = '';
-    CreatePixelBoard('5px');
+    CreatePixelBoard(5);
   } else if (boardSize.value > 49) {
     pixelBoard.innerHTML = '';
-    CreatePixelBoard('50px');
+    CreatePixelBoard(50);
   } else {
-    const width = `${boardSize.value}px`;
     pixelBoard.innerHTML = '';
-    CreatePixelBoard(width);
+    CreatePixelBoard(boardSize.value);
   }
+}
+
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
