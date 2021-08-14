@@ -56,10 +56,10 @@ color.classList.add('selected');
 function addSelected() { // adicionando classe selected elemento selecionado
   const colorsAll = document.getElementsByClassName('color');
   for (let index = 0; index < colorsAll.length; index += 1) {
-    colorsAll[index].addEventListener('click', function(event) {
-    color.classList.remove('selected');
-    event.target.classList.add('selected');
-    color = event.target;
+    colorsAll[index].addEventListener('click', function (event) {
+      color.classList.remove('selected');
+      event.target.classList.add('selected');
+      color = event.target;
     });
   }
 }
@@ -67,9 +67,10 @@ addSelected();
 
 // Exercício 8
 const pixel = document.querySelectorAll('.pixel');
+
 function pixelColor() {
   for (let index = 0; index < pixel.length; index += 1) {
-    pixel[index].addEventListener('click', (event) => {
+    pixel[index].addEventListener('click', function (event) {
       const colorPixel = color.style.backgroundColor;
       event.target.style.backgroundColor = colorPixel;
     });
@@ -79,3 +80,17 @@ pixelColor();
 
 // Exercício 9
 
+function pixelWhite() {
+  const button = document.createElement('button');
+  button.id = 'clear-board';
+  button.innerText = 'Limpar';
+  const pixelBoard = document.getElementById('pixel-board');
+  document.body.insertBefore(button, pixelBoard);
+  button.addEventListener('click', function () {
+    for (let index = 0; index < pixel.length; index += 1) {
+      pixel[index].style.backgroundColor = 'white';
+    }
+  })
+}
+
+pixelWhite();
