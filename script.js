@@ -20,5 +20,11 @@ window.onload = function() {
         }
     }
     createPixelBoard();
+
+    function firstSelectedColor() {
+        let colorBlack = document.querySelector('#color-1');
+        colorBlack.classList.add('selected');
+    }
+    firstSelectedColor();
 }
 
