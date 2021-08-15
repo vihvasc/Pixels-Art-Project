@@ -10,6 +10,14 @@ window.onload = function () {
   //Cor Preta é selecionada inicialmente
   colorPallete.firstChild.classList.add('selected');
 
+  //Adiciona o evento de click na pleta de cores
+  let colors = document.getElementsByClassName('color');
+  for (let color of colors) {
+    color.addEventListener('click', selectColor);
+  }
+
+  // CRIANDO OS ELEMENTOS
+
   // Cria a paleta com as cores presentes em colorList
   function createColorPallete(colorList) {
     for (let color of colorList) {
@@ -22,8 +30,6 @@ window.onload = function () {
       colorPallete.appendChild(newColor);
     }
   }
-
-  // CRIANDO O PIXEL BOARD
 
   // Cria o pixel board de acordo com a quantidade de linhas e colunas passadas por parâmetro
   function createPixelBoard(boardSize) {
@@ -53,5 +59,14 @@ window.onload = function () {
     }
 
     return document.getElementsByClassName('line');
+  }
+
+  // FUNÇÕES DE EVENTOS
+
+  // Função para mudar a cor selecionada
+  function selectColor(event) {
+    selected = document.querySelector('.selected');
+    selected.classList.remove('selected');
+    event.target.classList.add('selected');
   }
 };
