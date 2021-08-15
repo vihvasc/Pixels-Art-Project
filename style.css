@@ -4,4 +4,11 @@
 
 .color {
   border: 1px solid black;
+  width: 35px;
+  height: 35px;
+}
+
+#pixel-board {
+  display: flex;
+  flex-wrap: wrap;
 }

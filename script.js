@@ -1,5 +1,7 @@
 const containerOfPalettes = document.getElementById('color-palette');
 const palettes = document.getElementsByClassName('color');
+const pixelBoard = document.getElementById('pixel-board');
+let qntOfPixels = 5;
 
 function generateRandomNumber() {
   // Valores entre 0 e 254, desconderando o 255/branco
@@ -21,4 +23,27 @@ function createPalettes() {
   }
 }
 
+function defineSizeOfPixelBoard(pixels) {
+  // 42 é o tamanho do pixel considerando as bordas horizontais ou verticais
+  const widthAndHeight = 42 * pixels;
+  pixelBoard.style.width = `${widthAndHeight}px`;
+  pixelBoard.style.height = `${widthAndHeight}px`;
+}
+
+function createPixels(num) {
+  // num é elevado ao quadrado para ter a mesma quantidade de altura e largura
+  const pixelCount = num ** 2;
+  for (let index = 0; index < pixelCount; index += 1) {
+    const div = document.createElement('div');
+    div.className = 'pixel';
+    div.style.width = '40px';
+    div.style.height = '40px';
+    div.style.border = '1px solid black';
+    div.style.backgroundColor = 'white';
+    pixelBoard.appendChild(div);
+  }
+}
+
 createPalettes();
+defineSizeOfPixelBoard(qntOfPixels);
+createPixels(qntOfPixels);
