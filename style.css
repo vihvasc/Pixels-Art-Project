@@ -35,3 +35,9 @@
   margin-bottom: 15px;
   margin-left: 20px;
 }
+
+#pixel-board1 {
+  max-width: 202px;
+  height: 202px;
+  border: 1px solid #000;
+}
