@@ -2,7 +2,7 @@
 // paletaDeCores.id = 'color-palette';
 // document.body.appendChild(paletaDeCores);
 
-const cores = ['pink', 'yellow', 'brown', 'green'];
+const cores = ['black', 'yellow', 'brown', 'green'];
 
 // for (let index = 0; index < cores.length; index += 1) {
 //   const novaCor = document.createElement('div');
