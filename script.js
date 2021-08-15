@@ -27,3 +27,24 @@ CreatQuadroDePixels()
 CreatQuadroDePixels()
 CreatQuadroDePixels()
 
+function clicksColors (){
+    let AtualColor = "";
+    window.onload = Blacked
+    function Blacked(){
+  
+    let firstColor = "black"
+     AtualColor = firstColor.value;
+    
+    }
+    let black = document.querySelectorAll(".color")[1]
+ Peç.addEventListener("click", MudaCorDoBackground)
+       function MudaCorDoBackground (){
+
+        AtualColor = Palette.style.backgroundColr
+        console.log("AtualColor")
+       }
+      } 
+   
+
+
+clicksColors()
