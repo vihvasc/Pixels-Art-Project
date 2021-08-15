@@ -1,3 +1,7 @@
+* {
+    text-align: center;
+}
+
 div.color {
     display: inline-block;
     width: 40px;
