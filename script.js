@@ -1,46 +1,48 @@
-let divcolorPallete = document.getElementsByClassName('color selected')[0].style.backgroundColor ="black";
- divcolorPallete = document.getElementsByClassName('color')[1].style.backgroundColor ="gold";
- divcolorPallete = document.getElementsByClassName('color')[2].style.backgroundColor ="darkred";
- divcolorPallete = document.getElementsByClassName('color')[3].style.backgroundColor ="blue";
+let cores = ["black", "yellow", "green", "purple"]
+let corSelecionada = cores[0];
 
 
- window.onload = function(){
-
-    let paleta = document.querySelectorAll('.color');
-    let pixel = document.querySelectorAll('.pixel');
-    let corselecionada = paleta[0].style.backgroundColor
- }
-
- function createBoard(pixels) {
-    const pixelBoard = document.querySelector('#pixel-board');
-    pixelBoard.innerHTML = '';
-    for (let i = 0; i < pixels; i += 1) {
-      const pixelRow = document.createElement('div');
-      pixelRow.className = 'pixel-row flex center';
-      for (let ia = 0; ia < pixels; ia += 1) {
-        const newPixel = document.createElement('div');
-        newPixel.className = 'pixel';
-        newPixel.addEventListener('click', (e) => {
-          const selectedColor = document.querySelector('.selected');
-          e.target.style.backgroundColor = getComputedStyle(selectedColor).backgroundColor;
-        });
-        newPixel.addEventListener('dblclick', (e) => {
-          e.target.style.backgroundColor = 'white';
-        });
-        pixelRow.appendChild(newPixel);
-      }
-      pixelBoard.appendChild(pixelRow);
+function createColor(colorName) {
+  const color = document.createElement("div")
+  color.classList.add("color")
+  color.style.backgroundColor = colorName
+  color.onclick = function () {
+    corSelecionada = colorName
+    let outrasCores = document.getElementsByClassName("selected")
+    for (let i = 0; i < outrasCores.length; i++) {
+      outrasCores[i].classList.remove("selected")
     }
+      color.classList.add("selected")
   }
- 
-  createBoard(5);
+  return color
+}
 
-  
+function createPixel() {
+  const pixel = document.createElement("div")
+  pixel.classList.add("pixel")
+  pixel.onclick = function () {
+    pixel.style.backgroundColor = corSelecionada
+  }
+  return pixel
+}
+
+
+const colorPallete = document.getElementById("color-palette")
+for (let i = 0; i < cores.length; i++) {
+  colorPallete.appendChild(createColor(cores[i]))
+}
+
+const pixelBoard = document.getElementById("pixel-board")
+
+for (let i = 0; i < 25; i++) {
+  pixelBoard.appendChild(createPixel())
+}
 
 
 
-   
 
-    
 
-    
+
+
+
+
