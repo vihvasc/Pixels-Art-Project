@@ -32,30 +32,40 @@ title {
 
 #board-size {
 	width: 40px;
+	padding: 0px;
 }
+
 
 #generate-board{
-	width: 40px;
+	padding: 0px;
 }
 
+#clear-board{
+	padding: 0px;
+}
 
+#pixel-board{
+	margin: 20px auto;
+	display: table;
+}
 
-/*
 .pixel {
 	height: 40px;
 	width: 40px;
-	display: inline-block;
 	border: 1px solid rgb(0, 0, 0);
 	box-sizing: border-box;
 	padding: 0px;
-	display: table-cell; 
+	display: table-cell;
+	background-color: rgb(255, 255, 255);
 }
+
+/*
 .backgroudwhite{
 	background-color: rgb(255, 255, 255);
 }
 
 
-/*
+
 .backgroudRed{
 	background-color:rgb(255, 0, 0);
 }
