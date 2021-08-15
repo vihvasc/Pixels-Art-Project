@@ -16,6 +16,12 @@ window.onload = function () {
     color.addEventListener('click', selectColor);
   }
 
+  //Adiciona evento de click em todos Pixels
+  pixels = document.getElementsByClassName('pixel');
+  for (let pixel of pixels) {
+    pixel.addEventListener('click', paintPixel);
+  }
+
   // CRIANDO OS ELEMENTOS
 
   // Cria a paleta com as cores presentes em colorList
@@ -68,5 +74,11 @@ window.onload = function () {
     selected = document.querySelector('.selected');
     selected.classList.remove('selected');
     event.target.classList.add('selected');
+  }
+
+  //Função para pintar o pixel clicado
+  function paintPixel(event) {
+    color = document.querySelector('.selected');
+    event.target.style.backgroundColor = color.style.backgroundColor;
   }
 };
