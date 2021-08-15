@@ -8,7 +8,7 @@ function createH1() {
 createH1();
 
 function colorRandom() {
-  const numberRandom = Math.floor(Math.random() * 255) + 1;
+  const numberRandom = Math.floor(Math.random() * 255);
   return numberRandom;
 }
 
@@ -30,11 +30,16 @@ function createDiv() {
 }
 createDiv();
 
+let numberInput = 5;
+
 function createPixelFrame() {
   const divFather = document.createElement('div');
+  let widhtAndHeight = 42 * numberInput;
   divFather.id = 'pixel-board';
+  divFather.style.width = `${widhtAndHeight}px`;
+  divFather.style.height = `${widhtAndHeight}px`;
   document.body.appendChild(divFather);
-  for (let index = 0; index < 25; index += 1) {
+  for (let index = 0; index < (numberInput ** 2); index += 1) {
     const divSon = document.createElement('div');
     divSon.className = 'pixel';
     divSon.style.backgroundColor = 'white';
@@ -71,7 +76,7 @@ function colorPixel() {
 }
 colorPixel();
 
-function createButton() {
+function createButtonClear() {
   const button = document.createElement('button');
   button.id = 'clear-board';
   button.innerText = 'Limpar';
@@ -84,4 +89,43 @@ function createButton() {
   });
 }
 
-createButton();
+createButtonClear();
+
+// requisito 10 / entre 5 e 10
+
+const div = document.createElement('div');
+div.id = 'button-input';
+document.body.insertBefore(div, document.querySelector('#pixel-board'));
+
+let input = document.createElement('input');
+input.id = 'board-size';
+input.type = 'number';
+input.min = '1';
+div.appendChild(input);
+
+const button = document.createElement('button');
+button.id = 'generate-board';
+button.innerText = 'VQV';
+div.appendChild(button);
+
+function setInput() {
+  button.addEventListener('click', function () {
+    let numberDoInput = input.value;
+    if (numberDoInput === '') {
+      alert("Board inválido!");
+      return;
+    }
+    if (numberDoInput < 5) {
+      numberDoInput = 5
+    }
+    if (numberDoInput > 50) {
+      numberDoInput = 50;
+    }
+    numberInput = numberDoInput;
+    document.body.removeChild(document.querySelector('#pixel-board'));
+    createPixelFrame()
+    colorPixel()
+  });
+}
+
+setInput();

@@ -31,6 +31,6 @@ body {
 #pixel-board {
   display: flex;
   flex-wrap: wrap;
-  max-width: 210px;
+  width: 210px;
   height: 210px;
 }
