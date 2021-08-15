@@ -44,13 +44,12 @@ color4.addEventListener('click', changeSelectedColor);
 function setPixelColor(event) {
   const selectedColor = document.querySelector('.selected');
   const getPixelColor = window.getComputedStyle(selectedColor).getPropertyValue('background-color');
-  console.log(window.getComputedStyle(selectedColor));
   event.target.style.backgroundColor = getPixelColor;
 }
 pixelBoard.addEventListener('click', setPixelColor);
 
 // Limpar quadro de pixels
-const button = document.getElementById('clear-board');
+const buttonClear = document.getElementById('clear-board');
 const pixels = document.getElementsByClassName('pixel');
 
 function clearPixels() {
@@ -59,4 +58,22 @@ function clearPixels() {
   }
 }
 
-button.addEventListener('click', clearPixels);
+buttonClear.addEventListener('click', clearPixels);
+
+// Seleciona o tamanho do quadro
+const buttonGenerateBoard = document.getElementById('generate-board');
+
+function generateBoard() {
+  const inputNumber = document.getElementById('board-size').value;
+  if (inputNumber !== '') {
+    while (pixelBoard.firstChild) {
+      pixelBoard.removeChild(pixelBoard.firstChild);
+    }
+    createPixels(inputNumber);
+  } else {
+    alert('Board inválido!');
+    createPixels(5);
+  }
+}
+
+buttonGenerateBoard.addEventListener('click', generateBoard);

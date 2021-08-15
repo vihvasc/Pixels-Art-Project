@@ -1,6 +1,11 @@
 body {
   text-align: center;
   font-family: 'Nunito', sans-serif;
+  background-image: url('background.png');
+}
+
+h1 {
+  color: white;
 }
 
 #black-color {
@@ -22,6 +27,12 @@ body {
 #pixel-board {
   border: black solid 1px;
   display: table;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#color-palette {
+  margin-bottom: 10px;
 }
 
 .pixel {
