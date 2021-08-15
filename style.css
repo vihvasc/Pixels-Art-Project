@@ -10,7 +10,6 @@ main {
   display: block;
 }
 
-
 #title {
   text-align: center;
   margin: 2rem 0;
@@ -23,11 +22,14 @@ main {
   justify-content: center;
   bottom: 20px;
 }
+
 #button-clear {
   display: flex;
   align-content: center;
-  justify-content: center;  
+  justify-content: center;
+ 
 }
+
 .color {
   width: 40px;
   height: 40px;
@@ -50,14 +52,25 @@ main {
   background-color: white;
   display: table-cell;
 }
-.lines { 
+
+.lines {
   display: table-row;
-} 
-button{
-  width: 100px;
+}
+
+button {
+  width: 70px;
   height: 40px;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 300;
   border-radius: 4px;
   cursor: pointer;  
+  margin: 2px;
+}
+input{
+  background-color: white;
+  padding: 2px;
+  width: 70px;
+  height: 40px;
+  margin-right: 2px;
+  font-size: 16px;
 }

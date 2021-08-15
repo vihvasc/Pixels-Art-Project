@@ -1,6 +1,8 @@
 const colorList = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board');
 const sessionClear = document.getElementById('button-clear');
+const alingItems = document.createElement('div');
+sessionClear.appendChild(alingItems);
 const firstBlock = document.createElement('div');
 const secondBlock = document.createElement('div');
 const thirdBlock = document.createElement('div');
@@ -88,3 +90,36 @@ function eventCreateClear() {
   }
 }
 btnClear.addEventListener('click', eventCreateClear);
+
+function createElementsCustomUser() {
+  const inputBoardSize = document.createElement('input');
+  inputBoardSize.type = 'text';
+  inputBoardSize.id = 'board-size';
+  inputBoardSize.placeholder = 'Quant';
+  alingItems.appendChild(inputBoardSize);
+  const btnGenerateBoard = document.createElement('button');
+  btnGenerateBoard.id = 'generate-board';
+  btnGenerateBoard.textContent = 'VQV';
+  alingItems.appendChild(btnGenerateBoard);
+}
+createElementsCustomUser();
+
+// const btnQdt = document.getElementById('generate-board');
+// const inputQtd = document.getElementById('board-size');
+
+// btnQdt.addEventListener('click', function(){
+// if (inputQtd.value > 4 && inputQtd.value<51){
+
+// }
+// });
+
+function generateColorsRadom() { 
+  const r = parseInt(Math.random() * 255, 10);
+  const g = parseInt(Math.random() * 255, 10);
+  const b = parseInt(Math.random() * 255, 10);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+firstBlock.style.background = 'black';
+secondBlock.style.background = generateColorsRadom();
+thirdBlock.style.background = generateColorsRadom();
+fourBlock.style.background = generateColorsRadom();
