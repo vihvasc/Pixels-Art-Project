@@ -6,10 +6,10 @@ window.onload = function () {
     let thirdColor = palletItems[2];
     let fourthColor = palletItems[3];
 
-    currentColor.style.background = "black";
-    secondColor.style.background = "red";
-    thirdColor.style.background = "blue";
-    fourthColor.style.background = "green";
+    currentColor.style.background = 'black';
+    secondColor.style.background = 'red';
+    thirdColor.style.background = 'blue';
+    fourthColor.style.background = 'green';
 
     for (let i = 0; i < palletItems.length; i += 1) {
       let item = palletItems[i];
@@ -47,17 +47,30 @@ window.onload = function () {
       pixel.className = 'pixel';
 
       pixel.addEventListener('click', function () {
-
         let selectedColorItem = document.querySelector('.selected');
-        
+
         pixel.style.background = selectedColorItem.style.background;
       });
 
       row.appendChild(pixel);
     }
-
   }
 
   setPalletListener();
   createBoard();
+
+  let button = document.getElementById('clear-board');
+  button.innerText = 'Limpar';
+
+  button.addEventListener('click', clearBoard);
+
+  function clearBoard() {
+    let pixels = document.querySelectorAll('.pixel');
+    for (let i = 0; i < pixels.length; i += 1) {
+      let pixelList = pixels[i];
+      pixelList.style.background = 'white';
+    }
+  }
+
+  clearBoard();
 };

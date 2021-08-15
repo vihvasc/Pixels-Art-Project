@@ -28,22 +28,6 @@ h1 {
   margin-left: 10px;
 }
 
-.black {
-  /* background: black; */
-}
-
-.red {
-  background: red;
-}
-
-.blue {
-  background: blue;
-}
-
-.green {
-  background: green;
-}
-
 .pixel-row {
   display: flex;
 }
@@ -54,4 +38,14 @@ h1 {
   background: white;
   height: 40px;
   width: 40px;
+}
+
+#clear-board {
+  margin-bottom: 10px;
+  padding: 5px;
+  background: yellow;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 80px;
 }
