@@ -1,3 +1,7 @@
+* {
+  list-style: none;
+}
+
 #color-palette {
   padding-left: 0;
   width: 340px;
@@ -8,6 +12,10 @@
   width: 40px;
   height: 40px;
   display: inline-block;
+}
+
+#pixel-board {
+  width: 215px;
 }
 
 .pixel {
