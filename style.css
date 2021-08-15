@@ -25,3 +25,19 @@ h1 , #color-palette {
 #color-4 {
     background-color: #ff9f1c;
 }
+
+#pixel-board {
+    height: 260px;
+    width: 260px;
+    margin: auto;
+    text-align: center;
+    line-height: 0;
+}
+
+.pixel {
+    background-color: white;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+}
