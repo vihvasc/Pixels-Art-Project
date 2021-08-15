@@ -2,6 +2,7 @@ const containerOfPalettes = document.getElementById('color-palette');
 const palettes = document.getElementsByClassName('color');
 const pixelBoard = document.getElementById('pixel-board');
 let qntOfPixels = 5;
+let initialColorSelected = palettes[0];
 
 function generateRandomNumber() {
   // Valores entre 0 e 254, desconderando o 255/branco
