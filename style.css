@@ -14,6 +14,10 @@
   background-color: white;
 }
 
+.selected {
+  background-color: black;
+}
+
 #pixel-board { 
   height: 667px;
   margin-left: 41%;
