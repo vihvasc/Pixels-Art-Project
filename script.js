@@ -124,7 +124,7 @@ function clearButton() {
   createButton('clear-board', 'Limpar', 'pixel-board');
   const clearBoard = document.querySelector('#clear-board');
   clearBoard.style.marginLeft = '10px';
-  clearBoard.addEventListener('click', () => {
+  clearBoard.addEventListener('click', function whiteBG() {
     for (let pix = 0; pix < catchPixels.length; pix += 1) {
       catchPixels[pix].style.backgroundColor = 'white';
     }
@@ -150,7 +150,7 @@ function eraseGrid() {
 function inputButtons() {
   createButton('generate-board', 'VQV', 'pixel-board');
   const inputButton = document.querySelector('#generate-board');
-  inputButton.addEventListener ('click', () => {
+  inputButton.addEventListener ('click', function checkInput() {
     if (input.value === '') {
       return alert('Board inválido!');
     }
