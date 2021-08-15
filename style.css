@@ -6,6 +6,13 @@
 body {
   display: flex;
   flex-direction: column;
+  background-image: url(https://images4.alphacoders.com/966/thumb-1920-966314.jpg);
+  background-size: 1366px;
+}
+
+#title {
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 .color {
