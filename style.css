@@ -13,19 +13,19 @@
   display: inline-block;
 }
 
-.color.black {
+#black {
   background-color: #000000;
 }
 
-.color.green {
+#green {
   background-color: #4E6E5D;
 }
 
-.color.white {
+#white {
   background-color: #C9D5B5;
 }
 
-.color.gold {
+#gold {
   background-color: #B1740F;
 }
 
@@ -39,4 +39,6 @@
 #pixel-board {
   box-sizing: border-box;
   font-size: 0px;
+  width: 210px;
+  height: 210px;
 }
