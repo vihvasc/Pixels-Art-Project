@@ -1,38 +1,39 @@
-
-let black = document.querySelector('#black');
-let green = document.querySelector('#green');
-let red = document.querySelector('#red');
-let blue = document.querySelector('#blue');
-
-black.addEventListener('click', clickBlack);
-green.addEventListener('click', clickGreen);
-red.addEventListener('click', clickRed);
-blue.addEventListener('click', clickBlue);
-
-function clickBlack(){
-    black.classList.add('selected')
-    green.classList.remove('selected')
-    red.classList.remove('selected')
-    blue.classList.remove('selected')
+window.onload = function(){
+    document.querySelector('.color').classList.add('selected')
 }
+let colorOne = document.getElementById("first");
+let colorTwo = document.getElementById("second");
+let colorThree = document.getElementById("third");
+let colorFour = document.getElementById("fourth");
+let pixelBoard = document.getElementById("pixel-board");
+let eraseButton = document.getElementById("clear-board")
+let getSquares = document.querySelectorAll(".pixel");
+let setNewColor = 'white';
 
-function clickGreen(){
-    green.classList.add('selected')
-    black.classList.remove('selected')
-    red.classList.remove('selected')
-    blue.classList.remove('selected')
-}
 
-function clickRed(){
-    red.classList.add('selected')
-    black.classList.remove('selected')
-    green.classList.remove('selected')
-    blue.classList.remove('selected')
-}
+colorOne.style.backgroundColor = "black";
+colorTwo.style.backgroundColor = "green";
+colorThree.style.backgroundColor = "red";
+colorFour.style.backgroundColor = "blue";
+colorOne.addEventListener('click', addSelectedClass);
+colorTwo.addEventListener('click', addSelectedClass);
+colorThree.addEventListener('click', addSelectedClass);
+colorFour.addEventListener('click', addSelectedClass);
+pixelBoard.addEventListener('click', changeColor);
 
-function clickBlue(){
-    blue.classList.add('selected')
-    black.classList.remove('selected')
-    green.classList.remove('selected')
-    red.classList.remove('selected')
+
+function addSelectedClass(event) {
+    let checkSelected = document.querySelector('.selected');
+    checkSelected.classList.remove('selected');
+    event.target.classList.add('selected');
+   }
+
+function changeColor(event) {
+    let colorSelected = document.querySelector(".selected").style.backgroundColor;
+event.target.style.backgroundColor = colorSelected;
 }
+eraseButton.addEventListener('click', function(){
+    for (let i = 0; i < getSquares.length; i += 1){
+        getSquares[i].style.backgroundColor = setNewColor;
+    }
+ }); 
