@@ -28,14 +28,18 @@ function create4Palletes() {
 create4Palletes();
 
 // Requisito 4
+let dimensionsOfBoard = 5;
 function createPixels() {
   let divFather = document.createElement('div');
+  let valorDeAlturaELargura = 42 * dimensionsOfBoard;
   divFather.id = 'pixel-board';
+  divFather.style.width = `${valorDeAlturaELargura}px`;
+  divFather.style.height = `${valorDeAlturaELargura}px`;
   document.body.appendChild(divFather);
-  for (let index = 0; index < 25; index += 1) {
+  for (let index = 0; index < (dimensionsOfBoard ** 2); index += 1) {
     let divChild = document.createElement('div');
     divChild.className = 'pixel';
-    divChild.style.background = 'white';
+    divChild.style.backgroundColor = 'white';
     divFather.appendChild(divChild);
   }
 }
@@ -81,10 +85,47 @@ function resetColors() {
     }
   })
 
-  document.body.insertBefore(button, document.querySelector('#pixel-board'));
+  document.body.insertBefore(button, document.querySelector('#color-palette').nextElementSibling);
 
 }
 resetColors();
+
+// Requisito 10
+let div = document.createElement('div');
+div.id = 'button-input';
+document.body.insertBefore(div, document.querySelector('#clear-board'));
+
+let input = document.createElement('input');
+input.id = 'board-size';
+input.type = 'number';
+input.min = '1';
+div.appendChild(input);
+
+let button = document.createElement('button');
+button.id = 'generate-board';
+button.innerText = 'VQV';
+div.appendChild(button);
+
+function setInput() {
+  button.addEventListener('click', function () {
+    let numberDoInput = input.value;
+    if (numberDoInput === '') {
+      alert("Board inválido!");
+      return;
+    }
+    if (numberDoInput < 5) {
+      numberDoInput = 5;
+    }
+    if (numberDoInput > 50) {
+      numberDoInput = 50;
+    }
+    dimensionsOfBoard = numberDoInput;
+    document.body.removeChild(document.querySelector('#pixel-board'));
+    createPixels();
+    addColorForClick();
+  });
+}
+setInput();
 
 // Requisito 12
 function randomColors() {
