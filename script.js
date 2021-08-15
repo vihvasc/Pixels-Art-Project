@@ -15,6 +15,14 @@ function setPixelColor(id) {
   pixel.style.backgroundColor = colorSelected.id;
 }
 
+function clear() {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    const pixel = pixels[i];
+    pixel.style.backgroundColor = 'white';
+  }
+}
+
 function clearButton() {
   const buttonClear = document.createElement('button');
   buttonClear.innerText = 'Limpar';
@@ -41,11 +49,3 @@ function squareOfPixels() {
   }
 }
 squareOfPixels();
-
-function clear() {
-  const pixels = document.querySelectorAll('.pixel');
-  for (let i = 0; i < pixels.length; i += 1) {
-    const pixel = pixels[i];
-    pixel.style.backgroundColor = 'white';
-  }
-}
