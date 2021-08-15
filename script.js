@@ -56,4 +56,16 @@ window.onload = function() {
         }
     }
     pixelColorer();
+
+    function clearButton() {
+        let button = document.querySelector('#clear-board');
+        button.addEventListener('click', function() {
+            let pixels = document.querySelectorAll('.pixel');
+            for (let i = 0, pixelsLength = pixels.length; i < pixelsLength; i += 1) {
+                pixels[i].style.backgroundColor = 'white'
+            }
+        })
+    }
+    clearButton();
+  
 }
