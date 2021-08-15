@@ -41,5 +41,19 @@ window.onload = function() {
         }
     }
     colorSelector();
-}
 
+    function pixelColorer() {
+        let pixels = document.querySelectorAll('.pixel');
+        for (let i = 0, pixelsLength = pixels.length; i < pixelsLength; i += 1) {
+            pixels[i].addEventListener('click', function() {
+                let colorerColor = window.getComputedStyle(document.querySelector('.color.selected')).backgroundColor;
+                if (pixels[i].style.backgroundColor !== colorerColor) {
+                    pixels[i].style.backgroundColor = colorerColor;
+                } else {
+                    pixels[i].style.backgroundColor = 'unset';
+                }
+            })
+        }
+    }
+    pixelColorer();
+}
