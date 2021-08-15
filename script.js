@@ -49,8 +49,8 @@ function createPalette() {
 createPalette();
 
 // Requisito 04 e 05
-
 let gridSize = 5;
+
 function createPixels() {
   for (let line = 0; line < gridSize; line += 1) {
     const createLine = document.createElement('div');
