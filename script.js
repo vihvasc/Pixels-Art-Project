@@ -66,11 +66,11 @@ function selecionarPreta() {
 }
 corPreta.addEventListener('click', selecionarPreta);
 
-function criaBotao () {
+function criaBotao() {
   const pegaBotao = document.createElement('button');
   pegaBotao.id = 'clear-board';
   pegaBotao.textContent = 'Limpar';
-  pegaBotao.style.display = 'inline'
+  pegaBotao.style.display = 'inline';
   const div = document.getElementById('botao');
   div.appendChild(pegaBotao);
 }
@@ -86,16 +86,18 @@ function limpaBotao() {
 }
 pegarBotao.addEventListener('click', limpaBotao);
 
-function mudarCor() {
-  const quadrado1 = document.getElementsByClassName('pixel');
-  for (const i of quadrado1) {
-    i.addEventListener('click', pintaQuadrado);
-  }
-}
-mudarCor();
-
 function pintaQuadrado(selecionado) {
   const pegaCor = document.getElementsByClassName('color selected')[0];
   const cor = pegaCor.innerText;
+  // eslint-disable-next-line no-param-reassign
   selecionado.target.style.backgroundColor = cor;
 }
+
+function mudarCor() {
+  const quadrado1 = document.getElementsByClassName('pixel');
+  // eslint-disable-next-line no-restricted-syntax
+  for (const index of quadrado1) {
+    index.addEventListener('click', pintaQuadrado);
+  }
+}
+mudarCor();
