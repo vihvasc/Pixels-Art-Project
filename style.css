@@ -1,0 +1,25 @@
+.color{
+    width: 10px;
+    background-color: purple;
+    border: black solid 1px;
+
+}
+
+#um{
+    background-color: blue;
+}
+
+
+#dois{
+    background-color: yellow;
+}
+
+
+#tres{
+    background-color: pink;
+}
+
+
+#quatro{
+    background-color: green;
+}
