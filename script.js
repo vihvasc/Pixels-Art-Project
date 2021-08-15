@@ -14,10 +14,10 @@ boxBlackD.style.backgroundColor = 'MediumSpringGreen';
 
 let pixelBoard = document.getElementById('pixel-board');
 // criando a tela com as boxs
-function creatBox() {
-    for (let i = 0; i < 5; i += 1) {
+function creatBox(qtd) {
+    for (let i = 0; i < qtd; i += 1) {
         let divLineBox = document.createElement('div');
-        for (let j = 0; j < 5; j += 1) {
+        for (let j = 0; j < qtd; j += 1) {
             let divBox = document.createElement('div');
             divBox.className = 'pixel';
             divLineBox.appendChild(divBox);
@@ -25,8 +25,8 @@ function creatBox() {
         pixelBoard.appendChild(divLineBox);
     }
 }
-
-creatBox();
+let n = 5;
+creatBox(n);
 // função para selecionar a cor
 function selectColor(evento) {
 
@@ -49,17 +49,50 @@ function colorPrint(evento) {
     evento.target.style.backgroundColor = corSelecionada.style.backgroundColor;
 }
 //adicionando o texto limpar no botão
-let botao = document.querySelector('button');
+let botao = document.querySelectorAll('button')[0];
 botao.innerText = 'Limpar';
 // criando a função para limpar
 botao.addEventListener('click', clearColor);
-
+// criando a função para limpar
 function clearColor(evento) {
     for (let i = 0; i < 25; i += 1) {
         let limpar = document.querySelectorAll('.pixel')[i];
         limpar.style.backgroundColor = 'white';
         evento.target.style.backgroundColor = limpar;
     }
-    
-
 }
+
+let botaoB = document.querySelectorAll('button')[1];
+botaoB.innerText = 'VQV';
+
+botaoB.addEventListener('click', function (evento) {
+    evento.preventDefault();
+    let number = document.querySelector('#board-size');// criando uma variavel o intput
+    let value = number.value;// atriuindo o valor do input a variavel numero
+    let tagMain = document.querySelectorAll('#pixel-board');
+    let divMain = document.querySelectorAll('#pixel-board div');
+    let n = 0;
+    if (value === '') {
+        window.alert('Board inválido!');
+    } else if (value > 4 && value < 51) {
+        n = value;
+
+        for (let i = 0; i < divMain.length; i += 1) {
+            divMain[i].remove();
+        }
+
+        // tagMain.removeChild(divMain);
+
+        creatBox(n);
+    }
+    console.log(n);
+    // for (let i = 0; i < n.length; i += 1) {
+    //     let boxLittle = document.querySelectorAll('.pixel')[i];
+    //     boxLittle.style.backgroundColor = 'white';
+    //     boxLittle.style.width = n+'px';
+    //     boxLittle.style.height = n+'px';
+
+    // }
+
+    //}
+})
