@@ -2,7 +2,9 @@ let title = document.getElementById("title");
 let header = document.getElementById("header");
 let colorPalett = document.getElementById("color-palette");
 let pixelBoard = document.getElementById("pixel-board");
-let blackColor = document.querySelector(".color");
+let selected = document.querySelector(".selected");
+
+
 
 function getRandomColor() {
   let letters = "0123456789ABCDEF";
@@ -17,13 +19,21 @@ function createColorPalett (){
   for (let i = 0; i < 4; i += 1){
     let randomColor = document.createElement("div");
     colorPalett.appendChild(randomColor);
-    randomColor.setAttribute("class", "color");
+    randomColor.classList.add("color");
     if (i === 0){
       randomColor.style.backgroundColor = "black";
       randomColor.classList.add("selected");
-    } else {
+      randomColor.setAttribute("id", "black")
+    } else if (i === 1){
       randomColor.style.backgroundColor = getRandomColor();
-    };    
+      randomColor.setAttribute("id", "color-two")
+    } else if (i === 2){
+      randomColor.style.backgroundColor = getRandomColor();
+      randomColor.setAttribute("id", "color-three")
+    } else if (i === 3){
+      randomColor.style.backgroundColor = getRandomColor();
+      randomColor.setAttribute("id", "color-four")
+    };     
   }; 
 };
 
@@ -46,9 +56,22 @@ function createPixels(){
 createPixels();
 
 // 7 - Clicar em uma das cores da paleta, faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+let blackColor = document.getElementById("black");
+let secondColor = document.getElementById("color-two");
+let thirdColor = document.getElementById("color-three");
+let fourthColor = document.getElementById("color-four");
 
-/*let clicar = document.addEventListener("click", selectColor);
+blackColor.addEventListener("click", selectColor);
+secondColor.addEventListener("click", selectColor);
+thirdColor.addEventListener("click", selectColor);
+fourthColor.addEventListener("click", selectColor);
 
 function selectColor(event){
+  blackColor.classList.remove("selected");
+  secondColor.classList.remove("selected");
+  thirdColor.classList.remove("selected");
+  fourthColor.classList.remove("selected");
   
-}*/
+  event.target.classList.add("selected");
+  selected = document.querySelector(".selected");
+};
