@@ -62,3 +62,15 @@ function optionUser() {
     })
 }
 optionUser();
+
+function randomPalettes() {
+    const color = document.getElementsByClassName('color');
+    for (let index = 1; index < color.length; index += 1) {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        const rgb = `rgb(${r}, ${g}, ${b})`;
+        color[index].style.backgroundColor = rgb;
+    } // fonte: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+}
+randomPalettes();
