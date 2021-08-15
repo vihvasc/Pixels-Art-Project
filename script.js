@@ -2,9 +2,9 @@ const btn = document.querySelector('#clear-board');
 const pontoLuminoso = document.getElementsByClassName('pixel');
 
 function limparQuadro() {
-for (const quadrado of pontoLuminoso) {
-  quadrado.style.backgroundColor = 'rgb(255, 255, 255)';
-}
+  for (const quadrado of pontoLuminoso) {
+    quadrado.style.backgroundColor = 'rgb(255, 255, 255)';
+  }
 }
 btn.addEventListener('click', limparQuadro);
 
@@ -20,3 +20,18 @@ function mudarClasse(event) {
   }
   event.target.classList.add('selected');
 }
+
+const pixels = document.getElementsByClassName('pixel');
+for (let index = 0; index < pixels.length; index += 1){
+  pixels[index].addEventListener('click', adicionarCores);
+}
+
+function adicionarCores(event) {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1){
+}
+  event.target.style.backgroundColor = 'red';
+}
+
+const classeSelecionada = document.getElementsByClassName('selected');
+console.log(classeSelecionada[1]);
