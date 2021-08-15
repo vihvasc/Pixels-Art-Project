@@ -1,4 +1,31 @@
-/* 
+function creatColorClass(){
+	let n = 4;
+	let colorPalette = document.getElementById("color-palette");
+	for(let cont = 1;cont <= n;cont += 1){
+		let color = document.createElement("div");
+		color.classList.add("color");
+		colorPalette.appendChild(color);	
+	}
+}
+creatColorClass();
+
+
+//change color byid
+
+function changeColorOfColor(){
+	let arrClassColor = document.getElementsByClassName("color");
+		arrClassColor[0].style.backgroundColor = "black"
+		arrClassColor[1].style.backgroundColor = "red"
+		arrClassColor[2].style.backgroundColor = "orange"
+		arrClassColor[3].style.backgroundColor = "pink"
+		
+}
+changeColorOfColor();
+
+
+
+
+/*
 ### 4 - Adicione à página um quadro de pixels, com 25 pixels.
 
 - O quadro de "pixels" deve ter 5 elementos de largura e 5 elementos de comprimento;
@@ -27,8 +54,31 @@ function creatPixel(){
 	let pixel = document.createElement("div");
 	pixel.classList.add("pixel")
 	pixelBoard.appendChild(pixel);
-			
+				
 	}
 
 }
 creatPixel();
+	/* 
+### 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
+
+- O elemento da cor preta deve possuir, inicialmente, a `classe` `selected`;
+
+- Note que o elemento que deverá receber a classe `selected` deve ser um dos elementos que possuem a classe `color`, como especificado no **requisito 2**.
+
+**O que será verificado:**
+
+- Verifica se o elemento da cor preta possui, inicialmente, a `classe` `selected`
+
+- Verifica se nenhuma outra cor da paleta tem a `classe` `selected`
+*/
+
+console.log(document.querySelector(".color"));
+function selectedColorBlack(){
+	let blackSelected = document.querySelector(".color")
+	blackSelected.classList.add("selected")
+
+}
+selectedColorBlack();
+
+

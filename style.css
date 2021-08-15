@@ -13,6 +13,7 @@
     height: 40px;
     border: 1px solid black;
     display: inline-block;
+    margin: 1px;
 
 }
 #pixel-board{
