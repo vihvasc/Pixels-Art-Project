@@ -1,0 +1,7 @@
+#color-palette {
+  display: flex;
+}
+
+.color {
+  border: 1px solid black;
+}
