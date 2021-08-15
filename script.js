@@ -124,11 +124,13 @@ function clearButton() {
   createButton('clear-board', 'Limpar', 'pixel-board');
   const clearBoard = document.querySelector('#clear-board');
   clearBoard.style.marginLeft = '10px';
-  clearBoard.addEventListener('click', function whiteBG() {
-    for (let pix = 0; pix < catchPixels.length; pix += 1) {
-      catchPixels[pix].style.backgroundColor = 'white';
-    }
-  });
+  clearBoard.addEventListener('click', whiteBG);
+}
+
+function whiteBG() {
+  for (let pix = 0; pix < catchPixels.length; pix += 1) {
+    catchPixels[pix].style.backgroundColor = 'white';
+  }
 }
 clearButton();
 
@@ -150,21 +152,23 @@ function eraseGrid() {
 function inputButtons() {
   createButton('generate-board', 'VQV', 'pixel-board');
   const inputButton = document.querySelector('#generate-board');
-  inputButton.addEventListener ('click', function checkInput() {
-    if (input.value === '') {
-      return alert('Board inválido!');
-    }
-    if (input.value < 5) {
-      input.value = 5;
-    }
-    if (input.value > 50) {
-      input.value = 50;
-    }
-    eraseGrid();
-    gridSize = input.value;
-    pixelBoard();
-    changePixelColor();
-  });
+  inputButton.addEventListener ('click', checkInput);
+}
+
+function checkInput() {
+  if (input.value === '') {
+    return alert('Board inválido!');
+  }
+  if (input.value < 5) {
+    input.value = 5;
+  }
+  if (input.value > 50) {
+    input.value = 50;
+  }
+  eraseGrid();
+  gridSize = input.value;
+  pixelBoard();
+  changePixelColor();
 }
 
 inputButtons();
