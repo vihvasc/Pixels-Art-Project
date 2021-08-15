@@ -9,21 +9,24 @@ window.onload = function () {
   createClearBoardButton();
   createPixelBoard(pixelBoardSize);
 
-  //Cor Preta é selecionada inicialmente
+  // Cor Preta é selecionada inicialmente
   colorPallete.firstChild.classList.add('selected');
 
-  //Adiciona o evento de click na pleta de cores
+  // Adiciona o evento de click na pleta de cores
   let colors = document.getElementsByClassName('color');
   for (let color of colors) {
     color.addEventListener('click', selectColor);
   }
 
-  //Adiciona evento de click em todos Pixels
+  // Adiciona evento de click em todos Pixels
   let pixels = document.getElementsByClassName('pixel');
   for (let pixel of pixels) {
     pixel.addEventListener('click', paintPixel);
   }
 
+  // Adicona evento de click no botão clear board
+  let clearBoardButton = document.getElementById('clear-board');
+  clearBoardButton.addEventListener('click', clearPixelBoard);
   // CRIANDO OS ELEMENTOS
 
   // Cria a paleta com as cores presentes em colorList
@@ -86,9 +89,18 @@ window.onload = function () {
     event.target.classList.add('selected');
   }
 
-  //Função para pintar o pixel clicado
+  // Função para pintar o pixel clicado
   function paintPixel(event) {
     color = document.querySelector('.selected');
     event.target.style.backgroundColor = color.style.backgroundColor;
+  }
+
+  // Função para limpar o Pixel Board
+  function clearPixelBoard() {
+    let pixels = document.querySelectorAll('.pixel');
+
+    for (let pixel of pixels) {
+      pixel.style.backgroundColor = 'white';
+    }
   }
 };
