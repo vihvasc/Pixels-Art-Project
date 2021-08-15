@@ -21,6 +21,14 @@ body {
   padding: 5px 10px;
 }
 
+#input-button {
+  margin: 10px auto 20px;
+}
+
+#board-size {
+  margin-right: 10px;
+}
+
 #pixel-board {
   width: 210px;
   height: 210px;

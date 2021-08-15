@@ -10,7 +10,7 @@ createTitle();
 
 // Requisito 12
 function randomPalette() {
-  const randomNumber = Math.floor((Math.random() * 255) + 1);
+  const randomNumber = Math.floor(Math.random() * 255);
   return randomNumber;
 }
 
@@ -34,11 +34,15 @@ function createPalette() {
 createPalette();
 
 // Requisito 4 e 5
+let framesInput = 5; // Número de quadros-pixels
 function createFrame() {
   const divFather = document.createElement('div');
+  const result = framesInput * 42;
   divFather.id = 'pixel-board';
+  divFather.style.width = `${result}px`;
+  divFather.style.height = `${result}px`;
   document.body.appendChild(divFather);
-  for (let index = 0; index < 25; index += 1) {
+  for (let index = 0; index < (framesInput ** 2); index += 1) {
     const divChild = document.createElement('div');
     divChild.className = 'pixel';
     divChild.style.backgroundColor = 'white';
@@ -67,7 +71,7 @@ function selectColor() {
 selectColor();
 
 // Requisito 8
-const pixelBox = document.querySelectorAll('.pixel');
+const pixelBox = document.getElementsByClassName('pixel');
 function pixelColor() {
   for (let index = 0; index < pixelBox.length; index += 1) {
     pixelBox[index].addEventListener('click', (event) => {
@@ -80,11 +84,13 @@ function pixelColor() {
 pixelColor();
 
 // Requisito 9
+
+const pixelBoard = document.querySelector('#pixel-board');
 function createButton() {
   const button = document.createElement('button');
   button.id = 'clear-board';
   button.innerText = 'Limpar';
-  document.body.insertBefore(button, document.querySelector('#pixel-board'));
+  document.body.insertBefore(button, pixelBoard);
 
   button.addEventListener('click', () => {
     for (let index = 0; index < pixelBox.length; index += 1) {
@@ -94,3 +100,41 @@ function createButton() {
 }
 
 createButton();
+
+// Requisito 10
+const div = document.createElement('div');
+div.id = 'input-button';
+document.body.insertBefore(div, pixelBoard);
+
+const input = document.createElement('input');
+input.id = 'board-size'; // Item 3
+input.type = 'number';
+input.min = '1';
+div.appendChild(input);
+
+const button = document.createElement('button');
+button.id = 'generate-board'; // Item 3
+button.innerText = 'VQV'; // Item 5
+div.appendChild(button);
+
+function setInput() {
+  button.addEventListener('click', () => {
+    let numberOfInput = input.value;
+    if (numberOfInput === '') {
+      alert('Board inválido!');
+      return; // Item 8
+    }
+    if (numberOfInput < 5) {
+      numberOfInput = 5;
+    }
+    if (numberOfInput > 50) {
+      numberOfInput = 50;
+    }
+    framesInput = numberOfInput;
+    document.body.removeChild(pixelBoard);
+    createFrame();
+    pixelColor();
+  });
+}
+
+setInput();
