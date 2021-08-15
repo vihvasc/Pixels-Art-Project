@@ -4,8 +4,9 @@ const buttom = document.getElementById('clear-board');
 const vqvButtom = document.getElementById('generate-board');
 
 function changeColor(event) {
+  const pixel = event;
   const bColor = document.querySelector('.selected').style.backgroundColor;
-  event.target.style.backgroundColor = bColor;
+  pixel.target.style.backgroundColor = bColor;
 }
 
 function selectColor(event) {
