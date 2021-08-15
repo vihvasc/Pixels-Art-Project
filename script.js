@@ -3,8 +3,10 @@ window.onload = function () {
   let pixelBoardSize = 5;
   let colorPallete = document.getElementById('color-palette');
   let pixelBoard = document.getElementById('pixel-board');
+  let buttonContainer = document.getElementById('button-container');
 
   createColorPallete(colorList);
+  createClearBoardButton();
   createPixelBoard(pixelBoardSize);
 
   //Cor Preta é selecionada inicialmente
@@ -17,7 +19,7 @@ window.onload = function () {
   }
 
   //Adiciona evento de click em todos Pixels
-  pixels = document.getElementsByClassName('pixel');
+  let pixels = document.getElementsByClassName('pixel');
   for (let pixel of pixels) {
     pixel.addEventListener('click', paintPixel);
   }
@@ -65,6 +67,14 @@ window.onload = function () {
     }
 
     return document.getElementsByClassName('line');
+  }
+
+  // Cria botão para para resetar o Pixel Board
+  function createClearBoardButton() {
+    let clearBoardButton = document.createElement('button');
+    clearBoardButton.id = 'clear-board';
+    clearBoardButton.innerText = 'Limpar';
+    buttonContainer.appendChild(clearBoardButton);
   }
 
   // FUNÇÕES DE EVENTOS
