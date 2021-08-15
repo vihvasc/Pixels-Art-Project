@@ -93,6 +93,29 @@ buttonClear.addEventListener('click', function(){
 
 clearButton();
 
+// Desafio 10
+
+let div = document.createElement('div');
+div.id = 'button-input';
+document.body.insertBefore(div, document.querySelector('#pixel-board'));
+
+let input = document.createElement( 'input');
+input.id = 'board-size';
+document.body.insertBefore(input, document.querySelector('#pixel-board'));
+
+let button = document.createElement('button');
+button.id = 'generate-board';
+button.innerText = 'VQV';
+document.body.insertBefore(button, document.querySelector('#pixel-board'));
+
+input.min
+
+
+
+
+// Input só aceita nº maiores que zero
+
+// pode ser usada somente 
 
 
 
