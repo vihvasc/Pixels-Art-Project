@@ -63,16 +63,26 @@ buttonClear.addEventListener('click', clearPixels);
 // Seleciona o tamanho do quadro
 const buttonGenerateBoard = document.getElementById('generate-board');
 
+function deletePixels() {
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
+  }
+}
+
 function generateBoard() {
   const inputNumber = document.getElementById('board-size').value;
-  if (inputNumber !== '') {
-    while (pixelBoard.firstChild) {
-      pixelBoard.removeChild(pixelBoard.firstChild);
-    }
-    createPixels(inputNumber);
-  } else {
+  if (inputNumber === '') {
     alert('Board inválido!');
+  }
+  if (inputNumber < 5) {
+    deletePixels();
     createPixels(5);
+  } else if (inputNumber > 50) {
+    deletePixels();
+    createPixels(50);
+  } else {
+    deletePixels();
+    createPixels(inputNumber);
   }
 }
 
