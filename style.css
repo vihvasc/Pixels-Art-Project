@@ -27,7 +27,8 @@
   .pixel-board {
     display: flex;
     flex-wrap: wrap;
-    width: 240px;
+    width: 210px;
+    margin: auto;
     }
     
     .pixel {
@@ -36,9 +37,7 @@
     border: 1px solid black;
     } 
 
-    #color-palette > .selected {
-      border: 1px solid blue;
-    }
+    
   
 
  
