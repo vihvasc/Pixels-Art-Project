@@ -30,4 +30,9 @@ body {
 
 #clear-board {
   margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#board-size {
+  margin-right: 5px;
 }
