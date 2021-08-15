@@ -1,43 +1,48 @@
-*{
+* {
   list-style: none;
-  font-family: 'Orbitron', sans-serif;
+  font-family: Orbitron, sans-serif;
   margin: 0;
   padding: 0;
 }
-header{
+
+header {
   text-align: center;
   background-color: #1397e9;
   position: fixed;
   width: 100%;
   top: 0;
 }
-main{
+
+main {
   margin-top: 100px;
 }
 
-ul li{
+ul li {
   display: inline-block;
 }
 
-button{
-  background-color:#1397e9;
+button {
+  background-color: #1397e9;
   border: 0;
   height: 40px;
   width: 200px;
   margin: 30px;
 }
-input{
+
+input {
   width: 200px;
 
 }
 
-/* consultei sobreo display grid em: https://www.origamid.com/projetos/css-grid-layout-guia-completo/ */
-#pixel-board{
+/* consultei sobreo display grid em:
+ https://www.origamid.com/projetos/css-grid-layout-guia-completo/ */
+
+#pixel-board {
   display: grid;
   grid-template-columns: repeat(5, 40px);
 }
 
-#color-palette{
+#color-palette {
   border: 1px solid black;
   width: 300px;
   height: 80px;
@@ -45,25 +50,26 @@ input{
   justify-content: center;
   align-items: center;
 }
-.color{
+
+.color {
   margin: 10px;
 }
 
-.box{
+.box {
   border: 1px solid black;
   width: 40px;
   height: 40px;
 }
 
-.pixel{
-  background-color: rgb(255, 255, 255);
+.pixel {
+  background-color: white;
 }
 
-button:hover{
+button:hover {
   background-color: #91cff6;
 }
 
-.color:hover{
+.color:hover {
   width: 50px;
   height: 50px;
   margin: 0;
