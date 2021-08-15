@@ -4,14 +4,18 @@
   text-align: center;
 }
 
+body {
+  background-color: whitesmoke;
+}
+
 h1 {
   font-family: Montserrat, sans-serif;
   background-color: #ccb3ff;
-  color: #f2f2f2;
+  color: white;
 }
 
 #color-palette {
-  background-color: #f2f2f2;
+  background-color: lightgray;
 }
 
 #pixel-board {
