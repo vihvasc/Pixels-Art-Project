@@ -29,7 +29,7 @@ function paintSquare(originEvent) {
   myPixel.style.background = selectedColor;
 }
 
-// make 5x5 grid, pixel size = 40px
+// exercise 5: make 5x5 grid, pixel size = 40px
 const exerciseSize = '40px';
 const sideExerciseNumber = parseInt(exerciseSize, 10); // 40
 const sideGrid = sideExerciseNumber * 5; // 200
