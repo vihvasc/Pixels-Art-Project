@@ -3,7 +3,7 @@
   margin-right: auto;
 }
 
-body{
+body {
   display: flex;
   flex-direction: column;
 }
