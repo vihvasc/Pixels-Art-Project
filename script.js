@@ -66,8 +66,17 @@ function selecionarPreta() {
 }
 corPreta.addEventListener('click', selecionarPreta);
 
-const pegarBotao = document.getElementById('clear-board');
+function criaBotao () {
+  const pegaBotao = document.createElement('button');
+  pegaBotao.id = 'clear-board';
+  pegaBotao.textContent = 'Limpar';
+  pegaBotao.style.display = 'inline'
+  const div = document.getElementById('botao');
+  div.appendChild(pegaBotao);
+}
+criaBotao();
 
+const pegarBotao = document.getElementById('clear-board');
 function limpaBotao() {
   const quadrados = document.getElementsByClassName('pixel');
   for (let i = 0; i < quadrados.length; i += 1) {
