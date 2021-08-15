@@ -104,8 +104,7 @@ const catchPixels = document.getElementsByClassName('pixel');
 function changePixelColor() {
   for (let curColor = 0; curColor < catchPixels.length; curColor += 1) {
     catchPixels[curColor].addEventListener('click', function (event) {
-      const initColor = initialColor;
-      const currentColor = initColor.style.backgroundColor;
+      const currentColor = initialColor.style.backgroundColor;
       event.target.style.backgroundColor = currentColor;
     });
   }
@@ -172,6 +171,4 @@ function inputButtons() {
   const inputButton = document.querySelector('#generate-board');
   inputButton.addEventListener ('click', checkInput);
 }
-
-
 inputButtons();
