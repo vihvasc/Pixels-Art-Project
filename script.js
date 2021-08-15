@@ -76,3 +76,18 @@ function clicandoParaSelecionar1() {
     cor4.classList.remove('selected')
 }
 cor1.addEventListener('click', clicandoParaSelecionar1);
+
+
+
+
+let pixels = document.getElementsByClassName('pixel')
+for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener("click", pintandoPixels);
+}
+// esse .target é para descobrir o alvo,
+// sem ele nada acontece porque precisamos saber onde
+// está o objeto para o tipo do evento, colocando o
+// .target
+function pintandoPixels(objeto) {
+    objeto.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+}
