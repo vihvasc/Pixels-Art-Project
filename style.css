@@ -1,4 +1,4 @@
-h1, #color-palette {
+h1 , #color-palette {
     text-align: center;
 }
 
@@ -10,17 +10,17 @@ h1, #color-palette {
 }
 
 #color-1 {
-    background-color: #011627;
+    background-color: black;
 }
 
 #color-2 {
-    background-color: #F71735;
+    background-color: #f71735;
 }
 
 #color-3 {
-    background-color: #41EAD4;
+    background-color: #41ead4;
 }
 
 #color-4 {
-    background-color: #FF9F1C;
+    background-color: #ff9f1c;
 }
