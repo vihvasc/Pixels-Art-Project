@@ -12,19 +12,19 @@ createTitle();
 // Requisito 12
 // Fonte: https://www.youtube.com/watch?v=UNIlt7_oMQQ
 function getRandomColor() {
-	let letters = '0123456789ABCDEF';
+  const letters = '0123456789ABCDEF';
   let color = '#';
   for (let count = 0; count < 6; count += 1) {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
-};
+}
 
 const color1 = getRandomColor();
 const color2 = getRandomColor();
 const color3 = getRandomColor();
 
-let colors = ['#000000', color1, color2, color3];
+const colors = ['#000000', color1, color2, color3];
 
 function addColor() {
   for (let index = 0; index < colors.length; index += 1) {
@@ -88,8 +88,8 @@ initialColor.classList.add('selected');
 const changeColor = document.querySelectorAll('.color');
 
 function addClass() {
-  for (let i = 0; i < changeColor.length; i += 1) {
-    changeColor[i].addEventListener('click', function (event) {
+  for (let select = 0; select < changeColor.length; select += 1) {
+    changeColor[select].addEventListener('click', function (event) {
       initialColor.classList.remove('selected');
       event.target.classList.add('selected');
       initialColor = event.target;
@@ -104,9 +104,9 @@ const catchPixels = document.getElementsByClassName('pixel');
 function changePixelColor() {
   for (let curColor = 0; curColor < catchPixels.length; curColor += 1) {
     catchPixels[curColor].addEventListener('click', function (event) {
-      let currentColor = initialColor.style.backgroundColor;
+      const currentColor = initialColor.style.backgroundColor;
       event.target.style.backgroundColor = currentColor;
-    })
+    });
   }
 }
 
@@ -114,7 +114,7 @@ changePixelColor();
 
 // Requisito 09
 function createButton(buttonId, buttonText, insBeforeId) {
-  let button = document.createElement('button');
+  const button = document.createElement('button');
   button.id = buttonId;
   button.innerText = buttonText;
   document.body.insertBefore(button, document.getElementById(insBeforeId));
@@ -122,18 +122,18 @@ function createButton(buttonId, buttonText, insBeforeId) {
 
 function clearButton() {
   createButton('clear-board', 'Limpar', 'pixel-board');
-  let clearBoard = document.querySelector('#clear-board');
+  const clearBoard = document.querySelector('#clear-board');
   clearBoard.style.marginLeft = '10px';
-  clearBoard.addEventListener('click', function(event){
+  clearBoard.addEventListener('click', function () {
     for (let pix = 0; pix < catchPixels.length; pix += 1) {
-    catchPixels[pix].style.backgroundColor = 'white';
+      catchPixels[pix].style.backgroundColor = 'white';
     }
   });
 }
-clearButton()
+clearButton();
 
 // Requisito 10
-let input = document.createElement('input');
+const input = document.createElement('input');
 function inputSize() {
   input.id = 'board-size';
   input.style.width = '40px';
@@ -144,10 +144,13 @@ function inputSize() {
 }
 inputSize();
 
+function eraseGrid() {
+  document.body.removeChild(document.querySelector('#pixel-board'));
+}
 function inputButtons() {
   createButton('generate-board', 'VQV', 'pixel-board');
-  let inputButton = document.querySelector('#generate-board');
-  inputButton.addEventListener('click', function(){
+  const inputButton = document.querySelector('#generate-board');
+  inputButton.addEventListener ('click', function() {
     if (input.value === '') {
       alert('Board inválido!');
       return;
@@ -156,17 +159,14 @@ function inputButtons() {
       input.value = 5;
     }
     if (input.value > 50) {
-      input.value = 50;
+    input.value = 50;
     }
-      eraseGrid();
-      gridSize = input.value;
-      pixelBoard();
-      changePixelColor();
+    eraseGrid();
+    gridSize = input.value;
+    pixelBoard();
+    changePixelColor();
   });
 }
 
 inputButtons();
 
-function eraseGrid() {
-  document.body.removeChild(document.querySelector('#pixel-board'));
-}
