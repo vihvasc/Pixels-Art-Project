@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-Br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,49 +8,34 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1 id = "title" >Paleta de Cores</h1>
-    </header>
+    <h1 id ='title'>Paleta de Cores</h1>
 
-    <section id = "color-palette">
-        <div class = "color paleta-preto"></div>
-        <div class = "color paleta-vermelho"></div>
-        <div class = "color paleta-azul"></div>
-        <div class = "color paleta-verde"></div>
-    </section>
-    <section id = "pixel-board">
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-        <div class = "pixel"></div>
-
-    </section>
+    <h2>escolha uma cor</h2>
     
-    <script src = "script.js"></script>
+        <table id = "color-palette">
+            <tr>
+                <td class="color pixel backgroudBlack"></td><td class="color pixel backgroudRed"></td><td class="color pixel backgroudBlue"></td><td class="color pixel backgroudGreen"></td>
+            </tr>
+        </table>
+
+    
+    <input type="color" id = "colorPicker">
+    
+    <h2>escolha o tamanho do tabuleiro</h2>
+    <form id = "sizePicker">
+        grid height:
+        <input type = "number" id = "inputHeight" name = "height" min = "1" value = "1"> 
+        grid width:
+        <input type = "number" id = "inputWidth" name = "width" min = "1" value = "1"> 
+        <input type = "submit" onclick="makeGrid() return false;">
+    </form>
+
+    <h2>design canvas</h2>
+    <table id ="pixelCanvas"></table>
+        
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        </head>
+    <script src="script.js"></script>
 </body>
 </html>
