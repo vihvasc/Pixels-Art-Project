@@ -2,7 +2,7 @@ const containerOfPalettes = document.getElementById('color-palette');
 const palettes = Array.from(document.getElementsByClassName('color'));
 const pixelBoard = document.getElementById('pixel-board');
 let qntOfPixels = 5;
-let initialColorSelected = palettes[0];
+let colorSelected = palettes[0];
 
 function generateRandomNumber() {
   // Valores entre 0 e 254, desconderando o 255/branco
@@ -48,9 +48,19 @@ function createPixels(num) {
 function clickForSelectColor() {
   palettes.forEach((color) => {
     color.addEventListener('click', (event) => {
-      initialColorSelected.classList.remove('selected');
+      colorSelected.classList.remove('selected');
       event.target.classList.add('selected');
-      initialColorSelected = event.target;
+      colorSelected = event.target;
+    });
+  });
+}
+
+function clickForPaint() {
+  const allPixels = Array.from(document.getElementsByClassName('pixel'));
+  allPixels.forEach((pixel) => {
+    pixel.addEventListener('click', (event) => {
+      const pixelForPaint = event;
+      pixelForPaint.target.style.backgroundColor = colorSelected.style.backgroundColor;
     });
   });
 }
@@ -59,3 +69,4 @@ createPalettes();
 defineSizeOfPixelBoard(qntOfPixels);
 createPixels(qntOfPixels);
 clickForSelectColor();
+clickForPaint();
