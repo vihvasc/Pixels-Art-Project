@@ -8,6 +8,15 @@ const gridButton = document.querySelector('#generate-board');
 
 const colorsArray = Array.from(colors);
 const colorsArrayLength = colorsArray.length;
+// sets random colors on initialization
+for (let index = 1; index < colorsArrayLength; index += 1) {
+  const firstNumber = Math.floor(Math.random() * 255);
+  const secondNumber = Math.floor(Math.random() * 255);
+  const thirdNumber = Math.floor(Math.random() * 255);
+  root.style.setProperty('--second-color', `rgb(${firstNumber}, ${secondNumber}, ${thirdNumber})`);
+  root.style.setProperty('--third-color', `rgb(${secondNumber}, ${firstNumber}, ${thirdNumber})`);
+  root.style.setProperty('--fourth-color', `rgb(${thirdNumber}, ${secondNumber}, ${firstNumber})`);
+}
 
 // setting black as default selected
 const blackColor = colorsArray[0];

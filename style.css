@@ -7,6 +7,12 @@
   --grid-size: 0;
 
   --grid-size-px: 0;
+
+  --second-color: 0;
+
+  --third-color: 0;
+
+  --fourth-color: 0;
 }
 
 #title {
@@ -33,15 +39,15 @@
 }
 
 .color:nth-of-type( 2 ) {
-  background-color: red;
+  background-color: var(--second-color);
 }
 
 .color:nth-of-type( 3 ) {
-  background-color: yellow;
+  background-color: var(--third-color);
 }
 
 .color:nth-of-type( 4 ) {
-  background-color: green;
+  background-color: var(--fourth-color);
 }
 
 #clear-board {
