@@ -1,4 +1,3 @@
-createBoard();
 
 //variáveis globais
 var paletteList = document.querySelectorAll(".color");
@@ -10,50 +9,53 @@ var boardButton = document.getElementById("generate-board");
 var boardInput = document.getElementById("board-size");
 var boardColumns = 5;
 
-
+createBoard();
 // função que cria os grids para o pixel-board
 function createBoard(){
-  for(let i = 0; i < 25; i ++){
+   validatesValue();
+  resetSize();
+  for(let i = 0; i < boardColumns**2; i ++){
+
     let box = document.createElement("div");
     box.classList.add("pixel");
     box.classList.add("box");
 
-    let board = document.querySelector("#pixel-board");
+    board = document.querySelector("#pixel-board");
     board.appendChild(box);
+
+    let stringGrid = "repeat(" + boardColumns + ", 40px)";
+    board.style.gridTemplateColumns = stringGrid;
+    createEvent(pixelBoard, paletteList);
   }
 }
 
-// boardButton.addEventListener('click', resizeBoard);
-// boardInput.addEventListener('change', getValue);
+boardInput.addEventListener('change', getValue);
+boardButton.addEventListener('click', createBoard);
 
-// function getValue(){
-//   boardColumns = event.target.value;
-  
-// }
-// function resetSize(){
-//   pixelBoard = document.querySelectorAll(".pixel");
-// for(let i = 0; i < pixelBoard.length; i ++){
-//   board.removeChild(pixelBoard[i]);
-// }
-// console.log(pixelBoard);
-// }
+function getValue(){
+  boardColumns = event.target.value;
+  validatesValue();
+}
+function validatesValue(){
+  let data = document.getElementById('board-size');
+  if(data.value === ''){
+    alert("Board inválido!");
+    return;
+  }
+  if(data.value < 5){
+    boardColumns = 5;
+  }
+  if(data.value > 50){
+    boardColumns = 50;
+  }
+}
 
-// function resizeBoard(){
-//   resetSize();
-//   var boardSize = boardColumns*boardColumns;
-//   let templateGrid = document.getElementById("pixel-board");
-//   let stringGrid = "repeat(" + boardColumns + ", 40px)";
-//   templateGrid.style.gridTemplateColumns = stringGrid;
-
-//   for(let i = 0; i < boardSize; i ++){
-//     let box = document.createElement("div");
-//     box.classList.add("pixel");
-//     box.classList.add("box");
-
-//     board.appendChild(box);
-//   }
-// }
-
+function resetSize(){
+  pixelBoard = document.querySelectorAll(".pixel");
+for(let i = 0; i < pixelBoard.length; i ++){
+  board.removeChild(pixelBoard[i]);
+}
+}
 
 //seta a primeira cor da paleta como preto
 firstColor();
@@ -82,27 +84,14 @@ function paint(){
   event.target.style.backgroundColor = selectedColor;
 }
 
-function createEvent(pixelBoard, paletteList){
-  for(let i =0; i < pixelBoard.length; i++){
-    pixelBoard[i].addEventListener('click', paint);
-  }
-
-  for(let i =0; i < paletteList.length; i ++){
-    paletteList[i].addEventListener('click', selectColor);
-  }
-  console.log(pixelBoard.length);
-}
-
-button.addEventListener('click', clearBoard);
-
 function clearBoard(){
-  
+  pixelBoard = document.querySelectorAll(".pixel");
   for(let key of pixelBoard){
     key.style.backgroundColor = 'white';
   }
+  console.log("Estive aqui :)");
+  console.log(pixelBoard.length);
 }
-
-createEvent(pixelBoard, paletteList);
 
 //randomizar cores da palheta
 //criar função que gera um número aleatório
@@ -124,6 +113,7 @@ function rgbString(value){
   return string;
 }
 
+
 fillPalette();
 function fillPalette(){
   let boxes = document.querySelectorAll(".color");
@@ -136,4 +126,16 @@ function fillPalette(){
       boxes[i].style.backgroundColor = rgbString();
     }
   }
+}
+
+function createEvent(pixelBoard, paletteList){
+  pixelBoard = document.querySelectorAll(".pixel");
+  for(let i =0; i < pixelBoard.length; i++){
+    pixelBoard[i].addEventListener('click', paint);
+  }
+
+  for(let i =0; i < paletteList.length; i ++){
+    paletteList[i].addEventListener('click', selectColor);
+  }
+  button.addEventListener('click', clearBoard);
 }
