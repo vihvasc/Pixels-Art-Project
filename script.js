@@ -76,7 +76,8 @@ function pixelColor() {
   for (let index = 0; index < pixelBox.length; index += 1) {
     pixelBox[index].addEventListener('click', (event) => {
       const colorPixelSelected = colorSelected.style.backgroundColor;
-      event.target.style.backgroundColor = colorPixelSelected;
+      const evento = event.target;
+      evento.style.backgroundColor = colorPixelSelected;
     });
   }
 }
