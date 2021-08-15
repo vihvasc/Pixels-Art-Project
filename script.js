@@ -1,17 +1,29 @@
-window.onload = function() {
-  const firstColor = document.getElementById('box-color1');
-  const secondColor = document.getElementById('box-color2');
-  const thirdColor = document.getElementById('box-color3');
-  const fourthColor = document.getElementById('box-color4');
+const firstColor = document.getElementById('box-color1');
+const secondColor = document.getElementById('box-color2');
+const thirdColor = document.getElementById('box-color3');
+const fourthColor = document.getElementById('box-color4');
 
-  function handleChangeTech(event) {
-    const colorSelect = document.querySelector('.selected');
-    colorSelect.classList.remove('selected');
-    event.target.classList.add('selected');
-  }
 
-  firstColor.addEventListener('click', handleChangeTech);
-  secondColor.addEventListener('click', handleChangeTech);
-  thirdColor.addEventListener('click', handleChangeTech);
-  fourthColor.addEventListener('click', handleChangeTech);
+function changeColor(event) {
+  const colorSelect = document.querySelector('.selected');
+  colorSelect.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+firstColor.addEventListener('click', changeColor);
+secondColor.addEventListener('click', changeColor);
+thirdColor.addEventListener('click', changeColor);
+fourthColor.addEventListener('click', changeColor);
+
+const pixels = document.getElementsByClassName('pixel');
+
+function changePixelColor(event) {
+  const colorSelect = document.querySelector('.selected');
+  // Pesquisei o código de [Ulisses Roque] Projeto Pixels Art para coletar a cor da paleta;
+  const color = getComputedStyle(colorSelect).getPropertyValue('background-color');
+  event.target.style.setProperty('background-color', color);
+}
+
+for (let n = 0; n < pixels.length; n += 1) {
+  pixels[n].addEventListener('click', changePixelColor);
 }

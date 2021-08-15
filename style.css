@@ -12,30 +12,31 @@
 
 .line {
   width: 220px;
-  height: 45px;
+  height: 40px;
 }
 
 .pixel {
   width: 40px;
   height: 40px;
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0);
   box-sizing: border-box;
   display: inline-block;
   background-color: rgb(255, 255, 255);
+  margin-inline: -2px; 
 }
 
 #box-color1 {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
 }
 
 #box-color2 {
-  background-color: green;
+  background-color: rgb(0, 128, 0);
 }
 
 #box-color3 {
-  background-color: yellow;
+  background-color: rgb(255, 255, 0);
 }
 
 #box-color4 {
-  background-color: blue;
+  background-color: rgb(0, 0, 255);
 }
