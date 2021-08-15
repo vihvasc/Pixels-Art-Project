@@ -69,30 +69,28 @@ botaoB.addEventListener('click', function (evento) {
     evento.preventDefault();
     let number = document.querySelector('#board-size');// criando uma variavel o intput
     let value = number.value;// atriuindo o valor do input a variavel numero
-    let tagMain = document.querySelectorAll('#pixel-board');
-    let divMain = document.querySelectorAll('#pixel-board div');
-    let n = 0;
+    let divMain = document.querySelectorAll('#pixel-board div');// pegando todas as divs do pixel board
+
     if (value === '') {
         window.alert('Board inválido!');
     } else if (value > 4 && value < 51) {
-        n = value;
 
         for (let i = 0; i < divMain.length; i += 1) {
             divMain[i].remove();
         }
-
-        // tagMain.removeChild(divMain);
-
-        creatBox(n);
+        creatBox(value);
+    } else if (value > 50) {
+        value = 50;
+        for (let i = 0; i < divMain.length; i += 1) {
+            divMain[i].remove();
+        }
+        creatBox(value);
     }
-    console.log(n);
-    // for (let i = 0; i < n.length; i += 1) {
-    //     let boxLittle = document.querySelectorAll('.pixel')[i];
-    //     boxLittle.style.backgroundColor = 'white';
-    //     boxLittle.style.width = n+'px';
-    //     boxLittle.style.height = n+'px';
-
-    // }
-
-    //}
+    else if (value < 5) {
+        value = 5;
+        for (let i = 0; i < divMain.length; i += 1) {
+            divMain[i].remove();
+        }
+        creatBox(value);
+    }
 })
