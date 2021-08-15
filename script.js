@@ -1,1 +1,1 @@
-document.getElementsByClassName('color')[0].classList.add('selected')
+document.querySelector('.color').classList.add('selected')
