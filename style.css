@@ -39,7 +39,7 @@ header {
   display: flex;
   flex-flow: wrap;
   height: 40px;
-  width: 300px;
+  width: 100%;
   justify-content: center;
 }
 
@@ -70,7 +70,14 @@ header {
   border: rgb(0, 0, 0) solid 1px;
 }
 
+#new-palette-button {
+  margin-bottom: 10px;
+}
+
 #clear-board {
   margin-bottom: 10px;
 }
 
+#board-size {
+  margin-bottom: 10px;
+}

@@ -1,11 +1,8 @@
-const clearButton = document.getElementById('clear-board');
 const newColorsButton = document.getElementById('new-palette-button');
+const clearButton = document.getElementById('clear-board');
+const sizeButton = document.getElementById('board-size');
 let selectedColor = document.querySelector('.selected');
 const colors = document.getElementsByClassName('color');
-const firstColor = colors[0];
-const secondColor = colors[1];
-const thirdColor = colors[2];
-const fourthColor = colors[3];
 const pixels = document.getElementsByClassName('pixel');
 const stylesheet = document.styleSheets[0];
 
@@ -20,9 +17,9 @@ window.onload = function () {
 function generateColors() {
   const max = 255;
   for (let index = 1; index < colors.length; index += 1) {
-    const rColor = Math.floor(Math.random() * max);
-    const gColor = Math.floor(Math.random() * max);
-    const bColor = Math.floor(Math.random() * max);
+    const rColor = Math.floor(Math.random() * max + 1);
+    const gColor = Math.floor(Math.random() * max + 1);
+    const bColor = Math.floor(Math.random() * max + 1);
     if (rColor !== 255 || gColor !== 255 || bColor !== 255) {
       stylesheet.insertRule(`:root{--color${index + 1}: rgb(${rColor}, ${gColor}, ${bColor})`);
     } else {
@@ -33,7 +30,7 @@ function generateColors() {
 
 generateColors();
 
-// Criar pixel board sqrt(numeroDeElementos) x sqrt(numeroDeElementos)
+// Criar pixel board input x input (padrão 5 x 5)
 
 function selectColor(_clickedColor) {
   for (const element of colors) {
@@ -46,10 +43,9 @@ function selectColor(_clickedColor) {
   return selectedColor;
 }
 
-firstColor.addEventListener('click', selectColor);
-secondColor.addEventListener('click', selectColor);
-thirdColor.addEventListener('click', selectColor);
-fourthColor.addEventListener('click', selectColor);
+for (let index = 0; index < colors.length; index += 1) {
+  colors[index].addEventListener('click', selectColor);
+}
 
 function paint(_clickedPixel) {
   let paintingColor = getComputedStyle(selectedColor).getPropertyValue('background-color');
@@ -67,3 +63,55 @@ function clearBoard() {
 }
 
 clearButton.addEventListener('click', clearBoard);
+
+function boardSize() {
+
+}
+
+sizeButton.addEventListener('click', boardSize);
+
+newColorsButton.addEventListener('click', generateColors);
+
+
+
+// function isBlackOrWhite(rColor, gColor, bColor) {
+//   _isBlackOrWhite = false;
+//   if (rColor + gColor + bColor == 255 * 3 || rColor + gColor + bColor == 0) {
+//     _isBlackOrWhite = true;
+//     return _isBlackOrWhite;
+//   }
+// }
+
+// function repeatedColor(colors) {
+//   let isRepeated = false;
+//   for (let color of colors) {
+//     let counter = 0;
+//     let colorValue = getComputedStyle(color).getPropertyValue('background-color');
+//     for (color2 of colors) {
+//       let color2Value =  getComputedStyle(color2).getPropertyValue('background-color');
+//       if (colorValue === color2Value) {
+//         counter += 1;
+//         if (counter > 1) {
+//           isRepeated = true;
+//           return isRepeated;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// function generateColors() {
+//   const max = 255;
+//   for (let index = 1; index < colors.length; index += 1) {
+//     const rColor = Math.floor(Math.random() * max);
+//     const gColor = Math.floor(Math.random() * max);
+//     const bColor = Math.floor(Math.random() * max);
+//    if (isBlackOrWhite) {
+//      generateColors();
+//    }
+//    if (repeatedColor) {
+//      generateColors();
+//    } else {
+//      stylesheet.insertRule(`:root{--color${index + 1}: rgb(${rColor}, ${gColor}, ${bColor})`);
+// }
+// }
