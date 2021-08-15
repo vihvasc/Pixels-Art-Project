@@ -70,7 +70,8 @@ function colorPixel() {
   for (let index = 0; index < boxPixel.length; index += 1) {
     boxPixel[index].addEventListener('click', (event) => {
       const colorSelected = classSelected.style.backgroundColor;
-      event.target.style.backgroundColor = colorSelected;
+      const evento = event.target;
+      evento.style.backgroundColor = colorSelected;
     });
   }
 }
