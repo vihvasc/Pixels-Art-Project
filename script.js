@@ -25,9 +25,9 @@ setDefaultColor();
 
 // Mudar cor selecionada
 const color1 = document.getElementById('black-color');
-const color2 = document.getElementById('red-color');
-const color3 = document.getElementById('green-color');
-const color4 = document.getElementById('blue-color');
+const color2 = document.getElementById('first-color');
+const color3 = document.getElementById('second-color');
+const color4 = document.getElementById('third-color');
 
 function changeSelectedColor(event) {
   const selectedColor = document.querySelector('.selected');
@@ -87,3 +87,8 @@ function generateBoard() {
 }
 
 buttonGenerateBoard.addEventListener('click', generateBoard);
+
+// Gerar cor aleatória para a paleta
+color2.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+color3.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+color4.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
