@@ -1,68 +1,63 @@
 window.onload = function () {
-  let colorPalette = document.getElementById('color-palette');
+  function setPalletListener() {
+    let palletItems = document.getElementsByClassName('color');
+    let currentColor = palletItems[0];
+    let secondColor = palletItems[1];
+    let thirdColor = palletItems[2];
+    let fourthColor = palletItems[3];
 
-  function createPixelsBoard() {
-    let pixelsBoard = document.getElementById('pixels-board1');
+    currentColor.style.background = "black";
+    secondColor.style.background = "red";
+    thirdColor.style.background = "blue";
+    fourthColor.style.background = "green";
 
-    for (let i = 1; i <= 5; i += 1) {
-      let pixels = document.createElement('div');
-      pixels.className = 'pixel';
-      pixelsBoard.appendChild(pixels);
+    for (let i = 0; i < palletItems.length; i += 1) {
+      let item = palletItems[i];
+
+      item.addEventListener('click', function () {
+        // 1. Remover class selected da atual cor
+        currentColor.className = currentColor.className.replace(
+          ' selected',
+          ''
+        );
+        // ideia do className.replace: https://stackoverflow.com/questions/195951/how-can-i-change-an-elements-class-with-javascript
+
+        // 2. Adicionar class selected na cor clicada
+        item.className += ' selected';
+
+        //Obs: usei o += para adicionar a classe selected sem remover as anteriores
+
+        // 3. A cor clicada é o novo currentSelectedItem
+        currentColor = item;
+      });
     }
   }
 
-  createPixelsBoard();
+  function createBoard() {
+    let rows = document.getElementsByClassName('pixel-row');
 
-  function createPixelsBoard2() {
-    let pixelsBoard2 = document.getElementById('pixels-board2');
-
-    for (let i = 1; i <= 5; i += 1) {
-      let pixels = document.createElement('div');
-      pixels.className = 'pixel';
-      pixelsBoard2.appendChild(pixels);
+    for (let i = 0; i < rows.length; i += 1) {
+      populateRow(rows[i]);
     }
   }
 
-  createPixelsBoard2();
+  function populateRow(row) {
+    for (let i = 0; i < 5; i += 1) {
+      let pixel = document.createElement('div');
+      pixel.className = 'pixel';
 
-  function createPixelsBoard3() {
-    let pixelsBoard3 = document.getElementById('pixels-board3');
+      pixel.addEventListener('click', function () {
 
-    for (let i = 1; i <= 5; i += 1) {
-      let pixels = document.createElement('div');
-      pixels.className = 'pixel';
-      pixelsBoard3.appendChild(pixels);
+        let selectedColorItem = document.querySelector('.selected');
+        
+        pixel.style.background = selectedColorItem.style.background;
+      });
+
+      row.appendChild(pixel);
     }
+
   }
 
-  createPixelsBoard3();
-
-  function createPixelsBoard4() {
-    let pixelsBoard4 = document.getElementById('pixels-board4');
-
-    for (let i = 1; i <= 5; i += 1) {
-      let pixels = document.createElement('div');
-      pixels.className = 'pixel';
-      pixelsBoard4.appendChild(pixels);
-    }
-  }
-
-  createPixelsBoard4();
-
-  function createPixelsBoard5() {
-    let pixelsBoard5 = document.getElementById('pixels-board5');
-
-    for (let i = 1; i <= 5; i += 1) {
-      let pixels = document.createElement('div');
-      pixels.className = 'pixel';
-      pixelsBoard5.appendChild(pixels);
-    }
-  }
-
-  createPixelsBoard5();
-
-  //Adicionando o evento na cor preta
-  let colorBlack = document.querySelector(".black");
-  colorBlack.className = "color black selected";
-
+  setPalletListener();
+  createBoard();
 };

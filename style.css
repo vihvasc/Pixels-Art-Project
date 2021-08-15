@@ -23,13 +23,13 @@ h1 {
 
 .color {
   border: 1px solid black;
-  height: 80px;
-  width: 90px;
+  height: 40px;
+  width: 40px;
   margin-left: 10px;
 }
 
 .black {
-  background: black;
+  /* background: black; */
 }
 
 .red {
@@ -44,23 +44,7 @@ h1 {
   background: green;
 }
 
-#pixels-board1 {
-  display: flex;
-}
-
-#pixels-board2 {
-  display: flex;
-}
-
-#pixels-board3 {
-  display: flex;
-}
-
-#pixels-board4 {
-  display: flex;
-}
-
-#pixels-board5 {
+.pixel-row {
   display: flex;
 }
 
@@ -71,4 +55,3 @@ h1 {
   height: 40px;
   width: 40px;
 }
-
