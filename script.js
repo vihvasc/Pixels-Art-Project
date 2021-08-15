@@ -33,6 +33,11 @@ primeiro.addEventListener('click', selecionaCor);
 segundo.addEventListener('click', selecionaCor);
 terceiro.addEventListener('click', selecionaCor);
 quarto.addEventListener('click', selecionaCor);
+function adicionaCor(evento) {
+  const cor = sessionStorage.getItem('cor');
+  const pixel = evento.target;
+  pixel.style.backgroundColor = cor;
+}
 function limpaCor() {
   const pixels = document.getElementsByClassName('pixel');
   const cor = 'white';
@@ -41,3 +46,59 @@ function limpaCor() {
   }
 }
 document.getElementsByTagName('button')[0].addEventListener('click', limpaCor);
+function apagaLinhas() {
+  let N = document.querySelector("#board-size").value
+  if (typeof N != "number") {
+    window.alert("Board inválido!")
+  }
+  if (N<5) {
+    N = 5
+  } else if (N>50) {
+    N = 50
+  }
+  let pixelBoard = document.querySelector("#pixel-board")
+  let filho = pixelBoard.children
+  let quantasLinhas = pixelBoard.children.length -1
+  for (let index = quantasLinhas; index >= 0; index = index - 1) {
+    pixelBoard.removeChild(filho[index]);
+  }
+}
+function criaLinha() {
+  let N = document.querySelector("#board-size").value
+  
+    apagaLinhas()
+  if (N<5) {
+    N = 5
+  } else if (N>50) {
+    N = 50
+  }
+  pixelBoard = document.querySelector("#pixel-board")
+  for (let index = 0; index < N; index += 1) {
+    let linha = document.createElement("section")
+    linha.className = "line"
+    pixelBoard.appendChild(linha)
+  }
+ 
+}
+function criaPixels() {
+  let N = document.querySelector("#board-size").value
+  criaLinha()
+  if (N<5) {
+    N = 5
+  } else if (N>50) {
+    N = 50
+  }
+  let linhas = document.getElementsByClassName("line")
+  for (let index = 0 ; index<linhas.length ; index += 1) {
+    let linha = linhas[index]
+    for (let index = 0; index<N; index += 1) {
+      let div = document.createElement("div")
+      div.className = "pixel"
+      div.style.backgroundColor = "white"
+      div.addEventListener("click", adicionaCor)
+      linha.appendChild(div)
+    }
+  }
+}
+let vqv = document.querySelector("#generate-board")
+vqv.addEventListener("click", criaPixels)

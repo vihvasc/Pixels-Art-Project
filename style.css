@@ -30,9 +30,10 @@ h1 {
 
 .line {
   position: relative;
-  left: 41.7%;
+  left: 20%;
   display: block;
-  max-width: 250px;
+  max-width: 90%;
+  max-height: 42px;
 }
 
 .pixel {
@@ -42,8 +43,37 @@ h1 {
   width: 40px;
 }
 
-button {
+#pixel-board {
+  max-width: 80%;
+}
+
+#clear-board {
   margin: auto;
   display: block;
-  margin-bottom: 2%;
+  margin-bottom: 0%;
+}
+
+li {
+  max-width: 10%;
+  list-style-type: none;
+  display: inline-block;
+  font-size: 18px;
+  color: #d0dabe;
+}
+
+ul {
+  padding-right:50%;
+  background-color: #757c95;
+  position: relative;
+  padding-bottom: 1%;
+}
+
+li :link {
+  text-transform: none;
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  display: inline-block;
 }
