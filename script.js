@@ -4,13 +4,16 @@ let boxBlackA = document.getElementsByClassName('color')[0];
 boxBlackA.style.backgroundColor = 'black';
 
 let boxBlackB = document.getElementsByClassName('color')[1];
-boxBlackB.style.backgroundColor = 'Tomato';
+let corB = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+boxBlackB.style.backgroundColor = corB;
 
 let boxBlackC = document.getElementsByClassName('color')[2];
-boxBlackC.style.backgroundColor = 'SkyBlue';
+let corC = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+boxBlackC.style.backgroundColor = corC;
 
 let boxBlackD = document.getElementsByClassName('color')[3];
-boxBlackD.style.backgroundColor = 'MediumSpringGreen';
+let corD = "#" + ((1 << 24) * Math.random() | 0).toString(16);
+boxBlackD.style.backgroundColor = corD;
 
 let pixelBoard = document.getElementById('pixel-board');
 // criando a tela com as boxs
@@ -46,7 +49,9 @@ main.addEventListener('click', colorPrint);
 // funação para pintar as boxs
 function colorPrint(evento) {
     let corSelecionada = document.querySelector('.selected');
-    evento.target.style.backgroundColor = corSelecionada.style.backgroundColor;
+    if (evento.target.classList.contains('pixel')) {
+        evento.target.style.backgroundColor = corSelecionada.style.backgroundColor;
+    }
 }
 //adicionando o texto limpar no botão
 let botao = document.querySelectorAll('button')[0];
