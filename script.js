@@ -5,6 +5,7 @@ const colorFour = document.getElementById('color-four');
 const pixelBoard = document.getElementById('pixel-board');
 const allPixel = document.getElementsByClassName('pixel');
 const clearButton = document.getElementById('clear-board');
+const numeroEntrada = document.getElementById("input");
 
 colorOne.style.backgroundColor = 'black';
 colorTwo.style.backgroundColor = 'red';
@@ -19,7 +20,7 @@ pixelBoard.addEventListener('click', changeColor);
 clearButton.addEventListener('click', clearColor);
 
 function addSelectedClass(event) {
-  let checkSelected = document.querySelector('.selected');
+  const checkSelected = document.querySelector('.selected');
   checkSelected.classList.remove('selected');
   event.target.classList.add('selected');
 }
@@ -34,3 +35,4 @@ function clearColor() {
     allPixel[index].style.backgroundColor = 'white';
   }
 }
+funtion multiplicaTamanho

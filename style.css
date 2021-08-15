@@ -1,43 +1,42 @@
-#color-palette{
-    height: 50px;
-
+#color-palette {
+  height: 50px;
 }
-#color-one{
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color:black;
-    border: 1px solid black;
+#color-one {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  border: 1px solid black;
 }
-#color-two{
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: red;
-    border: 1px solid black;
+#color-two {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: red;
+  border: 1px solid black;
 }
-#color-three{
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: green;
-    border: 1px solid black;
+#color-three {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: green;
+  border: 1px solid black;
 }
-#color-four{
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: yellow;
-    border: 1px solid black
+#color-four {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: yellow;
+  border: 1px solid black;
 }
-#pixel-board{
-    width: 260px;
-    height: 150px;
+#pixel-board {
+  width: 260px;
+  height: 150px;
 }
-.pixel{
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    border: 1px solid black;
+.pixel {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+  border: 1px solid black;
 }
