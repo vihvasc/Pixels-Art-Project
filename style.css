@@ -1,4 +1,19 @@
 * {
-  margin: 0;
   padding: 0;
+  margin: auto;
+  text-align: center;
+}
+
+h1 {
+  font-family: Montserrat, sans-serif;
+  background-color: #ccb3ff;
+  color: #f2f2f2;
+}
+
+#color-palette {
+  background-color: #f2f2f2;
+}
+
+#pixel-board {
+  margin-bottom: 20px;
 }
