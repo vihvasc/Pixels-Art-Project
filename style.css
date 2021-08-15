@@ -1,0 +1,26 @@
+h1, #color-palette {
+    text-align: center;
+}
+
+.color {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+}
+
+#color-1 {
+    background-color: #011627;
+}
+
+#color-2 {
+    background-color: #F71735;
+}
+
+#color-3 {
+    background-color: #41EAD4;
+}
+
+#color-4 {
+    background-color: #FF9F1C;
+}
