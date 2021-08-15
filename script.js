@@ -18,11 +18,11 @@ window.onload = coresAleatorias;
 
 // função para definir tamanho do quadrado
 function criandoLinhasColuna() {
-	const input = document.getElementById('board-size');
-	const pixelBoard = document.getElementById('pixel-board');
+	let input = document.getElementById('board-size');
+	let pixelBoard = document.getElementById('pixel-board');
 	
 	for (let index = 0; index < input.value; index ++) {
-		const tr = document.createElement('div');
+		let tr = document.createElement('div');
 		tr.className = 'tr';
 		pixelBoard.appendChild(tr);
 	
@@ -37,7 +37,7 @@ function criandoLinhasColuna() {
 function createTable() {
 	deletePixels();
 	
-	const input = document.getElementById('board-size');
+	let input = document.getElementById('board-size');
 	
 	if (input.value === '') {
 		alert('Board inválido!');
@@ -50,15 +50,24 @@ function createTable() {
 	criandoLinhasColuna();
 }
 
-	const generateTable = document.getElementById('generate-board');
+// funcionar os botaao
+function deletePixels() {
+	let pixelBoard = document.getElementById('pixel-board');
+
+	while (pixelBoard.firstChild) {
+	pixelBoard.removeChild(pixelBoard.firstChild);
+	}
+}
+
+	let generateTable = document.getElementById('generate-board');
 
 	generateTable.addEventListener('click', createTable);
 
-	// função para colorir pixels de acordo com a cor da paleta escolhida
-	const selectPixel = document.querySelectorAll('.pixel');
+// função para colorir pixels de acordo com a cor da paleta escolhida
+	let selectPixel = document.querySelectorAll('.pixel');
 
 function changeColor(event) {
-	const colorSelected = document.querySelector('.selected');
+	let colorSelected = document.querySelector('.selected');
 
 	event.target.style.backgroundColor = colorSelected.style.backgroundColor;
 }
