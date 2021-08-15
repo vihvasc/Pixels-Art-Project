@@ -9,9 +9,20 @@ function createTitle() {
 createTitle();
 
 // Requsito 02 e 03
-let color1 = getRandomColor();
-let color2 = getRandomColor();
-let color3 = getRandomColor();
+// Requisito 12
+// Fonte: https://www.youtube.com/watch?v=UNIlt7_oMQQ
+function getRandomColor() {
+	let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let count = 0; count < 6; count += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+const color1 = getRandomColor();
+const color2 = getRandomColor();
+const color3 = getRandomColor();
 
 let colors = ['#000000', color1, color2, color3];
 
@@ -74,7 +85,7 @@ let initialColor = document.querySelector('.color');
 initialColor.classList.add('selected');
 
 // Requisito 07
-let changeColor = document.querySelectorAll('.color');
+const changeColor = document.querySelectorAll('.color');
 
 function addClass() {
   for (let i = 0; i < changeColor.length; i += 1) {
@@ -89,10 +100,10 @@ function addClass() {
 addClass();
 
 // Requisito 08
-let catchPixels = document.getElementsByClassName('pixel');
+const catchPixels = document.getElementsByClassName('pixel');
 function changePixelColor() {
   for (let curColor = 0; curColor < catchPixels.length; curColor += 1) {
-    catchPixels[curColor].addEventListener('click', function(event){
+    catchPixels[curColor].addEventListener('click', function (event) {
       let currentColor = initialColor.style.backgroundColor;
       event.target.style.backgroundColor = currentColor;
     })
@@ -159,14 +170,3 @@ inputButtons();
 function eraseGrid() {
   document.body.removeChild(document.querySelector('#pixel-board'));
 }
-
-// Requisito 12
-// Fonte: https://www.youtube.com/watch?v=UNIlt7_oMQQ
-function getRandomColor() {
-	let letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let count = 0; count < 6; count += 1) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-};
