@@ -42,11 +42,6 @@ function adicionaClickNasCores() {
 }
 adicionaClickNasCores();
 
-// AQUI PRA BAIXO
-// 1 - VERIFICAR QUAL COR TEM A CLASSE SELECTED
-// 2 - PEGA A COR QUE TEM ESSA CLASSE. EX. RED
-// 3 - ADICIONA A CLASSE RED NA DIV QUE FOR PINTAR
-
 function pegaCorAtual(event) {
   const listaTodasCores = document.getElementById('color-palette').children;
   const corAtual = event.target;
@@ -74,16 +69,6 @@ function adicionaEventoBloco() {
   }
 }
 adicionaEventoBloco();
-
-// function criaBotao() {
-//   const button = document.createElement('button');
-//   const todasCores = document.querySelector('#color-palette');
-
-//   button.id = 'clear-board';
-//   button.innerText = 'Limpar';
-//   todasCores.appendChild(button);
-// }
-// criaBotao();
 
 function removeTodasCores() {
   const blocos = document.querySelectorAll('.pixel');
