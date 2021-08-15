@@ -36,18 +36,30 @@ function recebeClick(color){
     for(let index = 0; index < colorPalette.length; index += 1){
         if(colorPalette[index].classList.contains("selected")){
             colorPalette[index].classList.toggle("selected")
+            colorPalette[index].style.border = "1px solid black"
             
         }
     }
     color.target.classList.toggle("selected")
+    color.target.style.border = "2px solid black"
 }
 
 //função para preencher os quadrados
-
 function colorizePixel(pixel){
     for(let index = 0; index < colorPalette.length; index += 1){
         if(colorPalette[index].classList.contains("selected")){
             pixel.target.style.backgroundColor = colorPalette[index].style.backgroundColor
         }
     }
+}
+
+//função para limpar a tela
+let btnClear = document.querySelector("#clear-board")
+btnClear.addEventListener("click", clearBoard)
+let pixel = document.getElementsByClassName("pixel")
+function clearBoard(){
+    for(let index = 0; index < pixel.length; index += 1){
+        pixel[index].style.backgroundColor = "white"
+    }
+    
 }
