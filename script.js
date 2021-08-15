@@ -60,8 +60,8 @@ function clearBoard() {
   }
 }
 
-function addPixels() {
-  const newPixelSizeNumber = Number(input.value);
+function addPixels(inputValue) {
+  const newPixelSizeNumber = Number(inputValue);
   const newPixelSizeString = `${String(newPixelSizeNumber)}px`;
   const newGridSizeNumber = newPixelSizeNumber * newPixelSizeNumber;
   const newGridSizeString = `${String(newGridSizeNumber)}px`;
@@ -80,21 +80,21 @@ function addPixels() {
 }
 
 function checkInput() {
-  const inputValue = input.value;
+  let inputValue = input.value;
   const message = 'Board inválido!';
-  if (inputValue < 0) {
+  if (inputValue === '' || inputValue < 0) {
     alert(message);
     return;
   }
-  if (inputValue === '') {
-    alert(message);
-    return;
+  if (inputValue < 5) {
+    inputValue = 5;
+    input.value = 5;
   }
-  if (inputValue < 5 || inputValue > 50) {
-    alert(message);
-    return;
+  if (inputValue > 50) {
+    inputValue = 50;
+    input.value = 50;
   }
-  addPixels();
+  addPixels(inputValue);
 }
 
 for (let index = 0; index < colorsArrayLength; index += 1) {
