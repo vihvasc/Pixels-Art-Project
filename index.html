@@ -8,34 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id ='title'>Paleta de Cores</h1>
-
-    <h2>escolha uma cor</h2>
-    
-        <table id = "color-palette">
-            <tr>
-                <td class="color pixel backgroudBlack"></td><td class="color pixel backgroudRed"></td><td class="color pixel backgroudBlue"></td><td class="color pixel backgroudGreen"></td>
-            </tr>
-        </table>
-
-    
-    <input type="color" id = "colorPicker">
-    
-    <h2>escolha o tamanho do tabuleiro</h2>
-    <form id = "sizePicker">
-        grid height:
-        <input type = "number" id = "inputHeight" name = "height" min = "1" value = "1"> 
-        grid width:
-        <input type = "number" id = "inputWidth" name = "width" min = "1" value = "1"> 
-        <input type = "submit" onclick="makeGrid() return false;">
-    </form>
-
-    <h2>design canvas</h2>
-    <table id ="pixelCanvas"></table>
+    <header>
+        <h1 id="title">"Paleta de Cores"</h1>
+        </header>
         
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        </head>
+        <section class="color-palette" id="color-palette">
+        <div class="color backgroudBlack"></div>
+        <div class="color segunda-cor"></div>
+        <div class="color terceira-cor"></div>
+        <div class="color quarta-cor"></div>
+        </section>
+        
+
     <script src="script.js"></script>
 </body>
 </html>
