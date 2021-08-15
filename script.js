@@ -41,6 +41,15 @@ function paintPixels() {
     });
   }
 }
+function cleaningBoard() {
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', () => {
+    const pixelsBoard = document.getElementsByClassName('pixel');
+    for (let index = 0; index < pixelsBoard.length; index += 1) {
+      pixelsBoard[index].style.backgroundColor = 'white';
+    }
+  });
+}
 
 function pixelsArt() {
   colorPalette();
