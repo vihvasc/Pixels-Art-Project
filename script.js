@@ -52,8 +52,11 @@ pixelBoard.addEventListener('click', setPixelColor);
 // Limpar quadro de pixels
 const button = document.getElementById('clear-board');
 const pixels = document.getElementsByClassName('pixel');
-button.addEventListener('click', function () {
+
+function clearPixels() {
   for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].style.backgroundColor = 'white';
   }
-});
+}
+
+button.addEventListener('click', clearPixels);
