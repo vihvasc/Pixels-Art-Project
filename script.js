@@ -1,6 +1,7 @@
 let title = document.getElementById("title");
 let header = document.getElementById("header");
 let colorPalett = document.getElementById("color-palette");
+let pixelBoard = document.getElementById("pixel-board");
 
 function getRandomColor() {
   let letters = "0123456789ABCDEF";
@@ -32,3 +33,12 @@ createColorPalett();
 // - A cor inicial dos "pixels" dentro do quadro, ao abrir a página, deve ser branca;
 // - O quadro de "pixels" deve aparecer abaixo da paleta de cores.
 
+function createPixels(){
+  for (let i = 0; i < 25; i += 1){
+    let newPixel = document.createElement("div");
+    pixelBoard.appendChild(newPixel);
+    newPixel.setAttribute("class", "pixel");
+  }
+};
+
+createPixels();
