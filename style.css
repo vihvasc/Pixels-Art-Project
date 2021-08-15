@@ -1,7 +1,11 @@
 :root {
+
   --user-input: 5;
+
   --user-input-px: 5px;
+
   --grid-size: 0;
+  
   --grid-size-px: 0;
 }
 
