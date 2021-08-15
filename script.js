@@ -1,141 +1,135 @@
+// variáveis globais
 
-//variáveis globais
-var paletteList = document.querySelectorAll(".color");
-var pixelBoard = document.querySelectorAll(".pixel");
-var board = document.getElementById("pixel-board");
-var selectedColor = 'Black';
-var button = document.getElementById("clear-board");
-var boardButton = document.getElementById("generate-board");
-var boardInput = document.getElementById("board-size");
-var boardColumns = 5;
+const paletteList = document.querySelectorAll('.color');
+let pixelBoard = document.querySelectorAll('.pixel');
+let board = document.getElementById('pixel-board');
+let selectedColor = 'Black';
+const button = document.getElementById('clear-board');
+const boardButton = document.getElementById('generate-board');
+const boardInput = document.getElementById('board-size');
+let boardColumns = 5;
 
-createBoard();
+function validatesValue() {
+  const data = document.getElementById('board-size');
+  if (data.value === '') {
+    alert('Board inválido!');
+    return;
+  }
+  if (data.value < 5) {
+    boardColumns = 5;
+  }
+  if (data.value > 50) {
+    boardColumns = 50;
+  }
+}
+
+function resetSize() {
+  pixelBoard = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelBoard.length; i += 1) {
+    board.removeChild(pixelBoard[i]);
+  }
+}
+
+function paint() {
+  event.target.style.backgroundColor = selectedColor;
+}
+
+function selectColor() {
+  for (let i = 0; i < paletteList.length; i += 1) {
+    if (event.target === paletteList[i]) {
+      paletteList[i].classList.add('selected');
+      selectedColor = paletteList[i].style.backgroundColor;
+    } else {
+      paletteList[i].classList.remove('selected');
+    }
+  }
+}
+
+function clearBoard() {
+  pixelBoard = document.querySelectorAll('.pixel');
+  for (const key of pixelBoard) {
+    key.style.backgroundColor = 'white';
+  }
+}
+
+function createEvent() {
+  pixelBoard = document.querySelectorAll('.pixel');
+  for (let i = 0; i < pixelBoard.length; i += 1) {
+    pixelBoard[i].addEventListener('click', paint);
+  }
+
+  for (let i = 0; i < paletteList.length; i += 1) {
+    paletteList[i].addEventListener('click', selectColor);
+  }
+  button.addEventListener('click', clearBoard);
+}
+
 // função que cria os grids para o pixel-board
-function createBoard(){
-   validatesValue();
+function createBoard() {
+  validatesValue();
   resetSize();
-  for(let i = 0; i < boardColumns**2; i ++){
+  for (let i = 0; i < boardColumns ** 2; i += 1) {
+    const box = document.createElement('div');
+    box.classList.add('pixel');
+    box.classList.add('box');
 
-    let box = document.createElement("div");
-    box.classList.add("pixel");
-    box.classList.add("box");
-
-    board = document.querySelector("#pixel-board");
+    board = document.querySelector('#pixel-board');
     board.appendChild(box);
 
-    let stringGrid = "repeat(" + boardColumns + ", 40px)";
+    const stringGrid = `repeat(${boardColumns}, 40px)`;
     board.style.gridTemplateColumns = stringGrid;
-    createEvent(pixelBoard, paletteList);
+    createEvent();
   }
+}
+
+createBoard();
+
+function getValue(event) {
+  boardColumns = event.target.value;
+  validatesValue();
 }
 
 boardInput.addEventListener('change', getValue);
 boardButton.addEventListener('click', createBoard);
 
-function getValue(){
-  boardColumns = event.target.value;
-  validatesValue();
-}
-function validatesValue(){
-  let data = document.getElementById('board-size');
-  if(data.value === ''){
-    alert("Board inválido!");
-    return;
-  }
-  if(data.value < 5){
-    boardColumns = 5;
-  }
-  if(data.value > 50){
-    boardColumns = 50;
-  }
+// seta a primeira cor da paleta como preto
+function firstColor() {
+  const firstBox = document.querySelector('.color');
+  firstBox.style.backgroundColor = 'black';
+  firstBox.className = 'selected color box';
 }
 
-function resetSize(){
-  pixelBoard = document.querySelectorAll(".pixel");
-for(let i = 0; i < pixelBoard.length; i ++){
-  board.removeChild(pixelBoard[i]);
-}
-}
-
-//seta a primeira cor da paleta como preto
 firstColor();
-function firstColor(){
-  let firstBox = document.querySelector(".color");
-  firstBox.style.backgroundColor = "black";
-  firstBox.className = "selected color box";
-}
 
-function selectColor(event){
-  for(let i = 0; i < paletteList.length; i ++){
-    if(event.target === paletteList[i]){
-      paletteList[i].classList.add("selected");
-      selectedColor = paletteList[i].style.backgroundColor;
-    }
+// randomizar cores da palheta
+
+function randomNumber() {
+  let number = Math.random() * 100;
+  if (number > 255 || number < 0) {
+    number = Math.random() * 100;
   }
-  for(let i = 0; i < paletteList.length; i ++){
-    if(event.target !== paletteList[i]){
-      paletteList[i].classList.remove("selected");
-    }
-  }
-  console.log(selectedColor);
+  return number;
 }
 
-function paint(){
-  event.target.style.backgroundColor = selectedColor;
-}
+function rgbString() {
+  const red = randomNumber();
+  const green = randomNumber();
+  const blue = randomNumber();
 
-function clearBoard(){
-  pixelBoard = document.querySelectorAll(".pixel");
-  for(let key of pixelBoard){
-    key.style.backgroundColor = 'white';
-  }
-  console.log("Estive aqui :)");
-  console.log(pixelBoard.length);
-}
-
-//randomizar cores da palheta
-//criar função que gera um número aleatório
-function randomNumber(){
-let number = Math.random()*100;
-if(number > 255 || number < 0){
-  number = Math.random()*100;
-}
-return number;
-}
-//criar função que monta uma string rgg
-function rgbString(value){
-  let red = randomNumber();
-  let green = randomNumber();
-  let blue = randomNumber();
-
-  let string = "rgb(" + red + ", " + green + ", " + blue + ")";
+  const string = `rgb(${red}, ${green}, ${blue})`;
   console.log(string);
   return string;
 }
 
+function fillPalette() {
+  const boxes = document.querySelectorAll('.color');
 
-fillPalette();
-function fillPalette(){
-  let boxes = document.querySelectorAll(".color");
-  // boxes[1].style.backgroundColor = 'blue';
-  // boxes[2].style.backgroundColor = 'red';
-  // boxes[3].style.backgroundColor = 'green'
-  for(let i = 1; i < boxes.length; i ++){
+  for (let i = 1; i < boxes.length; i += 1) {
     boxes[i].style.backgroundColor = rgbString();
-    if(boxes[i].style.backgroundColor === 'black'){
+    if (boxes[i].style.backgroundColor === 'black') {
       boxes[i].style.backgroundColor = rgbString();
     }
   }
 }
 
-function createEvent(pixelBoard, paletteList){
-  pixelBoard = document.querySelectorAll(".pixel");
-  for(let i =0; i < pixelBoard.length; i++){
-    pixelBoard[i].addEventListener('click', paint);
-  }
-
-  for(let i =0; i < paletteList.length; i ++){
-    paletteList[i].addEventListener('click', selectColor);
-  }
-  button.addEventListener('click', clearBoard);
-}
+fillPalette();
