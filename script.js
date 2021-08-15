@@ -66,7 +66,7 @@ function createPixels() {
       createColumn.style.height = '40px';
       createColumn.style.backgroundColor = '#ffffff';
       createLine.appendChild(createColumn);
-    }    
+    }
   }
 }
 
@@ -150,7 +150,7 @@ function eraseGrid() {
 function inputButtons() {
   createButton('generate-board', 'VQV', 'pixel-board');
   const inputButton = document.querySelector('#generate-board');
-  inputButton.addEventListener ('click', function() {
+  inputButton.addEventListener ('click', function () {
     if (input.value === '') {
       alert('Board inválido!');
       return;
@@ -159,7 +159,7 @@ function inputButtons() {
       input.value = 5;
     }
     if (input.value > 50) {
-    input.value = 50;
+      input.value = 50;
     }
     eraseGrid();
     gridSize = input.value;
@@ -169,4 +169,3 @@ function inputButtons() {
 }
 
 inputButtons();
-
