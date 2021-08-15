@@ -3,10 +3,12 @@ let position2 = document.querySelectorAll('.color')[1].style.backgroundColor = '
 let position3 = document.querySelectorAll('.color')[2].style.backgroundColor = 'rgb(255, 173, 173)';
 let position4 = document.querySelectorAll('.color')[3].style.backgroundColor = 'rgb(255, 214, 165)';
 
-window.onload = function() {
-    for (let evenCreateLine = 0; evenCreateLine < 5; evenCreateLine += 1) {
+window.onload = createPixels();
+
+function createPixels(number = 5) {
+    for (let evenCreateLine = 0; evenCreateLine < number; evenCreateLine += 1) {
         let eachLines = document.createElement('div');
-        for (let evenCompleteSquare = 0; evenCompleteSquare < 5; evenCompleteSquare += 1) {
+        for (let evenCompleteSquare = 0; evenCompleteSquare < number; evenCompleteSquare += 1) {
             let pixelFrame = document.createElement('div');
             pixelFrame.className = 'pixel';
             pixelFrame.classList.add('pixel');
@@ -41,3 +43,22 @@ clearPallete.addEventListener('click', function() {
         pixelFrame[paint].style.backgroundColor = 'white';
     }
 });
+
+function optionUser() {
+    let input = document.getElementById('board-size');
+    let choiceButton = document.getElementById('generate-board');
+    choiceButton.addEventListener('click', () => {
+        let pixelBox = document.getElementById('pixel-board');
+        if (input.value === '') {
+            alert('Board inválido!')
+            input.value = 5;
+        } else if (input.value <= 5) {
+            input.value = 5;
+        } else if (input.value >= 50) {
+            input.value = 50;
+        }
+        pixelBox.innerHTML = '';
+        createPixels(input.value);
+    })
+}
+optionUser();
