@@ -3,6 +3,8 @@ const pixelBoard = document.getElementById('pixel-board');
 const btnEraseCanvas = document.getElementById('clear-board');
 const btnGenerateCanvas = document.getElementById('generate-board');
 const inputBoardSize = document.getElementById('board-size');
+const outsideBoard = document.getElementById('outside-board');
+const title = document.getElementById('title');
 let selectedColor;
 const config = {
   colors: ['black'],
@@ -24,6 +26,8 @@ function selectColor(event) {
   previousSelected.classList.remove('selected');
   pixel.classList.add('selected');
   selectedColor = pixel.style.backgroundColor;
+  title.style.color = pixel.style.backgroundColor;
+  outsideBoard.style.backgroundColor = pixel.style.backgroundColor;
 }
 
 // Cria uma div representando um pixel.
@@ -76,6 +80,7 @@ function selectFirstColor() {
   const firstColor = document.querySelector('.color');
   firstColor.classList.add('selected');
   selectedColor = firstColor.style.backgroundColor;
+  outsideBoard.style.backgroundColor = firstColor.style.backgroundColor;
 }
 
 // Apaga/reseta o quadro.
