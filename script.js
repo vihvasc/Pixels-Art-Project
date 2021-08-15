@@ -1,3 +1,4 @@
+// Cria titulo
 function titleH1() {
   const title1H1 = document.createElement('h1');
   title1H1.id = 'title';
@@ -6,11 +7,19 @@ function titleH1() {
 }
 titleH1();
 
+// cria as cores sortidas
+function collorsRandom() {
+  const collorRandom = Math.floor(Math.random() * 255);
+  return collorRandom;
+}
+
+// cria as 4 paletas com id color-palette, define as cores sortidas para as paletas 2,3,4;
+// adiciona classe color, define borda, coloca a cor nos box
 function createDiv() {
   const arrayColor = ['black'];
-  for (let index = 1; index < 4; index +=1){
-  arrayColor.push(`rgb(${collorsRandom()}, ${collorsRandom()}, ${collorsRandom()})`)
-}
+  for (let index = 1; index < 4; index += 1) {
+    arrayColor.push(`rgb(${collorsRandom()}, ${collorsRandom()}, ${collorsRandom()})`);
+  }
   const divColorFather = document.createElement('div');
   divColorFather.id = 'color-palette';
   document.body.appendChild(divColorFather);
@@ -24,11 +33,17 @@ function createDiv() {
 }
 createDiv();
 
+// cria os 25 box com a classe pixel e o background color branco
+
+let dimensionBox = 5;
 function createBox() {
   const divFather = document.createElement('div');
+  const valueWidthHeight = 42 * dimensionBox;
   divFather.id = 'pixel-board';
+  divFather.style.width = `${valueWidthHeight}px`;
+  divFather.style.height = `${valueWidthHeight}px`;
   document.body.appendChild(divFather);
-  for (let index = 0; index < 25; index += 1) {
+  for (let index = 0; index < (dimensionBox ** 2); index += 1) {
     const divChild = document.createElement('div');
     divChild.className = 'pixel';
     divChild.style.backgroundColor = 'white';
@@ -37,52 +52,89 @@ function createBox() {
 }
 createBox();
 
+// adiciona classe selected no preto
 let firstChild = document.querySelector('.color');
 firstChild.classList.add('selected');
 
-let allBoxCollor = document.querySelectorAll('.color');
+// pega todas das divs com a classe color
+const allBoxCollor = document.querySelectorAll('.color');
 
+// remove e adiciona classe selected
 function removeAddSelected() {
   for (let index = 0; index < allBoxCollor.length; index += 1) {
-    allBoxCollor[index].addEventListener('click', function (event) {
+    allBoxCollor[index].addEventListener('click', (event) => {
       firstChild.classList.remove('selected');
       event.target.classList.add('selected');
       firstChild = event.target;
-    })
+    });
   }
 }
 removeAddSelected();
 
+// add cor no box
 
-let pixelBox = document.getElementsByClassName('pixel');
+const pixelBox = document.getElementsByClassName('pixel');
+
 function selectPixel() {
   for (let index = 0; index < pixelBox.length; index += 1) {
-    pixelBox[index].addEventListener('click', function (event) {
-      let collorSelected = firstChild.style.backgroundColor;
-      event.target.style.backgroundColor = collorSelected
+    pixelBox[index].addEventListener('click', (event) => {
+      const collorSelected = firstChild.style.backgroundColor;
+      const evento = event.target;
+      evento.style.backgroundColor = collorSelected;
     });
   }
 }
-selectPixel()
+selectPixel();
 
+// cria botão
 function createBotton() {
-  let button = document.createElement('button');
+  const button = document.createElement('button');
   button.id = 'clear-board';
-  button.innerText ='Limpar';
+  button.innerText = 'Limpar';
   document.body.insertBefore(button, document.querySelector('#pixel-board'));
 
-  button.addEventListener('click', function(event){
-  for (let index = 0; index < pixelBox.length; index += 1) {
-    pixelBox[index].style.backgroundColor = 'white';
-  }
-  })
+  // adiciona fundo branco nos boxs ao clicar no botão
+  button.addEventListener('click', () => {
+    for (let index = 0; index < pixelBox.length; index += 1) {
+      pixelBox[index].style.backgroundColor = 'white';
+    }
+  });
 }
 createBotton();
 
-function collorsRandom() {
-  let collorRandom = Math.floor(Math.random() * 255);
-  return collorRandom;
+// requisito 10 / entre 5 e 10
+const div = document.createElement('div');
+div.id = 'button-input';
+document.body.insertBefore(div, document.querySelector('#clear-board'));
 
+const input = document.createElement('input');
+input.id = 'board-size';
+input.type = 'number';
+input.min = '1';
+div.appendChild(input);
+
+const button = document.createElement('button');
+button.id = 'generate-board';
+button.innerText = 'VQV';
+div.appendChild(button);
+
+function setInput() {
+  button.addEventListener('click', () => {
+    let numberDoInput = input.value;
+    if (numberDoInput === '') {
+      alert('Board inválido!');
+      return;
+    }
+    if (numberDoInput < 5) {
+      numberDoInput = 5;
+    }
+    if ((numberDoInput >= 50)) {
+      numberDoInput = 50;
+    }
+    dimensionBox = numberDoInput;
+    document.body.removeChild(document.querySelector('#pixel-board'));
+    createBox();
+    selectPixel();
+  });
 }
-
-
+setInput();
