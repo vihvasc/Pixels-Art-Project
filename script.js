@@ -50,6 +50,7 @@ adicionaClickNasCores();
 function pegaCorAtual(event) {
   const listaTodasCores = document.getElementById('color-palette').children;
   const corAtual = event.target;
+
   if (listaTodasCores[0].classList.contains('selected')) {
     corAtual.classList.remove('orange', 'red', 'royalblue');
     corAtual.classList.add('black');
@@ -67,8 +68,31 @@ function pegaCorAtual(event) {
 
 function adicionaEventoBloco() {
   const blocos = document.querySelectorAll('.pixel');
+
   for (let index = 0; index < blocos.length; index += 1) {
     blocos[index].addEventListener('click', pegaCorAtual);
   }
 }
 adicionaEventoBloco();
+
+// function criaBotao() {
+//   const button = document.createElement('button');
+//   const todasCores = document.querySelector('#color-palette');
+
+//   button.id = 'clear-board';
+//   button.innerText = 'Limpar';
+//   todasCores.appendChild(button);
+// }
+// criaBotao();
+
+function removeTodasCores() {
+  const blocos = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < blocos.length; index += 1) {
+    blocos[index].className = '';
+    blocos[index].className = 'pixel';
+  }
+}
+
+const button = document.getElementById('clear-board');
+button.addEventListener('click', removeTodasCores);
