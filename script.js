@@ -6,6 +6,8 @@ window.onload = function () {
   let buttonContainer = document.getElementById('button-container');
 
   createColorPallete(colorList);
+  // createGenerateBoardInput();
+  // createGenerateBoardButton();
   createClearBoardButton();
   createPixelBoard(pixelBoardSize);
 
@@ -80,18 +82,37 @@ window.onload = function () {
     buttonContainer.appendChild(clearBoardButton);
   }
 
+  // Cria Input para o board size
+  function createGenerateBoardInput() {
+    let inputContainer = document.getElementById('input-container');
+    let input = document.createElement('input');
+
+    input.id = 'board-size';
+    inputContainer.appendChild(input);
+  }
+
+  // Cria botao do input para o board size
+  function createGenerateBoardButton() {
+    let inputContainer = document.getElementById('input-container');
+    let button = document.createElement('button');
+
+    button.innerText = '#VQV';
+    button.id = 'generate-board';
+    inputContainer.appendChild(button);
+  }
+
   // FUNÇÕES DE EVENTOS
 
   // Função para mudar a cor selecionada
   function selectColor(event) {
-    selected = document.querySelector('.selected');
+    let selected = document.querySelector('.selected');
     selected.classList.remove('selected');
     event.target.classList.add('selected');
   }
 
   // Função para pintar o pixel clicado
   function paintPixel(event) {
-    color = document.querySelector('.selected');
+    let color = document.querySelector('.selected');
     event.target.style.backgroundColor = color.style.backgroundColor;
   }
 
