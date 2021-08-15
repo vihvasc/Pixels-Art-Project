@@ -27,3 +27,13 @@ function changePixelColor(event) {
 for (let n = 0; n < pixels.length; n += 1) {
   pixels[n].addEventListener('click', changePixelColor);
 }
+
+const clearPixel = document.getElementById('clear-board');
+
+function clear() {
+  for (let n = 0; n < pixels.length; n += 1) {
+    pixels[n].style.setProperty('background-color', 'white');
+  }
+}
+
+clearPixel.addEventListener('click', clear);

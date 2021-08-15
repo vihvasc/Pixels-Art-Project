@@ -18,25 +18,34 @@
 .pixel {
   width: 40px;
   height: 40px;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid black;
   box-sizing: border-box;
   display: inline-block;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   margin-inline: -2px; 
 }
 
 #box-color1 {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
 }
 
 #box-color2 {
-  background-color: rgb(0, 128, 0);
+  background-color: green;
 }
 
 #box-color3 {
-  background-color: rgb(255, 255, 0);
+  background-color: yellow;
 }
 
 #box-color4 {
-  background-color: rgb(0, 0, 255);
+  background-color: blue;
+}
+
+#clear-board {
+  width: 171px;
+  height: 26px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 2px;
 }
