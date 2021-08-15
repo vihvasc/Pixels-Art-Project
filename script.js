@@ -62,6 +62,13 @@ function clearBoard() {
   }
 }
 
+function generateColor() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
 buttom.addEventListener('click', clearBoard);
 
 vqvButtom.addEventListener('click', generateBoard);
@@ -72,4 +79,7 @@ for (let i = 0; i < colors.length; i += 1) {
 
 window.onload = function initial() {
   makePixelBoard(5);
+  for (let i = 1; i < colors.length; i += 1) {
+    colors[i].style.backgroundColor = generateColor();
+  }
 };
