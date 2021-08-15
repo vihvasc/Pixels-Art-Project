@@ -3,10 +3,10 @@
 }
 
 #color-palette {
-    width: 300px;
+    width: 310px;
     margin: auto;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 .color {
@@ -15,22 +15,6 @@
     display: inline-block;
     border-style: solid;
     border-width: 1px;
-}
-
-#black {
-    background-color: black;
-}
-
-#froly {
-    background-color: #eb6b6f;
-}
-
-#hitpink {
-    background-color: #f9a875;
-}
-
-#ivory {
-    background-color:#fff6d3 ;
 }
 
 #pixel-board {
