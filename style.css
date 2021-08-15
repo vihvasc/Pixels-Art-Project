@@ -1,0 +1,35 @@
+ #title {
+    text-align: center;
+ }
+
+#color-palette {
+
+    width: 1350px;
+    height: 100px;
+}
+
+.color{
+    border: black solid 1px;
+  
+}
+
+button {
+    width: 60px;
+    height: 60px;
+}    
+
+#preto{
+    background-color: black;
+}
+
+#azul {
+    background-color: blue;
+}
+
+#amarelo {
+    background-color: yellow;
+}
+
+#vermelho {
+    background-color: red;
+}
