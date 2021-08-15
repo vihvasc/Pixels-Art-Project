@@ -15,3 +15,6 @@ return Math.floor(Math.random() * number);
 }
 // transferir numeros aleatorios para gerar as cores
 window.onload = coresAleatorias;
+
+
+	
