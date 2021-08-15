@@ -116,7 +116,25 @@ function addNewBoard() {
   newBoardButton.addEventListener('click', rebuildBoard);
 }
 
+// Requisito 12 - Gera uma paleta de cores aleatoriamente a cada refresh.
+function generateRandomColor() {
+  const red = Math.round(Math.random() * 255);
+  const green = Math.round(Math.random() * 255);
+  const blue = Math.round(Math.random() * 255);
+
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
+function assignRandomColor() {
+  getColorPalette[0].style.backgroundColor = 'black';
+
+  for (let i = 1; i < getColorPalette.length; i += 1) {
+    getColorPalette[i].style.backgroundColor = generateRandomColor();
+  }
+}
+
 function generateWebPage() {
+  assignRandomColor();
   buildBoard(5);
   addPaletteEventListener();
   addPixelEventListener();

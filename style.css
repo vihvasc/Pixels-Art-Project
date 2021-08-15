@@ -43,22 +43,6 @@ body {
   width: 70px;
 }
 
-#color1 {
-  background-color: black;
-}
-
-#color2 {
-  background-color: rgb(205, 95, 42);
-}
-
-#color3 {
-  background-color: rgb(242, 171, 55);
-}
-
-#color4 {
-  background-color: rgb(216, 174, 139);
-}
-
 #clear-board {
   margin-top: 20px;
 }
