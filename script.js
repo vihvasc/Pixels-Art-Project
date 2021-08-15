@@ -30,8 +30,22 @@ function selectedColor() {
   }
 }
 
+function paintPixels() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', (event) => {
+      const colorSelected = document.querySelector('.selected');
+      const setBackgroundSelected = colorSelected.style.backgroundColor;
+      const setEvent = event.target;
+      setEvent.style.backgroundColor = setBackgroundSelected;
+    });
+  }
+}
+
 function pixelsArt() {
   colorPalette();
   selectedColor();
+  paintPixels();
+  cleaningBoard();
 }
 window.onload = pixelsArt;
