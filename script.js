@@ -87,12 +87,12 @@ function deletePreviousBoard() {
 }
 
 // Requisito 11 - Atribui 5 como valor mínimo e 50 como máximo.
-function checkInputValue() {
-  const inputValue = document.getElementById(boardSize).value;
-  if (inputValue.value && inputValue.value < 5) {
-    return 5;
-  } if (inputValue.value > 50) {
-    return 50;
+function checkInputValue(input) {
+  let inputValue = input;
+  if (inputValue < 5) {
+    inputValue = 5;
+  } if (inputValue > 50) {
+    inputValue = 50;
   }
 
   return inputValue;
@@ -106,7 +106,8 @@ function rebuildBoard() {
   newPixelBoardContainer.id = pixelBoard;
   getBoardContainer.appendChild(newPixelBoardContainer);
 
-  buildBoard(checkInputValue());
+  const inputValue = document.getElementById(boardSize).value;
+  buildBoard(checkInputValue(inputValue));
 }
 
 const newBoardButton = document.getElementById('generate-board');
