@@ -116,10 +116,14 @@ function addNewBoard() {
   newBoardButton.addEventListener('click', rebuildBoard);
 }
 
-window.onload = function () {
+function generateWebPage() {
   buildBoard(5);
   addPaletteEventListener();
   addPixelEventListener();
   addClearButtonEventListener();
   addNewBoard();
+}
+
+window.onload = function () {
+  generateWebPage();
 };
