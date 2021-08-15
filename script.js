@@ -3,7 +3,6 @@ const secondColor = document.getElementById('box-color2');
 const thirdColor = document.getElementById('box-color3');
 const fourthColor = document.getElementById('box-color4');
 
-
 function changeColor(event) {
   const colorSelect = document.querySelector('.selected');
   colorSelect.classList.remove('selected');
