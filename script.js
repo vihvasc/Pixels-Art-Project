@@ -6,16 +6,7 @@ function createDivs() {
 }
 createDivs();
 
-const color = document.querySelectorAll('.pixel')[0];
-color.addEventListener('click', changeColor);
-
-function changeColor() {
-  color.style.backgroundColor = 'black';
-}
-
-// Quando eu clicar, ele vai procurar pelo quadrado que tem a classe selected
-// vai achar qual tiver no momento e retirar
-
+let selectedColor = 'black';
 const buttons = document.getElementsByClassName('color');
 
 const buttonRed = document.getElementById('buttonRed');
@@ -26,6 +17,7 @@ function selectedInButtonRed() {
     }
   }
   buttonRed.classList.add('selected');
+  selectedColor = 'red';
 }
 buttonRed.addEventListener('click', selectedInButtonRed);
 
@@ -37,6 +29,7 @@ function selectedInButtonBlue() {
     }
   }
   buttonBlue.classList.add('selected');
+  selectedColor = 'blue';
 }
 buttonBlue.addEventListener('click', selectedInButtonBlue);
 
@@ -48,6 +41,7 @@ function selectedInButtonGreen() {
     }
   }
   buttonGreen.classList.add('selected');
+  selectedColor = 'green';
 }
 buttonGreen.addEventListener('click', selectedInButtonGreen);
 
@@ -59,17 +53,26 @@ function selectedInButtonBlack() {
     }
   }
   buttonBlack.classList.add('selected');
+  selectedColor = 'black';
 }
 buttonBlack.addEventListener('click', selectedInButtonBlack);
 
-/* let selected = document.getElementsByClassName('color');
-selected.addEventListener('click', searchSelected);
+const descolor = document.getElementById('clear-board');
+const div = document.getElementsByClassName('pixel');
 
-function searchSelected() {
-  for (let i = 0; i < 5; i += 1) {
-    if (selected[i].contains('selected')) {
-      selected[i].remove('selected');
-    }
+function cleanerBoard() {
+  for (let i = 0; i < 25; i += 1) {
+    div[i].style.backgroundColor = 'white';
   }
 }
-*/
+descolor.addEventListener('click', cleanerBoard);
+
+const color = document.getElementById('pixel-board');
+
+function changeColor(event) {
+  const selectClick = event.target;
+  if (selectClick.tagName === 'DIV') {
+    event.target.style.backgroundColor = selectedColor;
+  }
+}
+color.addEventListener('click', changeColor);
