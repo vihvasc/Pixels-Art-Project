@@ -26,5 +26,20 @@ window.onload = function() {
         colorBlack.classList.add('selected');
     }
     firstSelectedColor();
+
+    function colorSelector() {
+        let colors = document.querySelectorAll('.color');
+        for (let i = 0, colorsLength = colors.length; i < colorsLength; i += 1) {
+            colors[i].addEventListener('click', function() {
+                for (let i2 = 0; i2 < colorsLength; i2 += 1) {
+                    if (colors[i2].classList.contains('selected')) {
+                        colors[i2].classList.remove('selected');
+                    }
+                }
+                colors[i].classList.add('selected');
+            })
+        }
+    }
+    colorSelector();
 }
 
