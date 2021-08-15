@@ -22,58 +22,76 @@ function handlePaintingPixelBoard(event) {
   targetEvent.target.style.backgroundColor = newColor;
 }
 
-const allPixels = document.getElementsByClassName('pixel');
 function addPixelEventListener() {
+  const allPixels = document.getElementsByClassName('pixel');
   for (let i = 0; i < allPixels.length; i += 1) {
     allPixels[i].addEventListener('click', handlePaintingPixelBoard);
   }
 }
 
 // Requisito 9 - Resetar todos os quadrados com a cor branca.
-const clearButton = document.getElementById('clear-board');
 function handleClearButton() {
+  const allPixels = document.getElementsByClassName('pixel');
   for (let i = 0; i < allPixels.length; i += 1) {
     allPixels[i].style.backgroundColor = 'white';
   }
 }
 
 function addClearButtonEventListener() {
+  const clearButton = document.getElementById('clear-board');
   clearButton.addEventListener('click', handleClearButton);
 }
 
 // Requisito 10 - Fazer o tamanho do quadro de pixels ser definido pelo usuário.
 // Emite mensagem de erro quando o input é vazio
-const inputValue = document.getElementById('board-size');
 const newBoardButton = document.getElementById('generate-board');
 function alertErrorMessage() {
+  const inputValue = document.getElementById('board-size');
   if (!inputValue.value) {
     return alert('Board inválido!');
-  }
-  if (inputValue.value < 5 || inputValue.value > 50) {
-    return alert('Tamanho do board inválido!');
   }
 }
 
 // Refaz o board com base N.
 function rebuildBoard() {
-  const getBoardParent = document.getElementById('pixel-board');
-  const base = inputValue.value;
+  const inputValue = document.getElementById('board-size').value;
+  console.log(inputValue);
+  const getBoardContainer = document.getElementById('pixel-board');
 
-  for (let i = 0; i < base; i += 1) {
-    for (let j = 0; j < base; j += 1) {
-      
-      getBoardParent.appendChild();
+  for (let i = 0; i < inputValue; i += 1) {
+    const newLineDiv = document.createElement('div');
+    newLineDiv.className = 'pixel-line';
+    newLineDiv.style.backgroundColor = 'white';
+    getBoardContainer.appendChild(newLineDiv);
+
+    for (let j = 0; j < inputValue; j += 1) {
+      const getPixelLine = document.getElementsByClassName('pixel-line');
+      const newColumnDiv = document.createElement('div');
+      newColumnDiv.className = 'pixel';
+      newColumnDiv.style.backgroundColor = 'white';
+      getPixelLine[i].appendChild(newColumnDiv);
     }
+  }
+}
+
+// Requisito 11 - Atribui 5 como valor mínimo e 50 como máximo.
+function checkInputValue() {
+  const inputValue = document.getElementById('board-size').value;
+  if (inputValue.value && inputValue.value < 5) {
+    inputValue.value = '5';
+  } else if (inputValue.value > 50) {
+    inputValue.value = '50';
   }
 }
 
 function addNewBoard() {
   newBoardButton.addEventListener('click', alertErrorMessage);
   newBoardButton.addEventListener('click', rebuildBoard);
+  checkInputValue();
 }
 window.onload = function () {
+  addNewBoard();
   addPaletteEventListener();
   addPixelEventListener();
   addClearButtonEventListener();
-  addNewBoard();
 };
