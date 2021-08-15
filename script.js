@@ -2,6 +2,7 @@ let title = document.getElementById("title");
 let header = document.getElementById("header");
 let colorPalett = document.getElementById("color-palette");
 let pixelBoard = document.getElementById("pixel-board");
+let blackColor = document.querySelector(".color");
 
 function getRandomColor() {
   let letters = "0123456789ABCDEF";
@@ -19,6 +20,7 @@ function createColorPalett (){
     randomColor.setAttribute("class", "color");
     if (i === 0){
       randomColor.style.backgroundColor = "black";
+      randomColor.classList.add("selected");
     } else {
       randomColor.style.backgroundColor = getRandomColor();
     };    
@@ -42,3 +44,11 @@ function createPixels(){
 };
 
 createPixels();
+
+// 7 - Clicar em uma das cores da paleta, faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+
+/*let clicar = document.addEventListener("click", selectColor);
+
+function selectColor(event){
+  
+}*/
