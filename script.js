@@ -44,7 +44,6 @@ function addClearButtonEventListener() {
 
 // Requisito 4 - Cria um board com 25 pixels.
 const pixelLine = 'pixel-line';
-
 function createDivColumns(input, index) {
   for (let j = 0; j < input; j += 1) {
     const getPixelLine = document.getElementsByClassName(pixelLine);
@@ -55,8 +54,9 @@ function createDivColumns(input, index) {
   }
 }
 
+const pixelBoard = 'pixel-board';
 function buildBoard(input) {
-  const getPixelBoardContainer = document.getElementById('pixel-board');
+  const getPixelBoardContainer = document.getElementById(pixelBoard);
 
   for (let i = 0; i < input; i += 1) {
     const newLineDiv = document.createElement('div');
@@ -81,7 +81,7 @@ function alertErrorMessage() {
 
 // Refaz o board com base N.
 function deletePreviousBoard() {
-  const getPixelBoard = document.getElementById('pixel-board');
+  const getPixelBoard = document.getElementById(pixelBoard);
 
   getPixelBoard.remove();
 }
@@ -90,9 +90,9 @@ function deletePreviousBoard() {
 function checkInputValue() {
   const inputValue = document.getElementById(boardSize).value;
   if (inputValue.value && inputValue.value < 5) {
-    return '5';
+    return 5;
   } if (inputValue.value > 50) {
-    return '50';
+    return 50;
   }
 
   return inputValue;
@@ -103,7 +103,7 @@ function rebuildBoard() {
 
   const getBoardContainer = document.getElementById('board-container');
   const newPixelBoardContainer = document.createElement('div');
-  newPixelBoardContainer.id = 'pixel-board';
+  newPixelBoardContainer.id = pixelBoard;
   getBoardContainer.appendChild(newPixelBoardContainer);
 
   buildBoard(checkInputValue());
