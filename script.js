@@ -1,5 +1,5 @@
 const containerOfPalettes = document.getElementById('color-palette');
-const palettes = document.getElementsByClassName('color');
+const palettes = Array.from(document.getElementsByClassName('color'));
 const pixelBoard = document.getElementById('pixel-board');
 let qntOfPixels = 5;
 let initialColorSelected = palettes[0];
@@ -45,6 +45,17 @@ function createPixels(num) {
   }
 }
 
+function clickForSelectColor() {
+  palettes.forEach((color) => {
+    color.addEventListener('click', (event) => {
+      initialColorSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+      initialColorSelected = event.target;
+    });
+  });
+}
+
 createPalettes();
 defineSizeOfPixelBoard(qntOfPixels);
 createPixels(qntOfPixels);
+clickForSelectColor();
