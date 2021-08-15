@@ -1,8 +1,68 @@
+body {
+  max-width: 900px;
+  margin: auto;
+  background-color: rgb(255, 243, 176);
+}
+
+section {
+  width: 50%;
+  margin: auto;
+  position: relative;
+}
+
+div {
+  margin: auto;
+  width: 50%;
+}
+
+h1 {
+  text-align: center;
+  background-color: rgb(51, 92, 103);
+  color: rgb(224, 159, 62);
+}
+
+button {
+  background-color: rgb(51, 92, 103);
+  color: rgb(224, 159, 62);
+  margin: 5px;
+  padding: 5px;
+}
+
+input {
+  background-color: rgb(51, 92, 103);
+  color: rgb(224, 159, 62);
+  width: 35%;
+  margin: 5px 5px 5px 18%;
+  padding: 5px;
+}
+
+#color-palette {
+  padding: 5px;
+}
+
+#clear-board {
+  margin-left: 38%;
+}
+
+#pixel-board {
+  width: 100%;
+  margin: auto;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+#pixel-board > div {
+  width: 100%;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
 .color {
   width: 40px;
   height: 40px;
   border: 1px solid black;
   display: inline-block;
+  margin: 7px;
 }
 
 .pixel {
@@ -11,4 +71,5 @@
   display: inline-block;
   background-color: white;
   border: 1px solid black;
+  margin: 5px;
 }

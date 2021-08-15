@@ -1,5 +1,4 @@
-const id = ['title', 'color-palette', 'clear-board',
-  'board-size', 'generate-board', 'pixel-board'];
+const id = ['title', 'color-palette', 'clear-board', 'board-size', 'generate-board', 'pixel-board'];
 const configHeader = {
   elementType: 'body',
   elementNum: 0,
@@ -228,14 +227,14 @@ function newPixelsBoard() {
 }
 
 function startNewPixelBoard() {
-  const button = document.getElementById('generate-board');
+  const button = document.getElementById(id[4]);
   button.addEventListener('click', newPixelsBoard);
 }
 
 startNewPixelBoard();
 
 function inputPixels() {
-  const input = document.getElementById('board-size');
+  const input = document.getElementById(id[3]);
   input.setAttribute('min', '1');
   input.setAttribute('type', 'number');
 }
