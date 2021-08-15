@@ -34,12 +34,12 @@ let numberInput = 5;
 
 function createPixelFrame() {
   const divFather = document.createElement('div');
-  let widhtAndHeight = 42 * numberInput;
+  const widhtAndHeight = 42 * numberInput;
   divFather.id = 'pixel-board';
   divFather.style.width = `${widhtAndHeight}px`;
   divFather.style.height = `${widhtAndHeight}px`;
   document.body.appendChild(divFather);
-  for (let index = 0; index < (numberInput ** 2); index += 1) {
+  for (let index = 0; index < numberInput ** 2; index += 1) {
     const divSon = document.createElement('div');
     divSon.className = 'pixel';
     divSon.style.backgroundColor = 'white';
@@ -55,7 +55,7 @@ const allDivs = document.querySelectorAll('.color');
 
 function addClass() {
   for (let index = 0; index < allDivs.length; index += 1) {
-    allDivs[index].addEventListener('click', function (event) {
+    allDivs[index].addEventListener('click', (event) => {
       classSelected.classList.remove('selected');
       event.target.classList.add('selected');
       classSelected = event.target;
@@ -68,7 +68,7 @@ const boxPixel = document.getElementsByClassName('pixel');
 
 function colorPixel() {
   for (let index = 0; index < boxPixel.length; index += 1) {
-    boxPixel[index].addEventListener('click', function (event) {
+    boxPixel[index].addEventListener('click', (event) => {
       const colorSelected = classSelected.style.backgroundColor;
       event.target.style.backgroundColor = colorSelected;
     });
@@ -80,9 +80,9 @@ function createButtonClear() {
   const button = document.createElement('button');
   button.id = 'clear-board';
   button.innerText = 'Limpar';
-  document.body.insertBefore(button, document.querySelector('#pixel-board'));
+  document.body.insertBefore(button, document.getElementById('pixel-board'));
 
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     for (let index = 0; index < boxPixel.length; index += 1) {
       boxPixel[index].style.backgroundColor = 'white';
     }
@@ -97,7 +97,7 @@ const div = document.createElement('div');
 div.id = 'button-input';
 document.body.insertBefore(div, document.querySelector('#pixel-board'));
 
-let input = document.createElement('input');
+const input = document.createElement('input');
 input.id = 'board-size';
 input.type = 'number';
 input.min = '1';
@@ -109,22 +109,22 @@ button.innerText = 'VQV';
 div.appendChild(button);
 
 function setInput() {
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     let numberDoInput = input.value;
     if (numberDoInput === '') {
-      alert("Board inválido!");
+      alert('Board inválido!');
       return;
     }
     if (numberDoInput < 5) {
-      numberDoInput = 5
+      numberDoInput = 5;
     }
     if (numberDoInput > 50) {
       numberDoInput = 50;
     }
     numberInput = numberDoInput;
     document.body.removeChild(document.querySelector('#pixel-board'));
-    createPixelFrame()
-    colorPixel()
+    createPixelFrame();
+    colorPixel();
   });
 }
 
