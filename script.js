@@ -30,14 +30,45 @@ function removeAdicionaSelector(event) {
   const corNova = event.target;
 
   selected.classList.remove('selected');
-  corNova.className += ' selected';
+  corNova.classList.add('selected');
 }
 
-function allBox() {
+function adicionaClickNasCores() {
   const tabelaCores = document.querySelectorAll('.color');
 
   for (let index = 0; index < tabelaCores.length; index += 1) {
     tabelaCores[index].addEventListener('click', removeAdicionaSelector);
   }
 }
-allBox();
+adicionaClickNasCores();
+
+// AQUI PRA BAIXO
+// 1 - VERIFICAR QUAL COR TEM A CLASSE SELECTED
+// 2 - PEGA A COR QUE TEM ESSA CLASSE. EX. RED
+// 3 - ADICIONA A CLASSE RED NA DIV QUE FOR PINTAR
+
+function pegaCorAtual(event) {
+  const listaTodasCores = document.getElementById('color-palette').children;
+  const corAtual = event.target;
+  if (listaTodasCores[0].classList.contains('selected')) {
+    corAtual.classList.remove('orange', 'red', 'royalblue');
+    corAtual.classList.add('black');
+  } else if (listaTodasCores[1].classList.contains('selected')) {
+    corAtual.classList.remove('black', 'red', 'royalblue');
+    corAtual.classList.add('orange');
+  } else if (listaTodasCores[2].classList.contains('selected')) {
+    corAtual.classList.remove('black', 'orange', 'royalblue');
+    corAtual.classList.add('red');
+  } else {
+    corAtual.classList.remove('black', 'red', 'orange');
+    corAtual.classList.add('royalblue');
+  }
+}
+
+function adicionaEventoBloco() {
+  const blocos = document.querySelectorAll('.pixel');
+  for (let index = 0; index < blocos.length; index += 1) {
+    blocos[index].addEventListener('click', pegaCorAtual);
+  }
+}
+adicionaEventoBloco();
