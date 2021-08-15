@@ -45,8 +45,9 @@ function addClearButtonEventListener() {
 // Requisito 10 - Fazer o tamanho do quadro de pixels ser definido pelo usuário.
 // Emite mensagem de erro quando o input é vazio
 const newBoardButton = document.getElementById('generate-board');
+const boardSize = 'board-size';
 function alertErrorMessage() {
-  const inputValue = document.getElementById('board-size');
+  const inputValue = document.getElementById(boardSize);
   if (!inputValue.value) {
     return alert('Board inválido!');
   }
@@ -54,7 +55,7 @@ function alertErrorMessage() {
 
 // Refaz o board com base N.
 function rebuildBoard() {
-  const inputValue = document.getElementById('board-size').value;
+  const inputValue = document.getElementById(boardSize).value;
   console.log(inputValue);
   const getBoardContainer = document.getElementById('pixel-board');
 
@@ -76,7 +77,7 @@ function rebuildBoard() {
 
 // Requisito 11 - Atribui 5 como valor mínimo e 50 como máximo.
 function checkInputValue() {
-  const inputValue = document.getElementById('board-size').value;
+  const inputValue = document.getElementById(boardSize).value;
   if (inputValue.value && inputValue.value < 5) {
     inputValue.value = '5';
   } else if (inputValue.value > 50) {
