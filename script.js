@@ -85,12 +85,12 @@ function addClass() {
 addClass();
 
 // Requisito 08
-let catchPixels = document.querySelectorAll('.pixel');
+let catchPixels = document.getElementsByClassName('pixel');
 function changePixelColor() {
-  for (let i = 0; i < catchPixels.length; i += 1) {
-    catchPixels[i].addEventListener('click', function(event){
-      let consoleLogDoFernando = initialColor.style.backgroundColor;
-      event.target.style.backgroundColor = consoleLogDoFernando;
+  for (let curColor = 0; curColor < catchPixels.length; curColor += 1) {
+    catchPixels[curColor].addEventListener('click', function(event){
+      let currentColor = initialColor.style.backgroundColor;
+      event.target.style.backgroundColor = currentColor;
     })
   }
 }
@@ -108,6 +108,7 @@ function createButton(buttonId, buttonText, insBeforeId) {
 function clearButton() {
   createButton('clear-board', 'Limpar', 'pixel-board');
   let clearBoard = document.querySelector('#clear-board');
+  clearBoard.style.marginLeft = '10px';
   clearBoard.addEventListener('click', function(event){
     for (let pix = 0; pix < catchPixels.length; pix += 1) {
     catchPixels[pix].style.backgroundColor = 'white';
@@ -115,3 +116,42 @@ function clearButton() {
   });
 }
 clearButton()
+
+// Requisito 10
+let input = document.createElement('input');
+function inputSize() {
+  input.id = 'board-size';
+  input.style.width = '40px';
+  input.style.margin = '10px';
+  input.type = 'number';
+  input.min = 1;
+  document.body.insertBefore(input, document.getElementById('pixel-board'));
+}
+inputSize();
+
+function inputButtons() {
+  createButton('generate-board', 'VQV', 'pixel-board');
+  let inputButton = document.querySelector('#generate-board');
+  inputButton.addEventListener('click', function(){
+    if (input.value === '') {
+      alert('Board inválido!');
+      return;
+    }
+    if (input.value < 5) {
+      input.value = 5;
+    }
+    if (input.value > 50) {
+      input.value = 50;
+    }
+      eraseGrid();
+      gridSize = input.value;
+      pixelBoard();
+      changePixelColor();
+  });
+}
+
+inputButtons();
+
+function eraseGrid() {
+  document.body.removeChild(document.querySelector('#pixel-board'));
+}
