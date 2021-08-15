@@ -9,7 +9,11 @@ function createTitle() {
 createTitle();
 
 // Requsito 02 e 03
-const colors = ['#000000', '#ffb3ff', '#b3ffcc', '#ccb3ff'];
+let color1 = getRandomColor();
+let color2 = getRandomColor();
+let color3 = getRandomColor();
+
+let colors = ['#000000', color1, color2, color3];
 
 function addColor() {
   for (let index = 0; index < colors.length; index += 1) {
@@ -155,3 +159,14 @@ inputButtons();
 function eraseGrid() {
   document.body.removeChild(document.querySelector('#pixel-board'));
 }
+
+// Requisito 12
+// Fonte: https://www.youtube.com/watch?v=UNIlt7_oMQQ
+function getRandomColor() {
+	let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let count = 0; count < 6; count += 1) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
