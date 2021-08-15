@@ -7,7 +7,10 @@ window.onload = function () {
   createColorPallete(colorList);
   createPixelBoard(pixelBoardSize);
 
-  //cria a paleta com as cores presentes em colorList
+  //Cor Preta é selecionada inicialmente
+  colorPallete.firstChild.classList.add('selected');
+
+  // Cria a paleta com as cores presentes em colorList
   function createColorPallete(colorList) {
     for (let color of colorList) {
       let newColor = document.createElement('div');
@@ -20,9 +23,9 @@ window.onload = function () {
     }
   }
 
-  //CRIANDO O PIXEL BOARD
+  // CRIANDO O PIXEL BOARD
 
-  //Cria o pixel board de acordo com a quantidade de linhas e colunas passadas por parâmetro
+  // Cria o pixel board de acordo com a quantidade de linhas e colunas passadas por parâmetro
   function createPixelBoard(boardSize) {
     let lines = createLines(boardSize);
 
@@ -34,14 +37,14 @@ window.onload = function () {
     }
   }
 
-  //Cria um pixel para o pixel board
+  // Cria um pixel para o pixel board
   function createPixel() {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
     return pixel;
   }
 
-  //Cria as linhas do pixel board
+  // Cria as linhas do pixel board
   function createLines(numberOfLines) {
     for (let i = 0; i < numberOfLines; i += 1) {
       let line = document.createElement('div');
