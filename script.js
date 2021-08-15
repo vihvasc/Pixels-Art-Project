@@ -138,6 +138,30 @@ Verifica se os pixels dentro do quadro não têm a classe selected quando são c
 		arrClassColor[2].classList.remove("selected")
 		arrClassColor[0].classList.remove("selected")
 }
+/*
+### 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+
+**O que será verificado:**
+
+- Verifica se ao carregar a página deve ser possível pintar os pixels de preto
+
+- Verifica se após selecionar uma outra cor na paleta, é possível pintar os pixels com essa cor
+
+- Verifica se somente o pixel que foi clicado foi preenchido com a cor selecionada, sem influenciar na cor dos demais pixels.
+*/
+
+let pixels = document.getElementsByClassName("pixel");
+
+for (let cont = 0 ;cont < pixels.length; cont += 1) {
+	pixels[cont].addEventListener("click",changeColorSelected);
+
+}
+function changeColorSelected(click){
+	let color = document.querySelector(".selected").style.backgroundColor
+	click.target.style.backgroundColor = color;
+}
+	
+ 
 
 
 
