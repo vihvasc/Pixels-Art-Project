@@ -3,8 +3,10 @@ h1 {
 }
 
 ul {
-  width: 190px;
-  margin-left: 50px;
+  width: 168px;
+  height: 40px;
+  margin-left: 94px;
+  padding: 0;
 }
 
 section {
@@ -21,7 +23,15 @@ section {
   display: inline-block;
   height: 40px;
   width: 40px;
-  margin: 2px;
+}
+
+#color-palette {
+  width: 168px;
+  height: 42px;
+  margin-left: 94px;
+  padding: 0;
+  border: 0;
+  display: inline;
 }
 
 .pixel {
