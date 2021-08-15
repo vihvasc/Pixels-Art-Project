@@ -7,15 +7,16 @@ let divFilho3 = document.createElement("div");
 let divFilho4 = document.createElement("div");
 let divFilho5 = document.createElement("div");
 divPai.appendChild(divFilho1) && divPai.appendChild(divFilho2) && divPai.appendChild(divFilho3) && divPai.appendChild(divFilho4) && divPai.appendChild(divFilho5);
+// aqui criei mais variaveis, para facilitar 
+// o uso delas em qualquer funçao
+let cor1 = document.getElementById('cor1');
+let cor2 = document.getElementById('cor2');
+let cor3 = document.getElementById('cor3');
+let cor4 = document.getElementById('cor4');
 
-
+let arrayDeDivs = [divFilho1, divFilho2, divFilho3, divFilho4, divFilho5];
 
 function coresDasPaletas() {
-    let cor1 = document.getElementById('cor1');
-    let cor2 = document.getElementById('cor2');
-    let cor3 = document.getElementById('cor3');
-    let cor4 = document.getElementById('cor4');
-
     cor1.style.backgroundColor = 'black';
     cor2.style.backgroundColor = '#5900F5';
     cor3.style.backgroundColor = '#00E9F0';
@@ -23,11 +24,7 @@ function coresDasPaletas() {
 }
 coresDasPaletas();
 
-
-
-
 function criandoQuadradoDivs() {
-    let arrayDeDivs = [divFilho1, divFilho2, divFilho3, divFilho4, divFilho5];
 
     for (let index = 0; index < arrayDeDivs.length; index += 1) {
         arrayDeDivs[index].classList.add('pixel');
@@ -38,10 +35,44 @@ function criandoQuadradoDivs() {
 }
 criandoQuadradoDivs();
 
-
-
 function criandoClasseSelected() {
     let minhaClasseSelected = document.getElementById('cor1')
     minhaClasseSelected.classList.add('selected')
 }
 criandoClasseSelected();
+
+
+function clicandoParaSelecionar2() {
+    cor2.classList.add('selected')
+    cor1.classList.remove('selected')
+    cor3.classList.remove('selected')
+    cor4.classList.remove('selected')
+}
+cor2.addEventListener('click', clicandoParaSelecionar2)
+
+
+function clicandoParaSelecionar3() {
+    cor3.classList.add('selected')
+    cor1.classList.remove('selected')
+    cor2.classList.remove('selected')
+    cor4.classList.remove('selected')
+}
+cor3.addEventListener('click', clicandoParaSelecionar3);
+
+
+function clicandoParaSelecionar4() {
+    cor4.classList.add('selected')
+    cor1.classList.remove('selected')
+    cor2.classList.remove('selected')
+    cor3.classList.remove('selected')
+}
+cor4.addEventListener('click', clicandoParaSelecionar4);
+
+
+function clicandoParaSelecionar1() {
+    cor1.classList.add('selected')
+    cor2.classList.remove('selected')
+    cor3.classList.remove('selected')
+    cor4.classList.remove('selected')
+}
+cor1.addEventListener('click', clicandoParaSelecionar1);
