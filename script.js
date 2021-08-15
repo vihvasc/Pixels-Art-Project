@@ -11,7 +11,7 @@ quartaCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255
 }
 // gerar numeros aleartorios 
 function corAleatoria(number) {
-return Math.floor(Math.random() * number) + 1;  // +1 para nao dar branco no aleatorio
+return Math.floor(Math.random() * number);
 }
 // transferir numeros aleatorios para gerar as cores
 window.onload = coresAleatorias;
