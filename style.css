@@ -1,5 +1,7 @@
 body{
   text-align: center;
+  font-family: monospace;
+  background-color: aliceblue;
 }
 
 .color {
@@ -23,7 +25,7 @@ body{
 }
 
 #pixel-board {
-  padding-top: 50px;
+  padding: 50px;
   margin: auto;
 }
 
@@ -46,4 +48,15 @@ body{
 #board-size {
   width: 40px;
   margin-left: 40px;
+}
+
+#clear-board ,#generate-board, #board-size {
+  padding: 10px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+#clear-board ,#generate-board {
+  background-color: aquamarine;
 }
