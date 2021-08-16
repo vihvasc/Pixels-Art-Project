@@ -13,22 +13,6 @@
   display: inline-block;
 }
 
-#black {
-  background-color: #000000;
-}
-
-#green {
-  background-color: #4E6E5D;
-}
-
-#white {
-  background-color: #C9D5B5;
-}
-
-#gold {
-  background-color: #B1740F;
-}
-
 .pixel {
   width: 40px;
   height: 40px;
