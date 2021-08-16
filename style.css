@@ -12,23 +12,6 @@ body {
     background-color: black;
 }
 
-#blackSquare {
-    background-color: black;
-}
-
-#redSquare {
-    background-color: red;
-}
-
-#blueSquare {
-    background-color: blue;
-}
-
-#greenSquare {
-    background-color: green;
-}
-
-
 .pixel {
     background-color: white;
     color: white;
