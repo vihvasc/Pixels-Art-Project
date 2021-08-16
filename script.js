@@ -29,18 +29,20 @@ paletteList()
 
 // desafio 4 e 5- id pixel-board - class pixel
 
-let pixelsColor = document.querySelector('#color-palette')
-
+// let pixelsColor = document.querySelector('#color-palette')
 function createPixels() {
   let pixelDiv = document.createElement('div');
   pixelDiv.id = 'pixel-board';
   document.body.appendChild(pixelDiv);
+  pixelDiv.style.width = `${42 * 5}px`;
+  pixelDiv.style.height =`${42 * 5}px`;
 
   for (let index = 0; index < 25; index += 1) {
-    let pixelLi = document.createElement('li');
-    pixelLi.classList.add('pixel');
-    pixelLi.style.background = 'white';
-    pixelDiv.appendChild(pixelLi)
+    let pixelDivChild = document.createElement('div');
+    pixelDivChild.classList.add('pixel');
+    pixelDivChild.style.backgroundColor = 'white';
+   
+    pixelDiv.appendChild(pixelDivChild)
   }
 }
 createPixels();
@@ -51,10 +53,10 @@ let colorsSelect = document.querySelector('.color');
 colorsSelect.classList.add('selected');
 
 // desafio 7
-let seleciona = document.querySelectorAll('.color')
+let selectPixel = document.querySelectorAll('.color')
 function selectClicks(){
-  for (let index = 0; index < seleciona.length; index +=1){
-    seleciona[index].addEventListener('click',function(event) {
+  for (let index = 0; index < selectPixel.length; index +=1){
+    selectPixel[index].addEventListener('click',function(event) {
       colorsSelect.classList.remove('selected');
       event.target.classList.add('selected');
       colorsSelect = event.target;
@@ -69,8 +71,8 @@ let colorPixel = document.querySelectorAll('.pixel');
 function colorsBox(){
 for (let index = 0; index < colorPixel.length; index += 1){
   colorPixel[index].addEventListener('click',function(event){
-    let acesso = colorsSelect.style.backgroundColor;
-    event.target.style.backgroundColor = acesso;
+    let access = colorsSelect.style.backgroundColor;
+    event.target.style.backgroundColor = access;
   })
 }
 }
@@ -93,6 +95,38 @@ buttonClear.addEventListener('click', function(){
 
 clearButton();
 
+// Desafio 10
+
+let div = document.createElement('div');
+div.id = 'button-input';
+document.body.insertBefore(div, document.querySelector('#pixel-board'));
+
+let input = document.createElement( 'input');
+input.id = 'board-size';
+input.type= 'number'
+document.body.insertBefore(input, document.querySelector('#pixel-board'));
+
+let button = document.createElement('button');
+button.id = 'generate-board';
+button.innerText = 'VQV';
+document.body.insertBefore(button, document.querySelector('#pixel-board'));
+
+
+for(let index = 0; index < input.length; index += 1 ){
+if(input >= 5 && input <=50){
+  // colocar o código de multiplicação
+}else{
+  alert("Board inválido!")
+}
+}
+
+let numero = document.querySelector('#board-size');
+function capturando(){
+button.addEventListener('click', function(event){
+  numero.target.event.document.getElementById('#generate-board'.value);
+})
+}
+capturando()
 
 
 
@@ -106,3 +140,11 @@ clearButton();
 
 
 
+
+
+// function capturando (){
+//  valorDigitado = document.getElementById('#button-input').value;
+//  document.getElementById('#generate-board').innerHTML = valorDigitado;
+// }
+
+// capturando();
