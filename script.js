@@ -1,3 +1,11 @@
+function titleH2() {
+  const title1H2 = document.createElement('h1');
+  title1H2.id = 'nameProjet';
+  title1H2.innerText = 'Super Pixel Art World';
+  document.body.appendChild(title1H2);
+}
+titleH2();
+
 // Cria titulo
 function titleH1() {
   const title1H1 = document.createElement('h1');
@@ -33,6 +41,13 @@ function createDiv() {
 }
 createDiv();
 
+function criaP() {
+  const paragraph = document.createElement('p');
+  paragraph.id = 'paragraph';
+  paragraph.innerText = '(Selecione a cor desejada)';
+  document.body.appendChild(paragraph);
+}
+criaP();
 // cria os 25 box com a classe pixel e o background color branco
 
 let dimensionBox = 5;
