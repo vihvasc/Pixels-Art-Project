@@ -20,6 +20,11 @@ previousColor.classList.remove("selected");
 event.target.classList.add("selected");
 }
 
+let colors = document.getElementsByClassName("color");
+for(let index = 0 ; index < colors.length ; index += 1){
+    colors[index].addEventListener("click", clickSelectedPixel);
+}
+
 
 
 
@@ -31,10 +36,7 @@ for(let index2 = 0 ; index2 < selectedPixel.length; index2 +=1){
     selectedPixel[index2].addEventListener("click",changeColor);
 }
 
-let colors = document.getElementsByClassName("color");
-for(let index = 0 ; index < colors.length ; index += 1){
-    colors[index].addEventListener("click", clickSelectedPixel);
-}
+
 
 
 function clickTablePixel(event){
@@ -50,4 +52,24 @@ function changeColor(){
     let pixel2 = document.querySelector(".selectedP");
     pixel2.style.backgroundColor = pallet;
 }
+
+
+
+let divButton = document.querySelector(".button");
+let createButton = document.createElement("button");
+let button1 = divButton.appendChild(createButton);
+button1.id = "clear-board";
+button1.innerText = "Limpar";
+
+
+button1.addEventListener("click",clearTable )
+function clearTable (){
+    let tablePixel = document.querySelectorAll(".pixel");
+    for(let i = 0 ; i < tablePixel.length ; i += 1){
+        tablePixel[i].style.backgroundColor= "white";
+    }
+}
+    
+
+
 
