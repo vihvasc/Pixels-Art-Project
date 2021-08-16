@@ -8,16 +8,12 @@
   height: 40px;
   border: 1px solid black;
   display: inline-block;
+  cursor: pointer;
+}
+.line {
   margin: 0%;
   padding: 0%;
 }
-.line{
-margin: 0%;
-  padding: 0%;
-}
-/* #pixel-board {
-  border: 1px solid black;
-} */
 
 .sunset-orange {
   background-color: rgb(255, 85, 85);
@@ -25,6 +21,7 @@ margin: 0%;
   display: inline-block;
   width: 100px;
   height: 100px;
+  cursor: pointer;
 }
 .screaming-green {
   background-color: rgb(85, 255, 85);
@@ -32,6 +29,7 @@ margin: 0%;
   display: inline-block;
   width: 100px;
   height: 100px;
+  cursor: pointer;
 }
 .laser-lemon {
   background-color: rgb(255, 255, 85);
@@ -39,6 +37,7 @@ margin: 0%;
   display: inline-block;
   width: 100px;
   height: 100px;
+  cursor: pointer;
 }
 .black {
   background-color: black;
@@ -46,4 +45,5 @@ margin: 0%;
   display: inline-block;
   width: 100px;
   height: 100px;
+  cursor: pointer;
 }

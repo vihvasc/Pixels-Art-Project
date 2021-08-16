@@ -7,10 +7,9 @@ function makeLine() {
     let line = document.createElement('div');
     line.className = 'line';
     quadroPixel.appendChild(line);
-    makePixels(line)
+    makePixels(line);
   }
 }
-
 
 makeLine();
 
