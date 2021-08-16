@@ -64,8 +64,8 @@ fourBlock.addEventListener('click', selectColor);
 
 function selectPixel(event) {
   const painted = document.querySelector('.selected');
-  // eslint-disable-next-line no-param-reassign
-  event.target.style.backgroundColor = painted.style.background;
+  const evento = event;
+  evento.target.style.backgroundColor = painted.style.background;
 }
 pixelBoard.addEventListener('click', selectPixel);
 
