@@ -65,8 +65,25 @@ function clickForPaint() {
   });
 }
 
+function newBoard() {
+  let boardChild = pixelBoard.lastElementChild;
+  while (boardChild) {
+    pixelBoard.removeChild(boardChild);
+    boardChild = pixelBoard.lastElementChild;
+  }
+  createPixels(qntOfPixels);
+  clickForSelectColor();
+  clickForPaint();
+}
+
+function clearBoard() {
+  const clearButton = document.getElementById('clear-board');
+  clearButton.addEventListener('click', newBoard);
+}
+
 createPalettes();
 defineSizeOfPixelBoard(qntOfPixels);
 createPixels(qntOfPixels);
 clickForSelectColor();
 clickForPaint();
+clearBoard();
