@@ -3,7 +3,7 @@ window.onload = function () {
     let lines = document.getElementsByClassName('pixel-line');
 
     for (let i = 0; i < lines.length; i += 1) {
-      createPixels(lines[i]);
+      createPixels(lines[i]); // parametro funcao create pixels
     }
   }
 
@@ -22,6 +22,8 @@ window.onload = function () {
       line.appendChild(pixel);
     }
   }
+  
+// o parametro line corresponde ao lines[i] da linha 6
 
   makeBoardLines();
 
@@ -58,7 +60,7 @@ window.onload = function () {
 
   let button = document.getElementById('clear-board');
   button.innerText = 'Limpar';
-  
+
   button.addEventListener('click', clear);
 
   function clear() {
