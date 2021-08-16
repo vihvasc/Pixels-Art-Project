@@ -1,18 +1,32 @@
-const getColor = document.querySelectorAll(".color");
-//console.log(getcolor)
-for (let i = 0; i < getColor.length; i += 1) {
-    getColor[i].addEventListener("click", selectedClass);
-}
+let getColor = document.querySelectorAll('.color');
+let pixels = document.querySelectorAll('.pixel');
+let limparPixel = document.querySelector('#clear-board');
+let corSelecionada = document.querySelector('.selected');
 
-function coresAleatorias(){
-    return '#' + parseInt((Math.random() * 0xFFFFFF)) //cores hexadecimais começam com #, concatena com os valores gerados
-    .toString ( 16 ) // converte o valor de numero pra hexadecial
-    .padStart ( 6, '0'); // ele força a colocar 0 a esquerda e a ter o tamanho máximo de 6
-}
+getColor[0].style.backgroundColor = 'black';
+getColor[1].style.backgroundColor = 'purple';
+getColor[2].style.backgroundColor = 'yellow';
+getColor[3].style.backgroundColor = 'orange';
 
 function selectedClass(event) {
-    for (let i = 0; i < getColor.length; i += 1) {
-        getColor[i].classList.remove("selected")
-    } 
-    event.target.classList.add("selected");
+  for (let i = 0; i < getColor.length; i += 1) {
+    getColor[i].classList.remove('selected');
+  }
+  event.target.classList.add('selected');
+  corSelecionada = event.target;
 }
+
+for (let i = 0; i < getColor.length; i += 1) {
+  getColor[i].addEventListener('click', selectedClass);
+}
+
+function pintar() {
+  let pixels = document.querySelectorAll('.pixel');
+  for (let pixel of pixels){
+    pixel.addEventListener('click', function() {
+      console.log(pixel)
+    pixel.style.backgroundColor = corSelecionada.style.backgroundColor
+    });
+  }
+}
+pintar();

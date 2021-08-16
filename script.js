@@ -30,10 +30,10 @@ selecionarCores()
 function limparQuadro() {
 //ao clicar o quadro de pixels é totalmente preenchido de branco
 //pesquisado no w3school - https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_document_createelement2
-    const limparQuadro = document.querySelector('#clear-board');
-    pixel.style.backgroundColor = 'white';
+  const limparQuadro = document.querySelector('#clear-board');
+  pixel.style.backgroundColor = 'white';
 }
-limparQuadro.addEventListener("click", limparQuadro);
+limparQuadro.addEventListener('click', limparQuadro);
 
 
 
@@ -42,3 +42,13 @@ window.onload - paginaCarregada
 function paginaCarregada(){
     cor01 = black 
 }
+
+
+
+
+
+function limparQuadro() {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+}
+limparPixel.addEventListener('click', limparQuadro);
