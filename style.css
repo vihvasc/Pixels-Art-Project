@@ -1,0 +1,19 @@
+.color {
+    display:inline-block;
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+}
+
+.color.blue {
+    background-color: blue;
+}
+.color.lightblue {
+    background-color: lightblue;
+}
+.color.red {
+    background-color: red;
+}
+.color.pink {
+    background-color: pink;
+}
