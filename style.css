@@ -29,19 +29,18 @@ body {
 }
 
 
-.square {
+.pixel {
     background-color: white;
     color: white;
     height: 40px;
     width: 40px;
     border: 1px solid black;
-    padding: 20px;
 }
   
-.grid {
-    width: 600px;
+#pixel-board {
+    width: 200px;
+    height: 200px;
     display: grid;
-    grid-template-columns: repeat(5, 80px);
-    grid-template-rows: repeat(5,80px);
-    grid-auto-flow: column;
+    grid-template-columns: repeat(5, 40px);
+    grid-template-rows: repeat(5,40px);
 }
