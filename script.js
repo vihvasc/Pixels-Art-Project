@@ -1,6 +1,6 @@
-let ChoiceSizeQuadrado = 5
 
- 
+
+let ChoiceSizeQuadrado = 5
 let last = document.querySelectorAll(".pixel")[4]
 
 function CreatQuadroDePixels (){
@@ -27,16 +27,14 @@ CreatQuadroDePixels()
 CreatQuadroDePixels()
 CreatQuadroDePixels()
 
-window.onload = Blacked
+window.onload = addSelecteds
 
-function Blacked (){
-let ADD = document.querySelector(".color")
-  ADD.classList.add("selected")
-}
+
+
 
 
 function addSelecteds(){
-let AtualColor;
+let AtualColor = "black"
 let removeSelectedBlack = document.querySelector("#black")
 let removeSelectedRed = document.querySelector("#red")
 let removeSelectedGreen = document.querySelector("#green")
@@ -104,6 +102,30 @@ function ADDBlueAtualColor(){
 AtualColor = document.querySelector("#blue").style.backgroundColor
 console.log(AtualColor)
 }
+let Pixels = document.querySelectorAll(".pixel")
+for (let i = 0; i < Pixels.length; i += 1){
+Pixels[i].addEventListener("click",XD)
+function XD (){
+  Pixels[i].style.backgroundColor = AtualColor
+}
+}
 }
 
 addSelecteds()
+function ClearPixels(){
+  let Clear = document.createElement("button")
+  Clear.innerText = "Limpar"
+  let SectionClear = document.getElementById("Clear")
+  SectionClear.appendChild(Clear)
+  Clear.id = "clear-board"
+  let Pixels = document.querySelectorAll(".pixel")
+  for (let i = 0; i < Pixels.length; i += 1){
+  Clear.addEventListener("click",XD)
+  function XD (){
+    Pixels[i].style.backgroundColor = "white"
+  }
+  }
+  
+  }
+  ClearPixels()
+
