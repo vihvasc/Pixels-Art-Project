@@ -1,7 +1,3 @@
-window.onload = function() {
-    
-};
-
 let paleta = document.getElementById('color-palette');
 let colorPaleta = paleta.children;
 for (let i = 0; i < colorPaleta.length; i++){
