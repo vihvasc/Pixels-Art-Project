@@ -45,6 +45,7 @@ function createPixels() {
     for (let cell = 0; cell < 5; cell += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
+      pixel.id = 'cell';
       line.appendChild(pixel);
     }
   }
@@ -63,9 +64,7 @@ fourBlock.addEventListener('click', selectColor);
 
 function selectPixel(event) {
   const painted = document.querySelector('.selected');
-  if (event.target.className === 'pixel') {
-    event.target.style.backgroundColor = painted.style.backgroundColor;
-  }
+  event.target.style.backgroundColor = painted.style.background;
 }
 pixelBoard.addEventListener('click', selectPixel);
 
@@ -105,6 +104,7 @@ function createBoard() {
     for (let cell = 1; cell <= size; cell += 1) {
       const pixel = document.createElement('div');
       pixel.className = 'pixel';
+      pixel.id = 'cell';
       line.appendChild(pixel);
       pixel.style.width = 40;
       pixel.style.height = 40;
