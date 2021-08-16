@@ -23,4 +23,16 @@ clearButton.addEventListener('click', function() {
     }
 })
 
+colorsUl.addEventListener('click', function(e) {
+    let element = e.target
+    backgroundColorSelected = element.style.backgroundColor
+    let previousSelected = document.querySelector('.selected')
+    previousSelected.classList.remove('selected')
+    element.classList.add('selected')
+})
+    pixelBoard.addEventListener('click', function(e) {
+    let element = e.target
+    element.style.backgroundColor = backgroundColorSelected
+})
+
 alterarCor(colorsPalette)
