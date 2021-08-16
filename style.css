@@ -27,8 +27,6 @@ h1 , #color-palette {
 }
 
 #pixel-board {
-    height: 210px;
-    width: 210px;
     margin: auto;
     text-align: center;
     line-height: 0;
@@ -40,9 +38,4 @@ h1 , #color-palette {
     height: 40px;
     width: 40px;
     display: inline-block;
-}
-
-#clear-board {
-    margin-bottom: 8px;
-    margin-left: 647px;
 }
