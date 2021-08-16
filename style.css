@@ -21,22 +21,6 @@ body {
   box-sizing: border-box;
 }
 
-.black {
-  background: black;
-}
-
-.blue {
-  background: blue;
-}
-
-.green {
-  background: green;
-}
-
-.yellow {
-  background: yellow;
-}
-
 .pixel-line {
   display: flex;
 }
