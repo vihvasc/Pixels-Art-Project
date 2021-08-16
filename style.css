@@ -32,16 +32,16 @@ body {
 .square {
     background-color: white;
     color: white;
-    border-radius: 5px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
     padding: 20px;
-    font-size: 150%;
 }
   
 .grid {
     width: 600px;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(5, 100px);
-    grid-template-rows: repeat(5, 100px);
+    grid-template-columns: repeat(5, 80px);
+    grid-template-rows: repeat(5,80px);
     grid-auto-flow: column;
 }
