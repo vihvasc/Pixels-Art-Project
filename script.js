@@ -9,9 +9,10 @@ function colorPalette() {
   }
 }
 
-const pixelGrid = document.body.querySelector('#pixel-board');
-function insertPixels(numberOfPixels) {
-  for (let index = 1; index <= numberOfPixels; index += 1) {
+function insertPixels(numbersOfPixels) {
+  const pixelGrid = document.body.querySelector('#pixel-board');
+
+  for (let index = 1; index <= numbersOfPixels; index += 1) {
     const createPixelsList = document.createElement('li');
     createPixelsList.className = 'pixel';
     pixelGrid.appendChild(createPixelsList);
@@ -20,11 +21,11 @@ function insertPixels(numberOfPixels) {
 insertPixels(25);
 
 function selectedColor() {
-  const selectColor = document.querySelectorAll('.color');
-  for (let index = 0; index < selectColor.length; index += 1) {
-    selectColor[index].addEventListener('click', (event) => {
-      const getSelected = document.querySelector('.selected');
-      getSelected.classList.remove('selected');
+  const colorsList = document.querySelectorAll('.color');
+  for (let index = 0; index < colorsList.length; index += 1) {
+    colorsList[index].addEventListener('click', (event) => {
+      const recoverSelected = document.querySelector('.selected');
+      recoverSelected.classList.remove('selected');
       event.target.classList.add('selected');
     });
   }
@@ -35,9 +36,9 @@ function paintPixels() {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener('click', (event) => {
       const colorSelected = document.querySelector('.selected');
-      const setBackgroundSelected = colorSelected.style.backgroundColor;
+      const recoveryBackgroundSelected = colorSelected.style.backgroundColor;
       const setEvent = event.target;
-      setEvent.style.backgroundColor = setBackgroundSelected;
+      setEvent.style.backgroundColor = recoveryBackgroundSelected;
     });
   }
 }
