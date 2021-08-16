@@ -64,18 +64,13 @@ body {
   justify-content: center;
 }
 
+
 #board-size {
   height: 50px;
   margin: 20px 5px 40px;
 }
 
-#generate-board {
-  padding: 5px;
-  width: 60px;
-  margin: 20px 5px 40px;
-}
-
-#clear-board {
+.btn {
   padding: 5px;
   width: 60px;
   margin: 20px 5px 40px;
