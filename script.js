@@ -15,6 +15,7 @@ function atribuiCores() {
   for (let index = 0; index < cores.length; index += 1) {
     quadrado[index].style.backgroundColor = cores[index];
   }
+  quadrado[0].classList.add('selected');
 }
 
 const pegaTudo = document.getElementsByTagName('body');
