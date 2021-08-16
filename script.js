@@ -61,5 +61,20 @@ function pixelColor() {
 }
 pixelColor();
 
-
 //9
+function clearPixel() {
+  let clearButton = document.createElement('button');
+  clearButton.id = 'clear-board';
+  clearButton.innerText = 'Limpar';
+  document.body.insertBefore(
+    clearButton,
+    document.getElementById('pixel-board')
+  );
+
+  clearButton.addEventListener('click', function () {
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].style.backgroundColor = 'white';
+    }
+  });
+}
+clearPixel();
