@@ -18,3 +18,14 @@ function colorSelected(event) {
 
     event.target.className = 'color selected';
 }
+
+let pixelBoard = document.getElementById('pixel-board');
+let pixel = pixelBoard.children;
+for (let i = 0; i < pixel.length; i++) {
+    pixel[i].addEventListener('click', pixelColoring);
+}
+
+function pixelColoring(event) {
+    let selectColor = document.getElementsByClassName('selected')[0];
+    event.target.style.backgroundColor = selectColor.style.backgroundColor;
+}
