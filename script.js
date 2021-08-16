@@ -1,4 +1,3 @@
-const containerOfPalettes = document.getElementById('color-palette');
 const palettes = Array.from(document.getElementsByClassName('color'));
 const pixelBoard = document.getElementById('pixel-board');
 let qntOfPixels = 5;
@@ -32,6 +31,7 @@ function defineSizeOfPixelBoard(pixels) {
 }
 
 function createPixels(num) {
+  defineSizeOfPixelBoard(num);
   // num é elevado ao quadrado para ter a mesma quantidade de altura e largura
   const pixelCount = num ** 2;
   for (let index = 0; index < pixelCount; index += 1) {
@@ -81,9 +81,36 @@ function clearBoard() {
   clearButton.addEventListener('click', newBoard);
 }
 
+function catchBoardSize() {
+  const input = document.getElementById('board-size');
+  if (input.value === '') {
+    return alert('Board inválido!');
+  }
+  return input.value;
+}
+
+function checkInputValue() {
+  const inputValue = catchBoardSize();
+  if (inputValue < 5) {
+    qntOfPixels = 5;
+  } else if (inputValue > 50) {
+    qntOfPixels = 50;
+  } else {
+    qntOfPixels = inputValue;
+  }
+}
+
+function redefineBoardSize() {
+  const button = document.getElementById('generate-board');
+  button.addEventListener('click', () => {
+    checkInputValue();
+    newBoard();
+  });
+}
+
 createPalettes();
-defineSizeOfPixelBoard(qntOfPixels);
 createPixels(qntOfPixels);
 clickForSelectColor();
 clickForPaint();
 clearBoard();
+redefineBoardSize();
