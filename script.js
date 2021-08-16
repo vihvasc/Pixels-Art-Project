@@ -15,9 +15,11 @@ lightBlueColor.addEventListener('click', changeSelected);
 lightGreenColor.addEventListener('click', changeSelected);
 
 // 8. Created function for select pixel
-function setPixelColor(event) {
-  const selection = document.querySelector('.selected');
-  const selectionColor = window.getComputedStyle(selection).getPropertyValue('background-color');
-  event.target.style.backgroundColor = selectionColor;
+function pixelColorSelected(event) {
+  const select = document.querySelector('.selected');
+  const selectColor = window.getComputedStyle(select).getPropertyValue('background-color');
+  event.target.style.backgroundColor = selectColor;
 }
-document.querySelector('#pixel-board').addEventListener('click', setPixelColor);
+document.querySelector('#pixel-board').addEventListener('click', pixelColorSelected);
+
+// 9. Created function for button of clean
