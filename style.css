@@ -3,5 +3,22 @@
     height: 50px;
     width: 50px;
     background-color: 'black';
-    display: inline;
+    display: inline-block;
+}
+
+#pixel-board {
+    width: 210px;
+    height: 210px;
+}
+
+.pixel {
+    background-color: white;
+    float:left;
+    line-height: 0px;
+    line-clamp: 0px;
+    width: 40px;
+    height: 40px;
+    border: black solid 1px;
+    margin: 0px;
+    padding: 0px;
 }
