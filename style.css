@@ -17,7 +17,7 @@
 
 body {
   margin: 0;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Franklin-Gothic-Medium, Arial-Narrow, Arial, sans-serif;
   background-color: burlywood;
 }
 
@@ -66,27 +66,25 @@ body {
 
 #board-size {
   height: 50px;
-  margin: 20px 5px 40px 5px;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin: 20px 5px 40px;
 }
 
 #generate-board {
   padding: 5px;
   width: 60px;
-  margin: 20px 5px 40px 5px;
+  margin: 20px 5px 40px;
 }
 
 #clear-board {
   padding: 5px;
   width: 60px;
-  margin: 20px 5px 40px 5px;
+  margin: 20px 5px 40px;
 }
 
 #pixel-board {
   border: 1px solid black;
   padding: 20px;
-  background-color:black;
+  background-color: black;
   display: grid;
   max-width: var(--grid-size-px);
   max-height: var(--grid-size-px);
