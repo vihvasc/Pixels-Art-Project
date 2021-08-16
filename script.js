@@ -1,35 +1,40 @@
-function createLine() {
+const size = document.getElementById('board-size');
+
+function createLine(a) {
   const board = document.getElementById('pixel-board');
-  const numberOfLines = 5;
+  const numberOfLines = a;
   for (let l = 0; l < numberOfLines; l += 1) {
     const line = document.createElement('div');
     line.className = 'line';
     board.appendChild(line);
   }
-}
-
-function createPixel() {
-  const pixelPerLine = 5;
-  const linesToFill = document.getElementsByClassName('line');
-  for (let l = 0; l < linesToFill.length; l += 1) {
-    for (let p = 0; p < pixelPerLine; p += 1) {
-      const pixel = document.createElement('div');
-      pixel.className = 'pixel';
-      linesToFill[l].appendChild(pixel);
-    }
-  }
-}
-
-function changeSelected(event) {
-  const selectedColor = document.querySelector('.selected');
-  selectedColor.classList.remove('selected');
-  event.target.classList.add('selected');
+  size.value = '';
 }
 
 function paintPixel(event) {
   const color = document.querySelector('.selected');
   const eventTarget = event.target;
   eventTarget.style.backgroundColor = `${color.id}`;
+}
+
+function createPixel(a) {
+  const pixelPerLine = a;
+  const linesToFill = document.getElementsByClassName('line');
+  for (let l = 0; l < linesToFill.length; l += 1) {
+    for (let p = 0; p < pixelPerLine; p += 1) {
+      const pixel = document.createElement('div');
+      pixel.className = 'pixel';
+      pixel.addEventListener('click', paintPixel);
+      linesToFill[l].appendChild(pixel);
+    }
+  }
+  size.value = '';
+}
+
+function changeSelected(event) {
+  const selectedColor = document.querySelector('.selected');
+  selectedColor.classList.remove('selected');
+  event.target.classList.add('selected');
 }
 
 function limpar() {
@@ -39,19 +44,39 @@ function limpar() {
   }
 }
 
+function removeBoard() {
+  const lines = document.querySelectorAll('.line');
+  for (let l = 0; l < lines.length; l += 1) {
+    lines[l].remove();
+  }
+}
+
+function generateBoard() {
+  let n = size.value;
+  removeBoard();
+  if (n < 5) { n = 5; }
+  if (n > 50) { n = 50; }
+  createLine(n);
+  createPixel(n);
+}
+
+function checkN() {
+  const n = size.value;
+  if (n === '') {
+    alert('Board inválido!');
+  } else { generateBoard(); }
+}
+
 window.onload = function initPage() {
-  createLine();
-  createPixel();
+  createLine(5);
+  createPixel(5);
 
   const cores = document.querySelectorAll('.color');
   cores.forEach((item) => {
     item.addEventListener('click', changeSelected);
   });
 
-  const pixels = document.querySelectorAll('.pixel');
-  pixels.forEach((item) => {
-    item.addEventListener('click', paintPixel);
-  });
-
   document.getElementById('clear-board').addEventListener('click', limpar);
+
+  document.getElementById('generate-board').addEventListener('click', checkN);
 };
