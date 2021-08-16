@@ -75,3 +75,19 @@ function pixelColor (){
   
 }
 pixelColor();
+
+let getButton = document.getElementById('clear-board');
+getButton.innerText = 'Limpar';
+
+function clearPixelColor (){
+  let buttonClear = document.getElementById('clear-board');
+    buttonClear.addEventListener('click', clearColor);
+  function clearColor (obj){
+    let getPixel = document.getElementsByClassName('pixel');
+    for (i = 0; i < getPixel.length; i +=1){
+    getPixel[i].style.backgroundColor = 'white';
+  }
+  
+}
+}
+clearPixelColor();

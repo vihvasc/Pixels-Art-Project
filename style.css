@@ -5,7 +5,7 @@ h1{
   width: 400px;
   height: 75px;
   margin: auto;
-  padding: 0px;
+
 
   
 }
@@ -33,10 +33,14 @@ margin: auto;
 
 
 
-#x {
-  width: 40px;
-  height: 40px;
+#clear-board {
+  width: 100px;
+  height: 30px;
   border: 1px solid black;
-  float: left;
-  margin-left: 47px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 30px;
+  text-align: center;
+    /* margin-left: 620px;
+  margin-bottom: 10px; */
 }
