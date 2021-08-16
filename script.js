@@ -29,3 +29,12 @@ function pixelColoring(event) {
     let selectColor = document.getElementsByClassName('selected')[0];
     event.target.style.backgroundColor = selectColor.style.backgroundColor;
 }
+
+let buttonCleaner = document.getElementById('clear-board');
+buttonCleaner.addEventListener('click', clearPixels);
+
+function clearPixels() {
+    for (let i = 0; i < pixel.length; i++) {
+        pixel[i].style.backgroundColor = 'white';
+    }
+}
