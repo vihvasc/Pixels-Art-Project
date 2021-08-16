@@ -31,38 +31,47 @@ linha5.appendChild(div);
 
 let black = document.getElementById("black");
 let red = document.getElementById("red");
-let orange = document.getElementById("orange");
+let orangered = document.getElementById("orangered");
 let green = document.getElementById("green");
 
 black.addEventListener("click", blackSelect);
 function blackSelect(){
     black.className = "color selected";
     red.className = "color";
-    orange.className = "color";
+    orangered.className = "color";
     green.className = "color";
-    console.log(orange, red, black, green);
+    console.log(orangered, red, black, green);
 }
 red.addEventListener("click", redSelect);
 function redSelect(){
     red.className = "color selected";
     black.className = "color";
-    orange.className = "color";
+    orangered.className = "color";
     green.className = "color";
-    console.log(orange, red, black, green);
+    console.log(orangered, red, black, green);
 }
-orange.addEventListener("click", orangeSelect);
-function orangeSelect(){
-    orange.className = "color selected";
+orangered.addEventListener("click", orangeredSelect);
+function orangeredSelect(){
+    orangered.className = "color selected";
     red.className = "color";
     black.className = "color";
     green.className = "color";
-    console.log(orange, red, black, green);
+    console.log(orangered, red, black, green);
 }
 green.addEventListener("click", greenSelect);
 function greenSelect(){
     green.className = "color selected";
-    orange.className = "color";
+    orangered.className = "color";
     red.className = "color";
     black.className = "color";
-    console.log(orange, red, black, green);
+    console.log(orangered, red, black, green);
+}
+let pixel = document.getElementsByClassName("pixel");
+let colorSelected = document.getElementsByClassName("color selected");
+for(let i = 0; i < pixel.length; i++) {
+    pixel[i].addEventListener('click', click);
+    pixel[i].id = i;
+    function click(){
+    document.getElementById(i).style.backgroundColor = colorSelected[0].id;
+    }
 }
