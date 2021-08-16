@@ -1,6 +1,5 @@
 let getColor = document.querySelectorAll('.color');
 let pixels = document.querySelectorAll('.pixel');
-let limparPixel = document.querySelector('#clear-board');
 let corSelecionada = document.querySelector('.selected');
 
 getColor[0].style.backgroundColor = 'black';
@@ -23,10 +22,18 @@ for (let i = 0; i < getColor.length; i += 1) {
 function pintar() {
   let pixels = document.querySelectorAll('.pixel');
   for (let pixel of pixels){
-    pixel.addEventListener('click', function() {
-      console.log(pixel)
-    pixel.style.backgroundColor = corSelecionada.style.backgroundColor
-    });
+    pixel.addEventListener('click', function() 
+    {pixel.style.backgroundColor = corSelecionada.style.backgroundColor});
   }
 }
 pintar();
+
+function limparQuadro() {
+  let limparPixel = document.querySelector('#clear-board');
+  let pixels = document.querySelectorAll('.pixel');
+  for (let pixel of pixels){
+    limparPixel.addEventListener('click', function() 
+    {pixel.style.backgroundColor = 'white'});
+ }
+}
+limparQuadro();

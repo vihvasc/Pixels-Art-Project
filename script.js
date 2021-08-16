@@ -47,9 +47,3 @@ function paginaCarregada(){
 
 
 
-function limparQuadro() {
-  for (let i = 0; i < pixel.length; i += 1) {
-    pixel[i].style.backgroundColor = 'white';
-}
-}
-limparPixel.addEventListener('click', limparQuadro);
