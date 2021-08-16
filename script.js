@@ -60,6 +60,7 @@ criarPaleta();
 
 // 4 - Adicione à página um quadro de pixels, com 25 pixels.
 // 5 - Faça com que cada elemento do quadro de pixels possua 40 pixels de largura, 40 pixels de altura e seja delimitado por uma borda preta de 1 pixel.
+// 6 - Defina a cor preta como cor inicial. Ao carregar a página, a cor preta já deve estar selecionada para pintar os pixels
 // 10 - Faça o quadro de pixels ter seu tamanho definido pela pessoa usuária.
 // 11 - Limite o tamanho mínimo e máximo do board.
 function criaInputBotao() {
@@ -97,11 +98,11 @@ function criarPixelArt(tamanho) {
 
       pixel.style.display = 'inline-block';
       pixel.style.backgroundColor = 'white';
-      pixel.style.width = '40px';
-      pixel.style.height = '40px';
       pixel.style.borderColor = 'Black';
       pixel.style.borderWidth = '1px';
       pixel.style.borderStyle = 'solid';
+      pixel.style.width = '40px';
+      pixel.style.height = '40px';
 
       linha.appendChild(pixel);
     }
@@ -136,3 +137,35 @@ botaoVQV.addEventListener('click', function() {
   removePixelArt();
   criarPixelArt(valorQuadro);
 });
+
+// 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
+// 8 - Clicar em um pixel dentro do quadro após selecionar uma cor na paleta faz com que o pixel seja preenchido com a cor selecionada.
+function selecionarCor() {
+  const coresPaleta = document.getElementsByClassName('color');
+
+  for (let index = 0; index < coresPaleta.length; index += 1) {
+    coresPaleta[index].addEventListener('click', function () {
+      coresPaleta[index].className = 'color selected';
+      for(let index2 = 0; index2 < coresPaleta.length; index2 += 1) {
+        if (index !== index2) {
+          coresPaleta[index2].className = 'color';
+        }
+      }
+    });
+  }
+
+}
+selecionarCor();
+
+function pintaPixels() {
+  const pixelsDoQuadro = document.querySelectorAll('.pixel');
+  const coresPaleta = document.getElementsByClassName('color');
+
+  for (let index = 0; index < pixelsDoQuadro.length; index += 1) {
+    pixelsDoQuadro[index].addEventListener('click', function() {
+      let corSelecionada = document.querySelector('.selected');
+      pixelsDoQuadro[index].style.backgroundColor = corSelecionada.style.backgroundColor;
+    })
+  }
+}
+pintaPixels();
