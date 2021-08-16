@@ -1,0 +1,24 @@
+.color {
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    display: inline-block;
+    margin: 10px;
+    background-color: black;
+}
+
+#blackSquare {
+    background-color: black;
+}
+
+#redSquare {
+    background-color: red;
+}
+
+#blueSquare {
+    background-color: blue;
+}
+
+#greenSquare {
+    background-color: green;
+}
