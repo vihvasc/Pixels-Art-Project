@@ -1,14 +1,29 @@
+.center {
+  margin: auto;
+}
+
+#title {
+  text-align: center;
+}
+
+.container {
+  margin: auto;
+  width: 500px;
+  border: 1px solid red;
+}
+
 #color-palette {
   display: flex;
 }
 
 .color {
-  margin: 50px;
+  margin: auto;
   border: 1px solid black;
   padding: 50px;
 }
 
 #pixel-board {
+  margin: auto;
   width: 160px;
   height: 160px;
   display: grid;
@@ -24,4 +39,6 @@
   margin: 0;
 }
 
-
+.other-tools {
+  margin: auto;
+}
