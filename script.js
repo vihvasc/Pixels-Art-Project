@@ -34,3 +34,17 @@ function paintPixels() {
   }
 }
 paintPixels();
+
+function cleanGrid() {
+  const pixels = document.getElementsByClassName("pixel");
+  let cleanButtom = document.querySelector("#clear-board");
+
+  cleanButtom.addEventListener("click", function (event) {
+
+    for (let index = 0; index < pixels.length; index += 1) {
+      pixels[index].classList.remove("black", "red", "blue", "green");
+    }
+  })
+}
+
+cleanGrid();
