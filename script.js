@@ -75,11 +75,9 @@ function getSizeBoard() {
   }
   else if (inputNumber < 5) {
     inputNumber = 5;
-    alert('Valor muito baixo, considerando board de tamanho 5');
   }
-  else if (inputNumber > 43) {
-    inputNumber = 43;
-    alert('Valor muito alto, considere um valor ate 43');
+  else if (inputNumber > 50) {
+    inputNumber = 50;
   }
   else { 
     pixelBoard.innerHTML = '';
