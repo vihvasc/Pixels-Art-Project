@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#title {
+  margin: 20px 0;
+}
+
 #color-palette {
   font-size: 0;
   margin-bottom: 20px;
@@ -18,6 +27,11 @@
 
 #controls {
   margin-bottom: 20px;
+}
+
+.canvas {
+  width: fit-content;
+  margin: auto;
 }
 
 #pixel-board {
