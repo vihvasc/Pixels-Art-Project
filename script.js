@@ -39,7 +39,7 @@ function criarPaleta() {
   for (let index = 0; index < numeroDeCores; index += 1) {
     const divColorida = document.createElement('div');
     if (index === 0) {
-      divColorida.className = 'color selected'
+      divColorida.className = 'color selected';
     } else {
       divColorida.className = 'color';
     }
@@ -54,7 +54,6 @@ function criarPaleta() {
 
     paletaDeCores.appendChild(divColorida);
   }
-
 }
 criarPaleta();
 
@@ -75,6 +74,23 @@ function criaInputBotao() {
   document.getElementById('pixel-art').appendChild(botaoVQV);
 }
 criaInputBotao();
+
+// 9 - Crie um botão que, ao ser clicado, limpa o quadro preenchendo a cor de todos seus pixels com branco.
+function criarBotaoLimpar() {
+  const botaoLimpar = document.createElement('button');
+  botaoLimpar.id = 'clear-board';
+  botaoLimpar.innerText = 'Limpar';
+  botaoLimpar.style.display = 'block';
+  document.getElementById('pixel-art').appendChild(botaoLimpar);
+
+  botaoLimpar.addEventListener('click', function () {
+    const pixelsDoQuadro = document.querySelectorAll('.pixel');
+    for (let index = 0; index < pixelsDoQuadro.length; index += 1) {
+      pixelsDoQuadro[index].style.backgroundColor = '#FFFFFF';
+    }
+  });
+}
+criarBotaoLimpar();
 
 function criarQuadroPixels() {
   const quadroDePixels = document.createElement('div');
@@ -115,13 +131,12 @@ function removePixelArt() {
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].remove();
   }
-  let linhas = document.querySelectorAll('.lines');
+  const linhas = document.querySelectorAll('.lines');
   for (let index = 0; index < linhas.length; index += 1) {
     linhas[index].remove();
   }
 }
 
-let valorQuadro = document.querySelector('#board-size');
 const botaoVQV = document.querySelector('#generate-board');
 botaoVQV.addEventListener('click', function() {
   let valorQuadro = document.querySelector('#board-size').value;
@@ -162,10 +177,10 @@ function pintaPixels() {
   const coresPaleta = document.getElementsByClassName('color');
 
   for (let index = 0; index < pixelsDoQuadro.length; index += 1) {
-    pixelsDoQuadro[index].addEventListener('click', function() {
-      let corSelecionada = document.querySelector('.selected');
+    pixelsDoQuadro[index].addEventListener('click', function () {
+      const corSelecionada = document.querySelector('.selected');
       pixelsDoQuadro[index].style.backgroundColor = corSelecionada.style.backgroundColor;
-    })
+    });
   }
 }
 pintaPixels();
