@@ -1,5 +1,14 @@
 window.onload = function () {
 
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
     function createColorPalette() {
         for (let i = 1; i <= 4; i += 1) {
             const colorPalette = document.querySelector('#color-palette');
@@ -7,6 +16,9 @@ window.onload = function () {
             colorDiv.className = 'color';
             colorDiv.id = `${'color-' + i}`;
             colorPalette.appendChild(colorDiv);
+            if (i > 1) {
+                document.getElementById(`${'color-' + i}`).style.backgroundColor = getRandomColor();
+            }
         }
     }
     createColorPalette();
@@ -15,7 +27,6 @@ window.onload = function () {
         let input = document.querySelector('#board-size');
         if (input.value === '') {
             alert('Board inválido!');
-            return false;
         }
         if (input.value < 5 && input.value !== '') {
             input.value = 5;
