@@ -11,7 +11,7 @@ body {
 
 #color-palette {
     display: inline-block;
-    margin-left: 533px;
+    margin-left: 530px;
     
 }
 .color {
@@ -21,23 +21,20 @@ body {
     margin: 8px;
 }
 
-.selected {
-    height: 45px;
-    width: 45px;
-    border: 3px solid black;
-}
-
 #pixel-board {
-    margin-left: 538px;
+    margin-left: 535px;
 }
 
 .pixel {
     height: 40px;
     width: 40px;
     border: 1px solid black;
+    background-color: white;
     margin: -1px;
     display: inline-block;
 }
+
+/* https://webdeasy.de/en/top-css-buttons-en/ */
 
 #clear-board {
     padding: 16px 42px;
@@ -53,8 +50,9 @@ body {
     transition: background-color 0.6s ease;
     overflow: hidden;
     border: 0px;
-    margin-left: 570px;
+    margin-left: 30px;
     margin-top: 30px;
+    margin-bottom: 30px;
   }
   #clear-board:after {
     content: "";
