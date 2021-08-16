@@ -1,66 +1,66 @@
 function colorPaletteSquares() {
-    const colors = ['black', 'blue', 'red', 'green'];
-    let colorPalette = document.getElementById('color-palette');
-    for (let index = 0; index < colors.length; index += 1) {
-        let colorsDiv = document.createElement('button');
-        colorsDiv.className = 'color';
-        colorPalette.appendChild(colorsDiv);
-        colorsDiv.style.display = 'inline-block';
-        colorsDiv.style.backgroundColor = colors[index]; 
-    }
+  const colors = ['black', 'blue', 'red', 'green'];
+  const colorPalette = document.getElementById('color-palette');
+  for (let index = 0; index < colors.length; index += 1) {
+    const colorsDiv = document.createElement('button');
+    colorsDiv.className = 'color';
+    colorPalette.appendChild(colorsDiv);
+    colorsDiv.style.display = 'inline-block';
+    colorsDiv.style.backgroundColor = colors[index];
+  }
 }
-colorPaletteSquares()
+colorPaletteSquares();
 
 function whitePixels() {
-    let pixels = document.getElementsByClassName('pixel');
-    for (let index = 0; index < pixels.length; index += 1) {
-        pixels[index].addEventListener('load', function(){
-            pixels[index].style.backgroundColor = 'white';
-        })
-    }
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('load', () => {
+      pixels[index].style.backgroundColor = 'white';
+    });
+  }
 }
-whitePixels()
+whitePixels();
 
 function onloadSelected() {
-    let colors = document.querySelectorAll('.color');
-    let blackColor = colors[0];
-    blackColor.classList.add('selected');
+  const colors = document.querySelectorAll('.color');
+  const blackColor = colors[0];
+  blackColor.classList.add('selected');
 }
 
-onloadSelected()
+onloadSelected();
 
 function selectColor() {
-    const colors = document.getElementsByClassName('color');
-    for (let index = 0; index < colors.length; index += 1) {
-        colors[index].addEventListener('click', function(color) {
-            for (let index = 0; index < colors.length; index += 1) {
-                if (colors[index].classList.contains('selected')){
-                    colors[index].classList.toggle('selected');
-                }
-            }
-        color.target.classList.toggle('selected');
-        })
-    }
+  const colors = document.getElementsByClassName('color');
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].addEventListener('click', (color) => {
+      for (let index = 0; index < colors.length; index += 1) {
+        if (colors[index].classList.contains('selected')) {
+          colors[index].classList.toggle('selected');
+        }
+      }
+      color.target.classList.toggle('selected');
+    });
+  }
 }
-selectColor()
+selectColor();
 
-function paintPixel(){
-    let pixels = document.getElementsByClassName('pixel');
-    let selectedColor = document.getElementsByClassName('selected');
-    for (let index = 0; index < pixels.length; index += 1) {
-        pixels[index].addEventListener('click', function() {
-            pixels[index].style.backgroundColor = selectedColor[0].style.backgroundColor;
-        })
-    }
+function paintPixel() {
+  const pixels = document.getElementsByClassName('pixel');
+  const selectedColor = document.getElementsByClassName('selected');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', () => {
+      pixels[index].style.backgroundColor = selectedColor[0].style.backgroundColor;
+    });
+  }
 }
 
-paintPixel()
+paintPixel();
 
-let clearButton = document.getElementById('clear-board');
+const clearButton = document.getElementById('clear-board');
 
-clearButton.addEventListener('click', function() {
-    let pixels = document.getElementsByClassName('pixel');
-    for (let index = 0; index < pixels.length; index += 1) {
-        pixels[index].style.backgroundColor = 'white';
-    }
-})
+clearButton.addEventListener('click', () => {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+});

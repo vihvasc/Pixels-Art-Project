@@ -10,9 +10,7 @@ body {
 }
 
 #color-palette {
-    display: inline-block;
-    margin-left: 530px;
-    
+    margin-left: 530px;    
 }
 .color {
     height: 40px;
@@ -50,7 +48,7 @@ body {
     transition: background-color 0.6s ease;
     overflow: hidden;
     border: 0px;
-    margin-left: 30px;
+    margin-left: 565px;
     margin-top: 30px;
     margin-bottom: 30px;
   }
