@@ -1,36 +1,49 @@
+const tamanhoPaleta = 4;
+const quantidadePixel = 25;
+
 window.onload = function() {
+    iniciaPaleta();
+    iniciaPixels();
+}
+
+function iniciaPaleta() {
+    let colors = document.getElementsByClassName('color');
     criaPaletaCores();
-    addListenerPalet();
-    addPixel();
-    addListenerPixel();
+    addListenerPalet(colors);
+    setCoresPaleta(colors)
 }
 
 function criaPaletaCores() {
     let paleta = document.getElementById('color-palette');
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < tamanhoPaleta; index++) {
         let cor = document.createElement('div')
         cor.className ='color';
         paleta.appendChild(cor);
     }
 }
 
-function addListenerPalet() {
-    let colorS = document.getElementsByClassName('color')
-
-    for (let index = 0; index < colorS.length; index++) {
-        colorS[index].addEventListener('click', selectedPaleta)
+function addListenerPalet(colors) {
+    for (let index = 0; index < colors.length; index++) {
+        colors[index].addEventListener('click', selectedPaleta)
     }
-    colorS[0].style.backgroundColor = 'black';
-    colorS[1].style.backgroundColor = 'red';
-    colorS[2].style.backgroundColor = 'blue';
-    colorS[3].style.backgroundColor = 'green';
-
-    colorS[0].classList.add('selected')
 }
 
-function addPixel() {
+function setCoresPaleta(colors){
+    colors[0].style.backgroundColor = 'black';
+    colors[1].style.backgroundColor = 'red';
+    colors[2].style.backgroundColor = 'blue';
+    colors[3].style.backgroundColor = 'green';
+    colors[0].classList.add('selected')
+}
+
+function iniciaPixels(){
+    addPixels();
+    addListenerPixel();
+}
+
+function addPixels() {
     let divPixel = document.getElementById('pixel-board');
-    for (let index = 0; index < 25; index++) {
+    for (let index = 0; index < quantidadePixel; index++) {
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
         divPixel.appendChild(pixel);
@@ -40,22 +53,21 @@ function addPixel() {
 function addListenerPixel() {
     let pixelS = document.getElementsByClassName('pixel');
     for (let index = 0; index < pixelS.length; index++) {
-        pixelS[index].addEventListener('click', mudaPixel)        
+        pixelS[index].addEventListener('click', mudaCorPixel)        
     }
 }
 
 function selectedPaleta(div) {
-    let corPaleta = document.getElementsByClassName('color')
-    for (let index = 0; index < corPaleta.length; index++) {
-        if(corPaleta[index].classList.contains('selected')){
-            corPaleta[index].classList.toggle('selected');     
+    let paletaCores = document.getElementsByClassName('color')
+    for (let index = 0; index < paletaCores.length; index++) {
+        if(paletaCores[index].classList.contains('selected')){
+            paletaCores[index].classList.toggle('selected');     
         }
     }
     div.target.classList.toggle('selected');
 }
 
-function mudaPixel(div) {
+function mudaCorPixel(div) {
     let corSelected = document.querySelector('.selected')
-
     div.target.style.backgroundColor = corSelected.style.backgroundColor;
 }
