@@ -1,4 +1,5 @@
 const colorPalette = ['#000000'];
+const pixelBoardId = 'pixel-board';
 let selectedColorDiv;
 
 function generateRandomPalette() {
@@ -40,8 +41,8 @@ function handleColorDiv(event) {
 function addEventListenerToColorDivs() {
   const colorDivs = document.getElementsByClassName('color');
 
-  for (const div of colorDivs) {
-    div.addEventListener('click', handleColorDiv);
+  for (let i = 0; i < colorDivs.length; i += 1) {
+    colorDivs[i].addEventListener('click', handleColorDiv);
   }
 }
 
@@ -55,20 +56,20 @@ function handlePixel(event) {
 function handleClearBoardButton() {
   const pixels = document.getElementsByClassName('pixel');
 
-  for (const pix of pixels) {
-    pix.style.backgroundColor = '';
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = '';
   }
 }
 
 function resetPixelBoard() {
-  const pixelBoard = document.getElementById('pixel-board');
+  const pixelBoard = document.getElementById(pixelBoardId);
   pixelBoard.innerHTML = '';
 }
 
 function generatePixelBoard(n) {
   const rows = n;
   const pixelsPerRow = n;
-  const pixelBoard = document.getElementById('pixel-board');
+  const pixelBoard = document.getElementById(pixelBoardId);
   resetPixelBoard();
 
   for (let i = 0; i < rows; i += 1) {
@@ -110,7 +111,7 @@ window.onload = () => {
   generatePixelBoard(5);
   selectColor(document.querySelector('.color'));
   addEventListenerToColorDivs();
-  document.getElementById('pixel-board').addEventListener('click', handlePixel);
+  document.getElementById(pixelBoardId).addEventListener('click', handlePixel);
   document
     .getElementById('clear-board')
     .addEventListener('click', handleClearBoardButton);
