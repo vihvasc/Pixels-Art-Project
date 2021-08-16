@@ -8,6 +8,7 @@ button3.addEventListener('click', switchColor3);
 button4.addEventListener('click', switchColor4);
 button1.classList.add('selected')
 
+document.querySelector('#clear-board').addEventListener('click', clearBoard)
 function makeGridEvents(){
     let index = document.querySelectorAll('.pixel').length 
     for(let count = 0; count < index; count += 1){
@@ -59,3 +60,9 @@ function createGrid(){
 }
 createGrid();
 makeGridEvents();
+function clearBoard(){
+    let index = document.querySelectorAll('.pixel').length 
+    for(let count = 0; count < index ; count += 1){
+        document.querySelectorAll('.pixel')[count].style.backgroundColor = 'white'
+    }
+}
