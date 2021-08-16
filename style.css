@@ -6,22 +6,6 @@
   margin-bottom: 20px;
 }
 
-#firstColor {
-  background-color: black;
-}
-
-#secondColor {
-  background-color: red;
-}
-
-#thirdColor {
-  background-color: blue;
-}
-
-#fourthColor {
-  background-color: green;
-}
-
 .pixel {
   border: 1px solid black; 
   width: 40px;

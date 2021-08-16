@@ -1,5 +1,12 @@
 const btn = document.querySelector('#clear-board');
 const pontoLuminoso = document.getElementsByClassName('pixel');
+let corDoElemento = document.querySelector('.selected');
+const paletas = document.getElementsByClassName('color');
+
+paletas[0].style.backgroundColor = 'black';
+paletas[1].style.backgroundColor = 'red';
+paletas[2].style.backgroundColor = 'green';
+paletas[3].style.backgroundColor = 'blue';
 
 function limparQuadro() {
   for (const quadrado of pontoLuminoso) {
@@ -8,7 +15,6 @@ function limparQuadro() {
 }
 btn.addEventListener('click', limparQuadro);
 
-const paletas = document.getElementsByClassName('color');
 for (let index = 0; index < paletas.length; index += 1) {
   paletas[index].addEventListener('click', mudarClasse);
 }
@@ -19,19 +25,15 @@ function mudarClasse(event) {
     colorElement[index].classList.remove('selected');
   }
   event.target.classList.add('selected');
+  corDoElemento = event.target;
 }
 
-const pixels = document.getElementsByClassName('pixel');
-for (let index = 0; index < pixels.length; index += 1){
-  pixels[index].addEventListener('click', adicionarCores);
+function preencherPixel (){
+    for(let index = 0; index < pontoLuminoso.length; index += 1) {
+      pontoLuminoso[index].addEventListener('click', function() {
+        pontoLuminoso[index].style.backgroundColor = corDoElemento.style.backgroundColor;
+      })
+    }
 }
 
-function adicionarCores(event) {
-  const pixels = document.getElementsByClassName('pixel');
-  for (let index = 0; index < pixels.length; index += 1){
-}
-  event.target.style.backgroundColor = 'red';
-}
-
-const classeSelecionada = document.getElementsByClassName('selected');
-console.log(classeSelecionada[1]);
+preencherPixel();
