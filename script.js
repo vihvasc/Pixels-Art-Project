@@ -20,7 +20,7 @@ function geraQuadradao() {
   board.id = 'pixel-board';
   for (let index = 0; index < boardSize; index += 1) {
     const linhaQuadradao = document.createElement('div');
-    linhaQuadradao.className = 'grid-line';
+    linhaQuadradao.className = 'linha';
     for (let coluna = 0; coluna < boardSize; coluna += 1) {
       const colunaQuadradao = document.createElement('div');
       colunaQuadradao.className = 'pixel';
@@ -31,8 +31,16 @@ function geraQuadradao() {
   pegaTudo[0].appendChild(board);
 }
 
-let corEscolhida = 'rgba(0,0,0)';
+let corEscolhida = 'rgb(0,0,0)';
 quadrado[0].style.backgroundColor = corEscolhida;
+
+function pintaQuadradinho() {
+  const quadradoMaior = document.querySelectorAll('.pixel');
+  for (const quadradinho of quadradoMaior) {
+    quadradinho.addEventListener('click', function ()
+    { quadradinho.style.backgroundColor = corEscolhida; });
+  }
+}
 
 function escolheCor(event) {
   const novaCor = getComputedStyle(event.target);
@@ -42,6 +50,7 @@ function escolheCor(event) {
   }
   event.target.classList.add('selected');
   corEscolhida = novaCor.backgroundColor;
+  pintaQuadradinho();
 }
 
 function adicionaCorNaPaleta() {
@@ -51,6 +60,16 @@ function adicionaCorNaPaleta() {
     quadrado[index].addEventListener('click', escolheCor);
   }
 }
+
+function limpaQuadradao() {
+  let quadradinho = document.querySelector('#clear-board');
+  let quadrado = document.querySelectorAll('.pixel');
+  for (let umQuadrado of quadrado){
+    quadradinho.addEventListener('click', function() 
+    {umQuadrado.style.backgroundColor = 'white'});
+ }
+}
+limpaQuadradao();
 
 window.onload = function () {
   atribuiCores();
