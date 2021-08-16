@@ -12,14 +12,14 @@ window.onload = function () {
       let pixel = document.createElement('div');
       pixel.className = 'pixel';
 
-    pixel.addEventListener('click', function () {
-      // pega elemento classe selected
-      let colorSelected = document.querySelector('.selected');
-      
-      // a cor de fundo do pixel deve se tornar a cor de fundo da classe selected
-      pixel.style.background = colorSelected.style.background;
-    })
-    line.appendChild(pixel);
+      pixel.addEventListener('click', function () {
+        // pega elemento classe selected
+        let colorSelected = document.querySelector('.selected');
+
+        // a cor de fundo do pixel deve se tornar a cor de fundo da classe selected
+        pixel.style.background = colorSelected.style.background;
+      });
+      line.appendChild(pixel);
     }
   }
 
@@ -33,9 +33,9 @@ window.onload = function () {
     let yellowColor = palletColors[3];
 
     currentColor.style.background = 'black';
-    blueColor.style.background = "blue";
-    greenColor.style.background = "green";
-    yellowColor.style.background = "yellow";
+    blueColor.style.background = 'blue';
+    greenColor.style.background = 'green';
+    yellowColor.style.background = 'yellow';
 
     for (let i = 0; i < palletColors.length; i += 1) {
       let color = palletColors[i];
@@ -46,7 +46,7 @@ window.onload = function () {
           ' selected',
           ''
         );
-        // preciso adicionar a classe selected na cor clicada 
+        // preciso adicionar a classe selected na cor clicada
         color.className += ' selected';
 
         // a cor que eu clicar precisa ser a nova cor atual
@@ -56,6 +56,18 @@ window.onload = function () {
   }
   palletListener();
 
+  let button = document.getElementById('clear-board');
+  button.innerText = 'Limpar';
+  
+  button.addEventListener('click', clear);
 
+  function clear() {
+    let pixels = document.getElementsByClassName('pixel');
 
+    for (let i = 0; i < pixels.length; i += 1) {
+      let allPixels = pixels[i];
+      allPixels.style.background = 'white';
+    }
+  }
+  clear();
 };
