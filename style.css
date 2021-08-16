@@ -14,18 +14,18 @@
   box-sizing: border-box;
 }
 
-#black {
+.black {
   background-color: black;
 }
 
-#red {
+.red {
   background-color: red;
 }
 
-#blue {
+.blue {
   background-color: blue;
 }
 
-#green {
+.green {
   background-color: green;
 }
