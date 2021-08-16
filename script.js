@@ -86,6 +86,7 @@ function criaPixels() {
   } else if (N>50) {
     N = 50;
   }
+  central()
   criaLinha()
   let linhas = document.getElementsByClassName("line")
   for (let index = 0 ; index<linhas.length ; index += 1) {
@@ -103,3 +104,16 @@ function criaPixels() {
 let vqv = document.querySelector("#generate-board");
 vqv.addEventListener("click", criaPixels);
 let pixelsBoard = document.querySelector("#pixel-board");
+function central() {
+  let N = document.querySelector("#board-size").value;
+  if (N <= 8) {
+    pixelsBoard.style.left = '33%'
+  } else if (N <= 16 || N >= 9) {
+    pixelsBoard.style.left = '20%'
+  } else if (N > 16 || N <= 27) {
+    pixelsBoard.style.left = '-20%'
+  } else if (N > 28) {
+    pixelsBoard.style.left = '-10%'
+  }
+}
+pixelsBoard.style.left = '33%'
