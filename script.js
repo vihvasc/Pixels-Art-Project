@@ -8,6 +8,21 @@ button3.addEventListener('click', switchColor3);
 button4.addEventListener('click', switchColor4);
 button1.classList.add('selected')
 
+function makeGridEvents(){
+    let index = document.querySelectorAll('.pixel').length 
+    for(let count = 0; count < index; count += 1){
+        let currentBlock = document.querySelectorAll('.pixel')[count]
+        currentBlock.addEventListener('click', function(){
+            paint(currentBlock);
+        })
+    }
+}
+function paint(currentBlock){
+    let currentColor = document.querySelector('.selected')
+    let setColor =  window.getComputedStyle(currentColor).backgroundColor
+    currentBlock.style.backgroundColor = setColor
+}
+
 function switchColor1(){
     let actualColor = document.querySelector('.selected');
     actualColor.classList.remove('selected')
@@ -43,4 +58,4 @@ function createGrid(){
     }
 }
 createGrid();
-
+makeGridEvents();
