@@ -47,42 +47,31 @@ window.onload = function(){
   }
 }
  
-  // let divColor = document.getElementsByClassName('color')
-  // for (i = 0; i < divColor.length; i += 1) {
-  //   divColor[i].addEventListener('click', changeClass)
-  // }
-  
-  
-  // let x = document.getElementById('black');
-  // function changeClass (){
-  //   let firstColor = document.getElementById('black');
-  //   let secondColor = document.getElementById('purple');
-  //   let thirdColor = document.getElementById('green');
-  //   let fourthColor = document.getElementById('blue');
-  //     if(firstColor.classList.contains('selected')){
-  //       firstColor.classList.toggle('selected');
-  //       console.log('cheguei aqui');
-  //     } else {
-  //       firstColor.classList.toggle('selected');
-  //     }    
-  // }
-  
-  // document.getElementById('green').addEventListener('click', changeClass);
-  // document.getElementById('purple').addEventListener('click', changeClass);
-  // document.getElementById('blue').addEventListener('click', changeClass);
+let getDivPalette = document.getElementsByClassName('color');
+for (i = 0; i < getDivPalette.length; i += 1){
+  let buttonColor = getDivPalette[i];
+  if(buttonColor.classList.contains('color')){
+    buttonColor.classList = 'color selected';
+  if(buttonColor.classList.contains('selected')){
+    buttonColor.classList.remove('selected')}
+  }
 
-  // function changeClass (){
-    let getDivPalette = document.getElementsByClassName('color');
-    for (i = 0; i < getDivPalette.length; i += 1){
-      let buttonColor = getDivPalette[i];
-      if(buttonColor.classList.contains('color')){
-        buttonColor.classList = 'color selected';
-      if(buttonColor.classList.contains('selected')){
-        buttonColor.classList.remove('selected')}
-      // } else if (buttonColor.classList.toggle('color')){
-      //   buttonColor.classList.toggle('selected');
-      }
-    
-    }
-  // }
-// }
+} 
+// let paletteBackgroundColor =
+
+function pixelColor (){
+  let pixel = document.getElementsByClassName('pixel');
+  let paletteBackgroundColor = document.getElementsByClassName('selected')[0]
+
+
+  for (i = 0; i < pixel.length; i += 1){
+    pixel[i].addEventListener('click', pixelChangeColor);
+  }
+
+  function pixelChangeColor (obj){
+    obj.target.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('selected')[0]).getPropertyValue('background-color');
+    console.log(obj.target);
+  }
+  
+}
+pixelColor();
