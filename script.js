@@ -45,12 +45,9 @@ function limpaCor() {
     pixels[index].style.backgroundColor = cor;
   }
 }
-document.getElementsByTagName('button')[0].addEventListener('click', limpaCor);
+document.getElementById("clear-board").addEventListener('click', limpaCor);
 function apagaLinhas() {
-  let N = document.querySelector("#board-size").value
-  if (typeof N != "number") {
-    window.alert("Board inválido!")
-  }
+  let N = document.querySelector("#board-size").value;
   if (N<5) {
     N = 5
   } else if (N>50) {
@@ -64,41 +61,45 @@ function apagaLinhas() {
   }
 }
 function criaLinha() {
-  let N = document.querySelector("#board-size").value
-  
-    apagaLinhas()
+  let N = document.querySelector("#board-size").value;
   if (N<5) {
     N = 5
   } else if (N>50) {
     N = 50
   }
-  pixelBoard = document.querySelector("#pixel-board")
+  apagaLinhas();
+  pixelBoard = document.querySelector("#pixel-board");
   for (let index = 0; index < N; index += 1) {
-    let linha = document.createElement("section")
-    linha.className = "line"
-    pixelBoard.appendChild(linha)
+    let linha = document.createElement("section");
+    linha.className = "line";
+    pixelBoard.appendChild(linha);
   }
- 
+
 }
 function criaPixels() {
-  let N = document.querySelector("#board-size").value
-  criaLinha()
-  if (N<5) {
-    N = 5
-  } else if (N>50) {
-    N = 50
+  let N = document.querySelector("#board-size").value;
+  if (N === '') {
+    window.alert("Board inválido!");
   }
+  if (N<5) {
+    N = 5;
+  } else if (N>50) {
+    N = 50;
+  }
+  criaLinha()
   let linhas = document.getElementsByClassName("line")
   for (let index = 0 ; index<linhas.length ; index += 1) {
-    let linha = linhas[index]
+    let linha = linhas[index];
+    linhas[0].style.marginTop = '45px';
     for (let index = 0; index<N; index += 1) {
-      let div = document.createElement("div")
-      div.className = "pixel"
-      div.style.backgroundColor = "white"
-      div.addEventListener("click", adicionaCor)
-      linha.appendChild(div)
+      let div = document.createElement("div");
+      div.className = "pixel";
+      div.style.backgroundColor = "white";
+      div.addEventListener("click", adicionaCor);
+      linha.appendChild(div);
     }
   }
 }
-let vqv = document.querySelector("#generate-board")
-vqv.addEventListener("click", criaPixels)
+let vqv = document.querySelector("#generate-board");
+vqv.addEventListener("click", criaPixels);
+let pixelsBoard = document.querySelector("#pixel-board");
