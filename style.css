@@ -10,27 +10,6 @@ body {
 }
 
 #pixel-board {
-  display: flex;
-  padding-left: 30px;
-}
-
-#pixel-board2 {
-  display: flex;
-  padding-left: 30px;
-}
-
-#pixel-board3 {
-  display: flex;
-  padding-left: 30px;
-}
-
-#pixel-board4 {
-  display: flex;
-  padding-left: 30px;
-}
-
-#pixel-board5 {
-  display: flex;
   padding-left: 30px;
 }
 
@@ -46,9 +25,6 @@ body {
   background: black;
 }
 
-.selected {
-}
-
 .blue {
   background: blue;
 }
@@ -61,51 +37,14 @@ body {
   background: yellow;
 }
 
+.pixel-line {
+  display: flex;
+}
+
 .pixel {
   border: 1px solid black;
   height: 40px;
   width: 40px;
   background-color: white;
   box-sizing: border-box;
-}
-
-.coluna {
-  border: 1px solid black;
-  height: 80px;
-  width: 90px;
-}
-
-.line {
-  display: inline-block;
-  border: 1px solid black;
-  height: 80px;
-  width: 90px;
-}
-
-.line2 {
-  display: flex;
-  border: 1px solid black;
-  height: 80px;
-  width: 90px;
-}
-
-.line3 {
-  display: flex;
-  border: 1px solid black;
-  height: 80px;
-  width: 90px;
-}
-
-.line4 {
-  display: flex;
-  border: 1px solid black;
-  height: 80px;
-  width: 90px;
-}
-
-.line5 {
-  display: flex;
-  border: 1px solid black;
-  height: 80px;
-  width: 90px;
 }
