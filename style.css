@@ -15,7 +15,8 @@
 }
 
 #pixel-board {
-  width: 215px;
+  width: 210px;
+  height: 210px;
 }
 
 .pixel {

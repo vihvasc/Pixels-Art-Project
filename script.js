@@ -1,3 +1,6 @@
+const pixels = document.getElementsByClassName('pixel');
+const pixelGrid = document.body.querySelector('#pixel-board');
+let initialGrid = 5;
 function colorPalette() {
   const colors = ['black', 'yellow', 'blue', 'grey'];
   const colorsList = document.getElementsByClassName('color');
@@ -9,16 +12,14 @@ function colorPalette() {
   }
 }
 
-function insertPixels(numbersOfPixels) {
-  const pixelGrid = document.body.querySelector('#pixel-board');
-
-  for (let index = 1; index <= numbersOfPixels; index += 1) {
+function createPixels() {
+  for (let index = 1; index <= (initialGrid ** 2); index += 1) {
     const createPixelsList = document.createElement('li');
     createPixelsList.className = 'pixel';
+    createPixelsList.style.backgroundColor = 'white';
     pixelGrid.appendChild(createPixelsList);
   }
 }
-insertPixels(25);
 
 function selectedColor() {
   const colorsList = document.querySelectorAll('.color');
@@ -32,7 +33,6 @@ function selectedColor() {
 }
 
 function paintPixels() {
-  const pixels = document.getElementsByClassName('pixel');
   for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener('click', (event) => {
       const colorSelected = document.querySelector('.selected');
@@ -52,10 +52,36 @@ function cleaningBoard() {
   });
 }
 
+function removeOldBoard() {
+  while (pixelGrid.hasChildNodes()) {
+    pixelGrid.removeChild(pixelGrid.firstChild);
+  }
+}
+function setPixels() {
+  const inputBoardSize = document.querySelector('input[id="board-size"]');
+  const button = document.querySelector('#generate-board');
+  button.addEventListener('click', () => {
+    if (inputBoardSize.value === '') {
+      return alert('Board inválido!');
+    }
+    if (inputBoardSize.value < 5) {
+      inputBoardSize.value = 5;
+    }
+    if (inputBoardSize.value > 50) {
+      inputBoardSize.value = 50;
+    }
+    removeOldBoard();
+    initialGrid = inputBoardSize.value;
+    createPixels();
+  });
+}
+
 function pixelsArt() {
   colorPalette();
+  createPixels();
   selectedColor();
   paintPixels();
   cleaningBoard();
+  setPixels();
 }
 window.onload = pixelsArt;
