@@ -5,6 +5,7 @@ window.onload = function() {
   const initialColor = 'white';
   paletteCreator(colorPalette);
   fillBoard(boardLines);
+  colorSelect();
 
   // paleta de cores
   function paletteCreator(linha) {
@@ -37,12 +38,21 @@ window.onload = function() {
       boardLine.appendChild(box);
     }
   }
-};
-// function fillBoard(boardLine) {
-//   for (let i = 0; i < 25; i += 1) {
-//     let box = boxCreator('pixel');
 
-//     box.style.backgroundColor = initialColor;
-//     boardLine.appendChild(box);
-//   }
-// }
+  function colorSelect() {
+    const color = document.querySelectorAll('.color');
+
+    for (let i = 0; i < color.length; i++) {
+      color[0].className = 'color selected';
+      color[i].addEventListener('click', function(event) {
+        let colorSelected = document.getElementsByClassName('selected');
+
+        if (colorSelected.length === 0) {
+          event.target.className = 'color selected';
+        } else {
+          event.target.className = 'color';
+        }
+      });
+    }      
+  }
+};
