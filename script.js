@@ -1,12 +1,11 @@
-window.onload= function() {
+window.onload = function() {
     criaPaletaCores();
-    addListentePalet();
+    addListenerPalet();
     addPixel();
-    addListentePixel();
-    
+    addListenerPixel();
 }
 
-function criaPaletaCores(){
+function criaPaletaCores() {
     let paleta = document.getElementById('color-palette');
     for (let index = 0; index < 4; index++) {
         let cor = document.createElement('div')
@@ -15,7 +14,7 @@ function criaPaletaCores(){
     }
 }
 
-function addListentePalet(){
+function addListenerPalet() {
     let colorS = document.getElementsByClassName('color')
 
     for (let index = 0; index < colorS.length; index++) {
@@ -29,7 +28,7 @@ function addListentePalet(){
     colorS[0].classList.add('selected')
 }
 
-function addPixel(){
+function addPixel() {
     let divPixel = document.getElementById('pixel-board');
     for (let index = 0; index < 25; index++) {
         let pixel = document.createElement('div');
@@ -38,14 +37,14 @@ function addPixel(){
     }
 }
 
-function addListentePixel (){
+function addListenerPixel() {
     let pixelS = document.getElementsByClassName('pixel');
     for (let index = 0; index < pixelS.length; index++) {
-        pixelS[index].addEventListener('click', function(){})        
+        pixelS[index].addEventListener('click', mudaPixel)        
     }
 }
 
-function selectedPaleta(div){ // refatorar
+function selectedPaleta(div) {
     let corPaleta = document.getElementsByClassName('color')
     for (let index = 0; index < corPaleta.length; index++) {
         if(corPaleta[index].classList.contains('selected')){
@@ -53,4 +52,10 @@ function selectedPaleta(div){ // refatorar
         }
     }
     div.target.classList.toggle('selected');
+}
+
+function mudaPixel(div) {
+    let corSelected = document.querySelector('.selected')
+
+    div.target.style.backgroundColor = corSelected.style.backgroundColor;
 }
