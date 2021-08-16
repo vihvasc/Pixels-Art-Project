@@ -1,4 +1,4 @@
-//1 - Adicione à página o título "Paleta de Cores".
+// 1 - Adicione à página o título "Paleta de Cores".
 function criarH1() {
   const novoH1 = document.createElement('h1');
   novoH1.textContent = 'Paleta de Cores';
@@ -15,30 +15,34 @@ criarH1();
 function randomColor() {
   let randomColorString = 'FFFFFF';
   while (randomColorString === 'FFFFFF') {
-    randomColorString = Math.floor(Math.random()*16777215).toString(16);
+    randomColorString = Math.floor(Math.random() * 16777215).toString(16);
     while (randomColorString.length < 6) {
-      randomColorString = Math.floor(Math.random()*16777215).toString(16);
+      randomColorString = Math.floor(Math.random() * 16777215).toString(16);
     }
   }
   return ('#' + randomColorString);
 }
 
 function criarPaleta() {
-  let numeroDeCores = 4;
+  const numeroDeCores = 4;
   const paletaDeCores = document.createElement('div');
   paletaDeCores.id = 'color-palette';
   document.getElementById('paleta-de-cores').appendChild(paletaDeCores);
 
-   let cores = [];
-   cores[0] = '#000000';
+  const cores = [];
+  cores[0] = '#000000';
 
-  for(let index = 1; index < numeroDeCores; index += 1) {
+  for (let index = 1; index < numeroDeCores; index += 1) {
     cores[index] = randomColor();
   }
 
-  for(let index = 0; index < numeroDeCores; index += 1) {
+  for (let index = 0; index < numeroDeCores; index += 1) {
     const divColorida = document.createElement('div');
-    divColorida.className = 'color';
+    if (index === 0) {
+      divColorida.className = 'color selected'
+    } else {
+      divColorida.className = 'color';
+    }
 
     divColorida.style.borderColor = 'black';
     divColorida.style.borderStyle = 'solid';
@@ -50,6 +54,7 @@ function criarPaleta() {
 
     paletaDeCores.appendChild(divColorida);
   }
+
 }
 criarPaleta();
 
@@ -80,14 +85,14 @@ criarQuadroPixels();
 function criarPixelArt(tamanho) {
   const container = document.getElementById('pixel-board');
 
-  for(let linhas = 0; linhas < tamanho; linhas += 1) {
-    let linha = document.createElement('div');
+  for (let linhas = 0; linhas < tamanho; linhas += 1) {
+    const linha = document.createElement('div');
     linha.className = 'lines';
     linha.style.height = '40px';
     container.appendChild(linha);
 
-    for(let colunas = 0; colunas < tamanho; colunas += 1) {
-      let pixel = document.createElement('div');
+    for (let colunas = 0; colunas < tamanho; colunas += 1) {
+      const pixel = document.createElement('div');
       pixel.className = 'pixel';
 
       pixel.style.display = 'inline-block';
@@ -105,29 +110,29 @@ function criarPixelArt(tamanho) {
 criarPixelArt(5);
 
 function removePixelArt() {
-  let pixels = document.querySelectorAll('.pixel');
-  for (index = 0; index < pixels.length; index += 1) {
+  const pixels = document.querySelectorAll('.pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].remove();
   }
   let linhas = document.querySelectorAll('.lines');
-  for (index = 0; index < linhas.length; index += 1) {
+  for (let index = 0; index < linhas.length; index += 1) {
     linhas[index].remove();
   }
 }
 
-valorQuadro = document.querySelector('#board-size');
-botaoVQV = document.querySelector('#generate-board');
+let valorQuadro = document.querySelector('#board-size');
+const botaoVQV = document.querySelector('#generate-board');
 botaoVQV.addEventListener('click', function() {
   let valorQuadro = document.querySelector('#board-size').value;
-  if(!valorQuadro) {
+  if (!valorQuadro) {
     window.alert('Board inválido!');
     return null;
-  } else if(valorQuadro < 5) {
+  } else if (valorQuadro < 5) {
     valorQuadro = 5;
-  } else if(valorQuadro > 50) {
+  } else if (valorQuadro > 50) {
     valorQuadro = 50;
   }
 
   removePixelArt();
   criarPixelArt(valorQuadro);
-})
+});
