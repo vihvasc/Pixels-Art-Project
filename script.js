@@ -7,10 +7,10 @@ let quartaCor = document.querySelector('.quarta-cor');
 
 // criar cor com numero RGB
 function coresAleatorias() {
-primeiraCor.style.backgroundColor = `rgb(${corAleatoria(0)} , ${corAleatoria(0)} , ${corAleatoria(0)})`;
-segundaCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
-terceiraCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
-quartaCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
+	primeiraCor.style.backgroundColor = `rgb(${corAleatoria(0)} , ${corAleatoria(0)} , ${corAleatoria(0)})`;
+	segundaCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
+	terceiraCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
+	quartaCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
 }
 // gerar numeros aleartorios 
 function corAleatoria(number) {
@@ -67,15 +67,34 @@ function deletePixels() {
 
 	generateTable.addEventListener('click', createTable);
 
+
+// função para alterar a cor da paleta selecionada
+
+let getColor = document.querySelectorAll('.color');
+
+function changeSelected(event) {
+let colorSelected = document.querySelector('.selected');
+
+colorSelected.classList.remove('selected');
+event.target.classList.add('selected');
+}
+
+for (let count = 0; count < getColor.length; count += 1) {
+getColor[count].addEventListener('click', changeSelected);
+}
+
+
 // função para colorir pixels de acordo com a cor da paleta escolhida
-	let selectPixel = document.querySelectorAll('.pixel');
+
+let selectPixel = document.querySelectorAll('.pixel');
 
 function colorir(event) {
-	let colorSelected = document.querySelector('.selected');
+let colorSelected = document.querySelector('.selected');
 
-	event.target.style.backgroundColor = colorSelected.style.backgroundColor;
+event.target.style.backgroundColor = colorSelected.style.backgroundColor;
 }
-	
-	for (let index = 0; index < selectPixel.length; index += 1) {
-	selectPixel[index].addEventListener('click', colorir);
-	}
+
+for (let index = 0; index < selectPixel.length; index += 1) {
+selectPixel[index].addEventListener('click', colorir);
+}
+
