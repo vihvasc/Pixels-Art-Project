@@ -12,20 +12,23 @@ body{
 #black {
   background-color: black;
 }
-#blue {
+#color1 {
   background-color: blue;
 }
-#yellow {
+#color2 {
   background-color: yellow;
 }
-#green {
+#color3 {
   background-color: green;
 }
 
 #pixel-board {
   padding-top: 50px;
-  width: 250px;
   margin: auto;
+}
+
+.line {
+  height: 42px;
 }
 
 .pixel {
@@ -38,4 +41,9 @@ body{
 
 #clear-board {
   margin-top: 30px;
+}
+
+#board-size {
+  width: 40px;
+  margin-left: 40px;
 }

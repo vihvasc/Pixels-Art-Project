@@ -1,15 +1,20 @@
 const pixelBoard = document.getElementById('pixel-board');
 
-for (let index = 0; index < 25; index += 1) {
-  const divPixel = document.createElement('div');
-  divPixel.className = 'pixel';
-  pixelBoard.appendChild(divPixel);
+for (let index = 0; index < 5; index += 1) {
+  const line = document.createElement('div');
+  line.className = 'line';
+  for (let index2 = 0; index2 < 5; index2 += 1) {
+    const divPixel = document.createElement('div');
+    divPixel.className = 'pixel';
+    pixelBoard.appendChild(line);
+    line.appendChild(divPixel);
+  }
 }
 
 const blackColor = document.getElementById('black');
-const blueColor = document.getElementById('blue');
-const yellowColor = document.getElementById('yellow');
-const greenColor = document.getElementById('green');
+const color1 = document.getElementById('color1');
+const color2 = document.getElementById('color2');
+const color3 = document.getElementById('color3');
 
 function addClass(event) {
   const corSelecionada = document.querySelector('.selected');
@@ -18,9 +23,9 @@ function addClass(event) {
 }
 
 blackColor.addEventListener('click', addClass);
-blueColor.addEventListener('click', addClass);
-yellowColor.addEventListener('click', addClass);
-greenColor.addEventListener('click', addClass);
+color1.addEventListener('click', addClass);
+color2.addEventListener('click', addClass);
+color3.addEventListener('click', addClass);
 
 // função que altera cor
 function colorir(event) {
@@ -47,3 +52,49 @@ function clearBoard() {
 }
 
 buttonClear.addEventListener('click', clearBoard);
+
+// cria pixel board
+const input = document.getElementById('board-size');
+const vqv = document.getElementById('generate-board');
+
+function createBoard(boardSize) {
+  pixelBoard.innerText = '';
+  for (let index = 0; index < boardSize; index += 1) {
+    const line = document.createElement('div');
+    line.className = 'line';
+    for (let index2 = 0; index2 < boardSize; index2 += 1) {
+      const divPixel = document.createElement('div');
+      divPixel.className = 'pixel';
+      pixelBoard.appendChild(line);
+      line.appendChild(divPixel);
+    }
+  }
+}
+
+function createPixel() {
+  const boardSize = input.valueAsNumber;
+  if (boardSize < 5) {
+    createBoard(5);
+  } else if (boardSize > 50) {
+    createBoard(50);
+  } else if (boardSize > 4) {
+    createBoard(boardSize);
+  } else {
+    alert('Board inválido!');
+  }
+}
+
+vqv.addEventListener('click', createPixel);
+
+// função para colocar cor aleatoria
+
+function gerarCor() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+color1.style.backgroundColor = gerarCor();
+color2.style.backgroundColor = gerarCor();
+color3.style.backgroundColor = gerarCor();
