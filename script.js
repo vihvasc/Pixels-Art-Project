@@ -1,4 +1,5 @@
 window.onload = function () {
+  
   function setPalletListener() {
     let palletItems = document.getElementsByClassName('color');
     let currentColor = palletItems[0];
