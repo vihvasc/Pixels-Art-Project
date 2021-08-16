@@ -5,22 +5,6 @@
   height: 50px;
 }
 
-.black {
-  background-color: black;
-}
-
-.purple {
-  background-color: purple;
-}
-
-.grey {
-  background-color: grey;
-}
-
-.pink {
-  background-color: pink;
-}
-
 #pixel-board {
   width: 220px;
   height: 220px;

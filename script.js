@@ -1,8 +1,9 @@
+
 const square = document.body.querySelector('#pixel-board');
 
 function squarePixel(numberOfElements) {
-  for (let index = 1; index <= numberOfElements; index +=1) {
-    const pixels = document.createElement('li');
+  for (let index = 1; index <= numberOfElements; index += 1) {
+    const pixels = document.createElement('div');
     pixels.className = 'pixel';
 
     square.appendChild(pixels);
@@ -10,20 +11,38 @@ function squarePixel(numberOfElements) {
 }
 squarePixel(25);
 
-/* selectColor = document.body.getElementsByClassName('color');
-selectColor.addEvent
+const getColor = document.querySelectorAll('.color');
+getColor[0].style.backgroundColor = 'black';
+getColor[1].style.backgroundColor = 'purple';
+getColor[2].style.backgroundColor = 'grey';
+getColor[3].style.backgroundColor = 'pink';
 
-function select() {
-  if 
-} */
+for (let index = 0; index < getColor.length; index += 1) {
+  getColor[index].addEventListener('click', function(event) {
+    for (let index = 0; index < getColor.length; index += 1){
+      getColor[index].classList.remove('selected');
+    }
+    event.target.classList.add('selected');
+  });
+}
 
-const button = document.body.querySelector('#clear-board');
+const pixels = document.getElementsByClassName('pixel');
+console.log(pixels);
+for (let index = 0; index < pixels.length; index += 1) {
+  pixels[index].addEventListener('click', changeColor);
+}
+
+function changeColor(pixel) {
+  pixel.target.style.backgroundColor = 'black';
+}
+
+const button = document.getElementById('clear-board');
 button.addEventListener('click', clearBoard);
 
 function clearBoard() {
-  const pixels = document.body.getElementsByClassName('pixel');
-  for (let index = 0; index < pixels.length; index += 1) {
-    const pixel = pixels[index];
+  const clear = document.getElementsByClassName('pixel');
+  for (let index = 0; index < clear.length; index += 1) {
+    const pixel = clear[index];
     pixel.style.backgroundColor = 'white';
   }
 }
