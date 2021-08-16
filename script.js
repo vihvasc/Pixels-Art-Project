@@ -1,7 +1,7 @@
 function setPixelColor(id) {
   const pixel = document.getElementById(id);
   const colorSelected = document.querySelector('.selected');
-  pixel.style.backgroundColor = colorSelected.id;
+  pixel.style.backgroundColor = colorSelected.style.backgroundColor;
 }
 
 function squareOfPixels(pixels) {
@@ -24,16 +24,6 @@ function squareOfPixels(pixels) {
   }
 }
 squareOfPixels(5);
-
-function selectColor(color) {
-  const colors = document.querySelectorAll('.color');
-  for (let i = 0; i < colors.length; i += 1) {
-    colors[i].className = 'color';
-  }
-  const selected = document.getElementById(color);
-  selected.className += ' selected';
-}
-selectColor('black');
 
 function clear() {
   const pixels = document.querySelectorAll('.pixel');
@@ -91,3 +81,37 @@ function clearButton() {
   buttonClear.style.marginLeft = '10px';
 }
 clearButton();
+
+function createColor() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+
+  return `rgba(${r}, ${g}, ${b})`;
+}
+
+function selectColor(index) {
+  const colors = document.querySelectorAll('.color');
+  for (let i = 0; i < colors.length; i += 1) {
+    colors[i].className = 'color';
+  }
+
+  const selected = colors[index];
+  selected.className += ' selected';
+}
+
+function createColorPalette() {
+  const divColors = document.getElementById('color-palette');
+  for (let i = 0; i < 4; i += 1) {
+    const color = document.createElement('div');
+    color.className = 'color';
+    color.id = i;
+    divColors.appendChild(color);
+    color.style.backgroundColor = createColor();
+    const black = document.querySelectorAll('.color')[0];
+    black.style.backgroundColor = 'black';
+    color.addEventListener('click', () => selectColor(i));
+  }
+}
+createColorPalette();
+selectColor(0);

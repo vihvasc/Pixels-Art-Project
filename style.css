@@ -2,7 +2,8 @@
   border: solid black 1px;
   height: 40px;
   width: 40px;
-  box-sizing: content-box;
+  display: table-cell;
+  border-radius: 50%;
 }
 
 #pixel-board {
@@ -33,8 +34,4 @@
 
 #red {
   background-color: red;
-}
-
-button {
-  border-radius: 50%;
 }
