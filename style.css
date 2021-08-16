@@ -6,21 +6,21 @@
     padding: 50px;
 }
 
-#color-palette1 {
+#color-black {
     background-color: black;
 }
 
-#color-palette2 {
+#color-blue {
     color: blueviolet;
     background-color: blue;
 }
 
-#color-palette3 {
+#color-pink {
     color: brown;
     background-color: blueviolet;
 }
 
-#color-palette4 {
+#color-red {
     background-color:brown;
 }
 
@@ -37,3 +37,18 @@
     display: inline-block;
 }
 
+.divBlack {
+    background-color: black;
+}
+
+.divBlue {
+    background-color: blue;
+}
+
+.divPink {
+    background-color: blueviolet;
+}
+
+.divRed {
+    background-color: brown;
+}
