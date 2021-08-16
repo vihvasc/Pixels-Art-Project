@@ -16,7 +16,7 @@
 }
 
 .sunset-orange {
-  background-color: rgb(255, 85, 85);
+  /* background-color: rgb(255, 85, 85); */
   border: 1px solid black;
   display: inline-block;
   width: 100px;
@@ -24,7 +24,7 @@
   cursor: pointer;
 }
 .screaming-green {
-  background-color: rgb(85, 255, 85);
+  /* background-color: rgb(85, 255, 85); */
   border: 1px solid black;
   display: inline-block;
   width: 100px;
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 .laser-lemon {
-  background-color: rgb(255, 255, 85);
+  /* background-color: rgb(255, 255, 85); */
   border: 1px solid black;
   display: inline-block;
   width: 100px;
@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 .black {
-  background-color: black;
+  /* background-color: black; */
   border: 1px solid black;
   display: inline-block;
   width: 100px;

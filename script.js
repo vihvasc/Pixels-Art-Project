@@ -46,3 +46,20 @@ function addClassSelected() {
   }
 }
 addClassSelected();
+
+// 8
+let pixels = document.getElementsByClassName('pixel');
+// console.log(pixels[index]);
+
+function pixelColor() {
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].addEventListener('click', function (event) {
+      let selectedColor = selected.style.backgroundColor;
+      event.target.style.backgroundColor = selectedColor;
+    });
+  }
+}
+pixelColor();
+
+
+//9
