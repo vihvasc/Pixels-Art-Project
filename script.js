@@ -14,3 +14,16 @@ function changeBlackClass(){
 changeBlackClass()
 
 
+function clickSelectedPixel(event){
+let  previousColor= document.querySelector(".selected");
+previousColor.classList.remove("selected");
+event.target.classList.add("selected");
+}
+
+let colors = document.getElementsByClassName("color");
+for(let index = 0 ; index < colors.length ; index += 1){
+    colors[index].addEventListener("click", clickSelectedPixel);
+}
+
+
+
