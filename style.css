@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+/* body {
+  overflow-x: hidden;
+} */
+
 .color {
   position: relative;
   right: 35px;
@@ -16,9 +20,9 @@
   position: relative;
   top: 5px;
   left: 5px;
-  width: 202px;
-  height: 218px;
-  border: 1px solid black;
+  /* width: 202px;
+  height: 218px; */
+  /* border: 1px solid black; */
 }
 
 .pixel {
@@ -28,7 +32,19 @@
   border: 1px solid black;
 }
 
+.line-element {
+  max-height: 40px;
+  width: 100%;
+}
+
+#board-size {
+  position: relative;
+  width: 100px;
+  margin: 5px;
+}
+
 #clear-board {
   position: relative;
-  left: 145px;
+  top: -26px;
+  left: 169px;
 }
