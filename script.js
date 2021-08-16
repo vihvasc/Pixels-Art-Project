@@ -80,7 +80,7 @@ cor1.addEventListener('click', clicandoParaSelecionar1);
 
 
 
-let pixels = document.getElementsByClassName('pixel')
+const pixels = document.getElementsByClassName('pixel')
 for (let index = 0; index < pixels.length; index += 1) {
     pixels[index].addEventListener("click", pintandoPixels);
 }
@@ -90,4 +90,21 @@ for (let index = 0; index < pixels.length; index += 1) {
 // .target
 function pintandoPixels(objeto) {
     objeto.target.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+}
+
+// for (let index = 0; index < pixels.length; index += 1) {
+	//   botao[index].addEventListener('click', criandoBotao)
+	// }
+const botao = document.querySelector('#clear-board');
+botao.addEventListener('click', apagandoCores);
+
+function apagandoCores() {
+	for (let index = 0; index < pixels.length; index += 1) {
+		// if (pixels[index].style.backgroundColor === 'white') {
+		// 	console.log('Hello mundo')
+		// }
+		// para pegar uma cor específica
+		pixels[index].style.backgroundColor = 'white';
+		
+	}
 }
