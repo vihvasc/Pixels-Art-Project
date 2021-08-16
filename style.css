@@ -57,7 +57,7 @@ header {
     width: 200px;
     height: 200px;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 60px;
     border: 10px solid;
     border-image-slice: 1;
     border-width: 5px;
@@ -73,4 +73,20 @@ header {
     border: solid 1px black;
     box-sizing: border-box;
     cursor: pointer;
+}
+#center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#clear-board {
+    width: 150px;
+    height: 40px;
+    background-color: #16CC9A;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-top: 50px;
 }

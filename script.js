@@ -75,3 +75,11 @@ for(let i = 0; i < pixel.length; i++) {
     document.getElementById(i).style.backgroundColor = colorSelected[0].id;
     }
 }
+let btnClear = document.getElementById("clear-board");
+btnClear.addEventListener("click", limpar);
+function limpar(){
+    for(let i = 0; i < pixel.length; i++) {
+        pixel[i].id = i;
+        document.getElementById(i).style.backgroundColor = "white";
+}
+}
