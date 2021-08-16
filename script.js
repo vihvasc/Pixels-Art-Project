@@ -138,7 +138,7 @@ function removePixelArt() {
 }
 
 const botaoVQV = document.querySelector('#generate-board');
-botaoVQV.addEventListener('click', function() {
+botaoVQV.addEventListener('click', function () {
   let valorQuadro = document.querySelector('#board-size').value;
   if (!valorQuadro) {
     window.alert('Board inválido!');
@@ -168,13 +168,11 @@ function selecionarCor() {
       }
     });
   }
-
 }
 selecionarCor();
 
 function pintaPixels() {
   const pixelsDoQuadro = document.querySelectorAll('.pixel');
-  const coresPaleta = document.getElementsByClassName('color');
 
   for (let index = 0; index < pixelsDoQuadro.length; index += 1) {
     pixelsDoQuadro[index].addEventListener('click', function () {
