@@ -1,7 +1,13 @@
-let cores = ["black", "yellow", "green", "purple"]
+const cores = ['black'];
+  for (let index = 0; index < 3; index += 1) {
+    cores.push(`rgb(${colorRandom()}, ${colorRandom()}, ${colorRandom()})`);
+  }
 let corSelecionada = cores[0];
 
-
+function colorRandom() {
+  const numberRandom = Math.floor(Math.random() * 255);
+  return numberRandom;
+}
 
 function createColor(colorName) {
   const color = document.createElement("div")
@@ -9,6 +15,8 @@ function createColor(colorName) {
   if(colorName === corSelecionada){
     color.classList.add("selected")
   }
+
+  
   color.style.backgroundColor = colorName
   color.onclick = function () {
     corSelecionada = colorName
@@ -20,6 +28,8 @@ function createColor(colorName) {
   }
   return color
 }
+
+
 
 function createPixel() {
   const pixel = document.createElement("div")
@@ -43,14 +53,12 @@ function generateBoard(numero){
     pixelBoard.appendChild(createPixel())
   }
   }
-
+  generateBoard(5)
 
 const colorPallete = document.getElementById("color-palette")
 for (let i = 0; i < cores.length; i++) {
   colorPallete.appendChild(createColor(cores[i]))
 }
-
-generateBoard(5)
 
 
 
@@ -62,10 +70,27 @@ clearButton.onclick = function(){
   }
 }
 
+function setInput() {
+  const button = document.getElementById("generate-board")
+  let input = document.getElementById("board-size")
+  button.addEventListener('click', () => {
+    let numberDoInput = input.value;
+    if (numberDoInput === '') {
+      alert('Board inválido!');
+      return;
+    }
+    if (numberDoInput < 5) {
+      numberDoInput = 5;
+    }
+    if (numberDoInput > 50) {
+      numberDoInput = 50;
+    }
+    
+    generateBoard(numberDoInput);
+    createColor();
+  });
+}
 
-
-
-
-
+setInput();
 
 
