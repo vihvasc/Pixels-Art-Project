@@ -9,11 +9,12 @@ main {
   position: relative;
   display: block;
 }
-footer{
-  position:fixed;
-  bottom:0;
+
+footer {
+  position: fixed;
+  bottom: 0;
   padding: 20px;
-  width:100%; 
+  width: 100%; 
   background-color: #212121;
   color: white;
   text-align: center;
@@ -27,9 +28,10 @@ button {
   font-size: 18px;
   font-weight: 300;
   border-radius: 4px;
-  cursor: pointer; 
+  cursor: pointer;
   margin: 2px;
 }
+
 input {
   background-color: white;
   padding: 2px;
@@ -86,7 +88,7 @@ input {
   display: table-row;
 }
 
-.items{
+.items {
   position: relative;
   display: block;
 }
