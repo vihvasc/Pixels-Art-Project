@@ -28,3 +28,41 @@ let div = document.createElement("div");
 div.className = "pixel";
 linha5.appendChild(div);
 }
+
+let black = document.getElementById("black");
+let red = document.getElementById("red");
+let orange = document.getElementById("orange");
+let green = document.getElementById("green");
+
+black.addEventListener("click", blackSelect);
+function blackSelect(){
+    black.className = "color selected";
+    red.className = "color";
+    orange.className = "color";
+    green.className = "color";
+    console.log(orange, red, black, green);
+}
+red.addEventListener("click", redSelect);
+function redSelect(){
+    red.className = "color selected";
+    black.className = "color";
+    orange.className = "color";
+    green.className = "color";
+    console.log(orange, red, black, green);
+}
+orange.addEventListener("click", orangeSelect);
+function orangeSelect(){
+    orange.className = "color selected";
+    red.className = "color";
+    black.className = "color";
+    green.className = "color";
+    console.log(orange, red, black, green);
+}
+green.addEventListener("click", greenSelect);
+function greenSelect(){
+    green.className = "color selected";
+    orange.className = "color";
+    red.className = "color";
+    black.className = "color";
+    console.log(orange, red, black, green);
+}
