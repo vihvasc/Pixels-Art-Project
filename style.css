@@ -26,8 +26,8 @@ title {
 	box-sizing: border-box;
 }
 
-.backgroudBlack{
-	background-color: rgb(0, 0, 0);
+.selected{
+	background-color:;
 }
 
 #board-size {
@@ -47,6 +47,7 @@ title {
 #pixel-board{
 	margin: 20px auto;
 	display: table;
+	background-color: rgb(255, 255, 255);
 }
 
 .pixel {
@@ -58,63 +59,3 @@ title {
 	display: table-cell;
 	background-color: rgb(255, 255, 255);
 }
-
-/*
-.backgroudwhite{
-	background-color: rgb(255, 255, 255);
-}
-
-
-
-.backgroudRed{
-	background-color:rgb(255, 0, 0);
-}
-
-.backgroudBlue{
-	background-color:rgb(0, 0, 255);
-}
-
-.backgroudGreen{
-	background-color:rgb(0, 255, 0);
-}
-
-table,
-tr,
-td {
-	border: 1px solid black;
-	box-sizing: border-box;
-	font-size: 0px;
-	margin: auto;
-}
-
-.pixel {
-	height: 40px;
-	width: 40px;
-	font-size: 0px;
-	padding: 0px;
-	box-sizing: border-box;
-}
-
-#pixel-board{
-	border-collapse: collapse;
-	margin: 0 auto;
-	border: 1px solid black;
-}
-
-/*table {
-	border-collapse: collapse;
-	margin: 0 auto;
-	border: 1px solid black;
-}
-
-tr {
-	height: 40px;
-}	
-
-td {
-	width: 40px;
-}	
-
-input[type=number] {
-	width: 6em;
-}**/

@@ -1,10 +1,13 @@
 // para poder autera a cor no html
+let primeiraCor = document.querySelector('.primeira-cor');
 let segundaCor = document.querySelector('.segunda-cor');
 let terceiraCor = document.querySelector('.terceira-cor');
 let quartaCor = document.querySelector('.quarta-cor');
 
+
 // criar cor com numero RGB
 function coresAleatorias() {
+primeiraCor.style.backgroundColor = `rgb(${corAleatoria(0)} , ${corAleatoria(0)} , ${corAleatoria(0)})`;
 segundaCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
 terceiraCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
 quartaCor.style.backgroundColor = `rgb(${corAleatoria(255)} , ${corAleatoria(255)} , ${corAleatoria(255)})`;
@@ -52,6 +55,7 @@ function createTable() {
 
 // funcionar os botaao
 function deletePixels() {
+	
 	let pixelBoard = document.getElementById('pixel-board');
 
 	while (pixelBoard.firstChild) {
@@ -66,12 +70,12 @@ function deletePixels() {
 // função para colorir pixels de acordo com a cor da paleta escolhida
 	let selectPixel = document.querySelectorAll('.pixel');
 
-function changeColor(event) {
+function colorir(event) {
 	let colorSelected = document.querySelector('.selected');
 
 	event.target.style.backgroundColor = colorSelected.style.backgroundColor;
 }
 	
 	for (let index = 0; index < selectPixel.length; index += 1) {
-	selectPixel[index].addEventListener('click', changeColor);
+	selectPixel[index].addEventListener('click', colorir);
 	}
