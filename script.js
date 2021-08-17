@@ -30,6 +30,10 @@ colorsUl.addEventListener('click', function(e) {
     previousSelected.classList.remove('selected')
     element.classList.add('selected')
 })
+
+// Consultei o repositório do Erickson Siqueira para resolver essa parte
+// Link: https://github.com/tryber/sd-015-b-project-pixels-art/pull/61/commits
+
     pixelBoard.addEventListener('click', function(e) {
     let element = e.target
     element.style.backgroundColor = backgroundColorSelected
