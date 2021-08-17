@@ -5,7 +5,8 @@
 // Colocar projeto no GitHub
 
 // Gera cores aleatórias em RGB
-// Obtida do usuário adeneo em https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
+// Obtida do usuário adeneo em
+// https://stackoverflow.com/questions/23095637/how-do-you-get-random-rgb-in-javascript
 function randomRgba() {
   const o = Math.round;
   const r = Math.random;
@@ -50,13 +51,30 @@ function createPixes() {
   const pixelBoard = document.getElementById('pixel-board');
 
   for (let i = 0; i < NN - 1; i += 1) {
-    const criaPixels = document.createElement('div');
-    criaPixels.className = 'pixel';
-    pixelBoard.appendChild(criaPixels);
+    const pixel = document.createElement('div');
+    pixel.className = 'pixel';
+    pixelBoard.appendChild(pixel);
+  }
+}
+
+function whitePixels() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
   }
 }
 
 window.onload = function main() {
   palleteColors();
   createPixes();
+
+  const button = document.getElementById('clear-board');
+  button.addEventListener('click', whitePixels);
+
+  const changeSelection = document.querySelectorAll('.color');
+  changeSelection.forEach(function() {
+      
+  }
+
+  );
 };
