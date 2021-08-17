@@ -64,6 +64,21 @@ function whitePixels() {
   }
 }
 
+function changeSelected() {
+  if (!this.classList.contains('selected')) {
+    this.classList.add('selected');
+  }
+
+  const allColors = document.getElementsByClassName('color');
+  for (let i = 0; i < allColors.length; i += 1) {
+    if (allColors[i] !== this) {
+      allColors[i].classList.remove('selected');
+    }
+  }
+  console.log(this);
+  console.log(allColors);
+}
+
 window.onload = function main() {
   palleteColors();
   createPixes();
@@ -71,5 +86,8 @@ window.onload = function main() {
   const button = document.getElementById('clear-board');
   button.addEventListener('click', whitePixels);
 
-// const changeSelection = document.querySelectorAll('.color');
+  const changeSelection = document.querySelectorAll('.color');
+  changeSelection.forEach((item) => {
+    item.addEventListener('click', changeSelected);
+  });
 };
