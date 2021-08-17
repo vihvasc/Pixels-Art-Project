@@ -81,6 +81,7 @@ function criaPixels() {
   let N = document.querySelector("#board-size").value;
   if (N === '') {
     window.alert("Board inválido!");
+    return 
   }
   if (N<5) {
     N = 5;
@@ -92,7 +93,7 @@ function criaPixels() {
   let linhas = document.getElementsByClassName("line")
   for (let index = 0 ; index<linhas.length ; index += 1) {
     let linha = linhas[index];
-    linhas[0].style.marginTop = '45px';
+    // linhas[0].style.marginTop = '45px';
     for (let index = 0; index<N; index += 1) {
       let div = document.createElement("div");
       div.className = "pixel";
@@ -104,19 +105,11 @@ function criaPixels() {
 }
 let vqv = document.querySelector("#generate-board");
 vqv.addEventListener("click", criaPixels);
-let pixelsBoard = document.querySelector("#pixel-board");
+document.querySelector("#pixel-board").style.maxWidth = '230px'
 function central() {
   let N = document.querySelector("#board-size").value;
-  if (N === 5) {
-    pixelsBoard.style.marginLeft = '42%'
-  }else if (N <= 8 && N>5) {
-    pixelsBoard.style.marginLeft = '38%'
-  } else if (N <= 16 && N >= 9) {
-    pixelsBoard.style.marginLeft = '27%'
-  } else if (N > 16 && N <= 24) {
-    pixelsBoard.style.marginLeft = '19%'
-  } else if (N > 24) {
-    pixelsBoard.style.marginLeft = '10%'
-  } 
+  let numero = N*42;
+  let tamanho = numero + 'px';
+  document.querySelector("#pixel-board").style.maxWidth = tamanho;
 }
-pixelsBoard.style.marginLeft = '41.5%'
+
