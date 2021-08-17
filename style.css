@@ -1,44 +1,44 @@
-.black-color{
-    background-color: black;
-    border: 1px solid black;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
+.black-color {
+  background-color: black;
+  border: 1px solid black;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
 }
 
-.red-color{
-    background-color: red;
-    border: 1px solid black;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
+.red-color {
+  background-color: red;
+  border: 1px solid black;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
 }
 
-.blue-color{
-    background-color: blue;
-    border: 1px solid black;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
+.blue-color {
+  background-color: blue;
+  border: 1px solid black;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
 }
 
-.grey-color{
-    background-color: grey;
-    border: 1px solid black;
-    display: inline-block;
-    width: 50px;
-    height: 50px;
+.grey-color {
+  background-color: grey;
+  border: 1px solid black;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
 }
 
 #pixel-board {
-    height: 20px;
-    width: 20px;
-    }
-    
+  height: 20px;
+  width: 20px;
+}
+
 .pixel {
     background-color: white;
     height: 40px;
     width: 40px;
     border: black solid 1px;
     display: inline-block;
-} 
+}
