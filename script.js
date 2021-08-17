@@ -12,6 +12,7 @@ window.onload = function comeca() {
   sessionStorage.setItem('cor', '#000');
   const primeiro = document.getElementsByClassName('color')[0];
   primeiro.className = 'color selected';
+  corAleatoria()
 };
 function selecionaCor(evento) {
   const selecionado = evento.target;
@@ -21,18 +22,19 @@ function selecionaCor(evento) {
   selecionado.className = 'color selected';
   sessionStorage.setItem('cor', cor);
 }
-const primeiro = document.getElementsByClassName('color')[0];
-const segundo = document.getElementsByClassName('color')[1];
-const terceiro = document.getElementsByClassName('color')[2];
-const quarto = document.getElementsByClassName('color')[3];
-primeiro.style.backgroundColor = '#000';
-segundo.style.backgroundColor = '#6D597A';
-terceiro.style.backgroundColor = '#67697C';
-quarto.style.backgroundColor = '#C1C3C1';
-primeiro.addEventListener('click', selecionaCor);
-segundo.addEventListener('click', selecionaCor);
-terceiro.addEventListener('click', selecionaCor);
-quarto.addEventListener('click', selecionaCor);
+function corAleatoria() {
+  const vetor =  document.getElementsByClassName('color');
+  for (let index = 1; index < vetor.length; index += 1) {
+    vetor[0].style.backgroundColor = 'black'
+    vetor[0].addEventListener('click', selecionaCor);
+    let aleatorio1 = Math.random() * 256
+    let aleatorio2 = Math.random() * 256
+    let aleatorio3 = Math.random() * 256
+    let cor = 'rgb(' + aleatorio1 + ',' + aleatorio2 + ',' + aleatorio3 + ')'
+    vetor[index].style.backgroundColor = cor
+    vetor[index].addEventListener('click', selecionaCor);
+  }
+} 
 function adicionaCor(evento) {
   const cor = sessionStorage.getItem('cor');
   const pixel = evento.target;
@@ -74,7 +76,6 @@ function criaLinha() {
     linha.className = "line";
     pixelBoard.appendChild(linha);
   }
-
 }
 function criaPixels() {
   let N = document.querySelector("#board-size").value;
@@ -106,14 +107,16 @@ vqv.addEventListener("click", criaPixels);
 let pixelsBoard = document.querySelector("#pixel-board");
 function central() {
   let N = document.querySelector("#board-size").value;
-  if (N <= 8) {
-    pixelsBoard.style.left = '33%'
-  } else if (N <= 16 || N >= 9) {
-    pixelsBoard.style.left = '20%'
-  } else if (N > 16 || N <= 27) {
-    pixelsBoard.style.left = '-20%'
-  } else if (N > 28) {
-    pixelsBoard.style.left = '-10%'
-  }
+  if (N === 5) {
+    pixelsBoard.style.marginLeft = '42%'
+  }else if (N <= 8 && N>5) {
+    pixelsBoard.style.marginLeft = '38%'
+  } else if (N <= 16 && N >= 9) {
+    pixelsBoard.style.marginLeft = '27%'
+  } else if (N > 16 && N <= 24) {
+    pixelsBoard.style.marginLeft = '19%'
+  } else if (N > 24) {
+    pixelsBoard.style.marginLeft = '10%'
+  } 
 }
-pixelsBoard.style.left = '33%'
+pixelsBoard.style.marginLeft = '41.5%'

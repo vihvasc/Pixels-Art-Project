@@ -5,14 +5,18 @@
 
 body {
   background-image: url(./buba.png);
-  background-size: cover;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+  background-position-y: 5% ;
 }
 
 h1 {
   text-align: center;
   color: #d0dabe;
   font-family: 'Dancing Script', cursive;
-  font-size: 1.8em;
+  font-size: 2.2em;
   margin-top: 2%;
 }
 
@@ -46,8 +50,9 @@ h1 {
 
 .line {
   display: block;
-  max-width: 110%;
+  max-width: auto;
   max-height: 40px;
+  /* margin-left: 42%; */
 }
 
 .pixel {
@@ -59,10 +64,8 @@ h1 {
 }
 
 #pixel-board {
-  max-width: 80%;
-  margin: auto;
   margin-top: 45px;
-  position: relative;
+
 }
 
 #clear-board {
@@ -111,11 +114,6 @@ h2 {
   background-color: #6F8FAF;
   padding: 3px;
   opacity: 0.9;
-}
-
-.selected {
-  border: 2px solid black;
-  padding: 3.2% ;
 }
 
 li {
