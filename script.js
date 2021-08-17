@@ -5,6 +5,7 @@ cliquei;
 cliquei2;
 cliquei3;
 cliquei4;
+corPixels;
 }
 
 function corbranca (){
@@ -62,7 +63,13 @@ function cliquei4(){
     console.log(corArmazenada) 
 }  
 
-let corArmazenada = "";
+function corPixels (event) {
+    if(event.target.className === "pixel"){
+        event.target.style.backgroundColor = corArmazenada
+    }
+}
+
+let corArmazenada = "black";
 
 let cor1 = document.getElementsByClassName("color")[0]
 cor1.addEventListener("click", cliquei)
@@ -80,3 +87,5 @@ let cor4 = document.getElementsByClassName("color")[3]
 cor4.addEventListener("click", cliquei4)
 cor4.style.backgroundColor = "purple";
 
+let pixels = document.querySelector("#pixel-board")
+pixels.addEventListener("click", corPixels)
