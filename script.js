@@ -1,5 +1,6 @@
 let paletaDeCores = document.querySelectorAll('.color');
 let telaDePintura = document.querySelector('#pixel-board');
+let botãoDeLimpeza = document.querySelector('#clear-board');
 
 
 paletaDeCores[0].style.backgroundColor = 'black';
@@ -39,7 +40,18 @@ let quadroDePixel = document.querySelector('#pixel-board');
 
 function tinta(origem){
     let corSelecionada = document.querySelector('.selected').style.backgroundColor
-    origem.target.style.backgroundColor = corSelecionada;
+    if (origem.target.classList.contains('pixel')) {
+        origem.target.style.backgroundColor = corSelecionada;
+}
 };
 
 quadroDePixel.addEventListener('click', tinta);
+
+let limpezaDePixel= document.querySelectorAll('.pixel');
+
+function limpar(){
+    for(let i =0 ; i< limpezaDePixel.length; i += 1){
+    limpezaDePixel[i].style.backgroundColor = 'white'
+}
+}
+botãoDeLimpeza.addEventListener('click', limpar)
