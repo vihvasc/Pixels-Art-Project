@@ -75,8 +75,22 @@ function changeSelected() {
       allColors[i].classList.remove('selected');
     }
   }
-  console.log(this);
-  console.log(allColors);
+}
+
+function selectChnagePixelColor() {
+  let color = 'rgb(0,0,0)';
+
+  document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('selected')) {
+      color = window.getComputedStyle(event.target, null).getPropertyValue('background-color');
+    }
+  }, false);
+
+  document.addEventListener('click', (event) => {
+    if (event.target.classList.contains('pixel')) {
+      event.target.style.backgroundColor = color;
+    }
+  }, false);
 }
 
 window.onload = function main() {
@@ -90,4 +104,6 @@ window.onload = function main() {
   changeSelection.forEach((item) => {
     item.addEventListener('click', changeSelected);
   });
+
+  selectChnagePixelColor();
 };
