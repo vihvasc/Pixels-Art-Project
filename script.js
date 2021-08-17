@@ -1,6 +1,7 @@
 window.onload = function () {
-
+     
     function getRandomColor() {
+        /*Função pronta de um artigo do stackOverflow, porém sei exatamente como funciona. */ 
         var letters = '0123456789ABCDEF';
         var color = '#';
         for (var i = 0; i < 6; i++) {
@@ -23,19 +24,28 @@ window.onload = function () {
     }
     createColorPalette();
 
-    function createPixelBoard(teste) {
+    function alertAndLimiters() {
         let input = document.querySelector('#board-size');
-        if (input.value === '') {
+        if (input.value === '' || input.value === 0) {
             alert('Board inválido!');
         }
-        if (input.value < 5 && input.value !== '') {
+        if (input.value < 5) {
             input.value = 5;
         }
-        if (input.value > 50 && input.value !== '') {
+        if (input.value > 50) {
             input.value = 50;
         }
-        
-        let pixelLength = `${(input.value * 42) + 'px'}`
+    }
+
+    function createPixelBoard() {
+        let input = document.querySelector('#board-size');
+        alertAndLimiters();
+        let boardSize = input.value;
+        let pixelLength = `${(input.value * 42) + 'px'}`;
+        if (input.value = '') {
+            pixelLength = `${(5 * 42) + 'px'}`;
+            boardSize = 5;
+        }
         let pixelBoardSize = document.getElementById('pixel-board');
         pixelBoardSize.style.width = pixelLength;
         pixelBoardSize.style.height = pixelLength;
@@ -45,15 +55,19 @@ window.onload = function () {
                 pixelBoard.removeChild(pixelBoard.childNodes[u]);
             }
         } 
-        for (let i = 1; i <= (input.value ** 2); i += 1) {
+        for (let i = 1; i <= (boardSize ** 2); i += 1) {
             const pixelDiv = document.createElement('div');
             pixelDiv.className = 'pixel';
             pixelBoard.appendChild(pixelDiv);
         }
+        
         pixelColorer();
+        
     }
-
+    
     createPixelBoard();
+
+    
 
     document.querySelector('#generate-board').addEventListener('click' , createPixelBoard);
 
