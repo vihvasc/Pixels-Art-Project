@@ -94,10 +94,14 @@ function remove() {
 
 function verificacao() {
   const inputNumber = document.getElementById('board-size').value;
-  const value = inputNumber;
+  let value = inputNumber;
   document.getElementById('board-size').value = '';
   if (value === '') {
     alert('Board inválido!');
+  } else if (value > 50) {
+    value = 50;
+  } else if (value < 5) {
+    value = 5;
   }
   const linhas = value;
   return linhas;
