@@ -1,18 +1,44 @@
-/*let pblack = document.querySelector('#black');
-let pblack2 = document.getElementById('#black');
+/*let blacks = document.getElementById('black');
+let reds = document.getElementById('red');
+let blues = document.getElementById('blue');
+let green = document.getElementById('green');
+let pintar;
 
 
-let cor;
+//variavel pixelvazio recebendo um pixel vazio
+let pixelvazio = document.getElementsByClassName('pixel');
+//click + chamando metodo pintar de preto    
+pixelvazio.addEventListener('change', pintarblack);
 
-//pblack.addEventListener('click', pintar) { }
 
-let ppixel = document.querySelector('.pixel');
-
-//window.onload = { }
-
-function pintar (event){
-    ppixel.style.backgroundColor = black;
+  window.onload = function(){
+    pintarblack();
     
 }
 
-ppixel.addEventListener("change", pintar);*/
+//pixel.addEventListener('change', pintar);
+
+
+    
+    
+    function pintarblack(){
+    pixelvazio.style.backgroundColor = 'black';
+    
+}
+
+
+
+    /*function pintar(e){
+        if(catchacor == 'red'){
+            pixelvazio.style.backgroundColor = 'red';
+        }
+        if(catchacor == 'black'){
+            pixelvazio.style.backgroundColor = 'black';
+        }
+        if(catchacor == 'blue'){
+            pixelvazio.style.backgroundColor = 'blue';
+        }
+        if(catchacor == 'green'){
+            pixelvazio.style.backgroundColor = 'green';
+        }
+    }*/
