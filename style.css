@@ -1,18 +1,18 @@
 body {
-  max-width: 900px;
+  max-width: 1350px;
   margin: auto;
-  background-color: rgb(255, 243, 176);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+    url('./images/background.jpg');
 }
 
 section {
-  width: 50%;
+  width: fit-content;
   margin: auto;
   position: relative;
 }
 
 div {
   margin: auto;
-  width: 50%;
 }
 
 h1 {
@@ -45,14 +45,13 @@ input {
 }
 
 #pixel-board {
-  width: 100%;
+  width: fit-content;
   margin: auto;
   padding-bottom: 5px;
   position: relative;
 }
 
 #pixel-board > div {
-  width: 100%;
   margin: auto;
   padding-bottom: 10px;
 }
