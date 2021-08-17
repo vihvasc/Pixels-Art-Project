@@ -3,6 +3,7 @@ const colorPallet = document.createElement('div');
 colorPallet.id = 'color-palette';
 document.body.appendChild(colorPallet);
 const numberOfColors = 4;
+
 for (let i = 0; i < numberOfColors; i += 1) {
   const newDiv = document.createElement('div');
   newDiv.className = 'color';
@@ -12,6 +13,8 @@ for (let i = 0; i < numberOfColors; i += 1) {
 const colorBox = document.getElementsByClassName('color');
 
 // Gera cores aleatórias
+
+// Função obtida em: https://stackoverflow.com/questions/1484506/random-color-generator
 function generateRandomColor() {
   const values = '0123456789ABCDEF';
   let randomColor = '#';
