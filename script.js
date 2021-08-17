@@ -1,4 +1,3 @@
-
 const square = document.body.querySelector('#pixel-board');
 
 function squarePixel(numberOfElements) {
@@ -18,22 +17,22 @@ getColor[2].style.backgroundColor = 'grey';
 getColor[3].style.backgroundColor = 'pink';
 
 for (let index = 0; index < getColor.length; index += 1) {
-  getColor[index].addEventListener('click', function(event) {
-    for (let index = 0; index < getColor.length; index += 1){
-      getColor[index].classList.remove('selected');
+  getColor[index].addEventListener('click', function (event) {
+    for (let contador = 0; contador < getColor.length; contador += 1) {
+      getColor[contador].classList.remove('selected');
     }
     event.target.classList.add('selected');
   });
 }
 
 const pixels = document.getElementsByClassName('pixel');
-console.log(pixels);
 for (let index = 0; index < pixels.length; index += 1) {
   pixels[index].addEventListener('click', changeColor);
 }
 
 function changeColor(pixel) {
-  pixel.target.style.backgroundColor = 'black';
+  const selectedColor = document.getElementsByClassName('selected')[0];
+  pixel.target.style.backgroundColor = selectedColor.style.backgroundColor;
 }
 
 const button = document.getElementById('clear-board');
