@@ -1,6 +1,7 @@
 #pixel-board {
     border: black;
     border-style: groove;
+    display: table;
 }
 
 .color {
@@ -12,7 +13,12 @@
 
 .pixel {
     background-color: white;
-    width: 25px;
-    height: 25px;
     display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+}
+
+.pixel-board-sec {
+    display: table-row;
 }
