@@ -12,9 +12,10 @@ function createLine(a) {
 }
 
 function paintPixel(event) {
-  const color = document.querySelector('.selected');
+  const colorDiv = document.querySelector('.selected');
+  const color = window.getComputedStyle(colorDiv).getPropertyValue('background-color');
   const eventTarget = event.target;
-  eventTarget.style.backgroundColor = `${color.id}`;
+  eventTarget.style.backgroundColor = color;
 }
 
 function createPixel(a) {
@@ -67,9 +68,28 @@ function checkN() {
   } else { generateBoard(); }
 }
 
+function randomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const rgb = `rgb(${r}, ${g}, ${b})`;
+  return rgb;
+}
+
+function randomPaletteColor() {
+  const paleta = document.getElementById('color-palette');
+  for (let index = 0; index < 3; index += 1) {
+    const colorDiv = document.createElement('div');
+    colorDiv.className = 'color';
+    colorDiv.style.backgroundColor = `${randomColor()}`;
+    paleta.appendChild(colorDiv);
+  }
+}
+
 window.onload = function initPage() {
   createLine(5);
   createPixel(5);
+  randomPaletteColor();
 
   const cores = document.querySelectorAll('.color');
   cores.forEach((item) => {
