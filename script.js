@@ -73,4 +73,7 @@ function sizePixel(valueInput) {
       createDivP.className = "pixel"    
     }
   }
+  for (const pixel of pixels) {
+    pixel.addEventListener("click", addColor);
+  }
 }
