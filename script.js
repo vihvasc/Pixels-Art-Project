@@ -4,12 +4,13 @@ const cores = ['black', 'yellow', 'pink', 'brown'];
 // mantém o preto como selecionado
 const quadrado = document.getElementsByClassName('color');
 
-function atribuiCores() {
-  for (let index = 0; index < cores.length; index += 1) {
-    quadrado[index].style.backgroundColor = cores[index];
-  }
-  quadrado[0].classList.add('selected');
-}
+// function atribuiCores() {
+//   for (let index = 0; index < cores.length; index += 1) {
+//     quadrado[index].style.backgroundColor = cores[index];
+//     quadrado[index].addEventListener('click', escolheCor);
+//   }
+//   quadrado[0].classList.add('selected');
+// }
 
 const pegaTudo = document.getElementsByTagName('body');
 const boardSize = 5;
@@ -29,16 +30,22 @@ function geraQuadradao() {
     board.appendChild(linhaQuadradao);
   }
   pegaTudo[0].appendChild(board);
+  pintaQuadradinho();
 }
 
-let corEscolhida = 'rgb(0, 0, 0)';
+let corEscolhida = 'black';
 quadrado[0].style.backgroundColor = corEscolhida;
 
 function pintaQuadradinho() {
   const quadradoMaior = document.querySelectorAll('.pixel');
-  for (const quadradinho of quadradoMaior) {
-    quadradinho.addEventListener('click', function ()
-    { quadradinho.style.backgroundColor = corEscolhida; });
+  for (let index = 0; index < quadradoMaior.length; index += 1 ){
+    quadradoMaior[index].addEventListener('click', function () {
+      if (corEscolhida === 'black'){
+        event.target.style.backgroundColor = 'black';
+      } else {
+        event.target.style.backgroundColor = corEscolhida;
+      }
+    });
   }
 }
 
@@ -62,7 +69,6 @@ function adicionaCorNaPaleta() {
 }
 
 function limpaQuadradao() {
-  console.log('limpa');
   let limpaQuadrado = document.querySelector('#clear-board');
   limpaQuadrado.addEventListener('click', function () {
     const quadrado = document.querySelectorAll('.pixel');
@@ -74,7 +80,7 @@ limpaQuadradao();
 
 
 window.onload = function () {
-  atribuiCores();
+  // atribuiCores();
   geraQuadradao();
   adicionaCorNaPaleta();
 };
