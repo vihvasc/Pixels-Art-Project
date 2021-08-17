@@ -22,43 +22,15 @@ h1 {
     font-weight: 600
 }
 
-#clear-board:hover {
-    background: #36e2a3;
-}
-#clear-board:active {
-    background: #147a55;
-}
 #color-palette{
-    width: 50%;
     margin: auto
 }
 .color {
+    margin: auto;
     display: inline-block;
     height: 100px;
     width: 100px;
     border: 1px solid black
-}
-
-.color:hover {
-    border: 5px;
-}
-
-.color:active {
-    height: 98px;
-    width: 98px;
-    border: 5px solid black
-}
-
-.color:visited {
-    height: 98px;
-    width: 98px;
-    border: 5px solid black
-}
-
-.selected {
-    height: 98px;
-    width: 98px;
-    border: 5px solid blue
 }
 
 #pixel-board {

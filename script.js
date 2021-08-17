@@ -71,10 +71,5 @@ window.onload = function main() {
   const button = document.getElementById('clear-board');
   button.addEventListener('click', whitePixels);
 
-  const changeSelection = document.querySelectorAll('.color');
-  changeSelection.forEach(function() {
-      
-  }
-
-  );
+// const changeSelection = document.querySelectorAll('.color');
 };
