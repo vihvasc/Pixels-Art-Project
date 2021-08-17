@@ -8,7 +8,6 @@
 
 .color.black {
   background-color: black;
-  color: red;
 }
 
 .color.red {
@@ -35,4 +34,8 @@
   height: 40px;
   border: 1px solid black;
   background-color: white;
+}
+
+.selected {
+  color: aqua;
 }
