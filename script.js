@@ -1,5 +1,8 @@
 const tamanhoPaleta = 4;
 const quantidadePixel = 25;
+let botao = document.getElementById('clear-board');
+
+botao.addEventListener('click', limpaPixels);
 
 window.onload = function() {
     iniciaPaleta();
@@ -10,7 +13,7 @@ function iniciaPaleta() {
     let colors = document.getElementsByClassName('color');
     criaPaletaCores();
     addListenerPalet(colors);
-    setCoresPaleta(colors)
+    setCoresPaleta(colors);
 }
 
 function criaPaletaCores() {
@@ -70,4 +73,12 @@ function selectedPaleta(div) {
 function mudaCorPixel(div) {
     let corSelected = document.querySelector('.selected')
     div.target.style.backgroundColor = corSelected.style.backgroundColor;
+}
+
+function limpaPixels(){
+    let quadroPixel = document.querySelectorAll('.pixel');
+    for (let index = 0; index < quantidadePixel; index++) {
+        quadroPixel[index].style.backgroundColor = 'white';
+    }
+    //iniciaPixels()
 }
