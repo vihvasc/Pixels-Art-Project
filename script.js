@@ -82,7 +82,7 @@ function randomPaletteColor() {
     const colorDiv = document.createElement('div');
     colorDiv.className = 'color';
     colorDiv.style.backgroundColor = `${randomColor()}`;
-    if(index === 0) {
+    if (index === 0) {
       colorDiv.classList.add('selected');
     }
     paleta.appendChild(colorDiv);
