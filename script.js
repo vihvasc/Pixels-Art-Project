@@ -101,11 +101,12 @@ criarQuadroPixels();
 
 function criarPixelArt(tamanho) {
   const container = document.getElementById('pixel-board');
+  const tamanhoPixel = 200/tamanho;
 
   for (let linhas = 0; linhas < tamanho; linhas += 1) {
     const linha = document.createElement('div');
     linha.className = 'lines';
-    linha.style.height = '40px';
+    linha.style.height = tamanhoPixel + 'px';
     container.appendChild(linha);
 
     for (let colunas = 0; colunas < tamanho; colunas += 1) {
@@ -117,8 +118,8 @@ function criarPixelArt(tamanho) {
       pixel.style.borderColor = 'Black';
       pixel.style.borderWidth = '1px';
       pixel.style.borderStyle = 'solid';
-      pixel.style.width = '40px';
-      pixel.style.height = '40px';
+      pixel.style.width = tamanhoPixel + 'px';
+      pixel.style.height = tamanhoPixel + 'px';
 
       linha.appendChild(pixel);
     }
@@ -151,6 +152,7 @@ botaoVQV.addEventListener('click', function () {
 
   removePixelArt();
   criarPixelArt(valorQuadro);
+  pintaPixels();
 });
 
 // 7 - Clicar em uma das cores da paleta faz com que ela seja selecionada e utilizada para preencher os pixels no quadro.
