@@ -31,7 +31,7 @@ function geraQuadradao() {
   pegaTudo[0].appendChild(board);
 }
 
-let corEscolhida = 'rgb(0,0,0)';
+let corEscolhida = 'rgb(0, 0, 0)';
 quadrado[0].style.backgroundColor = corEscolhida;
 
 function pintaQuadradinho() {
@@ -62,14 +62,16 @@ function adicionaCorNaPaleta() {
 }
 
 function limpaQuadradao() {
-  let quadradinho = document.querySelector('#clear-board');
-  let quadrado = document.querySelectorAll('.pixel');
-  for (let umQuadrado of quadrado){
-    quadradinho.addEventListener('click', function() 
-    {umQuadrado.style.backgroundColor = 'white'});
- }
+  console.log('limpa');
+  let limpaQuadrado = document.querySelector('#clear-board');
+  limpaQuadrado.addEventListener('click', function () {
+    const quadrado = document.querySelectorAll('.pixel');
+    for (let quadradinho of quadrado){
+      quadradinho.style.backgroundColor = 'rgb(255, 255, 255)'};
+    });
 }
 limpaQuadradao();
+
 
 window.onload = function () {
   atribuiCores();
