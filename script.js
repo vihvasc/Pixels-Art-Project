@@ -13,5 +13,5 @@ function cores_da_paleta () {
 
 window.onload = function () {
     cores_da_paleta ();
-    
+
 }
