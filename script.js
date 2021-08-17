@@ -1,7 +1,6 @@
-// CRIA QUADRO DE CORES
+const table = document.getElementById('pixel-board');
 
 function createBoard() {
-  const table = document.getElementById('pixel-board');
   const linhas = 5;
   const colunas = 5;
 
@@ -81,3 +80,43 @@ function removeTodasCores() {
 
 const button = document.getElementById('clear-board');
 button.addEventListener('click', removeTodasCores);
+
+const buttonGenerate = document.getElementById('generate-board');
+
+function remove() {
+  const boxLine = document.querySelectorAll('.lines');
+  const secao = document.getElementById('pixel-board');
+  for (let index = 0; index < boxLine.length; index += 1) {
+    secao.removeChild(boxLine[index]);
+  }
+  return secao;
+}
+
+function verificacao() {
+  const inputNumber = document.getElementById('board-size').value;
+  const value = inputNumber;
+  document.getElementById('board-size').value = '';
+  if (value === '') {
+    alert('Board inválido!');
+  }
+  const linhas = value;
+  return linhas;
+}
+
+function geraBlocos() {
+  remove();
+  const linhas = verificacao();
+  const colunas = linhas;
+  console.log(linhas);
+  for (let linhaAtual = 0; linhaAtual < linhas; linhaAtual += 1) {
+    const divRow = document.createElement('div');
+    divRow.className = 'lines';
+    for (let criaColunas = 0; criaColunas < colunas; criaColunas += 1) {
+      const divBox = document.createElement('div');
+      divBox.className = 'pixel';
+      divRow.appendChild(divBox);
+    }
+    table.appendChild(divRow);
+  }
+}
+buttonGenerate.addEventListener('click', geraBlocos);
