@@ -78,10 +78,13 @@ function randomColor() {
 
 function randomPaletteColor() {
   const paleta = document.getElementById('color-palette');
-  for (let index = 0; index < 3; index += 1) {
+  for (let index = 0; index < 10; index += 1) {
     const colorDiv = document.createElement('div');
     colorDiv.className = 'color';
     colorDiv.style.backgroundColor = `${randomColor()}`;
+    if(index === 0) {
+      colorDiv.classList.add('selected');
+    }
     paleta.appendChild(colorDiv);
   }
 }
