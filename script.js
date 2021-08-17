@@ -11,7 +11,14 @@ function cores_da_paleta () {
     }
 }
 
+function preto_incial (color_divs) {
+    color_divs.classList.add('selected');
+
+}
+
+
+
 window.onload = function () {
     cores_da_paleta ();
-
+    preto_incial (document.querySelector('.color'));
 }
