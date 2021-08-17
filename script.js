@@ -6,6 +6,7 @@ cliquei2;
 cliquei3;
 cliquei4;
 corPixels;
+butaoDeReset;
 }
 
 function corbranca (){
@@ -69,6 +70,13 @@ function corPixels (event) {
     }
 }
 
+function butaoDeReset () {
+    let pixelsAlterados = document.getElementsByClassName("pixel")
+    for(i = 0; i < pixelsAlterados.length; i+=1){
+        pixelsAlterados[i].style.backgroundColor = "white"
+    }
+}
+
 let corArmazenada = "black";
 
 let cor1 = document.getElementsByClassName("color")[0]
@@ -89,3 +97,6 @@ cor4.style.backgroundColor = "purple";
 
 let pixels = document.querySelector("#pixel-board")
 pixels.addEventListener("click", corPixels)
+
+let buttom = document.getElementById("clear-board")
+buttom.addEventListener("click", butaoDeReset)
