@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+body {
+  text-align: center;
+  margin: 10px auto;
+  background-color: rgb(134, 255, 97);
+  white-space: nowrap;
+}
+
 .color {
   border: solid 1px black;
   display: inline-block;
@@ -11,12 +18,16 @@
   margin-bottom: 30px;
 }
 
+#title{
+  margin: 15px auto;
+}
+
 nav {
   margin-bottom: 30px;
 }
 
 #pixel-board {
-  
+  line-height: 0;
 }
 
 .pixel {
