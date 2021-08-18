@@ -9,11 +9,11 @@
 }
 
 #pixel-board {
-    margin-top: 10px;
-    margin-left: 10px;
-    width: 18%;
-    display: flex;
-    flex-wrap: wrap;
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 18%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .color {
