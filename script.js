@@ -18,8 +18,19 @@ lightGreenColor.addEventListener('click', changeSelected);
 function pixelColorSelected(event) {
   const select = document.querySelector('.selected');
   const selectColor = window.getComputedStyle(select).getPropertyValue('background-color');
-  event.target.style.backgroundColor = selectColor;
+  const argumentEvento = event.target;
+  argumentEvento.style.backgroundColor = selectColor;
 }
 document.querySelector('#pixel-board').addEventListener('click', pixelColorSelected);
 
 // 9. Created function for button of clean
+const button = document.querySelector('#clear-board');
+
+function clearPixels() {
+  const pixel = document.querySelectorAll('.pixel');
+
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+}
+button.addEventListener('click', clearPixels);
