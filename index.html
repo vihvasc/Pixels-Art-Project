@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,51 +8,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 id='title'>Paleta de Cores</h1>
-    <div id='color-palette'>
-        <div id="cor1" class="color"></div>
-        <div id="cor2" class="color"></div>
-        <div id="cor3" class="color"></div>
-        <div id="cor4" class="color"></div>
-    </div>
-    <div id="pixel-board">
-        <div class="linha">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="linha">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="linha">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="linha">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-        <div class="linha">
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-            <div class="pixel"></div>
-        </div>
-    </div>
-
-    <script src='script.js'></script>
+    <h1 id="title">Paleta de Cores</h1>
+    <div id="color-palette"></div>
+    <button id="clear-board">Limpar</button>
+    <input type="number" min="1" id="board-size">
+    <button id="generate-board">VQV</button>
+    <div id="pixel-board"></div>
+    <script src="script.js"></script>
 </body>
 </html>
