@@ -14,6 +14,8 @@
     addDivs.id = colors[i];
   }
 
+// funcao handleRandomColor feita baseada na explicacao do link a seguir: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+
   function handleRandomColor (){
     let r = Math.random() * 255 ;
     let g = Math.random() * 255 ;
