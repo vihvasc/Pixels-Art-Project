@@ -13,6 +13,13 @@ button1.classList.add('selected')
 inputButton.addEventListener('click', createNewGrid)
 
 document.querySelector('#clear-board').addEventListener('click', clearBoard)
+
+function generateColors(){
+    button2.style.backgroundColor = '#'+ randomColor();
+    button3.style.backgroundColor = '#'+ randomColor();
+    button4.style.backgroundColor = '#'+ randomColor();
+}
+
 function makeGridEvents(){
     let index = document.querySelectorAll('.pixel').length 
     for(let count = 0; count < index; count += 1){
@@ -102,5 +109,9 @@ function removeGrid(){
     let pixelBoard = document.querySelector('#pixel-board')
     pixelBoard.innerHTML = ''
 }
-
+function randomColor(){
+    var randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return randomColor
+}
+generateColors();
 createGrid();
