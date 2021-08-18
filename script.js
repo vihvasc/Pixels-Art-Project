@@ -14,8 +14,6 @@
     addDivs.id = colors[i];
   }
 
-// funcao handleRandomColor feita baseada na explicacao do link a seguir: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
-
   function handleRandomColor (){
     let r = Math.random() * 255 ;
     let g = Math.random() * 255 ;
@@ -129,3 +127,7 @@ function clearPixelColor (){
 }
 }
 clearPixelColor();
+
+// REFERENCIAS
+// funcao handleRandomColor feita baseada na explicacao do link a seguir: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+// Requisito 10, 11 e 12 feito em pair programming com Matheus Pessoa Fonseca
