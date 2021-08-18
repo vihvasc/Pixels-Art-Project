@@ -1,14 +1,19 @@
 h1{
  text-align: center;
 }
+#divPrincipal {
+  text-align: center;
+}
 #color-palette{
   width: 400px;
   height: 75px;
   margin: auto;
-
-
-  
 }
+
+#board-size {
+  margin: auto;
+}
+  
 .color {
   width: 40px;
   height: 40px;
@@ -17,8 +22,6 @@ h1{
   margin-left: 47px;
 }
 #pixel-board{
-width: 210px;
-height: 210px;
 background-color: red;
 margin: auto;
 }
@@ -30,17 +33,12 @@ margin: auto;
   float: left;
 }
 
-
-
-
 #clear-board {
   width: 100px;
   height: 30px;
   border: 1px solid black;
-  display: flex;
+  /* display: flex; */
   margin: auto;
   margin-bottom: 30px;
   text-align: center;
-    /* margin-left: 620px;
-  margin-bottom: 10px; */
 }

@@ -20,21 +20,43 @@
     paletteColor.style.display = 'inline-block'
   }
 
-
+  let getDivPixel = document.getElementById('pixel-board');
   function addPixel (number){  
-    for(i = 0; i < number; i += 1){
-      let getDivPixel = document.getElementById('pixel-board');
+    for(i = 0; i < (number**2); i += 1){
       let DivLines = document.createElement('div');
       getDivPixel.appendChild(DivLines);
       DivLines.className = 'pixel';
+      divWidht = number * 42;
+      divHeight = number * 42;
+      getDivPixel.style.width = divWidht + 'px';
+      getDivPixel.style.height = divHeight + 'px';
     }
   }
-  addPixel(25);
+  let quantidadeInicial = 5;
+  addPixel(quantidadeInicial);
+
+  
+  function deletePixelBoard (){
+    getDivPixel.innerHTML = '';
+  }
+  
+  let getInput = document.getElementById('board-size');
+  let getAddButton = document.getElementById('generate-board');
+  function getInputText (){
+    if(getInput.value > 4 && getInput.value < 51){
+      deletePixelBoard();
+      addPixel(getInput.value);
+      pixelColor();
+    } else {
+      alert("Board inválido!");
+    }
+  }
+  getAddButton.addEventListener('click', getInputText);
 window.onload = function(){
   const getBlackColor = document.querySelector('.color');
   getBlackColor.classList += ' selected';
 
-  function selectColor() {
+  function selectColor(event) {
     const initialColor = document.querySelectorAll('.selected');
     initialColor[0].classList.remove('selected');
     const target = event.target;
@@ -57,17 +79,13 @@ for (i = 0; i < getDivPalette.length; i += 1){
   }
 
 } 
-// let paletteBackgroundColor =
 
 function pixelColor (){
   let pixel = document.getElementsByClassName('pixel');
-  let paletteBackgroundColor = document.getElementsByClassName('selected')[0]
-
-
+  
   for (i = 0; i < pixel.length; i += 1){
     pixel[i].addEventListener('click', pixelChangeColor);
   }
-
   function pixelChangeColor (obj){
     obj.target.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('selected')[0]).getPropertyValue('background-color');
     console.log(obj.target);
