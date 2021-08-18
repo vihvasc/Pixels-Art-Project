@@ -61,7 +61,9 @@ function createNewGrid(){
 }
 function createGrid(){
     removeGrid();
+    handleInvalidNumbers();
     if(inputSize.value){
+
         var numberOfLines = inputSize.value; 
     }
     else{
@@ -82,7 +84,14 @@ function createGrid(){
     }
     makeGridEvents();
 }
-createGrid();
+function handleInvalidNumbers(){
+    if(inputSize.value < 5 && inputSize.value){
+        inputSize.value = 5
+    }
+    else if(inputSize.value > 50){
+        inputSize.value = 50
+    }
+}
 function clearBoard(){
     let index = document.querySelectorAll('.pixel').length 
     for(let count = 0; count < index ; count += 1){
@@ -93,3 +102,5 @@ function removeGrid(){
     let pixelBoard = document.querySelector('#pixel-board')
     pixelBoard.innerHTML = ''
 }
+
+createGrid();
