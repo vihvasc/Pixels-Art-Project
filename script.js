@@ -45,12 +45,12 @@ function palleteColors() {
   paleteColor[3].style.backgroundColor = cor3;
 }
 
-function createPixes() {
-  const N = 5;
+function createPixels(N) {
   const NN = N ** 2;
   const pixelBoard = document.getElementById('pixel-board');
-
-  for (let i = 0; i < NN - 1; i += 1) {
+  console.log(NN);
+  pixelBoard.innerHTML = '';
+  for (let i = 0; i < NN; i += 1) {
     const pixel = document.createElement('div');
     pixel.className = 'pixel';
     pixelBoard.appendChild(pixel);
@@ -77,7 +77,7 @@ function changeSelected() {
   }
 }
 
-function selectChnagePixelColor() {
+function selectChangePixelColor() {
   let color = 'rgb(0,0,0)';
 
   document.addEventListener('click', (event) => {
@@ -93,9 +93,38 @@ function selectChnagePixelColor() {
   }, false);
 }
 
+function resetChangeBoard(sizeLength) {
+  const palleteSize = document.getElementById('pixel-board');
+  const singlePixelSize = 42;
+  palleteSize.innerHTML = '';
+  palleteSize.style.height = `${sizeLength * singlePixelSize}px`;
+  palleteSize.style.width = `${sizeLength * singlePixelSize}px`;
+  createPixels(sizeLength);
+}
+
+function changePixelBoardSize() {
+  const inputUsr = document.getElementById('board-size');
+  let sizeLength = inputUsr.value;
+
+  if (sizeLength === '') {
+    window.alert('Board Inválido!');
+  } else if (sizeLength < 5) {
+    sizeLength = 5;
+    inputUsr.value = 5;
+    resetChangeBoard(sizeLength);
+  } else if (sizeLength > 50) {
+    sizeLength = 50;
+    inputUsr.value = 50;
+    resetChangeBoard(sizeLength);
+  } else {
+    resetChangeBoard(sizeLength);
+  }
+}
+
 window.onload = function main() {
+  const initialSize = 5;
   palleteColors();
-  createPixes();
+  createPixels(initialSize);
 
   const button = document.getElementById('clear-board');
   button.addEventListener('click', whitePixels);
@@ -105,5 +134,8 @@ window.onload = function main() {
     item.addEventListener('click', changeSelected);
   });
 
-  selectChnagePixelColor();
+  selectChangePixelColor();
+
+  const changeBoardSizeBtn = document.getElementById('generate-board');
+  changeBoardSizeBtn.addEventListener('click', changePixelBoardSize);
 };

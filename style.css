@@ -12,7 +12,7 @@ h1 {
   margin-bottom: 18px;
 }
 
-#clear-board {
+.button {
   display: inline-block;
   padding: 6px 18px;
   border: solid 2px black;
