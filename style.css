@@ -1,0 +1,51 @@
+div{
+    background-color: white;
+}
+
+.color{
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border: 1px;
+    border-style: solid;
+}
+
+#color-palette {
+    height: 100px;
+    width: 320px;
+    display: inline-block;
+}
+
+.color1{
+    background-color: black;
+}
+
+.color2{
+    background-color: red;
+}
+
+.canvasPixelBox{
+
+}
+
+.color3{
+    background-color: green;
+}
+
+.color4{
+    background-color: yellow;
+}
+
+.pixel{
+display: inline-block;
+width: 40px;
+height: 40px;
+border: 1px;
+border-style: solid;
+margin-bottom: -5px;
+margin-top: 0px;
+}
+
+#pixel-board{
+}
+
