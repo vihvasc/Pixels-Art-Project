@@ -32,7 +32,6 @@ function handleCreateBoard(number) {
     let pixel = document.createElement('div');
     pixel.classList.add('pixel');
     pixelBoard.appendChild(pixel);
-
     pixelBoard.style.width = 42 * number + 'px';
     pixelBoard.style.height = 42 * number + 'px';
   }
@@ -54,6 +53,12 @@ function handleInput() {
     for (pixel of arrayPixels) {
       pixel.addEventListener('click', handlePaint);
     }
+  } else if (inputValue > 50) {
+    handleDeleteBoard();
+    handleCreateBoard(50);
+  } else if (inputValue < 5) {
+    handleDeleteBoard();
+    handleCreateBoard(5);
   } else {
     alert('Board inválido!');
   }

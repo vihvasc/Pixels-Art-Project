@@ -27,6 +27,12 @@
   float: left;
 }
 
+.pixel-board {
+  margin: auto;
+  max-width: 294px;
+  max-height: 294px;
+}
+
 #other-tools {
   text-align: center;
   margin: 50px 0;
