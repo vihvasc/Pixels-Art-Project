@@ -8,3 +8,22 @@ cor2.style.backgroundColor = 'blue';
 cor3.style.backgroundColor = 'red';
 cor4.style.backgroundColor = 'yellow';
 
+cor1.addEventListener('click', function(){
+    document.querySelector('.selected').classList.remove('selected');
+    cor1.classList.add('selected');
+})
+
+cor2.addEventListener('click', function(){
+    document.querySelector('.selected').classList.remove('selected');
+    cor2.classList.add('selected');
+})
+
+cor3.addEventListener('click', function(){
+    document.querySelector('.selected').classList.remove('selected');
+    cor3.classList.add('selected');
+})
+
+cor4.addEventListener('click', function(){
+    document.querySelector('.selected').classList.remove('selected');
+    cor4.classList.add('selected');
+})
