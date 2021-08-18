@@ -1,5 +1,6 @@
 const selectColor = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
+const limpar = document.getElementById('clear-board');
 
 // criar o evento de click//
 function colorPaint(event) {
@@ -22,3 +23,9 @@ function pintar(eventPaint) {
 for (let i = 0; i < pixels.length; i += 1) {
   pixels[i].addEventListener('click', pintar);
 }
+function limparQuadro() {
+  for (let i = 0; i < pixels.length; i += 1) {
+    pixels[i].style.backgroundColor = 'white';
+  }
+}
+limpar.addEventListener('click', limparQuadro);
