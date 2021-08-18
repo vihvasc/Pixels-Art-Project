@@ -4,9 +4,9 @@ let botãoDeLimpeza = document.querySelector('#clear-board');
 
 
 paletaDeCores[0].style.backgroundColor = 'black';
-paletaDeCores[1].style.backgroundColor = 'blue';
-paletaDeCores[2].style.backgroundColor = 'cyan';
-paletaDeCores[3].style.backgroundColor = 'green';
+// paletaDeCores[1].style.backgroundColor = 'blue';
+// paletaDeCores[2].style.backgroundColor = 'cyan';
+// paletaDeCores[3].style.backgroundColor = 'rgba';
 
 paletaDeCores[0].classList.add('selected');
 
@@ -16,8 +16,8 @@ function createPixel(quantidadeDeQuadrados = 5) {
         let pixel = document.createElement('div');
         pixel.className = 'pixel';
         telaDePintura.appendChild(pixel);
-        
-        }
+
+    }
 }
 window.onload = createPixel()
 
@@ -59,7 +59,12 @@ botãoDeLimpeza.addEventListener('click', limpar)
 let valorImput = document.querySelector('#board-size')
 
 
-function apagarBord(){
+
+
+// montar tabela 
+
+
+function apagarBord() {
     telaDePintura.innerHTML = ""
 }
 
@@ -67,21 +72,51 @@ function alertaBotao() {
     alert("Board inválido!");
 }
 
-function montar() { 
-   if (valorImput.value <= 50 && valorImput.value >= 5) {
-        apagarBord()
-        quantidadeDeQuadrados = valorImput.value
-        createPixel(quantidadeDeQuadrados)
-        telaDePintura.style.width = `${quantidadeDeQuadrados * 42}px`
-    }else if (valorImput.value >= 51){
-        quantidadeDeQuadrados = 50
-        createPixel(quantidadeDeQuadrados)
-        telaDePintura.style.width = `${quantidadeDeQuadrados * 42}px`
+function montagem550() {
+    apagarBord()
+    quantidadeDeQuadrados = valorImput.value;
+    createPixel(quantidadeDeQuadrados);
+    telaDePintura.style.width = `${quantidadeDeQuadrados * 42}px`;
+};
+
+function montagem600() {
+    apagarBord()
+    if (valorImput.value <= 5) {
+        quantidadeDeQuadrados = 5;
     } else {
-        alertaBotao()
+        quantidadeDeQuadrados = 50;
+    }
+    createPixel(quantidadeDeQuadrados);
+    telaDePintura.style.width = `${quantidadeDeQuadrados * 42}px`;
+}
+
+function montar() {
+    if (valorImput.value <= 50 && valorImput.value >= 5) {
+        montagem550();
+    } else {
+        montagem600();
+        alertaBotao();
     }
 }
 
 let botaoDeAtualização = document.querySelector('#generate-board');
 
 botaoDeAtualização.addEventListener('click', montar)
+
+// cores aleatórias
+
+function geradorDeCores(tranparencia = 1){
+let red = parseInt(Math.random()*255);
+let green = parseInt(Math.random()*255);
+let blue = parseInt(Math.random()*255);
+
+return `rgba(${red},${green},${blue},${tranparencia})`
+}
+
+function coreNaTela(){
+paletaDeCores[1].style.backgroundColor = geradorDeCores();
+paletaDeCores[2].style.backgroundColor = geradorDeCores();
+paletaDeCores[3].style.backgroundColor = geradorDeCores();
+}
+
+window.onload = coreNaTela()
