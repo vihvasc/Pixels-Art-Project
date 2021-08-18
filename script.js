@@ -7,3 +7,4 @@ cor1.style.backgroundColor = 'black';
 cor2.style.backgroundColor = 'blue';
 cor3.style.backgroundColor = 'red';
 cor4.style.backgroundColor = 'yellow';
+
