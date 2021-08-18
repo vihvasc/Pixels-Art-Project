@@ -17,9 +17,17 @@ function handleBlackFirst(element) {
 }
 handleBlackFirst(firstColor);
 
-secondColor.style.background = '#2A522E';
-thirdColor.style.background = '#275AD8';
-fourthColor.style.background = '#E7C857';
+function handleRandomColor() {
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+secondColor.style.background = handleRandomColor();
+thirdColor.style.background = handleRandomColor();
+fourthColor.style.background = handleRandomColor();
 
 function handleSelectColor(event) {
   let elementSelectorClass = document.querySelector('.selected');
@@ -46,19 +54,11 @@ function handleDeleteBoard() {
 function handleInput() {
   let inputValue = parseInt(document.getElementById('board-size').value, 10);
   if (inputValue > 4 && inputValue < 51) {
-    handleDeleteBoard();
-    handleCreateBoard(inputValue);
-
-    arrayPixels = document.getElementsByClassName('pixel');
-    for (pixel of arrayPixels) {
-      pixel.addEventListener('click', handlePaint);
-    }
+    handlePixelFenix(inputValue);
   } else if (inputValue > 50) {
-    handleDeleteBoard();
-    handleCreateBoard(50);
+    handlePixelFenix(50);
   } else if (inputValue < 5) {
-    handleDeleteBoard();
-    handleCreateBoard(5);
+    handlePixelFenix(5);
   } else {
     alert('Board inválido!');
   }
@@ -73,8 +73,18 @@ function handlePaint(event) {
   let elementSelectorClass = document.querySelector('.selected');
   event.target.style.background = elementSelectorClass.style.background;
 }
-for (pixel of arrayPixels) {
-  pixel.addEventListener('click', handlePaint);
+function handleAddPixelListener() {
+  for (pixel of arrayPixels) {
+    pixel.addEventListener('click', handlePaint);
+  }
+}
+
+handleAddPixelListener();
+
+function handlePixelFenix(number) {
+  handleDeleteBoard();
+  handleCreateBoard(number);
+  handleAddPixelListener();
 }
 
 function handleClearBoard() {
