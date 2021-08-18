@@ -24,6 +24,8 @@ h1{
 #pixel-board{
 background-color: red;
 margin: auto;
+/* max-width: 294px; */
+/* max-height: 294px; */
 }
 .pixel{
   width: 40px;

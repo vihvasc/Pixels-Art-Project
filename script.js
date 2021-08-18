@@ -22,15 +22,15 @@
 
   let getDivPixel = document.getElementById('pixel-board');
   function addPixel (number){  
-    for(i = 0; i < (number**2); i += 1){
-      let DivLines = document.createElement('div');
-      getDivPixel.appendChild(DivLines);
-      DivLines.className = 'pixel';
-      divWidht = number * 42;
-      divHeight = number * 42;
-      getDivPixel.style.width = divWidht + 'px';
-      getDivPixel.style.height = divHeight + 'px';
-    }
+      for(i = 0; i < (number**2); i += 1){
+        let DivLines = document.createElement('div');
+        getDivPixel.appendChild(DivLines);
+        DivLines.className = 'pixel';
+        divWidht = number * 42;
+        divHeight = number * 42;
+        getDivPixel.style.width = divWidht + 'px';
+        getDivPixel.style.height = divHeight + 'px';
+      } 
   }
   let quantidadeInicial = 5;
   addPixel(quantidadeInicial);
@@ -39,15 +39,24 @@
   function deletePixelBoard (){
     getDivPixel.innerHTML = '';
   }
+  function renewPixelBoard (number){
+    deletePixelBoard();
+    addPixel(number);
+    pixelColor();
+  }
   
-  let getInput = document.getElementById('board-size');
+  // let getInput = parseInt(document.getElementById('board-size'));
   let getAddButton = document.getElementById('generate-board');
   function getInputText (){
-    if(getInput.value > 4 && getInput.value < 51){
-      deletePixelBoard();
-      addPixel(getInput.value);
-      pixelColor();
-    } else {
+    let getInput = parseInt(document.getElementById('board-size').value);
+    if(getInput > 4 && getInput < 51){
+      renewPixelBoard(getInput);
+    } else if (getInput > 50){
+      renewPixelBoard(50);
+    } else if (getInput < 5){
+      renewPixelBoard(5);
+    }
+    else{
       alert("Board inválido!");
     }
   }
