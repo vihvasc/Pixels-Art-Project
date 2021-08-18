@@ -1,6 +1,8 @@
 window.onload = function () {
   defineSizeOfBoard();
   createPixelsInBoard(5);
+  selectColor();
+  paintPixels();
 };
 
 function createPixelsInBoard(pixelsByTheUser) {
@@ -44,7 +46,41 @@ function defineSizeOfBoard() {
     pixelBoard.innerHTML = ' ';
 
     createPixelsInBoard(pixelNumber);
+    paintPixels();
   });
 }
 
-function paintPixels() {}
+function selectColor() {
+  let paletteColors = document.querySelectorAll('.color');
+
+  for (let index = 0; index < paletteColors.length; index += 1) {
+    paletteColors[index].addEventListener('click', selectColor);
+  }
+
+  function selectColor(originEvent) {
+    console.log('cheguei');
+    for (let index = 0; index < paletteColors.length; index += 1) {
+      paletteColors[index].classList.remove('selected');
+    }
+
+    originEvent.target.classList.add('selected');
+  }
+}
+
+function paintPixels() {
+  let pixelsOfBoard = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixelsOfBoard.length; index++) {
+    pixelsOfBoard[index].addEventListener('click', paint);
+  }
+
+  function paint(originEvent) {
+    console.log('cheguei');
+    let selectedColor = document.querySelector('.selected');
+    let colorOfSelected = window
+      .getComputedStyle(selectedColor, null)
+      .getPropertyValue('background-color');
+
+    originEvent.target.style.backgroundColor = colorOfSelected;
+  }
+}
