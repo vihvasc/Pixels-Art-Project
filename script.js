@@ -1,3 +1,4 @@
+const button = document.querySelector('#clear-board');
 const darkColor = document.querySelector('.dark');
 const darkBlueColor = document.querySelector('.dark-blue');
 const lightBlueColor = document.querySelector('.light-blue');
@@ -24,8 +25,6 @@ function pixelColorSelected(event) {
 document.querySelector('#pixel-board').addEventListener('click', pixelColorSelected);
 
 // 9. Created function for button of clean
-const button = document.querySelector('#clear-board');
-
 function clearPixels() {
   const pixel = document.querySelectorAll('.pixel');
 
