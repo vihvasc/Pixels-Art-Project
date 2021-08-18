@@ -51,10 +51,8 @@ function clearPixel() {
   let clearButton = document.createElement('button');
   clearButton.id = 'clear-board';
   clearButton.innerText = 'Limpar';
-  document.body.insertBefore(
-    clearButton,
-    document.getElementById('pixel-board')
-  );
+  divButton = document.getElementById('button-clear');
+  divButton.appendChild(clearButton);
   clearButton.addEventListener('click', function () {
     for (let index = 0; index < pixels.length; index += 1) {
       pixels[index].style.backgroundColor = 'white';

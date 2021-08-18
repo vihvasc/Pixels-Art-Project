@@ -1,11 +1,35 @@
+body {
+  background-image: url(https://cdnb.artstation.com/p/assets/images/images/024/538/827/original/pixel-jeff-clipa-s.gif?1582740711&dl=1);
+  font-family: 'Palette Mosaic', cursive;
+}
+
 #title {
   margin-bottom: 30px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 90px;
+}
+
+#color-palette {
+  display: flex;
+  justify-content: center;
+}
+#button-clear {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#pixel-board {
+  margin-top: 20px;
 }
 
 .pixel {
   background-color: white;
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border: 1px solid black;
   display: inline-block;
   cursor: pointer;
@@ -13,37 +37,39 @@
 .line {
   margin: 0%;
   padding: 0%;
+  display: flex;
+  justify-content: center;
 }
 
-.sunset-orange {
-  /* background-color: rgb(255, 85, 85); */
+.purple-heart {
+  /* background-color: #5000c3; */
   border: 1px solid black;
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
-.screaming-green {
+.ultramarine {
   /* background-color: rgb(85, 255, 85); */
   border: 1px solid black;
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
-.laser-lemon {
+.pink {
   /* background-color: rgb(255, 255, 85); */
   border: 1px solid black;
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
 .black {
   /* background-color: black; */
   border: 1px solid black;
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
 }
