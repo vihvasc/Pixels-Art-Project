@@ -72,3 +72,11 @@ btnClear.addEventListener('click', () => {
 });
 
 generateColorPalette(4);
+
+/* refs utilizadas:
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/input
+https://ricardo-reis.medium.com/o-m%C3%A9todo-foreach-do-array-javascript-878cec42f66c
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+*/
