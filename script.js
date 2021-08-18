@@ -27,3 +27,11 @@ cor4.addEventListener('click', function(){
     document.querySelector('.selected').classList.remove('selected');
     cor4.classList.add('selected');
 })
+
+let selectPixels = document.querySelectorAll('.pixel');
+for (let index=0; index < selectPixels.length; index+=1) {
+    selectPixels[index].addEventListener('click', function (){
+        selectPixels[index].style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
+        
+    })
+}
