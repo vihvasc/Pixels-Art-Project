@@ -12,6 +12,11 @@ function createColorPalette() {
   }
 }
 
+const pixels = document.getElementsByClassName('pixel')
+for (let i = 0; i < pixels.length; i += 1) {
+  pixels[i].addEventListener('click', paintPixel)
+}
+
 function paletteColors() {
   const palette = document.getElementsByClassName('color');
   for (let i = 0; i < palette.length; i += 1) {
@@ -44,25 +49,6 @@ function paintPixel() {
   event.target.style.backgroundColor = colorSelected[0].style.backgroundColor;  
   console.log(colorSelected[0].style.backgroundColor)
 
-}
-
-function createBoardInitial() {
-  const n = 5;
-  for (let i = 0; i < n; i += 1) {
-    const createElement = document.createElement('div');
-    pixelBoard.appendChild(createElement);
-    createElement.classList.add('lines');
-  }
-  const lines = document.getElementsByClassName('lines');
-  for (let i = 0; i < n; i += 1) {
-    for (let j = 0; j < n; j += 1) {
-      const createElement = document.createElement('div');
-      lines[i].appendChild(createElement);
-      createElement.classList.add('pixel');
-      createElement.style.backgroundColor = 'white';
-      createElement.addEventListener('click', paintPixel);
-    }
-  }
 }
 
 function createBoard() {
@@ -145,8 +131,6 @@ function clear() {
   }
 }
 
-createBoard();
-createBoardInitial();
 createColorPalette();
 paletteColors();
 
