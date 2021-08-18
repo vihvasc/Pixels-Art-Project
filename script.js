@@ -1,6 +1,9 @@
-window.onload = function () {
-  creatBoard ();
-  clickPixel ();
+window.onload = function() {
+  let buton = document.querySelector('#clear-board');
+  creatBoard();
+  clickPixel();
+  buton.addEventListener('click', clearBoard);
+  
 }
 
 let board = document.querySelector('#pixel-board');
@@ -28,7 +31,7 @@ function elementSelected (origem) {
 
 
 
-function creatBoard () {
+function creatBoard() {
   for(index = 0; index < boardLength * boardLength; index+= 1) {
     let creatPixel = document.createElement('div');
     creatPixel.className = 'pixel';
@@ -36,14 +39,21 @@ function creatBoard () {
   }
 }
 
-function clickPixel (){
-  let palettePixel = document.querySelectorAll(".pixel");  
+function clickPixel() {
+  let palettePixel = document.querySelectorAll(".pixel");
   for(let i = 0; i < 25; i+= 1){
     palettePixel[i].addEventListener('click', colorPixel)  
   }    
 }
 
-function colorPixel (origem){
+function colorPixel(origem) {
   let selected = document.querySelector('.selected').style.backgroundColor;
   origem.target.style.backgroundColor = selected;
+}
+
+function clearBoard(){
+  let palettePixel = document.querySelectorAll(".pixel");
+  for(let index = 0; index < 25; index += 1){
+    palettePixel[index].style.backgroundColor = 'white';
+  }
 }

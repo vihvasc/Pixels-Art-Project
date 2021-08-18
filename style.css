@@ -5,7 +5,11 @@
 #color-palette {
   width: 80%;
   display: flex;
-  
+}
+
+#clear-board {
+  margin-left: 87px;
+  margin-top: 10px;
 }
 
 #pixel-board {
