@@ -93,3 +93,10 @@ function handleClearBoard() {
   }
 }
 buttonClear.addEventListener('click', handleClearBoard);
+
+/* 
+! Referências
+ * Função handleRandomColor baseada na explicação do link a seguir: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+ *
+ * Requisitos bônus (10, 11 e 12) feito em pair coding com o Gabriel Jorge (https://github.com/GabrielJorge94)
+ */
