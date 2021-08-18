@@ -8,8 +8,18 @@
 
 }
 
+body {
+  background-image: url('https://cdn.pixabay.com/photo/2017/09/12/11/56/universe-2742113_960_720.jp');
+  background-color: beige;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h1 {
   margin-bottom: 18px;
+  border: solid 1px black;
+  border-radius: 10px;
+  background-color: rgb(177, 177, 228);
 }
 
 .button {
@@ -26,6 +36,11 @@ h1 {
 
 #color-palette {
   margin: auto;
+}
+
+#board-size {
+  border: solid 1px black;
+  border-radius: 10px;
 }
 
 .color {

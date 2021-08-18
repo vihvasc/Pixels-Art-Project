@@ -87,8 +87,9 @@ function selectChangePixelColor() {
   }, false);
 
   document.addEventListener('click', (event) => {
-    if (event.target.classList.contains('pixel')) {
-      event.target.style.backgroundColor = color;
+    const eventLet = event;
+    if (eventLet.target.classList.contains('pixel')) {
+      eventLet.target.style.backgroundColor = color;
     }
   }, false);
 }
