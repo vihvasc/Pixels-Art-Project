@@ -130,4 +130,4 @@ clearPixelColor();
 
 // REFERENCIAS
 // funcao handleRandomColor feita baseada na explicacao do link a seguir: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
-// Requisito 10, 11 e 12 feito em pair programming com Matheus Pessoa Fonseca
+// Requisito 10, 11 e 12 feito em pair programming com Matheus Pessoa Fonseca(https://github.com/matt-pessoa)
