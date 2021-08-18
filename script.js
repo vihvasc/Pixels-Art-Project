@@ -1,15 +1,18 @@
 const pixels = document.getElementsByClassName('pixel');
 const pixelGrid = document.body.querySelector('#pixel-board');
+const colorsList = document.getElementsByClassName('color');
+const colorPalettes = document.getElementById('color-pallete');
 let initialGrid = 5;
+
 function colorPalette() {
   const colors = ['black', 'yellow', 'blue', 'grey'];
-  const colorsList = document.getElementsByClassName('color');
 
   for (let index = 0; index < colorsList.length; index += 1) {
     const currentColor = colors[index];
     const currentColorList = colorsList[index];
     currentColorList.style.backgroundColor = currentColor;
   }
+  generateRandomPalettes();
 }
 
 function createPixels() {
@@ -22,7 +25,6 @@ function createPixels() {
 }
 
 function selectedColor() {
-  const colorsList = document.querySelectorAll('.color');
   for (let index = 0; index < colorsList.length; index += 1) {
     colorsList[index].addEventListener('click', (event) => {
       const recoverSelected = document.querySelector('.selected');
@@ -73,15 +75,35 @@ function setPixels() {
     removeOldBoard();
     initialGrid = inputBoardSize.value;
     createPixels();
+    paintPixels();
   });
 }
 
+function generateRandomNumber() {
+  const randomNumber = Math.floor(Math.random() * 255);
+  return randomNumber;
+}
+
+function generateRandomColors() {
+  const color1 = generateRandomNumber();
+  const color2 = generateRandomNumber();
+  const color3 = generateRandomNumber();
+  const rgb = `rgb(${color1}, ${color2}, ${color3})`;
+  return rgb;
+}
+
+function generateRandomPalettes() {
+  for (let index = 1; index < colorsList.length; index += 1) {
+    colorsList[index].style.backgroundColor = generateRandomColors();
+  }
+}
+
 function pixelsArt() {
-  colorPalette();
+  setPixels();
   createPixels();
+  colorPalette();
   selectedColor();
   paintPixels();
   cleaningBoard();
-  setPixels();
 }
 window.onload = pixelsArt;
