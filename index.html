@@ -15,18 +15,18 @@
 
     <!--------COLOR PALETTE SECTION-------->
     <section id="color-palette">
-      <div id="black" class="color"></div>
+      <div id="black" class="color selected"></div>
       <div id="green" class="color"></div>
       <div id="yellow" class="color"></div>
       <div id="magenta" class="color"></div>
+    </section>
 
-      <div id="pick-size">
-        <p>Colunas:</p>
-        <input id="column" type="number" value="" />
-        <p>Linhas:</p>
-        <input id="line" type="number" value="" />
-        <button id="pick-size-btn">Montar</button>
-      </div>
+    <section id="pick-size">
+      <form method="GET">
+        <label for="board-size">Escolha o numero de pixels:</label>
+        <input id="board-size" type="number" min="1" max="50" value="" />
+      </form>
+      <button id="generate-board" type="submit">VQV</button>
     </section>
 
     <!--------PIXEL BOARD SECTION-------->

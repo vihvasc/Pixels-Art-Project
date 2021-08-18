@@ -8,15 +8,13 @@ body {
   text-align: center;
 }
 
-br {
-  display: block;
-  margin-bottom: -5px;
+section {
+  margin-bottom: 20px;
 }
 
 /*---------- COLOR PALETTE SETTINGS ----------*/
 
 #color-palette {
-  margin-bottom: 15px;
   display: inline-block;
   text-align: center;
 }
@@ -35,32 +33,30 @@ br {
 
 /*---------- PICK BOARD SIZE SETTINGS ----------*/
 
-#pick-size {
-  float: right;
-  margin-right: -400px;
-  margin-top: -10px;
-}
-
-#pick-size p {
+#pick-size form {
   display: inline-block;
   margin-left: 10px;
 }
 
-#pick-size-btn {
-  margin-left: 5px;
+#generate-board {
+  display: inline-block;
 }
 
 #pick-size input {
   width: 70px;
 }
 
-/*---------- PIXELS SIZE SETTINGS ----------*/
+/*---------- PIXELS SETTINGS ----------*/
 
 .pixel {
   background-color: #fff;
   display: inline-block;
   border: 1px solid #000;
   width: 40px;
+  height: 40px;
+}
+
+.line {
   height: 40px;
 }
 
