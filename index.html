@@ -8,15 +8,29 @@
     <title>Pixels Art</title>
   </head>
   <body>
+    <!--------HEADER PIXEL-ART-------->
     <header>
       <h1 id="title">Paleta de Cores</h1>
     </header>
+
+    <!--------COLOR PALETTE SECTION-------->
     <section id="color-palette">
-      <div id="green" class="color"></div>
       <div id="black" class="color"></div>
+      <div id="green" class="color"></div>
       <div id="yellow" class="color"></div>
       <div id="magenta" class="color"></div>
+
+      <div id="pick-size">
+        <p>Colunas:</p>
+        <input id="column" type="number" value="" />
+        <p>Linhas:</p>
+        <input id="line" type="number" value="" />
+        <button id="pick-size-btn">Montar</button>
+      </div>
     </section>
+
+    <!--------PIXEL BOARD SECTION-------->
+    <section id="pixel-board"></section>
 
     <script src="script.js"></script>
   </body>
