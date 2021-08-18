@@ -13,12 +13,21 @@
     addDivs.className = 'color';
     addDivs.id = colors[i];
   }
-  const divs = document.getElementsByClassName('color');
-  for (let i = 0; i < divs.length; i += 1){
-    let paletteColor = divs[i];
-    paletteColor.style.backgroundColor = colors[i];
-    paletteColor.style.display = 'inline-block'
+
+  function handleRandomColor (){
+    let r = Math.random() * 255 ;
+    let g = Math.random() * 255 ;
+    let b = Math.random() * 255 ;
+
+    return `rgb(${r}, ${g}, ${b})`;
   }
+
+  const divs = document.getElementsByClassName('color');
+  divs[0].style.backgroundColor = 'black';
+  divs[1].style.backgroundColor = handleRandomColor();
+  divs[2].style.backgroundColor = handleRandomColor();
+  divs[3].style.backgroundColor =  handleRandomColor();
+
 
   let getDivPixel = document.getElementById('pixel-board');
   function addPixel (number){  
