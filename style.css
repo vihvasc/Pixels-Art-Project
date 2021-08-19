@@ -9,12 +9,13 @@
 
 #color-palette {
   display: flex;
+  justify-content: center;
 }
 
 .color {
-  margin: auto;
+  margin: auto 5px;
   border: 1px solid black;
-  padding: 50px;
+  padding: 20px;
 }
 
 .pixel {
@@ -32,5 +33,10 @@
 
 #other-tools {
   text-align: center;
-  margin: 50px 0;
+  margin: 30px 0;
+}
+
+.random {
+  text-align: center;
+  margin: 20px auto;
 }
