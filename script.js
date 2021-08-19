@@ -74,10 +74,10 @@ function getSizeBoard() {
     alert('Board inválido!');
   }
   else if (inputNumber < 5) {
-    inputNumber = 5;
+    generatePixels(5, 5);
   }
   else if (inputNumber > 50) {
-    inputNumber = 50;
+    generatePixels(50, 50);
   }
   else { 
     pixelBoard.innerHTML = '';
