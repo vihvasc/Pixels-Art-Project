@@ -7,6 +7,7 @@ let pixelBoard = document.getElementById('pixel-board');
 
 let buttonClear = document.getElementById('clear-board');
 let buttonAdd = document.getElementById('generate-board');
+let buttonRandomize = document.getElementById('randomize-btn');
 
 let arrayColors = [firstColor, secondColor, thirdColor, fourthColor];
 
@@ -29,9 +30,14 @@ function handleRandomColor() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-secondColor.style.background = handleRandomColor();
-thirdColor.style.background = handleRandomColor();
-fourthColor.style.background = handleRandomColor();
+function handleRandomizePalette() {
+  secondColor.style.background = handleRandomColor();
+  thirdColor.style.background = handleRandomColor();
+  fourthColor.style.background = handleRandomColor();
+}
+handleRandomizePalette();
+
+buttonRandomize.addEventListener('click', handleRandomizePalette);
 
 function handleSelectColor(event) {
   let elementSelectorClass = document.querySelector('.selected');
@@ -58,11 +64,11 @@ function handleDeleteBoard() {
 function handleInput() {
   let inputValue = parseInt(document.getElementById('board-size').value, 10);
   if (inputValue > 4 && inputValue < 51) {
-    handlePixelFenix(inputValue);
+    handleRenewBoard(inputValue);
   } else if (inputValue > 50) {
-    handlePixelFenix(50);
+    handleRenewBoard(50);
   } else if (inputValue < 5) {
-    handlePixelFenix(5);
+    handleRenewBoard(5);
   } else {
     alert('Board inválido!');
   }
@@ -85,7 +91,7 @@ function handleAddPixelListener() {
 
 handleAddPixelListener();
 
-function handlePixelFenix(number) {
+function handleRenewBoard(number) {
   handleDeleteBoard();
   handleCreateBoard(number);
   handleAddPixelListener();
