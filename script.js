@@ -10,16 +10,31 @@
 
 // }
 
-const ColorPalette = document.getElementsByClassName('color');
+const colorPalette = document.getElementsByClassName('color');
+const pixel = document.getElementsByClassName('pixel');
+
+function paintSelectedColor(event) {
+  const eventSelected = event;
+  const color = ['black', 'red', 'blue', 'green'];
+  for (let i = 0; i < colorPalette.length; i += 1) {
+    if (colorPalette[i].classList.contains('selected')) {
+      eventSelected.target.style.backgroundColor = color[i];
+    }
+  }
+}
+for (let i = 0; i < pixel.length; i += 1) {
+  pixel[i].addEventListener('click', paintSelectedColor);
+}
 
 function selectedColor(event) {
-  for (let i = 0; i < ColorPalette.length; i += 1) {
-    if (ColorPalette[i].classList.contains('selected')) {
-      ColorPalette[i].classList.remove('selected');
+  for (let i = 0; i < colorPalette.length; i += 1) {
+    if (colorPalette[i].classList.contains('selected')) {
+      colorPalette[i].classList.remove('selected');
     }
   }
   event.target.classList.add('selected');
+  paintSelectedColor(event);
 }
-for (let i = 0; i < ColorPalette.length; i += 1) {
-  ColorPalette[i].addEventListener('click', selectedColor);
+for (let i = 0; i < colorPalette.length; i += 1) {
+  colorPalette[i].addEventListener('click', selectedColor);
 }

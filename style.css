@@ -18,7 +18,7 @@ body {
 }
 
 #color4 {
-  background-color: darkgreen;
+  background-color: green;
   margin-left: 10px;
 }
 
@@ -37,6 +37,7 @@ body {
   height: 40px;
   background-color: white;
 }
+
 .pixel {
   border: solid black 1px;
   width: 40px;
@@ -44,4 +45,3 @@ body {
   background-color: white;
   display: inline-block;
 }
-
