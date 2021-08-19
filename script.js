@@ -1,14 +1,22 @@
 const clearButton = document.querySelector('#clear-board');
+const sizeButton = document.querySelector('#generate-board')
 const primeiraCor = document.querySelector('#firstColor');
 primeiraCor.classList.add('selected');
-
+const pixelBoard = document.querySelector('#pixel-board')
 const paletteColors = document.querySelectorAll('.color');
 
-function createGrid (){
-const gridSize = 5;
+function alerta (){
+
+}
+
+function firstGrid (){
+let gridSize = 5;
+
 const local = document.querySelector('#pixel-board');
+
   for (let linhas = 0; linhas < gridSize; linhas += 1) {
     const divsLinhas = document.createElement('div');
+          divsLinhas.className = 'linha'
     local.appendChild(divsLinhas);
     for (let colunas = 0; colunas < gridSize; colunas +=1) {
         const pixel = createPixel();
@@ -16,7 +24,31 @@ const local = document.querySelector('#pixel-board');
     }
   }
 }
-createGrid ();
+firstGrid ();
+
+function createGrid (){
+  const sizeInput = document.getElementById('board-size').value
+  let gridSize = 0;
+  
+   if( sizeInput > 0){
+    gridSize = sizeInput
+  }else{
+    alert('Board inválido!')
+    gridSize = 5
+  }
+  
+  const local = document.querySelector('#pixel-board');
+  
+    for (let linhas = 0; linhas < gridSize; linhas += 1) {
+      const divsLinhas = document.createElement('div');
+            divsLinhas.className = 'linha'
+      local.appendChild(divsLinhas);
+      for (let colunas = 0; colunas < gridSize; colunas +=1) {
+          const pixel = createPixel();
+          divsLinhas.appendChild(pixel);
+      }
+    }
+  }
 
 function createPixel(){
   const pixel = document.createElement('div');
@@ -24,7 +56,7 @@ function createPixel(){
     return pixel;
 }
 
-for (let i = 0; i < paletteColors.length; i++) {
+for (let i = 0; i < paletteColors.length; i+= 1) {
   paletteColors[i].addEventListener('click', seletora);
 }
 
@@ -60,4 +92,20 @@ function clear(){
     allPixels[i].style.backgroundColor = 'white';
   }
 }
+
+function clearGrid(){
+  let board = document.querySelectorAll('.linha')
+  for (let i = 0; i < board.length; i += 1) {
+    const element = board[i]
+       if (element.className === 'linha'){
+          pixelBoard.removeChild(element)
+       }
+  }
+ 
+  console.log(board);
+  
+  createGrid()
+}
+
 clearButton.addEventListener('click', clear);
+sizeButton.addEventListener('click', clearGrid)

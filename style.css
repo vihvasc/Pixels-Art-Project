@@ -18,6 +18,13 @@ margin-left: 50px;
 margin-bottom: 20px;
 padding: 5px 15px;
 }
+#sizeSection{
+  margin-bottom: 10px;
+}
+#gridSize{
+  padding: 5px;
+  text-align: center;
+}
 .selected{
  background-color: black;
 }
