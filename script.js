@@ -2,14 +2,22 @@ const contentPalette = document.querySelector('.colors-ul');
 const colorPalette = document.getElementsByClassName('color');
 const pixelBoard = document.querySelector('#pixel-board');
 const pixel = document.getElementsByClassName('pixel');
-const colors = ['black', 'red', 'green', 'yellow'];
+const colors = [`rgb(0, 0, 0)`];
 const button = document.querySelector('#clear-board');
 let colorPixel;
 
-function createColorsAndAddClass() {
-  const quantListItem = 4;
+function createRadomColor() {
+  const red = parseInt(Math.random() * (256 - 0) + 0);
+  const green = parseInt(Math.random() * (256 - 0) + 0);
+  const blue = parseInt(Math.random() * (256 - 0) + 0);
 
+  return colors.push(`rgb(${red}, ${green}, ${blue})`);
+}
+
+function addColorsAndAddClass() {
+  const quantListItem = 4;
   for (let i = 0; i < quantListItem; i += 1) {
+    createRadomColor();
     const li = document.createElement('li');
     li.className = 'color';
     li.style.backgroundColor = colors[i];
@@ -18,7 +26,7 @@ function createColorsAndAddClass() {
   colorPalette[0].classList.add('selected');
 }
 
-createColorsAndAddClass();
+addColorsAndAddClass();
 
 function generatePixels(width, height) {
   pixelBoard.style.maxWidth = `${width * 40 + 2}px`;
@@ -48,14 +56,10 @@ function setSelectedClass(event) {
   event.target.classList.add('selected');
 }
 
-contentPalette.addEventListener('click', setSelectedClass);
-
 function paintPixel(event) {
   colorPixel = document.querySelector('.selected');
   event.target.style.backgroundColor = colorPixel.style.backgroundColor;
 }
-
-pixelBoard.addEventListener('click', paintPixel);
 
 function clearPixelBoard() {
   for (let i = 0; i < pixel.length; i += 1) {
@@ -63,8 +67,6 @@ function clearPixelBoard() {
   }
   pixelBoard.style.backgroundColor = 'white';
 }
-
-button.addEventListener('click', clearPixelBoard);
 
 function getSizeBoard() {
   let inputUser = document.querySelector('#board-size').value;
@@ -87,4 +89,7 @@ function getSizeBoard() {
   }
 }
 
+contentPalette.addEventListener('click', setSelectedClass);
+pixelBoard.addEventListener('click', paintPixel);
+button.addEventListener('click', clearPixelBoard);
 document.querySelector("#generate-board").addEventListener('click', getSizeBoard);
