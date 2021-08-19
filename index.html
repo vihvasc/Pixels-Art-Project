@@ -11,13 +11,19 @@
 
   <h1 id="title">Paleta de Cores</h1>
   <div id="color-palette">
-    <div class="color colorBk_01 "></div>
-    <div class="color colorBk_02"></div>
-    <div class="color colorBk_03"></div>
-    <div class="color colorBk_04"></div>
+    <div class="color selected"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
   </div>
+  <div id="button-nav"> 
+    <label for="row-button">Linhas e colunas: </label> 
 
-  <button id="clear-board">Limpar</button>
+    <input type="number" min="1" max="50" id="board-size">
+    <button id="generate-board" >VQV</button>
+    <button id="clear-board">Limpar</button>
+  </div>
+  
   <div id="pixel-board"></div>
   
   <script src="script.js"></script>

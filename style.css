@@ -1,11 +1,18 @@
 *{
-  width: 1366px; 
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+#title {
+  display: flex;
+  justify-content: center;
+}
+
 #color-palette {
   display: flex;
   margin: 5px;
+  justify-content: center;
 }
 
 .color{ 
@@ -13,38 +20,38 @@
   height: 25px;
   border: 1px solid black;
   margin: 2px;
+  border-radius: 2px;
 }
 
-.colorBk_01 {
-  background-color: black;
-}
-.colorBk_02 {
-  background-color: red;
-}
-.colorBk_03 {
-  background-color: green;
-}
-.colorBk_04 {
-  background-color: yellow;
-}
 
 #pixel-board{
-  display: flex;
-  flex-wrap: wrap;
-  width: 210px;
-
+  display: grid;
+  grid-template-rows: repeat(6, 40px);
+  grid-template-columns: repeat(6, 40px);
+  justify-content: center;
 }
 
 .pixel {
-  text-align: center;
+  display: flex;
   background-color: white;
   width: 40px;
   height: 40px;
   border: 1px solid black;
 }
 
-button{
+#button-nav{
   display: flex;
-  width: 300px;
   justify-content: center;
-};
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#board-size {
+  height: 27px;
+  width: 50px;
+}
+
+button {
+  margin: 3px ;
+  padding: 5px;
+}; 
