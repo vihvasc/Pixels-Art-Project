@@ -17,10 +17,14 @@ function handleBlackFirst(element) {
 }
 handleBlackFirst(firstColor);
 
+/*
+ * Consultei o blog abaixo para entender como criar uma função para gerar cores RGB aleatórias
+ * Source: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
+ */
 function handleRandomColor() {
-  let r = Math.random() * 255;
-  let g = Math.random() * 255;
-  let b = Math.random() * 255;
+  let r = parseInt(Math.random() * 255);
+  let g = parseInt(Math.random() * 255);
+  let b = parseInt(Math.random() * 255);
 
   return `rgb(${r}, ${g}, ${b})`;
 }
@@ -94,9 +98,6 @@ function handleClearBoard() {
 }
 buttonClear.addEventListener('click', handleClearBoard);
 
-/* 
-! Referências
- * Função handleRandomColor baseada na explicação do link a seguir: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
- *
+/*
  * Requisitos bônus (10, 11 e 12) feito em pair coding com o Gabriel Jorge (https://github.com/GabrielJorge94)
  */
