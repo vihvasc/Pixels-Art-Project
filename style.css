@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+  }
+  
+  section {
+    text-align: center;
+  }
+  
+  .color {
+    display: inline-block;
+    border: 1px solid #000;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+  }
+  
+  .color:first-of-type {
+    margin-left: 0px;
+  }
+  
+  #green {
+    background-color: #2fc18c;
+  }
+  
+  #black {
+    background-color: #000;
+  }
+  
+  #yellow {
+    background-color: #ffff00;
+  }
+  
+  #magenta {
+    background-color: #cc00cc;
+  }
