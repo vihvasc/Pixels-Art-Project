@@ -69,14 +69,16 @@ button.addEventListener('click', clearPixelBoard);
 function getSizeBoard() {
   let inputUser = document.querySelector('#board-size').value;
   let inputNumber = parseInt(inputUser);
-  
+
   if (inputUser === '') {
     alert('Board inválido!');
   }
   else if (inputNumber < 5) {
+    pixelBoard.innerHTML = '';
     generatePixels(5, 5);
   }
   else if (inputNumber > 50) {
+    pixelBoard.innerHTML = '';
     generatePixels(50, 50);
   }
   else { 
