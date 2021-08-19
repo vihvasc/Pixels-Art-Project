@@ -34,4 +34,14 @@
     box-sizing: border-box;
     background-color: white;
 }
-    
+
+#tools {
+    display: inline-block;
+    height:40px;
+    width:40px;
+    border: 1px solid black;
+}
+
+#pixel-board {
+    font-size: 0%;
+}
