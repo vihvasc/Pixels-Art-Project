@@ -57,15 +57,28 @@ let colorSelected = document.querySelector('.color');
 colorSelected.classList.add('selected');
 
 // Requisito 7
+const arrayColor = document.getElementsByClassName('color');
+const divsPalette = [];
+for (let index = 0; index < arrayColor.length; index += 1) {
+  divsPalette.push(arrayColor[index]);
+}
 function selectColor() {
-  const divsPalette = document.querySelectorAll('.color');
-  for (let index = 0; index < divsPalette.length; index += 1) {
-    divsPalette[index].addEventListener('click', (event) => {
-      colorSelected.classList.remove('selected');
-      event.target.classList.add('selected');
-      colorSelected = event.target;
-    });
-  }
+  document.body.addEventListener('click', (event) => {
+    if (!(divsPalette.includes(event.target))) {
+      return;
+    }
+    colorSelected.classList.remove('selected');
+    event.target.classList.add('selected');
+    colorSelected = event.target;
+  });
+
+  // for (let index = 0; index < divsPalette.length; index += 1) {
+  //   divsPalette[index].addEventListener('click', (event) => {
+  //     colorSelected.classList.remove('selected');
+  //     event.target.classList.add('selected');
+  //     colorSelected = event.target;
+  //   });
+  // }
 }
 
 selectColor();
@@ -102,7 +115,7 @@ function createButton() {
 
 createButton();
 
-// Requisito 10
+// Requisito 10 e 11
 const div = document.createElement('div');
 div.id = 'input-button';
 document.body.insertBefore(div, pixelBoard);
