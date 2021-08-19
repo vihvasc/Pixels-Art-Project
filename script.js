@@ -1,13 +1,3 @@
-// Requisito 1
-function createTitle() {
-  const h1 = document.createElement('h1');
-  h1.id = 'title';
-  h1.innerText = 'Paleta de Cores';
-  document.body.appendChild(h1);
-}
-
-createTitle();
-
 // Requisito 12
 function randomPalette() {
   const randomNumber = Math.floor(Math.random() * 255);
@@ -20,9 +10,7 @@ function createPalette() {
   for (let index = 0; index < 3; index += 1) {
     colors.push(`rgb(${randomPalette()}, ${randomPalette()}, ${randomPalette()})`);
   }
-  const divFather = document.createElement('div');
-  divFather.id = 'color-palette';
-  document.body.appendChild(divFather);
+  const divFather = document.getElementById('color-palette');
   for (let index = 0; index < 4; index += 1) {
     const divChild = document.createElement('div');
     divChild.className = 'color';
@@ -71,34 +59,29 @@ function selectColor() {
     event.target.classList.add('selected');
     colorSelected = event.target;
   });
-
-  // for (let index = 0; index < divsPalette.length; index += 1) {
-  //   divsPalette[index].addEventListener('click', (event) => {
-  //     colorSelected.classList.remove('selected');
-  //     event.target.classList.add('selected');
-  //     colorSelected = event.target;
-  //   });
-  // }
 }
 
 selectColor();
 
 // Requisito 8
-const pixelBox = document.getElementsByClassName('pixel');
+const arrayPixels = document.getElementsByClassName('pixel');
+const pixelBox = [];
+for (let index = 0; index < arrayPixels.length; index += 1) {
+  pixelBox.push(arrayPixels[index]);
+}
 function pixelColor() {
-  for (let index = 0; index < pixelBox.length; index += 1) {
-    pixelBox[index].addEventListener('click', (event) => {
-      const colorPixelSelected = colorSelected.style.backgroundColor;
-      const evento = event.target;
-      evento.style.backgroundColor = colorPixelSelected;
-    });
-  }
+  document.body.addEventListener('click', (event) => {
+    if (!(pixelBox.includes(event.target))) {
+      return;
+    }
+    const evento = event.target;
+    evento.style.backgroundColor = colorSelected.style.backgroundColor;
+  });
 }
 
 pixelColor();
 
 // Requisito 9
-
 const pixelBoard = document.querySelector('#pixel-board');
 function createButton() {
   const button = document.createElement('button');
@@ -121,7 +104,8 @@ div.id = 'input-button';
 document.body.insertBefore(div, pixelBoard);
 
 const input = document.createElement('input');
-input.id = 'board-size'; // Item 3
+input.id = 'board-size';
+input.placeholder = 'Digite aqui'; // Item 3
 input.type = 'number';
 input.min = '1';
 div.appendChild(input);
