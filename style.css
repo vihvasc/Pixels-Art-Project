@@ -1,15 +1,32 @@
 /*---------- GENERAL SETTINGS ----------*/
-
+* {
+  margin: 0;
+  padding: 0;
+}
 h1 {
   text-align: center;
 }
 
 body {
   text-align: center;
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9bc27292880429.5e569ff84e4d0.gif);
+  color: #fff;
 }
 
 section {
   margin-bottom: 20px;
+}
+
+/*---------- HEADER SETTINGS ----------*/
+
+header {
+  background-color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 80px;
+  height: 100px;
+}
+
+header h1 {
+  padding-top: 20px;
 }
 
 /*---------- COLOR PALETTE SETTINGS ----------*/
@@ -21,7 +38,7 @@ section {
 
 .color {
   display: inline-block;
-  border: 1px solid #000;
+  border: 3px solid #fff;
   width: 40px;
   height: 40px;
   margin-left: 10px;
@@ -79,5 +96,9 @@ section {
 /*---------- BUTTONS SETTINGS ----------*/
 
 #clear-board {
-  width: 400px;
+  width: 150px;
+}
+
+#generate-board {
+  width: 50px;
 }
