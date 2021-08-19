@@ -1,7 +1,7 @@
 window.onload = function() {
   const colorPalette = document.querySelector('#color-palette');
   const boardLines = document.querySelectorAll('.line');
-  const colors = ['black', 'green', 'yellow', 'red'];
+  const colors = ['black', 'green','yellow', 'red'];
   const initialColor = 'white';
   paletteCreator(colorPalette);
   fillBoard(boardLines);
@@ -10,7 +10,7 @@ window.onload = function() {
   // paleta de cores
   function paletteCreator(linha) {
     for (let i = 0; i < colors.length; i += 1) {
-      let colorBox = boxCreator('color');
+      const colorBox = boxCreator('color');
 
       colorBox.style.backgroundColor = colors[i];
       linha.appendChild(colorBox);
@@ -18,7 +18,7 @@ window.onload = function() {
   }
 
   function boxCreator(classe) {
-    let box = document.createElement("div");
+    const box = document.createElement("div");
     box.className = classe;
     return box;
   }
@@ -32,27 +32,27 @@ window.onload = function() {
 
   function fillLine(boardLine) {
     for (let i = 0; i < boardLines.length; i += 1) {
-      let box = boxCreator('pixel');
+      const box = boxCreator('pixel');
 
       box.style.backgroundColor = initialColor;
       boardLine.appendChild(box);
     }
   }
-
-  function colorSelect() {
-    const color = document.querySelectorAll('.color');
-
-    for (let i = 0; i < color.length; i++) {
-      color[0].className = 'color selected';
-      color[i].addEventListener('click', function(event) {
-        let colorSelected = document.getElementsByClassName('selected');
-
-        if (colorSelected.length === 0) {
-          event.target.className = 'color selected';
-        } else {
-          event.target.className = 'color';
-        }
-      });
-    }      
-  }
 };
+function colorSelect() {
+  const color = document.querySelectorAll('.color');
+  for (let i = 0; i < color.length; i++) {
+    color[0].classList.add('selected');
+    color[i].addEventListener('click', function(event) {
+      const colorSelected = document.querySelector('.selected');
+      colorSelected.classList.remove('selected');
+      event.target.classList.add('selected');
+    });
+  }      
+}
+
+function colorChange() {
+  const paint = document.querySelectorAll('.color');
+  console.log(paint)
+}
+colorChange();
