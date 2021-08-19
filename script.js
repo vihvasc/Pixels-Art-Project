@@ -1,7 +1,14 @@
+/**
+ * todo Mudar a cor do cursor de acordo com a cor selecionada na paleta
+ * todo Criar paletas de cores predefinidas baseadas em artistas famosos
+ */
+
 let firstColor = document.getElementById('color-palette').children[0];
 let secondColor = document.getElementById('color-palette').children[1];
 let thirdColor = document.getElementById('color-palette').children[2];
 let fourthColor = document.getElementById('color-palette').children[3];
+
+let eraser = document.getElementById('eraser');
 
 let pixelBoard = document.getElementById('pixel-board');
 
@@ -89,6 +96,12 @@ function handleAddPixelListener() {
   }
 }
 
+function handleSelectEraser(event) {
+  let elementSelectorClass = document.querySelector('.selected');
+  elementSelectorClass.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+eraser.addEventListener('click', handleSelectEraser);
 handleAddPixelListener();
 
 function handleRenewBoard(number) {
