@@ -64,7 +64,7 @@ section {
   background-color: #2fc18c;
 }
 
-#black {
+#first-color {
   background-color: #000;
 }
 
@@ -74,4 +74,10 @@ section {
 
 #magenta {
   background-color: #cc00cc;
+}
+
+/*---------- BUTTONS SETTINGS ----------*/
+
+#clear-board {
+  width: 400px;
 }

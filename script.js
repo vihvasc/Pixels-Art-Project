@@ -3,6 +3,8 @@ window.onload = function () {
   createPixelsInBoard(5);
   selectColor();
   paintPixels();
+  clearBoard();
+  generateRandomColor();
 };
 
 function createPixelsInBoard(pixelsByTheUser) {
@@ -82,5 +84,35 @@ function paintPixels() {
       .getPropertyValue('background-color');
 
     originEvent.target.style.backgroundColor = colorOfSelected;
+  }
+}
+
+function clearBoard() {
+  let button = document.querySelector('#clear-board');
+
+  button.addEventListener('click', makeItClean);
+
+  function makeItClean() {
+    let pixelsOfBoard = document.querySelectorAll('.pixel');
+
+    for (let index = 0; index < pixelsOfBoard.length; index++) {
+      pixelsOfBoard[index].style.backgroundColor = '#fff';
+    }
+  }
+}
+
+function generateRandomColor() {
+  let secondColor = document.querySelector('#second-color');
+  let thirdColor = document.querySelector('#third-color');
+  let fourthColor = document.querySelector('#fourth-color');
+  let arrayOfColors = [secondColor, thirdColor, fourthColor];
+
+  for (let index = 0; index < arrayOfColors.length; index++) {
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+
+    arrayOfColors[index].style.backgroundColor =
+      'rgb(' + r + ', ' + g + ', ' + b + ')';
   }
 }
