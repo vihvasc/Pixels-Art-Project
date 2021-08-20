@@ -39,7 +39,7 @@ function createPixels() {
 
 function removeSelect() {
   const selected = document.querySelectorAll('.selected');
-  for (let i = 0; i < selected.length; i += 1){
+  for (let i = 0; i < selected.length; i += 1) {
     selected[i].classList.remove('selected');
   }
 }
@@ -56,12 +56,12 @@ function selectColor() {
       event.target.classList.add('selected');
       console.log(selected);
     }
-  })
+  });
 }
 
 function colorPixel() {
   const pixel = document.querySelectorAll('.pixel');
-  for(let i = 0; i < pixel.length; i += 1){
+  for (let i = 0; i < pixel.length; i += 1) {
 
     pixel[i].addEventListener('click', () => {
       const selected = document.querySelector('.selected');
@@ -76,7 +76,7 @@ function clearPixels() {
   const pixel = document.querySelectorAll('.pixel');
 
   clearButton.addEventListener('click', () => {
-    for(let i = 0; i < pixel.length; i += 1) {
+    for (let i = 0; i < pixel.length; i += 1) {
       pixel[i].style.backgroundColor = 'white';
     }
   });
