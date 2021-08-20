@@ -1,7 +1,14 @@
 // fiz a tabela baseada nesse video https://www.youtube.com/watch?v=-dGWaHA3ud8
 let botao = document.querySelectorAll('button')
 let color = document.querySelectorAll('.color')
-let selecinada = color[0] // pegando o primeiro color
+let primeiraCor = color[0] // pegando o primeiro color
+let selected = document.querySelector('.selected') 
+let Preto = document.getElementById('PRETO')
+let Azul = document.getElementById('AZUL')
+let Vermelho = document.getElementById('VERMELHO')
+let Amarelo = document.getElementById('AMARELO')
+
+
 
 
 function criarLinhas() {
@@ -16,30 +23,36 @@ function criarLinhas() {
       divs.appendChild(sessao);
     }
   }
-   
-    
-    
-    
-    /* .addEventListener('click',function(){
-    document.querySelectorAll('.pixel').style.color= 'rgb(0,0,0)'
-    }) */
 } 
 
 function selecionar () {
 
   for (let index = 0; index < color.length; index++) {
     color[index].addEventListener('click',function(event){
-     selecinada.classList.remove('selected')
-     event.target.classList.add('selected')
-     selecinada = event.target
-     
-   
-    })
-    
-   }
+    primeiraCor.classList.remove('selected')
+    event.target.classList.add('selected')
+    primeiraCor = event.target})}
   
 }
-
-
+  function pixelColor() {
+    let pixel = document.querySelectorAll('.pixel')
+    for (let index = 0; index < pixel.length; index++) {
+    
+    pixel[index].addEventListener('click',function () {
+    
+    if( Preto.classList.contains('selected') === true){
+      pixel[index].classList.add('preto')}
+      else if(Amarelo.classList.contains('selected') === true){
+        pixel[index].classList.add('amarelo')
+      }
+      else if (Vermelho.classList.contains('selected') === true){
+        pixel[index].classList.add('vemelho')
+      }
+      else if(Azul.classList.contains('selected') === true){
+        pixel[index].classList.add('azul')
+      }
+  } )
+}} 
 criarLinhas() 
 selecionar()
+pixelColor() 
