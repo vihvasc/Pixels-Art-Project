@@ -7,6 +7,7 @@ window.onload = function () {
   fillBoard(boardLines);
   colorSelect();
   toPaint();
+  clear();
 
   // paleta de cores
   function paletteCreator(linha) {
@@ -43,24 +44,38 @@ window.onload = function () {
 
 function colorSelect() {
   const color = document.querySelectorAll('.color');
-  
-  for (let i = 0; i < color.length; i++) {
+
+  for (let i = 0; i < color.length; i += 1) {
     color[0].classList.add('selected');
     color[i].addEventListener('click', function (event) {
       const colorSelected = document.querySelector('.selected');
       colorSelected.classList.remove('selected');
       event.target.classList.add('selected');
     });
-  }      
+  }
 }
 
 function toPaint() {
   const pixels = document.querySelectorAll('.pixel');
-  
-  for (let i = 0; i < pixels.length; i++) {   
+
+  for (let i = 0; i < pixels.length; i += 1) {
     pixels[i].addEventListener('click', function (event) {
       const colorSelected = document.querySelector('.selected').style.backgroundColor;
       event.target.style.backgroundColor = colorSelected;
-    })
+    });
   }
+}
+
+function clear() {
+  const clearButton = document.getElementById('clear-board');
+
+  clearButton.addEventListener('click', function (event) {
+    const pixels = document.querySelectorAll('.pixel');
+    
+    for (let i = 0; i < pixels.length; i += 1) {
+      const bgc = pixels[i];
+
+      bgc.style.backgroundColor = 'white';
+    }
+  });
 }
