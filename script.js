@@ -66,11 +66,20 @@ function colorPixel() {
     pixel[i].addEventListener('click', () => {
       const selected = document.querySelector('.selected');
       const color = selected.style.backgroundColor;
-      console.log(color)
       pixel[i].style.backgroundColor = color;
-      
     });
   }
+}
+
+function clearPixels() {
+  const clearButton = document.querySelector('#clear-board');
+  const pixel = document.querySelectorAll('.pixel');
+
+  clearButton.addEventListener('click', () => {
+    for(let i = 0; i < pixel.length; i += 1) {
+      pixel[i].style.backgroundColor = 'white';
+    }
+  });
 }
 window.onload = () => {
   verifyAndAddBackgroundColor();
@@ -78,4 +87,5 @@ window.onload = () => {
   createPixels();
   selectColor();
   colorPixel();
+  clearPixels();
 };
