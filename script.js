@@ -36,12 +36,14 @@ function createPixels() {
     }
   }
 }
+
 function removeSelect() {
   const selected = document.querySelectorAll('.selected');
   for (let i = 0; i < selected.length; i += 1){
-    selected[i].classList.remove('selected')
+    selected[i].classList.remove('selected');
   }
 }
+
 function selectColor() {
   const selected = document.querySelectorAll('.selected');
   const colorPalette = document.querySelector('#color-palette');
@@ -50,18 +52,30 @@ function selectColor() {
     if (!selected) {
       event.target.classList.add('selected');
     } else {
-      removeSelect()
+      removeSelect();
       event.target.classList.add('selected');
-      console.log(selected)
+      console.log(selected);
     }
   })
-
 }
 
+function colorPixel() {
+  const pixel = document.querySelectorAll('.pixel');
+  for(let i = 0; i < pixel.length; i += 1){
 
+    pixel[i].addEventListener('click', () => {
+      const selected = document.querySelector('.selected');
+      const color = selected.style.backgroundColor;
+      console.log(color)
+      pixel[i].style.backgroundColor = color;
+      
+    });
+  }
+}
 window.onload = () => {
   verifyAndAddBackgroundColor();
   firstLiIsBlack();
   createPixels();
   selectColor();
+  colorPixel();
 };
