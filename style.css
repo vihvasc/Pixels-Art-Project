@@ -12,12 +12,21 @@ body {
 #color-palette {
     margin-left: 530px;    
 }
+
+
 .color {
     height: 40px;
     width: 40px;
     border: 1px solid black;
     margin: 8px;
+    transition: 0.3s;
 }
+
+.color:hover {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+} 
 
 #pixel-board {
     margin-left: 535px;
@@ -32,7 +41,7 @@ body {
     display: inline-block;
 }
 
-/* https://webdeasy.de/en/top-css-buttons-en/ */
+/* peguei um botão neste site do autor "Tiberiu Raducea" https://webdeasy.de/en/top-css-buttons-en/ */
 
 #clear-board {
     padding: 16px 42px;
@@ -73,3 +82,8 @@ body {
     width: 200px;
     height: 200px;
   }
+input {
+    display: block;
+    margin-left: 610px;
+    margin-top: 20px;
+}
