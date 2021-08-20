@@ -17,7 +17,7 @@ window.onload = function () {
       pixelBoard.appendChild(pixelLine);
   
       createPixelsInBoardLine(columnSize, lineSize);
-    });
+    }
       for (let column = 0; column < pixelsByTheUser; column += 1) {
         let pixel = document.createElement('div');
   
@@ -65,4 +65,18 @@ window.onload = function () {
     });
   }
   
-  function paintPixels() {}
+  function paintPixels() {
+    let pixelsOfBoard = document.querySelectorAll('.pixel');
+
+  for (let index = 0; index < pixelsOfBoard.length; index++) {
+    pixelsOfBoard[index].addEventListener('click', paint);
+  }
+  function paint(originEvent) {
+    console.log('cheguei');
+    let selectedColor = document.querySelector('.selected');
+    let colorOfSelected = window
+      .getComputedStyle(selectedColor, null)
+      .getPropertyValue('background-color');
+
+    originEvent.target.style.backgroundColor = colorOfSelected;
+  }
