@@ -1,59 +1,66 @@
+const getTitle = document.getElementById('title');
+getTitle.innerText = 'Paleta de Cores';
 
-  // requisito 1 
-  const getTitle = document.getElementById('title');
-  getTitle.innerText = 'Paleta de Cores';
+const colors = ['black', 'purple', 'green', 'blue'];
+for (let i = 0; i < colors.length; i += 1) {
+  const getDivColor = document.getElementById('color-palette');
+  const addDivs = document.createElement('div');
+  getDivColor.appendChild(addDivs);
+  addDivs.className = 'color';
+  addDivs.id = colors[i];
+}
 
-  // requisito 2
-  
-  const colors = ['black', 'purple', 'green', 'blue'];
-  for (let i = 0; i < colors.length; i += 1){
-    let getDivColor = document.getElementById('color-palette')
-    let addDivs = document.createElement('div');
-    getDivColor.appendChild(addDivs);
-    addDivs.className = 'color';
-    addDivs.id = colors[i];
+function handleRandomColor() {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+const divs = document.getElementsByClassName('color');
+divs[0].style.backgroundColor = 'black';
+divs[1].style.backgroundColor = handleRandomColor();
+divs[2].style.backgroundColor = handleRandomColor();
+divs[3].style.backgroundColor = handleRandomColor();
+
+const getDivPixel = document.getElementById('pixel-board');
+function addPixel(number) {
+  for (let i = 0; i < (number ** 2); i += 1) {
+    const DivLines = document.createElement('div');
+    getDivPixel.appendChild(DivLines);
+    DivLines.className = 'pixel';
+    const divWidht = number * 42;
+    const divHeight = number * 42;
+    getDivPixel.style.width = `${divWidht}px`;
+    getDivPixel.style.height = `${divHeight}px`;
   }
-
-  function handleRandomColor (){
-    let r = Math.random() * 255 ;
-    let g = Math.random() * 255 ;
-    let b = Math.random() * 255 ;
-
-    return `rgb(${r}, ${g}, ${b})`;
+}
+const quantidadeInicial = 5;
+addPixel(quantidadeInicial);
+function deletePixelBoard() {
+  getDivPixel.innerHTML = '';
+}
+function pixelColor() {
+  const pixel = document.getElementsByClassName('pixel');
+  function pixelChangeColor(obj) {
+    const colorSelected = document.getElementsByClassName('selected')[0];
+    const selected = window.getComputedStyle(colorSelected).getPropertyValue('background-color');
+    obj.target.style.backgroundColor = selected;
   }
-
-  const divs = document.getElementsByClassName('color');
-  divs[0].style.backgroundColor = 'black';
-  divs[1].style.backgroundColor = handleRandomColor();
-  divs[2].style.backgroundColor = handleRandomColor();
-  divs[3].style.backgroundColor =  handleRandomColor();
-
-
-  let getDivPixel = document.getElementById('pixel-board');
-  function addPixel (number){  
-      for(i = 0; i < (number**2); i += 1){
-        let DivLines = document.createElement('div');
-        getDivPixel.appendChild(DivLines);
-        DivLines.className = 'pixel';
-        divWidht = number * 42;
-        divHeight = number * 42;
-        getDivPixel.style.width = divWidht + 'px';
-        getDivPixel.style.height = divHeight + 'px';
-      } 
-  }
-  let quantidadeInicial = 5;
-  addPixel(quantidadeInicial);
-
-  
-  function deletePixelBoard (){
-    getDivPixel.innerHTML = '';
-  }
-  function renewPixelBoard (number){
-    deletePixelBoard();
-    addPixel(number);
-    pixelColor();
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].addEventListener('click', pixelChangeColor);
   }
   
+}
+pixelColor();
+
+function renewPixelBoard(number) {
+  deletePixelBoard();
+  addPixel(number);
+  pixelColor();
+}
+
   // let getInput = parseInt(document.getElementById('board-size'));
   let getAddButton = document.getElementById('generate-board');
   function getInputText (){
@@ -98,19 +105,7 @@ for (i = 0; i < getDivPalette.length; i += 1){
 
 } 
 
-function pixelColor (){
-  let pixel = document.getElementsByClassName('pixel');
-  
-  for (i = 0; i < pixel.length; i += 1){
-    pixel[i].addEventListener('click', pixelChangeColor);
-  }
-  function pixelChangeColor (obj){
-    obj.target.style.backgroundColor = window.getComputedStyle(document.getElementsByClassName('selected')[0]).getPropertyValue('background-color');
-    console.log(obj.target);
-  }
-  
-}
-pixelColor();
+
 
 let getButton = document.getElementById('clear-board');
 getButton.innerText = 'Limpar';
