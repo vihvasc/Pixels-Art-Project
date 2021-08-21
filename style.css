@@ -46,8 +46,9 @@
   border-color: black;
   border-style: solid;
   border-width: 1px;
-  width: 300px;
-  height: 300px;
+  width: 270px;
+  height: 270px;
+  margin-left: 30px;
 }
 
 .pixel {
@@ -58,4 +59,12 @@
   height: 40px;
   background-color: white;
   display: inline-block;
+}
+
+.selected {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  float: left;
+  display: block;
 }
