@@ -1,5 +1,6 @@
 const color = document.querySelectorAll('.color');
 const pixel = document.querySelectorAll('.pixel');
+const clearBoard = document.querySelector('#clear-board');
 
 function selectedColor(event) {
   for (let i = 0; i < color.length; i += 1) {
@@ -15,6 +16,12 @@ function paint(event) {
   coloredpixel.style.backgroundColor = compStyle.backgroundColor;
 }
 
+function clear() {
+  for (let i = 0; i < pixel.length; i += 1) {
+    pixel[i].style.backgroundColor = 'white';
+  }
+}
+
 for (let i = 0; i < color.length; i += 1) {
   color[i].addEventListener('click', selectedColor);
 }
@@ -22,3 +29,5 @@ for (let i = 0; i < color.length; i += 1) {
 for (let i = 0; i < pixel.length; i += 1) {
   pixel[i].addEventListener('click', paint);
 }
+
+clearBoard.addEventListener('click', clear);
