@@ -10,9 +10,10 @@
 <body>
   <header>
   <h1 id="title">Paleta de Cores</h1>
+  <p>Informe um <strong>número</strong> de '5' a '50' para o gerador e click no botão <strong>VQV</strong></p>
 
   </header>
-  <main>
+  <main class="test">
 
   <section>
     <div id="color-palette">
@@ -21,11 +22,13 @@
       <div id="thirdColor" class="color"></div>
       <div id="fourthColor" class="color"></div>
     </div>
-    <button id ="clear-board">Limpar</button>
+
+    <button class ="button" id ="clear-board">Limpar</button>
 
     <input id ="board-size" type="number" max="50" min="1">
 
-    <button id="generate-board">VQV</button>
+    <button class ="button" id="generate-board">VQV</button>
+
   </section>
 
   <section id="pixel-board"></section>
