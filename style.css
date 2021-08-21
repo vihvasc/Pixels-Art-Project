@@ -17,23 +17,6 @@ body {
   justify-content: center;
 }
 
-#clear-board {
-  margin: auto;
-  margin-top: 20px;
-  padding: 5px;
-  color: rgb(255, 255, 255);
-  background-color: rgb(36, 150, 126);
-  border-color: rgb(36, 150, 126);
-  border-radius: 3px;
-  font-weight: 500px;
-}
-
-#clear-board:hover {
-  background-color: rgb(38, 71, 64);
-  text-transform: uppercase;
-  border-color: rgb(190, 5, 5);
-}
-
 .black-color {
   background-color: black;
   border: 1px solid black;
@@ -66,10 +49,28 @@ body {
   height: 50px;
 }
 
+#clear-board {
+  margin: auto;
+  margin-top: 5px;
+  padding: 5px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(36, 150, 126);
+  border-color: rgb(36, 150, 126);
+  border-radius: 3px;
+}
+
+#clear-board:hover {
+  background-color: rgb(38, 71, 64);
+  text-transform: uppercase;
+  border-color: rgb(190, 5, 5);
+}
+
+
 #pixel-board {
   height: fit-content;
   width: fit-content;
   margin: 0 auto;
+  padding-top: 15px;
 }
 
 .pixel {
