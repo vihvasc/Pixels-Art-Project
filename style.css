@@ -1,3 +1,11 @@
+body {
+  text-align: center;
+}
+
+#title {
+  margin-top: 50px;
+}
+
 .black-color {
   background-color: black;
   border: 1px solid black;
@@ -31,8 +39,8 @@
 }
 
 #pixel-board {
-  height: 20px;
-  width: 20px;
+  height: fit-content;
+  width: fit-content;
 }
 
 .pixel {
@@ -41,4 +49,8 @@
   width: 40px;
   border: black solid 1px;
   display: inline-block;
+}
+
+.line {
+  display: block;
 }
