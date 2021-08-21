@@ -52,9 +52,8 @@ function selectColor(event) {
   evento.style.backgroundColor = theCSSprop;
 }
 
-const allPixel = document.querySelectorAll('.pixel');
-
 function paintPixel() {
+  const allPixel = document.querySelectorAll('.pixel');
   for (let i = 0; i < allPixel.length; i += 1) {
     allPixel[i].addEventListener('click', selectColor);
   }
@@ -63,6 +62,7 @@ paintPixel();
 
 // requisito 9
 function clearPixel() {
+  const allPixel = document.querySelectorAll('.pixel');
   for (let i = 0; i < allPixel.length; i += 1) {
     allPixel[i].style.backgroundColor = 'white';
   }
@@ -83,7 +83,7 @@ function verifyInput() {
   }
 }
 // utilizado para remover Board antes de criar outra;
-// /* https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes */
+// /* source https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes */
 function verifyChildNodes() {
   while (pixelBoard.firstChild) {
     pixelBoard.removeChild(pixelBoard.firstChild);
@@ -108,4 +108,5 @@ buttonInputSize.addEventListener('click', () => {
   verifyInput();
   verifyChildNodes();
   createBoard();
+  paintPixel();
 });
