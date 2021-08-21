@@ -12,12 +12,14 @@ const buttonInputSize = document.querySelector('#generate-board');
 
 // requisito 10
 function verifyInput() {
-  if (sizeBoard.value === '') {
+  const inputValue = sizeBoard.value;
+  if (inputValue === '') {
     alert('Board inválido!');
   }
-  if (sizeBoard.value > 50) {
+
+  if (inputValue > 50) {
     sizeBoard.value = 50;
-  } else if (sizeBoard.value < 5) {
+  } else if (inputValue < 5) {
     sizeBoard.value = 5;
   }
 }
