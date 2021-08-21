@@ -24,15 +24,33 @@ function addEvents() {
         color[i].addEventListener("click", selecionaCor);
     }
 }
-addEvents();
+
+
+
+
+let corSelecionada = document.querySelector(".selected")
 
 function criaPaleta(cores) {
+    const paleta = document.getElementById("color-palette");
+
     for (i = 0; i < cores.length; i += 1) {
     let cor = document.createElement("div");
-    const paleta = document.getElementById("color-palette");
+    paleta.appendChild(cor);
+    cor.className = "color " + "cor" + (i + 1);
+    cor.style.backgroundColor = cores[i];
     }
 }
+criaPaleta(["black", "red", "blue", "green"]);
+
+
 
 function colorirPixel(event) {
-    event.target.style.backgroundColor = "black";
+    let pixel = event.target;
+    pixel.style.backgroundColor = document.querySelector(".selected").style.backgroundColor;
 }
+
+
+let blackColor = document.querySelector(".cor1");
+blackColor.classList.add("selected")
+
+addEvents();
