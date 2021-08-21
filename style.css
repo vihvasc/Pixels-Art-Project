@@ -1,11 +1,24 @@
-#color-pallete {
-  display: flex;
-}
-
 .color {
-  border: solid black 1px;
-  margin-inline-end: 8px;
   height: 40px;
   width: 40px;
+  border: solid black 1px;
+  display: inline-block;
 }
 
+#pixel-board {
+  height: 225px;
+  width: 225px;
+  border:solid black 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
+  padding-bottom: 2px;
+}
+
+.pixel {
+  height: 40px;
+  width: 40px;
+  border: solid black 1px;
+
+}
