@@ -1,3 +1,5 @@
+// Agradecimentos a Thiago Ramos e João Marco que me ajudaram a corrigir uns commits errados que tinham no projeto.
+
 let buttonVQV = document.getElementById('generate-board');
 let pixelBoard = document.getElementById('pixel-board');
 console.log(pixelBoard);
