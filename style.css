@@ -3,13 +3,12 @@ body {
 }
 
 #title {
-  
   display: flex;
-  margin-top: 30px;
   justify-content: center;
-  background-color: rgb(38, 151, 127);
   margin: 0px;
+  margin-top: 30px;
   padding: 20px;
+  background-color: rgb(38, 151, 127);
   font-size: 35px;
   border-radius: 3px;
 }

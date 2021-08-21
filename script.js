@@ -23,8 +23,8 @@ primeiraCor.className = 'color selected black-color';
 // Requisito 7
 
 const coresDaPaleta = document.getElementsByClassName('color');
-  for (let index = 0; index < coresDaPaleta.length; index += 1) {
-  coresDaPaleta[index].addEventListener('click', selecionarCor);
+for (let index = 0; index < coresDaPaleta.length; index += 1) {
+coresDaPaleta[index].addEventListener('click', selecionarCor);
 }
 
 function selecionarCor(evento) {
@@ -32,3 +32,15 @@ function selecionarCor(evento) {
   classeSelected.classList.remove('selected');
   evento.target.classList.add('selected');
 }
+
+// Requisito 8
+
+function mudaCorPixel (evento) {
+  let classeSelected = document.querySelector('.selected');
+// Para a linha 41, foi usado o site https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle para referencia. 
+  let novaCor = window.getComputedStyle(classeSelected).backgroundColor;
+  let eventoAlvo = evento;
+  eventoAlvo.target.style.backgroundColor = novaCor;
+}
+
+corpoDoQuadro.addEventListener('click', mudaCorPixel);
