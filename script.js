@@ -1,32 +1,73 @@
-const test = document.querySelector('#pixel-board');
-
+// Variaveis id = color-palette
 const firstColor = document.getElementById('firstColor');
-firstColor.classList.add('selected');
-
+firstColor.classList.add('selected'); // Requisito 6
 const secondColor = document.getElementById('secondColor');
 const thirdColor = document.getElementById('thirdColor');
 const fourthColor = document.getElementById('fourthColor');
-
+// outras variaveis
+const pixelBoard = document.querySelector('#pixel-board');
 const clearButton = document.getElementById('clear-board');
+const sizeBoard = document.querySelector('#board-size');
+const buttonInputSize = document.querySelector('#generate-board');
 
-function createPixelDivs(param1) {
-  let lengthDivs;
-  let widthDivs;
-  for (let index = 0; index < param1; index += 1) {
-    lengthDivs = document.createElement('div');
-    for (let index2 = 0; index2 < param1; index2 += 1) {
-      widthDivs = document.createElement('div');
-      widthDivs.classList = 'pixel';
-      lengthDivs.appendChild(widthDivs);
-    }
-    test.appendChild(lengthDivs);
+// requisito 10
+function verifyInput() {
+  if (sizeBoard.value === '') {
+    window.alert('Board inválido!');
+  }
+}
+// utilizado para remover Board antes de criar outra;
+// /* https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes */
+function verifyChildNodes() {
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
   }
 }
 
+function createBoard() {
+  const size = sizeBoard.value;
+
+  for (let index = 0; index < size; index += 1) {
+    const linesDiv = document.createElement('div');
+    pixelBoard.appendChild(linesDiv);
+    for (let index2 = 0; index2 < size; index2 += 1) {
+      const colunsDiv = document.createElement('div');
+      colunsDiv.className = 'pixel';
+      linesDiv.appendChild(colunsDiv);
+    }
+  }
+}
+
+buttonInputSize.addEventListener('click', () => {
+  verifyInput();
+  verifyChildNodes();
+  createBoard();
+});
+
+// Requisito 4
+function createPixelDivs() {
+  let linesDiv;
+  let colunsDiv;
+
+  for (let line = 0; line < 5; line += 1) {
+    linesDiv = document.createElement('div');
+
+    for (let coluns = 0; coluns < 5; coluns += 1) {
+      colunsDiv = document.createElement('div');
+      colunsDiv.classList = 'pixel';
+      linesDiv.appendChild(colunsDiv);
+    }
+
+    pixelBoard.appendChild(linesDiv);
+  }
+}
+createPixelDivs();
+
+// requisito 7
 function addAndRemoveClassSelected(event) {
   const addAndRemove = document.querySelector('.selected');
-  addAndRemove.classList.remove('selected');
 
+  addAndRemove.classList.remove('selected');
   event.target.classList.add('selected');
 }
 firstColor.addEventListener('click', addAndRemoveClassSelected);
@@ -34,31 +75,30 @@ secondColor.addEventListener('click', addAndRemoveClassSelected);
 thirdColor.addEventListener('click', addAndRemoveClassSelected);
 fourthColor.addEventListener('click', addAndRemoveClassSelected);
 
-function selectionColor() {
-  const select = document.querySelectorAll('.pixel');
+// utilizando para pegar o style backgroundColor;
+// /* source https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp */
+// requisito 8
+function selectColor(event) {
+  const evento = event.target;
+  const color = document.querySelector('.selected');
+  const theCSSprop = window.getComputedStyle(color).getPropertyValue('background-color');
 
-  for (let index = 0; index < select.length; index += 1) {
-    select[index].addEventListener('click', () => {
-      const elem = document.querySelector('.selected');
-      const theCSSprop = window.getComputedStyle(elem, null).getPropertyValue('background-color');
-      select[index].style.backgroundColor = theCSSprop;
-    });
-  }
+  evento.style.backgroundColor = theCSSprop;
 }
 
-/* https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp */
+const allPixel = document.querySelectorAll('.pixel');
 
-function buttonClear() {
-  const clearPixels = document.querySelectorAll('.pixel');
-
-  for (let index = 0; index < clearPixels.length; index += 1) {
-    clearPixels[index].style.backgroundColor = 'white';
+function paintPixel() {
+  for (let i = 0; i < allPixel.length; i += 1) {
+    allPixel[i].addEventListener('click', selectColor);
   }
 }
+paintPixel();
 
-clearButton.addEventListener('click', buttonClear);
-
-window.onload = () => {
-  createPixelDivs(5);
-  selectionColor();
-};
+// requisito 9
+function clearPixel() {
+  for (let i = 0; i < allPixel.length; i += 1) {
+    allPixel[i].style.backgroundColor = 'white';
+  }
+}
+clearButton.addEventListener('click', clearPixel);
