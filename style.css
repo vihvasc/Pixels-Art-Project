@@ -6,12 +6,12 @@
 }
 
 #pixel-board {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .pixel {
   border: black solid 1px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   display: inline-block;
   width: 40px;
   height: 40px;
