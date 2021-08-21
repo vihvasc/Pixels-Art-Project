@@ -16,7 +16,7 @@ function coresAleatorias() {
 function corAleatoria(number) {
 return Math.floor(Math.random() * number);
 }
-// transferir numeros aleatorios para gerar as cores
+
 window.onload = coresAleatorias;
 
 // função para definir tamanho do quadrado
@@ -30,14 +30,14 @@ function criandoLinhasColuna() {
 		pixelBoard.appendChild(tr);
 	
 		for (let count = 0; count < input.value; count ++) {
-			const td = document.createElement('div');
+			let td = document.createElement('div');
 			td.className = 'pixel td';
 			tr.appendChild(td);
 		}
 	}
 }
-	
-function createTable() {
+// funçao condicoes de limite do tamanho da tabela
+function dimencionarTabela() {
 	deletePixels();
 	
 	let input = document.getElementById('board-size');
@@ -53,9 +53,13 @@ function createTable() {
 	criandoLinhasColuna();
 }
 
-// funcionar os botaao
+// acionar o botao e criar tabela por meio das funcoes dimencionarTabela e criandoLinhasColuna
+let gerarTabela = document.getElementById('generate-board');
+
+gerarTabela.addEventListener('click', dimencionarTabela);
+
+// funçao remove o quadro de pixel inicial
 function deletePixels() {
-	
 	let pixelBoard = document.getElementById('pixel-board');
 
 	while (pixelBoard.firstChild) {
@@ -63,38 +67,44 @@ function deletePixels() {
 	}
 }
 
-	let generateTable = document.getElementById('generate-board');
+// função para alterar a cor de seleçao da paleta paleta
 
-	generateTable.addEventListener('click', createTable);
-
-
-// função para alterar a cor da paleta selecionada
-
-let getColor = document.querySelectorAll('.color');
+let listaDeCor = document.querySelectorAll('.color');
 
 function changeSelected(event) {
-let colorSelected = document.querySelector('.selected');
+let selecionarCor = document.querySelector('.selected');
 
-colorSelected.classList.remove('selected');
+selecionarCor.classList.remove('selected');
 event.target.classList.add('selected');
 }
 
-for (let count = 0; count < getColor.length; count += 1) {
-getColor[count].addEventListener('click', changeSelected);
+for (let index = 0; index < listaDeCor.length; index += 1) {
+listaDeCor[index].addEventListener('click', changeSelected);
 }
 
 
 // função para colorir pixels de acordo com a cor da paleta escolhida
 
-let selectPixel = document.querySelectorAll('.pixel');
+let selecionaPixel = document.querySelectorAll('.pixel');
 
 function colorir(event) {
-let colorSelected = document.querySelector('.selected');
+	
+let selecionarCor = document.querySelector('.selected');
 
-event.target.style.backgroundColor = colorSelected.style.backgroundColor;
+event.target.style.backgroundColor = selecionarCor.style.backgroundColor;
 }
 
-for (let index = 0; index < selectPixel.length; index += 1) {
-selectPixel[index].addEventListener('click', colorir);
+for (let index = 0; index < selecionaPixel.length; index += 1) {
+selecionaPixel[index].addEventListener('click', colorir);
 }
+
+// funçao botao limpar o quadro de pixel faxendo fcar branco de novo
+const botaoLimpar = document.getElementById('clear-board');
+
+botaoLimpar.addEventListener('click', function () {
+for (let list = 0; list < selecionaPixel.length; list += 1) {
+selecionaPixel[list].style.backgroundColor = 'white';
+}
+});
+
 
