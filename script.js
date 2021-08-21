@@ -10,47 +10,6 @@ const clearButton = document.getElementById('clear-board');
 const sizeBoard = document.querySelector('#board-size');
 const buttonInputSize = document.querySelector('#generate-board');
 
-// requisito 10
-function verifyInput() {
-  const inputValue = sizeBoard.value;
-  if (inputValue === '') {
-    alert('Board inválido!');
-  }
-
-  if (inputValue > 50) {
-    sizeBoard.value = 50;
-  } else if (inputValue < 5) {
-    sizeBoard.value = 5;
-  }
-}
-// utilizado para remover Board antes de criar outra;
-// /* https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes */
-function verifyChildNodes() {
-  while (pixelBoard.firstChild) {
-    pixelBoard.removeChild(pixelBoard.firstChild);
-  }
-}
-
-function createBoard() {
-  const size = sizeBoard.value;
-
-  for (let index = 0; index < size; index += 1) {
-    const linesDiv = document.createElement('div');
-    pixelBoard.appendChild(linesDiv);
-    for (let index2 = 0; index2 < size; index2 += 1) {
-      const colunsDiv = document.createElement('div');
-      colunsDiv.className = 'pixel';
-      linesDiv.appendChild(colunsDiv);
-    }
-  }
-}
-
-buttonInputSize.addEventListener('click', () => {
-  verifyInput();
-  verifyChildNodes();
-  createBoard();
-});
-
 // Requisito 4
 function createPixelDivs() {
   let linesDiv;
@@ -109,3 +68,44 @@ function clearPixel() {
   }
 }
 clearButton.addEventListener('click', clearPixel);
+
+// requisito 10
+function verifyInput() {
+  const inputValue = sizeBoard.value;
+  if (inputValue === '') {
+    alert('Board inválido!');
+  }
+
+  if (inputValue > 50) {
+    sizeBoard.value = 50;
+  } else if (inputValue < 5) {
+    sizeBoard.value = 5;
+  }
+}
+// utilizado para remover Board antes de criar outra;
+// /* https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes */
+function verifyChildNodes() {
+  while (pixelBoard.firstChild) {
+    pixelBoard.removeChild(pixelBoard.firstChild);
+  }
+}
+
+function createBoard() {
+  const size = sizeBoard.value;
+
+  for (let index = 0; index < size; index += 1) {
+    const linesDiv = document.createElement('div');
+    pixelBoard.appendChild(linesDiv);
+    for (let index2 = 0; index2 < size; index2 += 1) {
+      const colunsDiv = document.createElement('div');
+      colunsDiv.className = 'pixel';
+      linesDiv.appendChild(colunsDiv);
+    }
+  }
+}
+
+buttonInputSize.addEventListener('click', () => {
+  verifyInput();
+  verifyChildNodes();
+  createBoard();
+});
