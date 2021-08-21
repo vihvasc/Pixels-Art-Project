@@ -22,7 +22,7 @@ title {
   height: 40px;
   width: 40px;
   display: inline-block;
-  border: 1px solid rgb (0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
   box-sizing: border-box;
 }
 
@@ -42,15 +42,15 @@ title {
 #pixel-board {
   margin: 20px auto;
   display: table;
-  background-color: rgb (255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .pixel {
   height: 40px;
   width: 40px;
-  border: 1px solid rgb (0, 0, 0);
+  border: 1px solid rgb(0, 0, 0);
   box-sizing: border-box;
   padding: 0;
   display: table-cell;
-  background-color: rgb (255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 const primeiraCor = document.querySelector('.primeira-cor');
 const segundaCor = document.querySelector('.segunda-cor');
 const terceiraCor = document.querySelector('.terceira-cor');
@@ -100,4 +101,4 @@ botaoLimpar.addEventListener('click', () => {
   for (let list = 0; list < selecionaPixel.length; list += 1) {
     selecionaPixel[list].style.backgroundColor = 'white';
   }
-});
+})
