@@ -1,31 +1,24 @@
-const colors = document.getElementsByClassName('color');
-const pixels = document.getElementsByClassName('pixel');
-const black = document.getElementById('black');
-const red = document.getElementById('red');
-const green = document.getElementById('green');
-const blue = document.getElementById('blue');
+const color = document.querySelectorAll('.color');
+const pixel = document.querySelectorAll('.pixel');
 
-function handleColors(event) {
-  const selectedColor = event.target;
-
-  for (let i = 0; i < colors.length; i += 1) {
-    colors[i].classList.remove('selected');
+function selectedColor(event) {
+  for (let i = 0; i < color.length; i += 1) {
+    color[i].classList.remove('selected');
   }
-  selectedColor.classList.add('selected');
+  event.target.classList.add('selected');
 }
 
-black.addEventListener('click', handleColors);
-red.addEventListener('click', handleColors);
-green.addEventListener('click', handleColors);
-blue.addEventListener('click', handleColors);
-
-function paint(eventPaint) {
-  const paintpixel = eventPaint.target;
-  const selector = document.querySelector('.selected');
-  const currentColor = window.getComputedStyle(selector);
-  paintpixel.style.backgroundColor = currentColor.backgroundColor;
-  console.log(currentColor.backgroundColor);
+function paint(event) {
+  const coloredpixel = event.target;
+  const selected = document.querySelector('.selected');
+  const compStyle = window.getComputedStyle(selected);
+  coloredpixel.style.backgroundColor = compStyle.backgroundColor;
 }
-for (let i = 0; i < pixels.length; i += 1) {
-  pixels[i].addEventListener('click', paint);
+
+for (let i = 0; i < color.length; i += 1) {
+  color[i].addEventListener('click', selectedColor);
+}
+
+for (let i = 0; i < pixel.length; i += 1) {
+  pixel[i].addEventListener('click', paint);
 }
