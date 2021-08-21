@@ -1,5 +1,5 @@
 * {
-    border: 1px solid blue
+    border: 1px solid blue;
 }
 .color {
     border: 1px solid black;
@@ -29,4 +29,8 @@ h1 {
     width: 40px;
     height: 40px;
     display: inline-block;
+}
+#clear-board {
+    display: block;
+    margin: 5px auto;
 }
