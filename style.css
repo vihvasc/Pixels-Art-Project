@@ -1,0 +1,26 @@
+body {
+    margin: 15px;
+}
+
+.color {
+    height: 50px;
+    width: 50px;
+    border: solid 1px black;
+    display: inline-block;
+}
+
+#green-button { 
+    background-color: chartreuse;
+}
+
+#blue-button {
+    background-color: deepskyblue;
+}
+
+#yellow-button {
+    background-color:yellow;
+}
+
+#red-button {
+    background-color: red;
+}
