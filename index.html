@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="script.js"></script>
+    
     
     <title>Project Pixels Art</title>
 </head>
 <body>
+    <script src="./script.js"></script>
     <header>
         <h1 id="title">Paleta de Cores</h1>
     </header>
@@ -16,9 +17,10 @@
         <div class="color" id="grey" style="background-color: #ccc;" onclick="setPenColor('#ccc')"></div>
         <div class="color" id="yellow" style="background-color: #ff0;" onclick="setPenColor('#ff0')"></div>
         <div class="color" id="red" style="background-color: #c00;" onclick="setPenColor('#c00')"></div>
-
     </section>
-
+    <div class="botao">
+        <button id="clear-board" onclick="cleanPixels()">Limpar</button>
+    </div>
     <section id="pixel-board">
         <div class="row">
             <div class="pixel" onclick="setPixelColor(this)"></div>
@@ -56,6 +58,6 @@
             <div class="pixel" onclick="setPixelColor(this)"></div>
         </div>
     </section>
-    
+
 </body>
 </html>
