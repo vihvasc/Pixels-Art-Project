@@ -1,6 +1,9 @@
 const selectColor = document.getElementsByClassName('color');
 const pixels = document.getElementsByClassName('pixel');
 const limpar = document.getElementById('clear-board');
+const vqv = document.querySelector('.inserir');
+const boardSize = document.getElementById('board-size');
+const pixelBoard = document.getElementById('pixel-board');
 
 // criar o evento de click//
 function colorPaint(event) {
@@ -29,3 +32,18 @@ function limparQuadro() {
   }
 }
 limpar.addEventListener('click', limparQuadro);
+
+function createBoard() {
+  pixelBoard.innerHTML = '';
+  const size = boardSize.value;
+  pixelBoard.style.width = `${size * 42}px`;
+  const quantidade = size * size;
+  for (let i = 0; i < quantidade; i += 1) {
+    const pixel = document.createElement('div');
+    pixel.classList.add('pixel');
+    pixel.addEventListener('click', pintar);
+    pixelBoard.appendChild(pixel);
+  }
+}
+
+vqv.addEventListener('click', createBoard);

@@ -1,6 +1,16 @@
 #title {
   text-align: center;
-  color: blue;
+  color: black;
+  background-color: rgb(33, 225, 255);
+  margin: 0%;
+  margin-bottom: 1%;
+}
+body {
+  margin: 0%;
+  background-image: url(https://images.hdqwalls.com/download/pixel-art-1366x768.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 #color-palette {
   width: 180px;
@@ -10,10 +20,31 @@
   border: 1px solid black;
   display: inline-table;
 }
+.board-control {
+  text-align: center;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
 .black {
   background-color: black;
   width: 40px;
   height: 40px;
+}
+.limpar {
+  background-color: #f44336;
+  color: aliceblue;
+  font-size: 16px;
+  border-radius: 8px;
+}
+.inserir {
+  background-color: #4CAF50;
+  color: aliceblue;
+  font-size: 16px;
+  border-radius: 8px;
+}
+input {
+  font-size: 16px;
 }
 .red {
   background-color: red;
@@ -32,9 +63,10 @@
 }
 #pixel-board {
   border: 1px solid black;
-  height: 226px;
   width: 226px;
   margin: auto;
+  font-size: 0;
+  text-align: center;
 }
 .pixel {
   width: 40px;
