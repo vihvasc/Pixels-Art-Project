@@ -1,6 +1,7 @@
 // variáveis globais
 const colorPalette = document.getElementById('color-palette');
 const pixelBoard = document.getElementById('pixel-board').children;
+const clearBoardButton = document.getElementById('clear-board');
 
 function selectedClass() {
   return document.querySelector('.selected');
@@ -23,8 +24,15 @@ function paintPixel(pixel) {
   }
 
   const currentColor = selectedClass().classList[1];
-  console.log(currentColor);
   pixel.classList.add(currentColor);
+}
+
+function clearBoard() {
+  for (let i = 0; i < pixelBoard.length; i += 1) {
+    if (pixelBoard[i].classList.length > 1) {
+      pixelBoard[i].classList.remove([pixelBoard[i].classList[1]]);
+    }
+  }
 }
 
 window.onload = () => {
@@ -41,4 +49,6 @@ window.onload = () => {
       paintPixel(pixelBoard[i]);
     });
   }
+
+  clearBoardButton.addEventListener('click', clearBoard);
 };
