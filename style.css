@@ -1,5 +1,7 @@
 * {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
+  padding: 0;
+  margin: 0;
 }
 
 .color {
@@ -22,19 +24,27 @@ h1 {
 
 #pixel-board {
   border: 1px solid black;
-  width: 250px;
-  height: 250px;
+  width: fit-content;
+  flex-direction: column;
+  height: auto;
   margin: 30px auto;
+  flex-wrap: wrap;
+  display: flex;
+  align-content: flex-start;
 }
 
 .pixel {
   border: 1px solid black;
   width: 40px;
   height: 40px;
-  display: inline-block;
+  background-color: white;
 }
 
 #clear-board {
   display: block;
   margin: 5px auto;
+}
+
+.linha {
+  display: flex;
 }

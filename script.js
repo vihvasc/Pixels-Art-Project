@@ -3,18 +3,24 @@ function colorirPixel(event) {
   pixel.style.backgroundColor = document.querySelector('.selected').style.backgroundColor;
 }
 function criarGrade(tamanho) {
-  const grade = document.querySelector('#pixel-board');
-
   for (let i = 0; i < tamanho; i += 1) {
-    const pixel = document.createElement('div');
-    pixel.className = 'pixel';
-    grade.appendChild(pixel);
-    pixel.style.backgroundColor = 'white';
-    pixel.addEventListener('click', colorirPixel);
+    const linhaDePixel = document.createElement('div');
+    const linha = document.querySelector('#pixel-board');
+    linha.appendChild(linhaDePixel);
+    linhaDePixel.className = 'linha';
+    for (let i2 = 0; i2 < tamanho; i2 += 1) {
+      const colunaDePixel = document.createElement('div');
+      const coluna = document.getElementsByClassName('linha')[i];
+      coluna.appendChild(colunaDePixel);
+      colunaDePixel.className = 'pixel';
+      colunaDePixel.addEventListener('click', colorirPixel);
+    }
   }
 }
-criarGrade(25);
-const color = document.getElementsByClassName('color');
+
+const quantidadeDePixel = document.getElementById('board-size').value;
+
+criarGrade(quantidadeDePixel);
 
 function selecionaCor(event) {
   const corSelecionada = document.querySelector('.selected');
@@ -28,12 +34,35 @@ function cleanBoard() {
     pixel[i].style.backgroundColor = 'white';
   }
 }
-function addEvents() {
-  for (let i = 0; i < color.length; i += 1) {
-    color[i].addEventListener('click', selecionaCor);
+const inputBoardSize = document.querySelector('#board-size');
+function tamanhoMinEMax() {
+  if (inputBoardSize.value < 5) {
+    inputBoardSize.value = 5;
+  } else if (inputBoardSize.value > 50) {
+    inputBoardSize.value = 50;
   }
-  const botao = document.querySelector('button');
-  botao.addEventListener('click', cleanBoard);
+}
+function apagaGrade() {
+  const linhaDePixel = document.getElementsByClassName('linha');
+  for (let i = linhaDePixel.length - 1; i >= 0; i -= 1) {
+    linhaDePixel[i].remove();
+  }
+}
+function mudarOTamanho() {
+  tamanhoMinEMax();
+  apagaGrade();
+  criarGrade(inputBoardSize.value);
+}
+function addEvents() {
+  const paletaDeCores = document.getElementsByClassName('color');
+  for (let i = 0; i < paletaDeCores.length; i += 1) {
+    paletaDeCores[i].addEventListener('click', selecionaCor);
+  }
+  const btnClean = document.querySelector('#clear-board');
+  btnClean.addEventListener('click', cleanBoard);
+  const btnVQV = document.querySelector('#generate-board');
+  btnVQV.addEventListener('click', tamanhoMinEMax);
+  btnVQV.addEventListener('click', mudarOTamanho);
 }
 
 function criaPaleta(cores) {
@@ -52,3 +81,9 @@ const blackColor = document.querySelector('.cor1');
 blackColor.classList.add('selected');
 
 addEvents();
+
+inputBoardSize.addEventListener('keyup', (event) => {
+  if (event.key === 'Enter') {
+    mudarOTamanho();
+  }
+});
