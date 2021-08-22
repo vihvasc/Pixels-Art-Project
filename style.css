@@ -4,27 +4,7 @@
   border: 1px solid black;
 }
 
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.yellow {
-  background-color: yellow;
-}
-
-.black {
-  background-color: black;
-}
-
-#color-palette {
-  display: flex;
-}
-
-#pixel-board .pixel{
+.pixel{
   width: 40px;
   height: 40px;
   background-color: rgb(255,255,255);
@@ -35,4 +15,29 @@
   width: 210px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.black {
+  background-color: black;
+}
+
+#pixel-board .black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: blue;
+}
+
+
+.yellow {
+  background-color: yellow;
+}
+
+#color-palette {
+  display: flex;
 }
