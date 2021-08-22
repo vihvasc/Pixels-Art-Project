@@ -1,3 +1,23 @@
+#pixel-board {
+  height: 225px;
+  width: 225px;
+  border: solid black 1px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#clear-board {
+  margin: 10px;
+  margin-left: 0px;
+  width: 60px;
+  height: 20px;
+  background-color: white;
+  border-radius: 3px;
+  border: solid black 1px;
+}
+
 .color {
   height: 40px;
   width: 40px;
@@ -5,27 +25,15 @@
   display: inline-block;
 }
 
-#pixel-board {
-  height: 225px;
-  width: 225px;
-  border:solid black 1px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 5px
-}
-
-
 .pixel {
   height: 40px;
   width: 40px;
   border: solid black 1px;
-
 }
 
 .selected {
   height: 40px;
   width: 40px;
   border: solid black 1px;
+  display: inline-block;
 }
-
