@@ -12,9 +12,9 @@ const cleanButtom = document.getElementById('clear-board');
 
 /** Sourse: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript */
 function generateColor() {
-  const r = parseInt(Math.random() * 255);
-  const g = parseInt(Math.random() * 255);
-  const b = parseInt(Math.random() * 255);
+  const r = parseInt(Math.random() * 255, 10);
+  const g = parseInt(Math.random() * 255, 10);
+  const b = parseInt(Math.random() * 255, 10);
   if (r !== 255) {
     return `rgb(${r}, ${g}, ${b})`;
   }
@@ -39,9 +39,9 @@ function colorSelect() {
 colorSelect();
 
 function verifyInputs() {
-  if (isNaN(boardSize)) {
+  if (Number.isNaN(Number(boardSize))) {
     alert('Board inválido!');
-    location.reload();
+    boardSize = 5;
   } else if (boardSize < 5) {
     boardSize = 5;
   } else if (boardSize > 50) {
@@ -68,21 +68,20 @@ function deleteBoard() {
   pixelBoard.innerHTML = '';
 }
 
-buttonVQV.addEventListener('click', (event) => {
-  boardSize = parseInt(input.value);
+buttonVQV.addEventListener('click', () => {
+  boardSize = parseInt(input.value, 10);
   verifyInputs();
   deleteBoard();
   createBoard();
 });
 
-pixelBoard.addEventListener('click', paintPixels);
-
 function paintPixels(event) {
+  const evento = event.target;
   const colorSelected = document.getElementsByClassName('selected')[0];
-  event.target.style.backgroundColor = colorSelected.style.backgroundColor;
+  evento.style.backgroundColor = colorSelected.style.backgroundColor;
 }
 
-cleanButtom.addEventListener('click', cleanGrid);
+pixelBoard.addEventListener('click', paintPixels);
 
 function cleanGrid() {
   const pixels = document.getElementsByClassName('pixel');
@@ -90,3 +89,5 @@ function cleanGrid() {
     pixels[index].style.backgroundColor = 'rgb(255, 255, 255)';
   }
 }
+
+cleanButtom.addEventListener('click', cleanGrid);
