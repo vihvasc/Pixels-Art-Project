@@ -30,13 +30,15 @@ function resetSize() {
   }
 }
 
-function paint() {
-  event.target.style.backgroundColor = selectedColor;
+function paint(event) {
+  const eventPaint = event.target;
+  eventPaint.style.backgroundColor = selectedColor;
 }
 
-function selectColor() {
+function selectColor(event) {
+  const eventSelect = event.target;
   for (let i = 0; i < paletteList.length; i += 1) {
-    if (event.target === paletteList[i]) {
+    if (eventSelect === paletteList[i]) {
       paletteList[i].classList.add('selected');
       selectedColor = paletteList[i].style.backgroundColor;
     } else {
@@ -47,8 +49,8 @@ function selectColor() {
 
 function clearBoard() {
   pixelBoard = document.querySelectorAll('.pixel');
-  for (const key of pixelBoard) {
-    key.style.backgroundColor = 'white';
+  for (let i = 0; i < pixelBoard.length; i += 1) {
+    pixelBoard[i].style.backgroundColor = 'white';
   }
 }
 
