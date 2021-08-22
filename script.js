@@ -1,28 +1,62 @@
-const palletaCores = document.querySelector("#color-pallete");
+
+const palletaCores = document.getElementById("color-palette");
 const color = document.getElementsByClassName("color")
 const cores = ["rgb(0,0,0)","rgb(255,0,0)","rgb(0,255,0)","rgb(0,0,255)"];
-const body = document.getElementsByTagName("body")[0]
+const body = document.getElementsByTagName("body")[0];
+const pixels = document.getElementsByClassName("pixel")
+const corSelecionada = document.getElementsByClassName("color selected")
 
+
+function mudacor(event) {
+  for(let index = 0; index < color.length; index+= 1) {
+    if(corSelecionada[index] === corSelecionada[0]) {
+      cor = corSelecionada[0].style.backgroundColor;
+    }
+  }
+  event.target.style.backgroundColor = cor;
+}
+
+function palletaEscultadores () {
+  for(let index = 0; index < color.length; index+= 1) {
+    color[index].addEventListener("click", function(){
+       if(color[index].className === "color") {
+        for(let index = 0; index < color.length; index+= 1) {
+          color[index].classList.remove("selected")
+        }
+         color[index].classList = "color selected";
+       } else if (color[index].className === "color selected") {
+         color[index].classList = "color";
+       }
+     })
+  }
+}
+
+function corPretaSelecionada() {
+  for(let index = 0; index < color.length; index+= 1) {
+    if(color[index] === color[0]) {
+      color[index].classList = "color selected"
+   }
+  }
+}   
 
 function corBrancaInicio () {
-    let white = "rgb(255,255,255)"
-    let pixel =  document.querySelector(".pixel")
+    let white = "rgb(255,255,255)";
+    let pixel =  document.querySelectorAll(".pixel");
+    for(let index = 0; index < 25; index+= 1) {
+      pixel[index].style.backgroundColor = white;
+    }
     
-    if(pixel.style.backgroundColor !== white) {
-        pixel.style.backgroundColor = white;
-   } 
 }
 
 function quadroPixel () {
-    let white = "rgb(255,255,255)"
     let quadroPixel = document.createElement("div")
     quadroPixel.id = "pixel-board"
     body.appendChild(quadroPixel)
         for(let index = 0; index < 25; index+= 1) {
           let pixel = document.createElement("div");
           pixel.className = "pixel"
+          pixel.addEventListener("click", mudacor)
           quadroPixel.appendChild(pixel)
-          pixel.style.backgroundColor = white;
         }
           
 }
@@ -37,4 +71,6 @@ window.onload = function () {
    AdicionaCores()
    quadroPixel()
    corBrancaInicio()
+   palletaEscultadores()
+   corPretaSelecionada()
 }

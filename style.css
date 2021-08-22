@@ -12,9 +12,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 5px;
-  padding-bottom: 2px;
+  padding: 5px
 }
+
 
 .pixel {
   height: 40px;
@@ -22,3 +22,10 @@
   border: solid black 1px;
 
 }
+
+.selected {
+  height: 40px;
+  width: 40px;
+  border: solid black 1px;
+}
+
