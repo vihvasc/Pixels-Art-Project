@@ -1,3 +1,4 @@
+
 .color {
     display: inline-block;
     height: 40px;
@@ -6,33 +7,11 @@
     border: 1px solid black;
 }
 
-#black {
-    background-color: black;
-}
-
-#red {
-    background-color: red;
-}
-
-#blue {
-    background-color: blue;
-}
-
-#green {
-    background-color: darkgreen;
-}
-
 #pixel-board {
     margin-top: 10px;
-}
-.pixel {
-    display: table-cell;
-    border: 1px solid black;
-    height: 40px;
-    width: 40px;
-    background-color: rgb(255, 255, 255);
 }
 
 button {
     margin-top: 5px;
+    display: inline-block;
 }
