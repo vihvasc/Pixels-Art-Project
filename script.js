@@ -1,14 +1,40 @@
 const square = document.body.querySelector('#pixel-board');
+let numberLine = 5;
+const initialSize = 25;
+let boardSize = numberLine ** 2;
 
-function squarePixel(numberOfElements) {
-  for (let index = 1; index <= numberOfElements; index += 1) {
+function squarePixel(number) {
+  for (let index = 1; index <= boardSize; index += 1) {
     const pixels = document.createElement('div');
     pixels.className = 'pixel';
+    const squareSize = numberLine * 42;
+    square.style.width = `${squareSize}px`;
 
     square.appendChild(pixels);
   }
 }
-squarePixel(25);
+squarePixel(numberLine);
+
+const input = document.getElementById('board-size');
+const buttonVQV = document.getElementById('generate-board');
+
+buttonVQV.addEventListener('click', function () {
+  numberLine = input.value;
+  console.log(numberLine);
+  boardSize = numberLine * numberLine;
+  cleanBoard();
+  if (numberLine < 5 || numberLine > 50 || numberLine === '') {
+    alert('Board inválido');
+  } else {
+    squarePixel(numberLine);
+  }
+});
+
+function cleanBoard() {
+  square.innerHTML = '';
+}
+
+const quadros = document.getElementsByClassName('pixel');
 
 const getColor = document.querySelectorAll('.color');
 getColor[0].style.backgroundColor = 'black';
