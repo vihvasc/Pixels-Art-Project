@@ -1,12 +1,9 @@
-body {
-    margin: 15px;
-}
-
 .color {
     height: 50px;
     width: 50px;
     border: solid 1px black;
     display: inline-block;
+    margin-bottom: 20px;
 }
 
 #green-button { 
@@ -21,6 +18,15 @@ body {
     background-color:yellow;
 }
 
-#red-button {
-    background-color: red;
+#black-button {
+    background-color: black;
+}
+
+.pixel {
+    margin:0px;
+    display: inline-block;
+    margin: 0px;
+    height: 50px;
+    width: 50px;
+    background-color: white;
 }
