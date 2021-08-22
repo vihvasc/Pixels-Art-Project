@@ -5,9 +5,10 @@ const body = document.getElementsByTagName('body')[0];
 const pixels = document.getElementsByClassName('pixel');
 const corSelecionada = document.getElementsByClassName('selected');
 const botaoClear = document.getElementById('clear-board');
+const white = 'rgb(255,255,255)';
+const pixel = document.querySelectorAll('.pixel');
 
 function limpaQuadro() {
-  let white = 'rgb(255,255,255)';
   for (let index = 0; index < 25; index += 1) {
     pixels[index].style.backgroundColor = white;
   }
@@ -35,8 +36,7 @@ palletaCores.addEventListener('click', seleciona);
 function mudacor(event) {
   for (let index = 0; index < color.length; index += 1) {
     if (corSelecionada[index] === corSelecionada[0]) {
-      event.target.style.backgroundColor =
-        corSelecionada[index].style.backgroundColor; //event.target (é o pixel clicado vindo da função )
+      event.target.style.backgroundColor = corSelecionada[index].style.backgroundColor;
     }
   }
 }
@@ -50,19 +50,17 @@ function corPretaSelecionada() {
 }
 
 function corBrancaInicio() {
-  let white = 'rgb(255,255,255)';
-  let pixel = document.querySelectorAll('.pixel');
   for (let index = 0; index < 25; index += 1) {
     pixel[index].style.backgroundColor = white;
   }
 }
 
 function quadroPixel() {
-  let quadroPixel = document.createElement('div');
+  const quadroPixel = document.createElement('div');
   quadroPixel.id = 'pixel-board';
   body.appendChild(quadroPixel);
   for (let index = 0; index < 25; index += 1) {
-    let pixel = document.createElement('div');
+    const pixel = document.createElement('div');
     pixel.className = 'pixel';
     pixel.addEventListener('click', mudacor);
     quadroPixel.appendChild(pixel);
@@ -75,9 +73,11 @@ function AdicionaCores() {
   }
 }
 
-window.onload = function () {
+function carregado() {
   AdicionaCores();
   quadroPixel();
   corBrancaInicio();
   corPretaSelecionada();
-};
+}
+
+window.onload = carregado;
