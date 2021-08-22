@@ -1,5 +1,4 @@
 * {
-  /* border: 1px solid blue; */
   padding: 0;
   margin: 0;
 }
@@ -28,9 +27,6 @@ h1 {
   flex-direction: column;
   height: auto;
   margin: 30px auto;
-  flex-wrap: wrap;
-  display: flex;
-  align-content: flex-start;
 }
 
 .pixel {
@@ -41,10 +37,19 @@ h1 {
 }
 
 #clear-board {
-  display: block;
-  margin: 5px auto;
+  margin-right: 20px;
 }
 
 .linha {
   display: flex;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+}
+
+#generate-board {
+  margin-left: 4px;
 }

@@ -17,6 +17,7 @@ function criarGrade(tamanho) {
     }
   }
 }
+criarGrade(5);
 
 const quantidadeDePixel = document.getElementById('board-size').value;
 
@@ -48,11 +49,18 @@ function apagaGrade() {
     linhaDePixel[i].remove();
   }
 }
+function alerta() {
+  if (inputBoardSize.value === '') {
+    alert('Board inválido!');
+  }
+}
 function mudarOTamanho() {
+  alerta();
   tamanhoMinEMax();
   apagaGrade();
   criarGrade(inputBoardSize.value);
 }
+
 function addEvents() {
   const paletaDeCores = document.getElementsByClassName('color');
   for (let i = 0; i < paletaDeCores.length; i += 1) {
@@ -61,8 +69,9 @@ function addEvents() {
   const btnClean = document.querySelector('#clear-board');
   btnClean.addEventListener('click', cleanBoard);
   const btnVQV = document.querySelector('#generate-board');
-  btnVQV.addEventListener('click', tamanhoMinEMax);
+  // btnVQV.addEventListener('click', tamanhoMinEMax);
   btnVQV.addEventListener('click', mudarOTamanho);
+  btnVQV.addEventListener('click', alerta);
 }
 
 function criaPaleta(cores) {
@@ -75,7 +84,16 @@ function criaPaleta(cores) {
     cor.style.backgroundColor = cores[i];
   }
 }
-criaPaleta(['black', 'red', 'blue', 'green']);
+
+function gerarCorRandom() {
+  const R = Math.trunc(Math.random() * 255);
+  const G = Math.trunc(Math.random() * 255);
+  const B = Math.trunc(Math.random() * 255);
+  const corAleatoria = `rgb(${R}, ${G}, ${B})`;
+  return corAleatoria;
+}
+
+criaPaleta(['black', gerarCorRandom(), gerarCorRandom(), gerarCorRandom()]);
 
 const blackColor = document.querySelector('.cor1');
 blackColor.classList.add('selected');
