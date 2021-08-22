@@ -23,3 +23,16 @@
 #color-palette {
   display: flex;
 }
+
+#pixel-board .pixel{
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255,255,255);
+  border: 1px solid black;
+}
+
+#pixel-board {
+  width: 210px;
+  display: flex;
+  flex-wrap: wrap;
+}
