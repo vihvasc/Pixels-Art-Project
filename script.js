@@ -5,10 +5,10 @@ const button4 = document.querySelector('.red')
 const inputButton = document.querySelector('#generate-board')
 const inputSize = document.querySelector('#board-size')
 
-button1.addEventListener('click',switchColor1)
-button2.addEventListener('click', switchColor2);
-button3.addEventListener('click', switchColor3);
-button4.addEventListener('click', switchColor4);
+button1.addEventListener('click',switchColor)
+button2.addEventListener('click', switchColor);
+button3.addEventListener('click', switchColor);
+button4.addEventListener('click', switchColor);
 button1.classList.add('selected')
 inputButton.addEventListener('click', createNewGrid)
 
@@ -24,40 +24,21 @@ function makeGridEvents(){
     let index = document.querySelectorAll('.pixel').length 
     for(let count = 0; count < index; count += 1){
         let currentBlock = document.querySelectorAll('.pixel')[count]
-        currentBlock.addEventListener('click', function(){
-            paint(currentBlock);
-        })
+        currentBlock.addEventListener('click', paint)
     }
 }
 
-function paint(currentBlock){
+function paint(event){
     let currentColor = document.querySelector('.selected')
     let setColor =  window.getComputedStyle(currentColor).backgroundColor
-    currentBlock.style.backgroundColor = setColor
+    event.target.style.backgroundColor = setColor
 }
 
-function switchColor1(){
+function switchColor(event){
     let actualColor = document.querySelector('.selected');
     actualColor.classList.remove('selected')
-    button1.classList.add('selected')
+    event.target.classList.add('selected')
 }
-
-function switchColor2(){
-    let actualColor = document.querySelector('.selected');
-    actualColor.classList.remove('selected')
-    button2.classList.add('selected')
-}
-function switchColor3(){
-    let actualColor = document.querySelector('.selected');
-    actualColor.classList.remove('selected')
-    button3.classList.add('selected')
-}
-function switchColor4(){
-    let actualColor = document.querySelector('.selected');
-    actualColor.classList.remove('selected')
-    button4.classList.add('selected')
-}
-
 function createNewGrid(){
     if(inputSize.value === ''){
         alert('Board inválido!')
