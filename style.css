@@ -1,17 +1,17 @@
 .color {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     border: solid 1px black;
     display: inline-block;
     margin-bottom: 20px;
 }
 
 #green-button { 
-    background-color: chartreuse;
+    background-color:chartreuse;
 }
 
 #blue-button {
-    background-color: deepskyblue;
+    background-color:deepskyblue;
 }
 
 #yellow-button {
@@ -19,14 +19,13 @@
 }
 
 #black-button {
-    background-color: black;
+    background-color:black;
 }
 
 .pixel {
-    margin:0px;
     display: inline-block;
-    margin: 0px;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
+    border: solid 1px black;
     background-color: white;
 }
