@@ -1,6 +1,9 @@
-let palleteColors = ['rgb(0, 0, 0)', 'rgb(255, 0, 0)', 'rgb(0, 255, 0)', 'rgb(0, 0, 255)'];
-let colorsUl = document.querySelector('.colors-ul');
-let backgroundColorSelected = 'rgb(0,0,0)';
+let palleteColors = ["rgb(0, 0, 0)", "rgb(255, 0, 0)", "rgb(0, 255, 0)", "rgb(0, 0, 255)"];
+let colorsUl = document.querySelector(".colors-ul");
+let pixelBoard = document.getElementById("pixel-board");
+let button = document.getElementById("clear-board")
+let backgroundColorSelected = "rgb(0,0,0)";
+
 
 function addClassAndBackgroundToColors(colors){
   for(let index = 0; index < colors.length; index += 1){
@@ -25,7 +28,7 @@ function creatPixelsBoard(width, heigth){
         for(let column = 1; column <= width; column += 1){
           let block = document.createElement("div");
           block.classList.add("pixel");
-          block.style.backgroundColor = "white";
+          block.style.backgroundColor = "rgb(255,255,255)";
           lineOfPixels.appendChild(block)
         }
       }
@@ -40,8 +43,24 @@ function creatPixelsBoard(width, heigth){
     previousSelected.classList.remove('selected')
   
     element.classList.add('selected')
-    console.log(element.classList)
   })
   
+  pixelBoard.addEventListener('click', function(e) {
+    let element = e.target
+    element.style.backgroundColor = backgroundColorSelected
+  })
+  button.addEventListener('click', function() {
+    let pixelsList = document.getElementsByClassName('pixel')
+    for(pixel of pixelsList){
+      pixel.style.backgroundColor = 'rgb(255,255,255)'
+    }
+  })
+
   addClassAndBackgroundToColors(palleteColors)
   creatPixelsBoard(5, 5)
+
+  /*Codigos alterados com a ajuda na consulta dos codigos de
+  ERICKSON SIQUEIRA
+  Segue o LINK: 
+  https://github.com/tryber/sd-015-b-project-pixels-art/pull/61/commits/a47aa3bcb09bb7542e05ee5d41e97dfc2220e91e
+  */
