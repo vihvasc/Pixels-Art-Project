@@ -6,6 +6,22 @@ div.color {
     width:30px;
     height:30px;
     display: inline-block;
+    border: solid 1px;
+}
+
+section#pixel-board{
+    /* max-height: 200px;
+    max-width: 200px; */
+    width: 210px;
+}
+div.pixel{
+    width:40px;
+    height:40px;
+    display: inline-block;
+    border: solid 1px;
+    background-color: white;
+    max-height: 40px;
+    max-width: 40px;
 }
 
 #black{
@@ -24,6 +40,8 @@ div.color {
     width: 210px;
 }
 .pixel{
-    width:30px;
-    height:30px;
+    
+}
+#pixel-board{
+
 }
