@@ -9,5 +9,29 @@ function selecionaPixel(event) {
 paletteColors.addEventListener('click', selecionaPixel);
 
 
-//digesan 9 gotas 
-//enterogermina plus uma vez por dia
+
+/* let colorPadrao = 'rgb(255, 255, 255)';
+function clearPixels() {
+    for (let index = 0; index < pixelsColorsTable.length; index += 1) {
+        if (pixelsColorsTable[index].style.backgroundColor !== colorPadrao) {
+            pixelsColorsTable[index].style.backgroundColor = colorPadrao;
+        }
+    }
+}
+buttonClearColors.addEventListener('click', clearPixels); */
+
+let buttonClearColors = document.querySelector('#clear-board');
+let pixelBoardColor = document.querySelector('#pixel-board');
+buttonClearColors.addEventListener('click', function() {
+  let backgroundColorPadrao = 'white';
+  let pixelsColorsTable = document.querySelectorAll('.pixel');
+  pixelBoardColor.style.backgroundColor = backgroundColorPadrao;
+  for (let index = 0; index < pixelsColorsTable.length; index += 1) {
+    if (pixelsColorsTable[index].style.backgroundColor !== backgroundColorPadrao) {
+        pixelsColorsTable[index].style.backgroundColor = backgroundColorPadrao;
+    }
+  }
+});
+
+/* digesan 9 gotas 
+enterogermina plus uma vez por dia */
