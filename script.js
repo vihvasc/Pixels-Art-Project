@@ -17,4 +17,9 @@ function fillColor(buttonClicked) {
     buttonClicked.style.backgroundColor = background;
 }
 
-
+function clearBoard() {
+    let allPixels = document.querySelectorAll('.pixel');  
+    for (let i = 0; i < allPixels.length; i += 1) {
+        allPixels[i].style.backgroundColor = 'white';
+    }
+}
