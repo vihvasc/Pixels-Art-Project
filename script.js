@@ -34,8 +34,15 @@ function limparQuadro() {
 limpar.addEventListener('click', limparQuadro);
 
 function createBoard() {
+  // se não existe o valor do input para o código //
+  if (!boardSize.value) {
+    window.alert('Board inválido!');
+    return;
+  };
+  let size = boardSize.value;
+  if (size < 5) return;
+  if (size > 50)size = 50;
   pixelBoard.innerHTML = '';
-  const size = boardSize.value;
   pixelBoard.style.width = `${size * 42}px`;
   const quantidade = size * size;
   for (let i = 0; i < quantidade; i += 1) {
@@ -45,5 +52,4 @@ function createBoard() {
     pixelBoard.appendChild(pixel);
   }
 }
-
 vqv.addEventListener('click', createBoard);
