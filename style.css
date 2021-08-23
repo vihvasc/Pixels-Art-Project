@@ -1,9 +1,11 @@
 #title {
   text-align: center;
-  color: black;
-  background-color: rgb(25, 225, 255);
+  color: rgb(255, 255, 255);
+  background-color: rgb(12, 13, 80);
   margin: 0%;
   margin-bottom: 1%;
+  font-size: 300%;
+  text-shadow: 3px 3px blueviolet;
 }
 body {
   margin: 0%;
