@@ -3,6 +3,8 @@ window.onload = function (){
     //chama a função makeBox
     makeBox();
     selecionada();
+    limparEscutador();
+    /* escutandoAsDivsPixel(); */
 }
 
 function makeBox(){
@@ -99,4 +101,28 @@ function corSelecionadaVermelho(){
     amarelo.className = "color";
     azul.className = "color";
     vermelho.className = "color selected";
+}
+/* function escutandoAsDivsPixel (){
+
+    let pixel = document.getElementsByClassName('pixel');
+    pixel.addEventListener('mouseover',marcandoAdiv);
+} 
+
+function marcandoAdiv(){
+
+    let pixel = document.getElementsByClassName("pixel");
+    pixel.className = "pixel selected";
+} */
+
+function limparEscutador (){
+    let botaolimpar = document.getElementById('clear-board');
+    botaolimpar.addEventListener('click',limpar);
+}
+function limpar(){
+    let pixel = document.querySelectorAll('.pixel');
+    
+    for ( var contador = 0; contador < pixel.length; contador++){
+        pixel[contador].style.backgroundColor = "rgb(255,255,255)";
+    }
+   
 }
