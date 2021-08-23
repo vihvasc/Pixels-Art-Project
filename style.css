@@ -12,7 +12,6 @@
 }
 
 #pixel-board {
-  /* width: 210px; */
   display: flex;
   flex-wrap: wrap;
 }
@@ -23,19 +22,6 @@
 
 #pixel-board .black {
   background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-
-.yellow {
-  background-color: yellow;
 }
 
 #color-palette {

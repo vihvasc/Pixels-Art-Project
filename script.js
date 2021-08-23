@@ -37,20 +37,18 @@ function selectColor(color) {
 }
 
 function paintPixel(pixelDiv) {
-  if (pixelDiv.classList.length > 1) {
-    pixelDiv.classList.remove(pixelDiv.classList[1]);
+  const actualPixelDiv = pixelDiv;
+  if (actualPixelDiv.classList.length > 1) {
+    actualPixelDiv.classList.remove(actualPixelDiv.classList[1]);
   }
-
-  const currentColor = selectedClass().classList[1];
-  console.log(currentColor);
-  pixelDiv.classList.add(currentColor);
+  const currentColor = selectedClass();
+  actualPixelDiv.style.backgroundColor = currentColor.style.backgroundColor;
 }
 
 function clearBoard() {
-  for (let i = 0; i < pixel().length; i += 1) {
-    if (pixel()[i].classList.length > 1) {
-      pixel()[i].classList.remove([pixel()[i].classList[1]]);
-    }
+  const allPixels = pixel();
+  for (let i = 0; i < allPixels.length; i += 1) {
+    allPixels[i].style.backgroundColor = 'white';
   }
 }
 
@@ -80,19 +78,41 @@ function generate() {
   pixelEvent(pixel());
 }
 
+function generateRandomColor() {
+  const color = Math.floor(Math.random() * 255);
+  return color;
+}
+
+function generateRandomRGB() {
+  const rgb = [];
+  rgb.push(generateRandomColor());
+  rgb.push(generateRandomColor());
+  rgb.push(generateRandomColor());
+  return rgb;
+}
+
+function colorRandom(color) {
+  const currentColor = color;
+  if (currentColor.classList[1] !== 'black') {
+    const rgb = generateRandomRGB();
+    currentColor.style.backgroundColor = `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+  } else {
+    currentColor.style.backgroundColor = 'black';
+  }
+}
+
 window.onload = () => {
   createPixel(5);
   pixelEvent(pixel());
   generateBoard.addEventListener('click', (event) => {
     event.preventDefault();
-    // boardSize.min = 5;
-    // boardSize.min = 50;
     generate();
   });
   if (selectedClass() === null) {
     colorPalette.children[0].classList.add('selected');
   }
   for (let i = 0; i < colorPalette.children.length; i += 1) {
+    colorRandom(colorPalette.children[i]);
     selectColor(colorPalette.children[i]);
   }
   clearBoardButton.addEventListener('click', clearBoard);
