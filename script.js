@@ -27,7 +27,6 @@ function colorPixel(event) {
 pixelBoard.addEventListener('click', colorPixel);
 
 const buttonClearColors = document.querySelector('#clear-board');
-const pixelBoardColor = document.querySelector('#pixel-board');
 buttonClearColors.addEventListener('click', function () {
   const backgroundColorPadrao = 'white';
   const pixelsColorsTable = document.querySelectorAll('.pixel');
