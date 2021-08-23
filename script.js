@@ -8,24 +8,29 @@ function selecionaPixel(event) {
 }
 paletteColors.addEventListener('click', selecionaPixel);
 
-
-
-/* let colorPadrao = 'rgb(255, 255, 255)';
-function clearPixels() {
-    for (let index = 0; index < pixelsColorsTable.length; index += 1) {
-        if (pixelsColorsTable[index].style.backgroundColor !== colorPadrao) {
-            pixelsColorsTable[index].style.backgroundColor = colorPadrao;
-        }
-    }
-}
-buttonClearColors.addEventListener('click', clearPixels); */
+let pixelBoard = document.querySelector('#pixel-board');
+let selectedColors = document.querySelector('.selected');
+ function colorPixel(event) {
+  if (colorSelect[0].classList.contains('selected')) {
+    event.target.style.backgroundColor = 'black';
+  }
+  else if (colorSelect[1].classList.contains('selected')) {
+  event.target.style.backgroundColor = 'red';
+  }
+  else if (colorSelect[2].classList.contains('selected')) {
+  event.target.style.backgroundColor = 'blue';
+  }
+  else if (colorSelect[3].classList.contains('selected')) {
+  event.target.style.backgroundColor = 'green';
+  }
+ }
+pixelBoard.addEventListener('click', colorPixel);
 
 let buttonClearColors = document.querySelector('#clear-board');
 let pixelBoardColor = document.querySelector('#pixel-board');
 buttonClearColors.addEventListener('click', function() {
   let backgroundColorPadrao = 'white';
   let pixelsColorsTable = document.querySelectorAll('.pixel');
-  pixelBoardColor.style.backgroundColor = backgroundColorPadrao;
   for (let index = 0; index < pixelsColorsTable.length; index += 1) {
     if (pixelsColorsTable[index].style.backgroundColor !== backgroundColorPadrao) {
         pixelsColorsTable[index].style.backgroundColor = backgroundColorPadrao;
