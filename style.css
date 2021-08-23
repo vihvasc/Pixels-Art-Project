@@ -1,44 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
+html, body {
+  background-color: rgb(132, 140, 148);
 }
 
 .color {
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
   display: inline-block;
-  margin: 0;
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
 }
 
 .selected {
-  background-color: black;
-}
-
-.color1 {
-  background-color: black;
-}
-
-.color2 {
-  background-color: orange;
-}
-
-.color3 {
-  background-color: gray;
-}
-
-.color4 {
-  background-color: purple;
-}
-
-.pixelCollum {
-  margin: 0;
+  background-color: black ;
 }
 
 .pixel {
+  display: inline-block;
+  border: 1px solid black;
   width: 40px;
   height: 40px;
-  border: 1px solid black;
-  display: inline-block;
-  margin: 0;
 }

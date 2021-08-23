@@ -1,25 +1,28 @@
-const getColor = document.querySelectorAll('.color');
-const getPixel = document.querySelectorAll('.pixel');
+const getColors = document.querySelectorAll('.color');
+let getPixels = document.querySelectorAll('.pixel')
 
-// inicializa com a cor de todos os quadrados em branco
-for (let index = 0; index < getPixel.length; index += 1) {
-  getPixel[index].style.backgroundColor = 'white';
-  //getPixel[index].addEventListener('click', colorPainter)
+for (let index = 0; index < getPixels.length; index += 1) {
+  getPixels[index].style.backgroundColor = 'white';
 }
 
-// itera sobre o NodeList da classe color, adicionando um evento em cada objeto, chamando uma função
-for (let index = 0; index < getColor.length; index += 1) {
-  getColor[index].addEventListener('click', selectedClass);
-}
+for (let index = 0; index < getColors.length; index += 1) {
 
-// event é para acessarmos o target do objeto chamado
-function selectedClass(event) {
-  // itera sobre os elementos, removendo a classe 'selected'
-  for (let index = 0; index < getColor.length; index += 1) {
-    getColor[index].classList.remove('selected');
-  }
-  getColor[index].style.backgroundColor = getColor[index].style.backgroundColor;
+  getColors[index].addEventListener('click', function() {
 
-  // event.target é uma propriedade do objeto para adicionarmos alguma coisa nele, nesse caso uma classe
-  event.target.classList.add('selected');
-}
+    if (getColors[index].className !== 'selected') {
+      for (let index = 0; index < getColors.length; index += 1) {
+        getColors[index].classList.remove('selected');
+      };
+    };
+
+    getColors[index].classList.add('selected')
+
+    for (let pixel = 0; pixel < getPixels.length; pixel += 1) {
+      getPixels[pixel].addEventListener('click', function() {
+        getPixels[pixel].style.backgroundColor = getColors[index].style.backgroundColor
+      })
+    }
+
+  });
+
+};
