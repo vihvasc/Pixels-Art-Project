@@ -10,6 +10,11 @@ function switchColor(buttonClicked) {
     buttonClicked.classList.add('selected');
 }   
 
-
+function fillColor(buttonClicked) {
+    let colorSelected = document.getElementsByClassName('selected')[0];
+    let colorSelectedStyle = window.getComputedStyle(colorSelected);
+    let background = colorSelectedStyle.getPropertyValue('background-color');
+    buttonClicked.style.backgroundColor = background;
+}
 
 
