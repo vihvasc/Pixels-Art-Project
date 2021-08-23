@@ -2,6 +2,7 @@ window.onload = function (){
 
     //chama a função makeBox
     makeBox();
+    selecionada();
 }
 
 function makeBox(){
@@ -32,4 +33,70 @@ function makeBox(){
     
     }
     
+}
+
+function selecionada(){
+
+    let buttonPreto = document.getElementById('preto');
+    let buttonAzul = document.getElementById('azul');
+    let buttonAmarelo = document.getElementById('amarelo');
+    let buttonVermelho = document.getElementById('vermelho');
+
+    buttonPreto.addEventListener('click',corSelecionadaPreto);
+    buttonAzul.addEventListener('click',corSelecionadaAzul);
+    buttonAmarelo.addEventListener('click',corSelecionadaAmarelo);
+    buttonVermelho.addEventListener('click',corSelecionadaVermelho);
+
+}
+
+function corSelecionadaPreto(){
+
+    let preto = document.getElementById('preto');
+    let amarelo = document.getElementById('amarelo');
+    let azul = document.getElementById('azul');
+    let vermelho = document.getElementById('vermelho');
+
+    preto.className = "color selected";
+    amarelo.className = "color";
+    azul.className = "color";
+    vermelho.className = "color";
+}
+
+function corSelecionadaAmarelo(){
+
+    let preto = document.getElementById('preto');
+    let amarelo = document.getElementById('amarelo');
+    let azul = document.getElementById('azul');
+    let vermelho = document.getElementById('vermelho');
+
+    preto.className = "color";
+    amarelo.className = "color selected";
+    azul.className = "color";
+    vermelho.className = "color";
+}
+
+function corSelecionadaAzul(){
+
+    let preto = document.getElementById('preto');
+    let amarelo = document.getElementById('amarelo');
+    let azul = document.getElementById('azul');
+    let vermelho = document.getElementById('vermelho');
+
+    preto.className = "color";
+    amarelo.className = "color";
+    azul.className = "color selected";
+    vermelho.className = "color";
+}
+
+function corSelecionadaVermelho(){
+
+    let preto = document.getElementById('preto');
+    let amarelo = document.getElementById('amarelo');
+    let azul = document.getElementById('azul');
+    let vermelho = document.getElementById('vermelho');
+
+    preto.className = "color";
+    amarelo.className = "color";
+    azul.className = "color";
+    vermelho.className = "color selected";
 }
