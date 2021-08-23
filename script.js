@@ -38,7 +38,7 @@ function createBoard() {
   if (!boardSize.value) {
     window.alert('Board inválido!');
     return;
-  };
+  }
   let size = boardSize.value;
   if (size < 5) return;
   if (size > 50)size = 50;
@@ -53,3 +53,16 @@ function createBoard() {
   }
 }
 vqv.addEventListener('click', createBoard);
+
+function randomColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
+function colorGenerator() {
+  for (let i = 1; i < selectColor.length; i += 1) {
+    selectColor[i].style.backgroundColor = randomColor();
+  }
+}
+colorGenerator();
