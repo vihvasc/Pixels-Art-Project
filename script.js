@@ -6,9 +6,14 @@ for (let i = 0; i < 25; i += 1) {
     console.log("olha eu aqui")
 
 }
+document.getElementById("blue").addEventListener("click", clickColor)
+document.getElementById("black").addEventListener("click", clickColor)
+document.getElementById("red").addEventListener("click", clickColor)
+document.getElementById("purple").addEventListener("click", clickColor)
 
 function clickColor (clickEvent) {
     const selection = document.querySelector(".selected");
     selection.classList.remove("selected");
     clickEvent.target.classList.add("selected");
 }
+
