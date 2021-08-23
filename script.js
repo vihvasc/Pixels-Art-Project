@@ -33,13 +33,9 @@ function criaPixels() {
             let setDiv1 = document.createElement('div');
             setDiv1.classList.add('pixel');
             elementPixelBoard.appendChild(setDiv1);
-            setDiv1.style.height = "40px"
-            setDiv1.style.width = "40px"
-            setDiv1.style.border = "1px solid black"
-            setDiv1.style.display = "table-cell"
-            setDiv1.style.backgroundColor = "white";
+
         }
-        let espaco = document.createElement('br');
+        let espaco = document.createElement('p');
         elementPixelBoard.appendChild(espaco);
     }
 }
@@ -102,14 +98,8 @@ function defineInput() {
             let setDiv1 = document.createElement('div');
             setDiv1.classList.add('pixel');
             elementPixelBoard.appendChild(setDiv1);
-            setDiv1.style.height = "40px";
-            setDiv1.style.width = "40px";
-            setDiv1.style.border = "1px solid black";
-            setDiv1.style.display = "table-cell";
-            setDiv1.style.margin = '0px';
-            setDiv1.style.backgroundColor = "white";
         }
-        let espaco = document.createElement('br');
+        let espaco = document.createElement('p');
         elementPixelBoard.appendChild(espaco);
     }
 
