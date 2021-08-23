@@ -1,0 +1,29 @@
+#color-palette{
+background-color: orange;
+
+}
+div.color {
+    width:30px;
+    height:30px;
+    display: inline-block;
+}
+
+#black{
+    background-color: black;
+}
+#purple{
+    background-color: purple;
+}
+#blue{
+    background-color: blue;
+}
+#red{
+    background-color: red;
+}
+#pixel-board{
+    width: 210px;
+}
+.pixel{
+    width:30px;
+    height:30px;
+}
