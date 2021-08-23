@@ -24,6 +24,24 @@ section {
   padding: 0;
 }
 
+button {
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 5px;
+  background-color: rgb(230, 230, 230);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgb(200, 200, 200);
+  border-color: rgb(70, 70, 70);
+}
+
+#board-size {
+  width: 50px;
+}
+
 #color-palette {
   text-align: center;
   display: block;
@@ -31,9 +49,17 @@ section {
 }
 
 #pixel-board {
-  margin-right: 580px;
-  margin-left: 560px;
+  display: grid;
+  justify-content: center;
   border: 2px solid green;
+}
+
+.pixel {
+  border: 1px solid black;
+  height: 40px;
+  width: 40px;
+  background-color: white;
+
 }
 
 #title {
@@ -47,12 +73,18 @@ section {
   width: 80px;
 }
 
-.pixel {
-  border: 1px solid black;
-  height: 40px;
-  width: 40px;
-  display: inline-block;
-  background-color: white;
+.buttons-section {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.buttons-section input{
+  margin-right: 10px;
+}
+
+.buttons-section button{
+  margin-right: 10px;
 }
 
 #black {
