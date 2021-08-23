@@ -16,6 +16,8 @@
 button {
     width: 60px;
     height: 60px;
+    position: relative;
+    margin: auto;
 }    
 
 #preto{
@@ -32,4 +34,13 @@ button {
 
 #vermelho {
     background-color: red;
+}
+
+#pixel-board{
+
+    width: 210px;
+    height:230px;
+    border: 1px black solid;
+    
+   
 }
