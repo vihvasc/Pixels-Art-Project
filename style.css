@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:  'Red Hat Display','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .color {
   width: 50px;
   height: 50px;
@@ -27,3 +34,81 @@
 #color-palette {
   display: flex;
 }
+
+body {
+  background-image: url(https://i.redd.it/imkv74m4q5g41.png);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.selected {
+  border: 2px solid rgba(255,255,0, .8);
+}
+
+.all-content{
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  padding-top: 10vh;
+}
+.pixel-content {
+  padding: 30px;
+  background-color: #B8BDC1;
+  border-radius: 0 0 20px 20px;
+}
+.interface-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #A4A4A4;
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+}
+
+form button {
+  background-color: #717171;
+  border-radius: 3px;
+  padding: 4px;
+  margin: 10px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  transition: .2s;
+}
+
+form button:last-child{
+  background-color: #FE6C5C;
+}
+
+form button:last-child:hover{
+  background-color: #f05e4d;
+}
+
+form button:hover{
+  cursor: pointer;
+  background-color: #585858;
+}
+
+form input {
+  width: 90px;
+}
+
+#color-palette {
+  background-color: #B1D785;
+  padding: 50px 10px 50px 10px;
+  border: 5px solid #6D4A3E;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 15px 0 0 0;
+}
+
