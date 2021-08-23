@@ -1,12 +1,42 @@
 const inputBox = document.getElementById('board-size');
 const buttonGenerate = document.getElementById('generate-board');
 const buttonClean = document.getElementById('clear-board');
-const colorsList = document.querySelectorAll('.color');
-colorsList[0].style.background = 'black';
-colorsList[1].style.background = 'lightblue';
-colorsList[2].style.background = 'lightgreen';
-colorsList[3].style.background = 'pink';
-colorsList[0].classList.add('selected');
+const colorsList = document.getElementById('color-palette');
+
+function createColorPalette() {
+  for (let index = 0; index < 4; index += 1) {
+    const listItem = document.createElement('li');
+    listItem.classList.add('color');
+    if (index === 0) {
+      listItem.classList.add('selected');
+    }
+    colorsList.appendChild(listItem);
+  }
+}
+
+function generateRGBColor() {
+  const colorNumbers = [];
+  for (let index = 0; index < 3; index += 1) {
+    const number = Math.round(Math.random() * 256);
+    colorNumbers.push(number);
+  }
+  const colorString = colorNumbers.join();
+  return colorString;
+}
+
+function randomizeColor() {
+  const colorPalette = document.querySelectorAll('.color');
+  colorPalette[0].style.background = 'rgb(0,0,0)';
+  for (let index = 1; index < 4; index += 1) {
+    const previousColor = colorPalette[index - 1].style.background;
+    const currentColorItem = colorPalette[index];
+    let currentColor = generateRGBColor();
+    while (currentColor === previousColor) {
+      currentColor = generateRGBColor();
+    }
+    currentColorItem.style.background = `rgb(${currentColor})`;
+  }
+}
 
 function createLine(width) {
   const pixelBoard = document.getElementById('pixel-board');
@@ -46,8 +76,9 @@ function handlePickedColor(event) {
 }
 
 function handlePickColorEvent() {
-  for (let index = 0; index < colorsList.length; index += 1) {
-    colorsList[index].addEventListener('click', handlePickedColor);
+  const colors = document.getElementsByClassName('color');
+  for (let index = 0; index < colors.length; index += 1) {
+    colors[index].addEventListener('click', handlePickedColor);
   }
 }
 
@@ -93,6 +124,8 @@ function checkInputValue() {
 }
 
 window.onload = function createPixelArt() {
+  createColorPalette();
+  randomizeColor();
   handlePickColorEvent();
   handlePixelsEventAdd();
   createBoard(5);
