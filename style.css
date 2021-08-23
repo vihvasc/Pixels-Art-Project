@@ -18,12 +18,12 @@ h1 {
     margin-left: 0px;
   }
   
-  #blue {
-    background-color: #00008B;
-  }
-  
   #black {
     background-color: #000000;
+  }
+  
+  #blue {
+    background-color: #00008B;
   }
   
   #yellow {
@@ -33,3 +33,23 @@ h1 {
   #red {
     background-color: #8B0000;
   }
+
+  border: solid black 1px;
+}
+
+#pixel-board {
+  display: table;
+  border-spacing: 1px;
+  background-color: black;
+  border: 5px solid black;
+}
+.pixel {
+  height: 40px;
+  width: 40px;
+  border: black solid 1px;
+  display: table-cell;
+  box-sizing: border-box;
+}
+
+#black {
+  background-color: black;
