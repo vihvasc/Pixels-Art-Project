@@ -1,6 +1,13 @@
+#title {
+  background-color: rgb(177, 192, 221);
+  text-align: center;
+  color: rgb(15, 15, 15);
+  font-size: 50px;
+}
 #color-palette {
   width: 1366px;
   height: 100px;
+  text-align: center;
 }
 
 .color {
@@ -16,6 +23,8 @@
   height: 40px;
   float: left;
   display: block;
+  margin-left: 40%;
+
 }
 
 #red {
@@ -42,6 +51,14 @@
   display: block;
 }
 
+#clear-board {
+  background-color: rgb(18, 197, 18);
+  color: white;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
 #pixel-board {
   border-color: black;
   border-style: solid;
@@ -49,6 +66,7 @@
   width: 270px;
   height: 270px;
   margin-left: 30px;
+  background-color: rgb(255, 255, 255);
 }
 
 .pixel {
@@ -57,7 +75,7 @@
   border-width: 1px;
   width: 40px;
   height: 40px;
-  background-color: rgb(255,255,255);
+  background-color: rgb(255, 255, 255);
   display: inline-block;
 }
 

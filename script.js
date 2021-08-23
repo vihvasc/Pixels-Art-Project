@@ -13,16 +13,16 @@ const pixelBoard = document.querySelector('#pixel-board');
 function colorPixel(event) {
   if (colorSelect[0].classList.contains('selected')) {
     event.target.style.backgroundColor = 'black';
-    }
+  }
   else if (colorSelect[1].classList.contains('selected')) {
     event.target.style.backgroundColor = 'red';
-    }
+  }
   else if (colorSelect[2].classList.contains('selected')) {
     event.target.style.backgroundColor = 'blue';
-    }
+  }
   else if (colorSelect[3].classList.contains('selected')) {
     event.target.style.backgroundColor = 'green';
-    }
+  }
 }
 pixelBoard.addEventListener('click', colorPixel);
 
