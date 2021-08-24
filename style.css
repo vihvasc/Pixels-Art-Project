@@ -6,33 +6,33 @@
   display: inline-block;
 }
 
-#pixel-board {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
+/* #pixel-board {
+  display: inline-block; */
+  /* grid-template-columns: repeat(5, auto);
   grid-template-rows: repeat(5, auto);
-  justify-content: start;
-}
+  justify-content: start; */
+
 
 .pixel {
+  display: inline-block;
   width: 40px;
   height: 40px;
   border: 1px solid;
-  background-color: white
+  background-color: rgb(255, 255, 255);
 }
 
-#black {
+/* #black {
   background-color: black
-}
+} */
 
-#red {
+/* #color1 {
   background-color: rgb(238, 108, 77);
 }
 
-#blue {
+#color2 {
   background-color: rgb(71, 59, 240);
 }
 
-#green {
+#color3 {
   background-color: rgb(128, 200, 65)
-}
-
+} */
