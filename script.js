@@ -1,5 +1,6 @@
 const numberOfLines = 5;
 const numberOfColumns = 5;
+let pixelBoard = document.getElementById('pixel-board');
 
 function createPixel(numberOfColumnsCP, divElementLine) {
   for (let index = 0; index < numberOfColumnsCP; index += 1) {
@@ -23,16 +24,14 @@ function createBoard(numberOfLinesCB, numberOfColumnsCB) {
 
 createBoard(numberOfLines, numberOfColumns);
 
-
 let colorPixel = document.querySelectorAll('.pixel');
 
-function colorsBox(){
-for (let index = 0; index < colorPixel.length; index += 1){
-  colorPixel[index].addEventListener('click',function(event){
-    let acesso = colorsSelect.style.backgroundColor;
-    event.target.style.backgroundColor = acesso;
-  })
-}
+function colorsBox() {
+  for (let index = 0; index < colorPixel.length; index += 1) {
+    colorPixel[index].addEventListener('click', function (event) {
+      event.target.style.backgroundColor = colorsSelect.id;
+    })
+  }
 }
 colorsBox();
 
@@ -43,31 +42,30 @@ colorsSelect.classList.add('selected');
 
 
 let seleciona = document.querySelectorAll('.color')
-function selectClicks(){
-  for (let index = 0; index < seleciona.length; index +=1){
-    seleciona[index].addEventListener('click',function(event) {
+function selectClicks() {
+  for (let index = 0; index < seleciona.length; index += 1) {
+    seleciona[index].addEventListener('click', function (event) {
       colorsSelect.classList.remove('selected');
       event.target.classList.add('selected');
       colorsSelect = event.target;
     });
   }
 }
-selectClicks()
+selectClicks();
 
-function clearButton(){
-let buttonClear = document.createElement('button');
-buttonClear.id = 'clear-board';
-buttonClear.innerText = 'Limpar';
-let pixelBoard = document.getElementById('pixel-board');
+function clearButton() {
+  let buttonClear = document.createElement('button');
+  buttonClear.id = 'clear-board';
+  buttonClear.innerText = 'Limpar';
+  let pixelBoard = document.getElementById('pixel-board');
 
-document.body.insertBefore(buttonClear, pixelBoard);
-buttonClear.addEventListener('click', function(){
-  for(let index = 0;index < colorPixel.length; index += 1){
-    colorPixel[index].style.backgroundColor = 'white';
+  document.body.insertBefore(buttonClear, pixelBoard);
+
+  buttonClear.addEventListener('click', function () {
+    for (let index = 0; index < colorPixel.length; index += 1) {
+      colorPixel[index].style.backgroundColor = 'white';
     }
-});
+  });
 }
 
 clearButton();
-
-

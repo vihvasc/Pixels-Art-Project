@@ -23,15 +23,15 @@ h1 {
   }
   
   #blue {
-    background-color: #00008B;
+    background-color: blue;
   }
   
   #yellow {
-    background-color: #ffff00;
+    background-color: yellow;
   }
   
   #red {
-    background-color: #8B0000;
+    background-color: red;
   }
 
 #pixel-board {
@@ -56,4 +56,10 @@ h1 {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 20px;
+}
+
+#pixel-board1 {
+  max-width: 202px;
+  height: 202px;
+  border: 1px solid #000;
 }
