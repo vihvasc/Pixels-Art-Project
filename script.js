@@ -50,11 +50,25 @@ function generateBoard() {
   boardSize = inputBoardSize.value;
 
   if (boardSize) {
+    boardSize = validateBoardSize(boardSize);
     createPixelBoard(boardSize);
     addClickOnPixels();
   } else {
     alert('Board inválido!');
   }
+}
+
+// Trata o valor recebido no input
+function validateBoardSize(inputValue) {
+  if (inputValue < 5) {
+    alert('5 é tamanho mínimo!');
+    inputValue = 5;
+  } else if (inputValue > 50) {
+    alert('50 é tamanho máximo!');
+    inputValue = 50;
+  }
+
+  return inputValue;
 }
 
 // Cria o pixel board com o tamanho  passado por parâmetro
