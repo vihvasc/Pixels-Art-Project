@@ -1,44 +1,22 @@
-/*let blacks = document.getElementById('black');
-let reds = document.getElementById('red');
-let blues = document.getElementById('blue');
-let green = document.getElementById('green');
-let pintar;
+const bottonLimpar = document.getElementById('clear-board');
+bottonLimpar.addEventListener('click', Limpar);
 
+function Limpar(){
+    const allIn = document.getElementsByClassName('pixel');
+    allIn.style.backgroundColor = 'red';}
+    //document.body.style.backgroundColor = 'green'; }
 
-//variavel pixelvazio recebendo um pixel vazio
-let pixelvazio = document.getElementsByClassName('pixel');
-//click + chamando metodo pintar de preto    
-pixelvazio.addEventListener('change', pintarblack);
+    let color = document.getElementsByClassName("color");
 
+    function selecionaCor(event) {
+        const corSelecionada = document.querySelector(".selected");
+        corSelecionada.classList.remove("selected");
+        event.target.classList.add("selected");
+    }
 
-  window.onload = function(){
-    pintarblack();
-    
-}
-
-//pixel.addEventListener('change', pintar);
-
-
-    
-    
-    function pintarblack(){
-    pixelvazio.style.backgroundColor = 'black';
-    
-}
-
-
-
-    /*function pintar(e){
-        if(catchacor == 'red'){
-            pixelvazio.style.backgroundColor = 'red';
+    function addEvents() {
+        for (i = 0; i < color.length; i += 1) {
+            color[i].addEventListener("click", selecionaCor);
         }
-        if(catchacor == 'black'){
-            pixelvazio.style.backgroundColor = 'black';
-        }
-        if(catchacor == 'blue'){
-            pixelvazio.style.backgroundColor = 'blue';
-        }
-        if(catchacor == 'green'){
-            pixelvazio.style.backgroundColor = 'green';
-        }
-    }*/
+    }
+    addEvents();
