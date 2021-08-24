@@ -48,10 +48,15 @@ function createColorPallete(colorList) {
 function generateBoard() {
   let inputBoardSize = document.getElementById('board-size');
   boardSize = inputBoardSize.value;
-  console.log(boardSize);
-  createPixelBoard(boardSize);
-  addClickOnPixels();
+
+  if (boardSize) {
+    createPixelBoard(boardSize);
+    addClickOnPixels();
+  } else {
+    alert('Board inválido!');
+  }
 }
+
 // Cria o pixel board com o tamanho  passado por parâmetro
 
 function createPixelBoard(boardSize) {
@@ -106,6 +111,8 @@ function createGenerateBoardInput() {
   let input = document.createElement('input');
 
   input.id = 'board-size';
+  input.type = 'number';
+  input.min = '1';
   inputContainer.appendChild(input);
 }
 
