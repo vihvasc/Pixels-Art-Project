@@ -1,0 +1,50 @@
+#pixel-board, #color-palette {
+    display: flex;
+    flex-direction: row;
+}
+#color-palette{
+    margin-bottom: 50px;
+}
+#pixel-board {
+    height: 220px;
+    width: 220px;
+    flex-wrap:wrap;
+    box-sizing:content-box;
+    align-items: center;
+}
+
+.color{
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    margin-right: 5px;
+}
+.pixel {
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    box-sizing: content-box;
+    align-self: center;
+    margin-right: 1px;
+    background-color:white;
+}
+.black {
+    background-color: black;
+}
+.blue {
+    background-color:blue ;
+}
+.green {
+    background-color: green;
+}
+.yellow {
+    background-color: yellow;
+}
+.red {
+    background-color:red;
+}
+.purple {
+    background-color: purple;
+}
