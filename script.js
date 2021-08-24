@@ -148,4 +148,30 @@ function callAllFunctions() {
   initialPixelBoard();
   listenerButtonVQV();
   listenerButtonClear();
+  rngColor();
 }
+
+
+ console.log("Numero aleatorio" + Math.round(Math.random() * (254))) ;
+
+/*  let color1 = stringify(Math.round(Math.random() * (254) + Math.round(Math.random() * (254) + Math.round(Math.random() * (254));
+ console.log("este é o color1" + color1) */
+
+ console.log("rgb(" + Math.round(Math.random() * (254)) + " ," + Math.round(Math.random() * (254)) + " ," + Math.round(Math.random() * (254)) + ")")
+
+ let color2 = "rgb(" + Math.round(Math.random() * (254)) + " , " + Math.round(Math.random() * (254)) + " , " + Math.round(Math.random() * (254)) + ")"
+
+ let color3 = "rgb(" + Math.round(Math.random() * (254)) + " , " + Math.round(Math.random() * (254)) + " , " + Math.round(Math.random() * (254)) + ")"
+
+ let color4 = "rgb(" + Math.round(Math.random() * (254)) + " , " + Math.round(Math.random() * (254)) + " , " + Math.round(Math.random() * (254)) + ")"
+
+  function rngColor () {
+   let originalColor2 = document.querySelector('.color2');
+   originalColor2.style.backgroundColor = color2;
+
+   let originalColor3 = document.querySelector('.color3');
+   originalColor3.style.backgroundColor = color3;
+
+   let originalColor4 = document.querySelector('.color4');
+   originalColor4.style.backgroundColor = color4;
+ }
