@@ -27,7 +27,7 @@ function Limpar(){
       }
       //Dos testes que fiz no npm test não estava conseguindo
       //fazer a função carregar com o window.onload corretamente
-      coresAleatorias();
+      coresAleatorias(); 
 
 
 
