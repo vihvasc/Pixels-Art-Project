@@ -1,6 +1,6 @@
 
 let selectColor = document.getElementsByClassName("color");
-let board = document.querySelectorAll(".pixel");
+let board = document.getElementsByClassName("pixel");
 
 let clearButton = document.getElementById("clear-board");
 
