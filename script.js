@@ -1,5 +1,12 @@
 const getColors = document.querySelectorAll('.color');
 let getPixels = document.querySelectorAll('.pixel')
+const clearBoard = document.getElementById('clear-board')
+
+clearBoard.addEventListener('click', function() {
+  for (let index = 0; index < getPixels.length; index += 1) {
+    getPixels[index].style.backgroundColor = 'white';
+  }
+})
 
 for (let index = 0; index < getPixels.length; index += 1) {
   getPixels[index].style.backgroundColor = 'white';
@@ -19,6 +26,7 @@ for (let index = 0; index < getColors.length; index += 1) {
 
     for (let pixel = 0; pixel < getPixels.length; pixel += 1) {
       getPixels[pixel].addEventListener('click', function() {
+
         getPixels[pixel].style.backgroundColor = getColors[index].style.backgroundColor
       })
     }
