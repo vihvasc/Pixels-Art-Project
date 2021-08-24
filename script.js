@@ -6,9 +6,24 @@ function Limpar(){
     const allIn = document.getElementsByClassName('pixel');
           
         for (let i = 0; i < allIn.length; i += 1) {
-          allIn[i].style.backgroundColor = 'white';
+          allIn[i].style.backgroundColor = 'rgb(255, 255, 255)';
         }
     }    
+
+    //PINTANDO PIXELS
+    function pintandoPixels() {
+        let pixelsGotcha = document.querySelectorAll('.pixel');
+      
+        for (let index = 0; index < pixelsGotcha.length; index++) {
+            pixelsGotcha[index].addEventListener('click', Pintar);
+        }
+      
+        function Pintar(event) {
+          let corSelecionada = document.querySelector('.selected');
+          event.target.style.backgroundColor = corSelecionada.style.backgroundColor;
+        }
+      }
+      pintandoPixels();
       
       //CORES ALEATORIAS, EXCETO O PRETO
       function coresAleatorias() {
@@ -30,6 +45,9 @@ function Limpar(){
       coresAleatorias(); 
 
 
+    
+        
+    
 
     //Pegando cor selecionada e .select
     let corPaleta = document.getElementsByClassName("color");
