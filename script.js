@@ -1,8 +1,8 @@
-let colorList = ['black', 'gray', 'blue', 'green'];
-let pixelBoardSize = 5;
-let colorPallete = document.getElementById('color-palette');
-let pixelBoard = document.getElementById('pixel-board');
-let buttonContainer = document.getElementById('button-container');
+const colorList = ['black', 'gray', 'blue', 'green'];
+const pixelBoardSize = 5;
+const colorPallete = document.getElementById('color-palette');
+const pixelBoard = document.getElementById('pixel-board');
+const buttonContainer = document.getElementById('button-container');
 
 createColorPallete(colorList);
 createGenerateBoardInput();
@@ -13,13 +13,13 @@ createPixelBoard(pixelBoardSize);
 // Cor Preta é selecionada inicialmente
 colorPallete.firstChild.classList.add('selected');
 
-//Adiciona evento ao botão para receber o tamanho do pixel board
-let generateBoardButton = document.getElementById('generate-board');
+// Adiciona evento ao botão para receber o tamanho do pixel board
+const generateBoardButton = document.getElementById('generate-board');
 
 generateBoardButton.addEventListener('click', generateBoard);
 
 // Adiciona o evento de click na pleta de cores
-let colors = document.getElementsByClassName('color');
+const colors = document.getElementsByClassName('color');
 for (let color of colors) {
   color.addEventListener('click', selectColor);
 }
@@ -28,8 +28,9 @@ for (let color of colors) {
 addClickOnPixels();
 
 // Adicona evento de click no botão clear board
-let clearBoardButton = document.getElementById('clear-board');
+const clearBoardButton = document.getElementById('clear-board');
 clearBoardButton.addEventListener('click', clearPixelBoard);
+
 // CRIANDO OS ELEMENTOS
 
 // Cria a paleta com as cores presentes em colorList
@@ -44,10 +45,11 @@ function createColorPallete(colorList) {
     colorPallete.appendChild(newColor);
   }
 }
-//Gera um novo Pixel Board de acordo com o valor do input
+
+// Gera um novo Pixel Board de acordo com o valor do input
 function generateBoard() {
   let inputBoardSize = document.getElementById('board-size');
-  boardSize = inputBoardSize.value;
+  let boardSize = inputBoardSize.value;
 
   if (boardSize) {
     boardSize = validateBoardSize(boardSize);
@@ -61,10 +63,8 @@ function generateBoard() {
 // Trata o valor recebido no input
 function validateBoardSize(inputValue) {
   if (inputValue < 5) {
-    alert('5 é tamanho mínimo!');
     inputValue = 5;
   } else if (inputValue > 50) {
-    alert('50 é tamanho máximo!');
     inputValue = 50;
   }
 
