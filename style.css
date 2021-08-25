@@ -24,7 +24,14 @@ button {
     background-color: black;
 }
 
+.preto {
+    background-color: black
+    ;
+}
 #azul {
+    background-color: blue;
+}
+.azul {
     background-color: blue;
 }
 
@@ -32,10 +39,15 @@ button {
     background-color: yellow;
 }
 
+.amarelo {
+    background-color: yellow;
+}
 #vermelho {
     background-color: red;
 }
-
+.vermelho {
+    background-color: red;
+}
 #pixel-board{
 
     width: 210px;

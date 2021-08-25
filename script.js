@@ -4,12 +4,13 @@ window.onload = function (){
     makeBox();
     selecionada();
     limparEscutador();
-    /* escutandoAsDivsPixel(); */
+    
 }
 
 function makeBox(){
 
-    
+    let  selected = document.querySelector(".selected");
+
     // estrutura para criar 25 divs
     for (let contador = 0; contador < 25; contador++){
     // cria uma variavel que chama o pixel-board    
@@ -30,8 +31,15 @@ function makeBox(){
     divBox.style.width  = "40px";
     divBox.style.border = "1px solid rgb(0,0,0)"
     divBox.style.margin = "block"
+    divBox.addEventListener('click',function (event){
     
+        let elementSelected = document.querySelector('.selected');
+        let elementColor = window.getComputedStyle(elementSelected).backgroundColor;
+        let elementClicked = event.target;
     
+        elementClicked.style.backgroundColor = elementColor;
+    
+    });
     
     }
     
@@ -102,17 +110,6 @@ function corSelecionadaVermelho(){
     azul.className = "color";
     vermelho.className = "color selected";
 }
-/* function escutandoAsDivsPixel (){
-
-    let pixel = document.getElementsByClassName('pixel');
-    pixel.addEventListener('mouseover',marcandoAdiv);
-} 
-
-function marcandoAdiv(){
-
-    let pixel = document.getElementsByClassName("pixel");
-    pixel.className = "pixel selected";
-} */
 
 function limparEscutador (){
     let botaolimpar = document.getElementById('clear-board');
