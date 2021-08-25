@@ -4,7 +4,8 @@ window.onload = function (){
     makeBox();
     selecionada();
     limparEscutador();
-    
+    randomColor ();
+    botoesCoresAleatorios (); 
 }
 
 function makeBox(){
@@ -122,4 +123,23 @@ function limpar(){
         pixel[contador].style.backgroundColor = "rgb(255,255,255)";
     }
    
+}
+
+function randomColor () {
+    let r = Math.floor(Math.random() * 256)
+    let g = Math.floor(Math.random() * 256)
+    let b = Math.floor(Math.random() * 256)
+    let rgb = `rgb(${r}, ${g}, ${b})`
+    return rgb;
+  }
+function botoesCoresAleatorios (){
+    
+    let buttonPreto = document.getElementById('preto');
+    let buttonAzul = document.getElementById('azul');
+    let buttonAmarelo = document.getElementById('amarelo');
+    let buttonVermelho = document.getElementById('vermelho');
+  
+    buttonAmarelo.style.backgroundColor = `${randomColor()}`
+    buttonAzul.style.backgroundColor = `${randomColor()}`
+    buttonVermelho.style.backgroundColor = `${randomColor()}`
 }
